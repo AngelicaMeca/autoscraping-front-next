@@ -1,7 +1,8 @@
 'use client';
 
 import { UsersRound, MessageSquare, Shield, Database, Layers, Zap, TrendingUp, CircleCheck as CheckCircle2, ChartBar as BarChart3, Globe, Sparkles, ChevronDown, ChevronLeft, ChevronRight, DollarSign, BookOpen, Rocket, GraduationCap, Target, BookText } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import CicloDelDatoSection from './ciclo-del-dato';
 import ResultadosBanner from './resultados-banner';
 import FaqSection from './faq-section';
@@ -50,30 +51,57 @@ export default function DataSquadPage() {
     },
   ];
 
+  // Continuous carousel animation
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const goToNextSlide = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setWhySlide((prev) => (prev >= whyCards.length - 1 ? 0 : prev + 1));
+    setTimeout(() => setIsTransitioning(false), 600);
+  }, [isTransitioning, whyCards.length]);
+
+  const goToPrevSlide = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setWhySlide((prev) => (prev <= 0 ? whyCards.length - 1 : prev - 1));
+    setTimeout(() => setIsTransitioning(false), 600);
+  }, [isTransitioning, whyCards.length]);
+
+  useEffect(() => {
+    autoplayRef.current = setInterval(goToNextSlide, 4000);
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+  }, [goToNextSlide]);
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#1e1b4b] via-[#312e81] to-[#1e3a8a]">
+    <main className="min-h-screen bg-gradient-to-b from-[#1a1247] via-[#2d1b69] to-[#1a1247]">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-40 pb-24 px-6 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-40 left-20 w-2 h-2 bg-blue-400/30 rounded-full"></div>
-        <div className="absolute top-60 right-32 w-3 h-3 bg-blue-300/40 rounded-full"></div>
-        <div className="absolute bottom-40 right-20 w-2 h-2 bg-blue-400/30 rounded-full"></div>
-        <div className="absolute bottom-96 left-1/4 w-1.5 h-1.5 bg-blue-300/40 rounded-full"></div>
+        {/* Decorative dots - matching Data Factory */}
+        <div className="absolute top-40 left-20 w-2 h-2 bg-purple-400 rounded-full opacity-60"></div>
+        <div className="absolute top-60 right-32 w-2 h-2 bg-pink-400 rounded-full opacity-60"></div>
+        <div className="absolute bottom-40 left-10 w-2 h-2 bg-blue-400 rounded-full opacity-60"></div>
+        <div className="absolute bottom-80 right-20 w-2 h-2 bg-purple-400 rounded-full opacity-60"></div>
 
         <div className="mx-auto max-w-6xl text-center relative">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-600/30 backdrop-blur-sm border border-blue-400/30 rounded-full px-5 py-2.5 mb-10">
-            <UsersRound className="w-5 h-5 text-blue-200" />
-            <span className="text-white font-medium text-sm tracking-wide">TALENTO BAJO DEMANDA</span>
-            <div className="w-1.5 h-1.5 bg-blue-300 rounded-full"></div>
+          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 mb-10">
+            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+            <UsersRound className="w-5 h-5 text-white" />
+            <span className="text-white font-medium text-sm tracking-wide uppercase">TALENTO BAJO DEMANDA</span>
+            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
           </div>
 
           {/* Title */}
           <h1 className="text-7xl font-bold mb-8 leading-tight">
             <span className="text-white">Data </span>
-            <span className="text-blue-400">Squad</span>
+            <span className="bg-gradient-to-r from-[#60A5FA] via-[#7B92FF] to-[#9D7EFF] bg-clip-text text-transparent">Squad</span>
+            <span className="text-[#60A5FA]">.</span>
           </h1>
 
           {/* Description */}
@@ -83,81 +111,80 @@ export default function DataSquadPage() {
 
           {/* CTA Buttons */}
           <div className="flex items-center justify-center gap-4 mb-20">
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl transition font-medium">
+            <button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
               <MessageSquare className="w-5 h-5" />
               <span>Hablar con un experto</span>
               <span className="ml-1">→</span>
             </button>
-            <button className="flex items-center gap-2 bg-transparent border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl transition font-medium">
-              <span>Conocer el proceso</span>
-              <ChevronDown className="w-5 h-5" />
+            <button className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all">
+              Conocer el proceso
             </button>
           </div>
 
           {/* Feature Pills */}
           <div className="flex items-center justify-center gap-4 mb-20">
-            <div className="flex items-center gap-3 bg-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl px-6 py-4">
-              <div className="bg-purple-500 p-2.5 rounded-xl">
+            <div className="bg-gradient-to-br from-[#10b981]/20 to-[#059669]/20 backdrop-blur-sm border border-[#10b981]/30 rounded-2xl px-6 py-4 flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-[#10b981] to-[#059669] rounded-xl flex items-center justify-center">
                 <UsersRound className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-white font-semibold text-sm">Talento senior</div>
-                <div className="text-blue-200 text-xs">1:1</div>
+                <p className="text-white font-semibold">Talento senior</p>
+                <p className="text-gray-300 text-sm">1:1</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl px-6 py-4">
-              <div className="bg-purple-500 p-2.5 rounded-xl">
+            <div className="bg-gradient-to-br from-[#3b82f6]/20 to-[#2563eb]/20 backdrop-blur-sm border border-[#3b82f6]/30 rounded-2xl px-6 py-4 flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-[#3b82f6] to-[#2563eb] rounded-xl flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-white font-semibold text-sm">Mantenimiento</div>
-                <div className="text-blue-200 text-xs">Proactivo</div>
+                <p className="text-white font-semibold">Mantenimiento</p>
+                <p className="text-gray-300 text-sm">Proactivo</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl px-6 py-4">
-              <div className="bg-blue-500 p-2.5 rounded-xl">
+            <div className="bg-gradient-to-br from-[#ec4899]/20 to-[#db2777]/20 backdrop-blur-sm border border-[#ec4899]/30 rounded-2xl px-6 py-4 flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-[#ec4899] to-[#db2777] rounded-xl flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-white font-semibold text-sm">Escalabilidad</div>
-                <div className="text-blue-200 text-xs">Inmediata</div>
+                <p className="text-white font-semibold">Escalabilidad</p>
+                <p className="text-gray-300 text-sm">Inmediata</p>
               </div>
             </div>
           </div>
 
           {/* Value Proposition Cards */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Card 1 */}
-            <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/30 backdrop-blur-sm border border-blue-400/20 rounded-3xl p-8 text-left">
-              <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-4 rounded-2xl w-fit mb-6">
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-left hover:border-purple-500/30 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#ec4899] to-[#db2777] rounded-2xl flex items-center justify-center mb-6">
                 <Zap className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-4">Integracio inmediata</h3>
-              <p className="text-blue-100/80 text-sm leading-relaxed">
+              <h3 className="text-white text-xl font-bold mb-4">Integración inmediata</h3>
+              <p className="text-gray-400 leading-relaxed">
                 Potencia tu capacidad operativa integrando especialistas expertos a tus flujos actuales.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/30 backdrop-blur-sm border border-blue-400/20 rounded-3xl p-8 text-left">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-700 p-4 rounded-2xl w-fit mb-6">
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-left hover:border-purple-500/30 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#3b82f6] to-[#2563eb] rounded-2xl flex items-center justify-center mb-6">
                 <CheckCircle2 className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-4">Gestion Garantizada</h3>
-              <p className="text-blue-100/80 text-sm leading-relaxed">
+              <h3 className="text-white text-xl font-bold mb-4">Gestión Garantizada</h3>
+              <p className="text-gray-400 leading-relaxed">
                 Recibe visibilidad total del progreso con reportes regulares, eliminando la carga de la microgestión.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/30 backdrop-blur-sm border border-blue-400/20 rounded-3xl p-8 text-left">
-              <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-2xl w-fit mb-6">
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-left hover:border-purple-500/30 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#10b981] to-[#059669] rounded-2xl flex items-center justify-center mb-6">
                 <TrendingUp className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-white text-xl font-bold mb-4">Continuidad activa</h3>
-              <p className="text-blue-100/80 text-sm leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 Transfiere la complejidad del mantenimiento y la resolución de bloqueos a un equipo dedicado.
               </p>
             </div>
@@ -166,26 +193,30 @@ export default function DataSquadPage() {
       </section>
 
       {/* La Solución DataSquad Section */}
-      <section className="relative py-24 px-6 overflow-hidden" style={{ background: 'linear-gradient(135deg, #eef2ff 0%, #f5f3ff 40%, #fdf2f8 100%)' }}>
+      <section className="relative py-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Background decorative blurred shapes */}
-        <div className="absolute top-16 left-8 w-56 h-56 bg-purple-400/25 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-16 right-12 w-72 h-72 bg-pink-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-purple-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-40 right-20 w-80 h-80 bg-pink-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-40 right-1/3 w-96 h-96 bg-cyan-300/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-200/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto relative z-10">
           {/* Badge */}
-          <div className="flex justify-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-white/80 border border-gray-200 rounded-full px-5 py-2.5 shadow-sm">
-              <UsersRound className="w-4 h-4 text-purple-500" />
-              <span className="text-gray-600 text-xs font-semibold uppercase tracking-widest">
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-200 rounded-full px-4 py-2">
+              <Sparkles className="w-4 h-4 text-purple-600" />
+              <span className="text-purple-600 text-xs font-bold uppercase tracking-wide">
                 CONSTRUIDO PARA TRABAJAR EN EQUIPO
               </span>
             </div>
           </div>
 
           {/* Title */}
-          <h2 className="text-center font-bold mb-6 leading-tight" style={{ fontSize: '3rem' }}>
-            <span className="text-gray-900">La Solución </span>
-            <span className="text-blue-500">DataSquad</span>
+          <h2 className="text-5xl font-bold text-center mb-6">
+            <span className="text-gray-900">La Solución</span>
+            <br />
+            <span className="bg-gradient-to-r from-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">DataSquad</span>
           </h2>
 
           {/* Description */}
@@ -275,121 +306,153 @@ export default function DataSquadPage() {
 
       {/* Por qué elegir DataSquad Section */}
       <section className="relative py-24 px-6 overflow-hidden bg-white">
-        {/* Background decorative blobs */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-purple-200/40 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-200/30 rounded-full blur-3xl pointer-events-none"></div>
+        {/* Background Decorative Blurred Shapes - matching Data Factory */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-10 w-96 h-96 bg-pink-300/40 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-20 w-80 h-80 bg-purple-300/40 rounded-full blur-3xl"></div>
+          <div className="absolute top-40 left-1/4 w-64 h-64 bg-blue-300/30 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-200/10 rounded-full blur-3xl"></div>
+        </div>
 
         <div className="max-w-5xl mx-auto relative z-10">
           {/* Badge */}
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-pink-100 border border-pink-200 rounded-full px-5 py-2.5">
-              <CheckCircle2 className="w-4 h-4 text-pink-500" />
-              <span className="text-pink-600 text-xs font-bold uppercase tracking-widest">
-                EL ESTÁNDAR QUE NOS EXIGIMOS
-              </span>
+            <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
+              <CheckCircle2 className="w-4 h-4 fill-pink-600" />
+              EL ESTÁNDAR QUE NOS EXIGIMOS
             </div>
           </div>
 
           {/* Title */}
-          <h2 className="text-center font-bold mb-5 leading-tight" style={{ fontSize: '3rem' }}>
-            <span className="text-gray-900">Por qué elegir </span>
-            <span className="text-purple-600">DataSquad</span>
-          </h2>
+          <div className="text-center mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+              Por qué elegir
+            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              DataSquad
+            </h2>
+          </div>
 
           {/* Subtitle */}
           <p className="text-center text-gray-600 text-base max-w-lg mx-auto mb-16 leading-relaxed">
             Porque la responsabilidad, la precisión y la continuidad no son opcionales para nosotros, son el punto de partida.
           </p>
 
-          {/* Carousel */}
-          <div className="relative flex items-center justify-center gap-6">
-            {/* Left arrow */}
+          {/* Carousel Container */}
+          <div className="relative max-w-2xl mx-auto">
+            {/* Navigation Buttons */}
             <button
-              onClick={() => setWhySlide((prev) => (prev <= 0 ? whyCards.length - 1 : prev - 1))}
-              className="flex-shrink-0 w-10 h-10 bg-white border border-gray-200 rounded-full shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+              onClick={goToPrevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center transition z-10"
               aria-label="Previous"
             >
-              <ChevronLeft className="w-5 h-5 text-gray-500" />
+              <ChevronLeft className="w-6 h-6 text-gray-700" />
+            </button>
+
+            <button
+              onClick={goToNextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center transition z-10"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-700" />
             </button>
 
             {/* Card */}
-            <div className="flex-1 max-w-xl bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-              {/* Card header */}
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0">
-                  {(() => {
-                    const Icon = whyCards[whySlide].icon;
-                    return <Icon className="w-6 h-6 text-white" />;
-                  })()}
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight">{whyCards[whySlide].title}</h3>
-                  <p className="text-pink-500 text-xs font-bold uppercase tracking-wide mt-0.5">{whyCards[whySlide].subtitle}</p>
-                </div>
-              </div>
+            <div className="bg-gradient-to-br from-purple-50/80 to-white rounded-3xl shadow-xl p-10 border border-purple-100/50 backdrop-blur-sm transition-all duration-500 min-h-[350px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={whySlide}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                >
+                  {/* Icon */}
+                  <div className="flex justify-start mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-500">
+                      {(() => {
+                        const Icon = whyCards[whySlide].icon;
+                        return <Icon className="w-8 h-8 text-white" />;
+                      })()}
+                    </div>
+                  </div>
 
-              {/* Description */}
-              <p className="text-gray-700 text-sm leading-relaxed mb-5">{whyCards[whySlide].description}</p>
+                  {/* Title & Badge */}
+                  <div className="mb-4">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2 transition-all duration-300">
+                      {whyCards[whySlide].title}
+                    </h3>
+                    <div className="inline-block">
+                      <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">
+                        {whyCards[whySlide].subtitle}
+                      </span>
+                    </div>
+                  </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {whyCards[whySlide].tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="text-xs font-medium text-gray-700 border border-pink-300 rounded-full px-3 py-1"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                  {/* Description */}
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6 transition-all duration-300">
+                    {whyCards[whySlide].description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {whyCards[whySlide].tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="bg-white text-purple-600 px-4 py-2 rounded-full text-sm font-medium border border-purple-200 transition-all duration-200 hover:bg-purple-50"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
-            {/* Right arrow */}
-            <button
-              onClick={() => setWhySlide((prev) => (prev >= whyCards.length - 1 ? 0 : prev + 1))}
-              className="flex-shrink-0 w-10 h-10 bg-white border border-gray-200 rounded-full shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-5 h-5 text-gray-500" />
-            </button>
-          </div>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-8">
-            {whyCards.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setWhySlide(i)}
-                className={`rounded-full transition-all ${
-                  i === whySlide
-                    ? 'w-4 h-4 bg-pink-500'
-                    : 'w-3 h-3 bg-pink-200 hover:bg-pink-300'
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-8">
+              {whyCards.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setWhySlide(i); if (autoplayRef.current) { clearInterval(autoplayRef.current); autoplayRef.current = setInterval(goToNextSlide, 4000); } }}
+                  className={`transition-all ${
+                    i === whySlide
+                      ? 'w-8 h-2 bg-pink-500'
+                      : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
+                  } rounded-full`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pilares de DataSquad Section */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-24 px-6 bg-gradient-to-br from-purple-50 via-white to-blue-50 overflow-hidden">
+        {/* Background decorative circles - matching Data Factory */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-purple-200 rounded-full"></div>
+          <div className="absolute top-40 left-32 w-24 h-24 border-2 border-blue-200 rounded-full"></div>
+          <div className="absolute bottom-32 right-20 w-40 h-40 border-2 border-purple-100 rounded-full"></div>
+          <div className="absolute top-60 right-40 w-28 h-28 border-2 border-blue-100 rounded-full"></div>
+          <div className="absolute bottom-20 left-40 w-36 h-36 bg-purple-100/30 rounded-full blur-2xl"></div>
+          <div className="absolute top-32 right-32 w-48 h-48 bg-blue-100/30 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
           {/* Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-pink-100 border border-pink-200 rounded-full px-5 py-2.5">
-              <Sparkles className="w-4 h-4 text-pink-500" />
-              <span className="text-pink-600 text-xs font-bold uppercase tracking-widest">
-                LO QUE NOS DEFINE
-              </span>
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide">
+              <Zap className="w-3 h-3" />
+              LO QUE NOS DEFINE
             </div>
           </div>
 
           {/* Title */}
-          <h2 className="text-center font-bold mb-5 leading-tight" style={{ fontSize: '3rem' }}>
-            <span className="text-gray-900">Pilares de </span>
-            <span className="text-purple-600 underline decoration-purple-300 underline-offset-4">DataSquad</span>
-          </h2>
+          <h3 className="text-center text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Pilares de <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">DataSquad</span>
+          </h3>
 
           {/* Subtitle */}
           <p className="text-center text-gray-600 text-base max-w-3xl mx-auto mb-16 leading-relaxed">
