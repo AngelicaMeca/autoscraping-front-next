@@ -1,10 +1,13 @@
 'use client';
 
 import { ChevronDown, Lightbulb, Monitor, Database, Zap, Shield, TrendingUp, Target, Settings, ShoppingCart, Chrome as HomeIcon, Plane, Heart, ShoppingBag, Lock, CreditCard, Ticket, UserCheck, Building2, ChartBar as BarChart3, ChevronLeft, ChevronRight, Sparkles, ArrowRight, FileText, Infinity, Quote, Star, ExternalLink, MessageCircle, ThumbsUp, Code, File as Document, ArrowUpRight as Growth, Eye, Clock, CircleCheck as CheckCircle, Boxes, Wrench, RefreshCw, Users, UsersRound, Linkedin, Github, Twitter, Facebook, Instagram, BookText, Mail, Phone, Calendar } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import InstagramCard from '@/components/InstagramCard';
+import AnimatedSection from '@/components/AnimatedSection';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -86,6 +89,14 @@ export default function Home() {
     setLogoSlide((prev) => (prev <= 0 ? maxLogoSlide : prev - 1));
   };
 
+  // Autoplay para el carrusel de líderes
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTeamSlide((prev) => (prev + 1) % teamMembers.length);
+    }, 5000); // 5 segundos
+    return () => clearInterval(timer);
+  }, [teamMembers.length]);
+
   return (
     <>
       <Navbar variant="adaptive" />
@@ -95,35 +106,38 @@ export default function Home() {
           background: 'linear-gradient(135deg, #0E155B 0%, #2A327A 25%, #9D62FA 50%, #2A327A 75%, #0E155B 100%)'
         }}>
 
-        <main className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-24">
+        <AnimatedSection>
+          <main className="relative z-10 mx-auto max-w-7xl px-6 pt-24 md:pt-32 pb-16 md:pb-24">
           <div className="max-w-4xl">
             <p className="text-blue-200 text-sm font-medium mb-8">
               Leading Web Scraping Solutions
             </p>
 
-            <h1 className="text-7xl font-bold text-white leading-tight mb-8">
-              Ingeniería humana<br />
-              para una extracción<br />
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 md:mb-8">
+              Ingeniería humana<br className="hidden md:block"/>
+              para una extracción<br className="hidden md:block"/>
               de datos continua y precisa
             </h1>
 
-            <p className="text-blue-200 text-lg leading-relaxed mb-12 max-w-2xl">
+            <p className="text-blue-200 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-2xl">
               Resolvemos los desafíos técnicos del scraping para que recibas información estructurada y lista para usar. Mientras tú escalas tu negocio, nosotros aseguramos la integridad y transparencia de cada dato.
             </p>
 
-            <div className="flex gap-4">
-              <button className="bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition">
                 Hablemos de tu proyecto
               </button>
-              <button className="bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition">
+              <button className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition">
                 Descubre más
               </button>
             </div>
           </div>
-        </main>
+          </main>
+        </AnimatedSection>
       </div>
       
-      <section className="relative bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20 py-24 pb-64 z-20">
+      <AnimatedSection>
+        <section className="relative bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20 py-24 pb-64 z-20">
         {/* Decorative elements - 3 circles with specified colors */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(167, 139, 250, 0.4)' }}></div>
@@ -141,37 +155,69 @@ export default function Home() {
               </div>
               NUESTROS PILARES
             </span>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              Infraestructura que da<br />
-              <span style={{ background: 'linear-gradient(to right, #9D62FA, #7B68EE, #2A327A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>sentido a tu estrategia</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Infraestructura que da<br className="hidden md:inline" />
+              <span className="md:ml-2" style={{ background: 'linear-gradient(to right, #9D62FA, #7B68EE, #2A327A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>sentido a tu estrategia</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
               Combinamos capacidad técnica y soporte directo para que tu equipo se centre en el análisis, delegando en nosotros la complejidad de la extracción.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(to bottom right, rgba(157, 98, 250, 0.15), rgba(157, 98, 250, 0.05))', borderColor: 'rgba(157, 98, 250, 0.2)' }}>
-              <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#9D62FA' }}>
-                <Lightbulb className="w-4 h-4" />
-                INGENIERÍA HUMANA
-              </span>
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4" style={{ backgroundColor: '#9D62FA' }}>
-                <Lightbulb className="w-6 h-6 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            {/* Columna Izquierda */}
+            <div className="flex flex-col gap-6">
+              <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(to bottom right, rgba(157, 98, 250, 0.15), rgba(157, 98, 250, 0.05))', borderColor: 'rgba(157, 98, 250, 0.2)' }}>
+                <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#9D62FA' }}>
+                  <Lightbulb className="w-4 h-4" />
+                  INGENIERÍA HUMANA
+                </span>
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4" style={{ backgroundColor: '#9D62FA' }}>
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Acompañamiento real
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Eliminamos la barrera de los tickets. Tratas directamente con los ingenieros que gestionan tus datos, para resolver dudas.
+                </p>
+                <a href="#" className="font-medium text-sm flex items-center gap-2" style={{ color: '#9D62FA' }}>
+                  Soluciones en tiempo real
+                  <span>→</span>
+                </a>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Acompañamiento real
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Eliminamos la barrera de los tickets. Tratas directamente con los ingenieros que gestionan tus datos, para resolver dudas.
-              </p>
-              <a href="#" className="font-medium text-sm flex items-center gap-2" style={{ color: '#9D62FA' }}>
-                Soluciones en tiempo real
-                <span>→</span>
-              </a>
+
+              <div className="bg-white rounded-3xl p-8 border border-gray-200">
+                <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
+                  <Database className="w-4 h-4" />
+                  CALIDAD DEL DATO
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">
+                  Información lista para usar para que empieces a trabajar de inmediato
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <Monitor className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
+                    <p className="text-sm font-semibold text-gray-900">Datos limpios</p>
+                  </div>
+                  <div className="text-center">
+                    <RefreshCw className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
+                    <p className="text-sm font-semibold text-gray-900">Datos verificados</p>
+                  </div>
+                  <div className="text-center">
+                    <Database className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
+                    <p className="text-sm font-semibold text-gray-900">Datos estructurados</p>
+                  </div>
+                  <div className="text-center">
+                    <Zap className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
+                    <p className="text-sm font-semibold text-gray-900">Archivos precisos</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-6">
+            {/* Columna Derecha */}
+            <div className="flex flex-col gap-6">
               <div className="bg-white rounded-3xl p-8 border border-gray-200">
                 <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
                   <Shield className="w-4 h-4" />
@@ -225,69 +271,41 @@ export default function Home() {
                   Valoramos tu tiempo. Hablas directamente con los especialistas que gestionan tu solución para obtener respuestas al momento y asegurar que nada detenga el ritmo de tu negocio.
                 </p>
               </div>
-            </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-gray-200">
-              <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
-                <Database className="w-4 h-4" />
-                CALIDAD DEL DATO
-              </span>
-              <h3 className="text-xl font-bold text-gray-900 mb-6">
-                Información lista para usar para que empieces a trabajar de inmediato
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <Monitor className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                  <p className="text-sm font-semibold text-gray-900">Datos limpios</p>
-                </div>
-                <div className="text-center">
-                  <RefreshCw className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                  <p className="text-sm font-semibold text-gray-900">Datos verificados</p>
-                </div>
-                <div className="text-center">
-                  <Database className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                  <p className="text-sm font-semibold text-gray-900">Datos estructurados</p>
-                </div>
-                <div className="text-center">
-                  <Zap className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                  <p className="text-sm font-semibold text-gray-900">Archivos precisos</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(to bottom right, rgba(123, 104, 238, 0.15), rgba(123, 104, 238, 0.05))', borderColor: 'rgba(123, 104, 238, 0.2)' }}>
-              <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
-                <Target className="w-4 h-4" />
-                POTENCIA TÉCNICA
-              </span>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Extracción sin obstáculos
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1" style={{ backgroundColor: 'rgba(123, 104, 238, 0.2)' }}>
-                    <Shield className="w-3 h-3" style={{ color: '#7B68EE' }} />
+              <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(to bottom right, rgba(123, 104, 238, 0.15), rgba(123, 104, 238, 0.05))', borderColor: 'rgba(123, 104, 238, 0.2)' }}>
+                <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
+                  <Target className="w-4 h-4" />
+                  POTENCIA TÉCNICA
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Extracción sin obstáculos
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1" style={{ backgroundColor: 'rgba(123, 104, 238, 0.2)' }}>
+                      <Shield className="w-3 h-3" style={{ color: '#7B68EE' }} />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">
+                        Superamos los bloqueos técnicos
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        con tecnología que se adapta a la web.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">
-                      Superamos los bloqueos técnicos
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      con tecnología que se adapta a la web.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1" style={{ backgroundColor: 'rgba(123, 104, 238, 0.2)' }}>
-                    <Zap className="w-3 h-3" style={{ color: '#7B68EE' }} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">
-                      Trabajamos para que recibas un flujo
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      de información estable y continuo.
-                    </p>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1" style={{ backgroundColor: 'rgba(123, 104, 238, 0.2)' }}>
+                      <Zap className="w-3 h-3" style={{ color: '#7B68EE' }} />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">
+                        Trabajamos para que recibas un flujo
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        de información estable y continuo.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -296,9 +314,9 @@ export default function Home() {
         </div>
 
         {/* Worldwide Customers Carousel - Overlapping */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20 w-full max-w-4xl px-6">
-          <div className="bg-white rounded-3xl shadow-2xl p-12 border border-gray-200">
-            <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20 w-full max-w-4xl px-4 md:px-6">
+          <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-12 border border-gray-200">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-6 md:mb-8">
               Worldwide customers who trusted us
             </h3>
             <div className="relative">
@@ -337,17 +355,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimatedSection>
 
-      <section className="relative bg-[#0E155B] pt-48 pb-32 overflow-hidden">
+      <AnimatedSection>
+        <section className="relative bg-[#0E155B] pt-32 md:pt-48 pb-16 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:32px_32px]"></div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">
               Capacidad operativa al servicio de tu negocio
             </h2>
-            <p className="text-blue-200 text-lg max-w-3xl mx-auto">
+            <p className="text-blue-200 text-base md:text-lg max-w-3xl mx-auto">
               Métricas que garantizan la precisión, legalidad y operativa escalable con el respaldo directo de nuestro equipo.
             </p>
           </div>
@@ -411,8 +431,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimatedSection>
 
-      <section className="relative py-24 overflow-hidden">
+      <AnimatedSection>
+        <section className="relative py-16 md:py-24 overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -423,33 +445,35 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-          <div className="mb-8">
+          <div className="mb-6 md:mb-8">
             <span className="inline-flex items-center gap-2 text-blue-200 text-sm font-medium px-4 py-2 rounded-full border border-blue-300/30 bg-blue-500/10">
               <Users className="w-4 h-4" />
               EXPERT TALENT
             </span>
           </div>
 
-          <h2 className="text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-white">La confianza de</span>
-            <br />
-            <span className="text-blue-400">Los líderes globales</span>
+            <br className="hidden md:block" />
+            <span className="text-blue-400"> Los líderes globales</span>
           </h2>
 
-          <p className="text-blue-100 text-xl leading-relaxed mb-10 max-w-4xl mx-auto">
-            Somos Solution Partner oficial de Bright Data,<br />
-            colaborando activamente en la resolución de desafíos complejos<br />
+          <p className="text-blue-100 text-base md:text-xl leading-relaxed mb-8 md:mb-10 max-w-4xl mx-auto">
+            Somos Solution Partner oficial de Bright Data,<br className="hidden md:block"/>
+            colaborando activamente en la resolución de desafíos complejos<br className="hidden md:block"/>
             de extracción de datos para la red más importante del mundo.
           </p>
 
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8 py-4 rounded-lg transition inline-flex items-center gap-2 text-lg">
+          <button className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 md:px-8 py-3 md:py-4 rounded-lg transition inline-flex justify-center items-center gap-2 text-base md:text-lg">
             Conoce nuestra alianza estratégica
             <span>→</span>
           </button>
         </div>
       </section>
+      </AnimatedSection>
 
-      <section className="relative py-24 overflow-hidden">
+      <AnimatedSection>
+        <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-white to-purple-100/30"></div>
 
         {/* Three blur circles with color #7B68EE */}
@@ -463,16 +487,16 @@ export default function Home() {
               <Sparkles className="w-4 h-4" />
               SOLUCIONES A MEDIDA
             </span>
-            <h2 className="text-5xl font-bold mb-2">
-              <span className="text-gray-900">Elige como quieres </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-2 md:mb-4">
+              <span className="text-gray-900">Elige como quieres </span><br className="block md:hidden"/>
               <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">dominar la web</span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-[#9D62FA] to-[#0E155B] mx-auto mt-4 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto mb-16 md:mb-24">
             {/* Data Factory Card */}
-            <Link href="/data-factory" className="bg-white rounded-3xl p-10 shadow-lg border border-purple-100 hover:shadow-xl transition-shadow block">
+            <Link href="/data-factory" className="bg-white rounded-3xl p-6 md:p-10 shadow-lg border border-purple-100 hover:shadow-xl transition-shadow block">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <span className="inline-block text-purple-600 text-xs font-bold px-3 py-1 rounded-full bg-purple-100 mb-4">
@@ -482,7 +506,7 @@ export default function Home() {
                     <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center shadow-lg">
                       <Database className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-900">Data Factory</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Data Factory</h3>
                   </div>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-200 transition">
@@ -495,7 +519,7 @@ export default function Home() {
             </Link>
 
             {/* Data Squad Card */}
-            <Link href="/data-squad" className="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-10 shadow-lg border border-teal-100 hover:shadow-xl transition-shadow block">
+            <Link href="/data-squad" className="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-6 md:p-10 shadow-lg border border-teal-100 hover:shadow-xl transition-shadow block">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#60A5FA]/20 via-[#C084FC]/20 to-[#F472B6]/20 rounded-3xl blur-2xl -z-10"></div>
               <div className="flex items-start justify-between mb-6">
                 <div>
@@ -506,7 +530,7 @@ export default function Home() {
                     <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
                       <Settings className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-900">Data Squad</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Data Squad</h3>
                   </div>
                 </div>
                 <button className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 hover:bg-teal-200 transition">
@@ -519,8 +543,8 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-gray-900">Tu mercado, con una</span>
               <br />
               <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">visión clara</span>
@@ -574,16 +598,18 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#1a1654] via-[#1e1a5e] to-[#0f0c3d]">
+      <AnimatedSection>
+        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-[#1a1654] via-[#1e1a5e] to-[#0f0c3d]">
         <div className="absolute top-20 left-20 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">
-              <span className="text-white">Un camino directo hacia </span>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-white">Un camino directo hacia </span><br className="block md:hidden"/>
               <span className="text-blue-400">tus datos</span>
             </h2>
             <p className="text-blue-200 text-lg">
@@ -674,9 +700,11 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
-      <section className="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <AnimatedSection>
+        <section className="relative py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-purple-300/40 rounded-full blur-2xl"></div>
         <div className="absolute top-20 right-20 w-40 h-40 bg-blue-300/35 rounded-full blur-3xl"></div>
@@ -698,11 +726,11 @@ export default function Home() {
           </div>
 
           {/* Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Confianza construida con <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">hechos</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
               Nos integramos en tu día a día para que la información nunca sea un obstáculo. Mira cómo ayudamos a otros líderes a tomar decisiones con total seguridad.
             </p>
           </div>
@@ -836,10 +864,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Team Leadership Carousel Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/20 to-gray-50">
+      <AnimatedSection>
+        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/20 to-gray-50">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-purple-400/25 to-blue-400/15 rounded-full blur-3xl" style={{ animation: 'float 8s ease-in-out infinite' }}></div>
@@ -872,12 +902,12 @@ export default function Home() {
           </div>
 
           {/* Main Heading */}
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold mb-4">
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-gray-900">El respaldo detras de tu </span>
               <span className="bg-gradient-to-r from-[#9D62FA] to-[#6B46C1] bg-clip-text text-transparent">Estrategia</span>
             </h2>
-            <p className="text-purple-600 text-lg">
+            <p className="text-purple-600 text-base md:text-lg">
               Conoce a los especialistas que lideran la ejecución de cada proyecto.
             </p>
           </div>
@@ -885,7 +915,7 @@ export default function Home() {
           {/* Carousel Container */}
           <div className="relative max-w-4xl mx-auto">
             {/* Main Card */}
-            <div className="relative bg-gradient-to-br from-[#0E155B] via-[#1a1f5f] to-[#2d2180] rounded-3xl p-12 shadow-2xl">
+            <div className="relative bg-gradient-to-br from-[#0E155B] via-[#1a1f5f] to-[#2d2180] rounded-3xl p-8 md:p-12 shadow-2xl min-h-[650px] md:min-h-[450px] lg:min-h-[420px]">
               <div className="absolute -inset-6 bg-gradient-to-r from-[#C084FC]/30 via-[#60A5FA]/30 to-[#F472B6]/30 rounded-3xl blur-3xl -z-10"></div>
               {/* Decorative corner brackets */}
               <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-purple-400/30 rounded-tl-2xl"></div>
@@ -893,56 +923,65 @@ export default function Home() {
               <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-purple-400/30 rounded-bl-2xl"></div>
               <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-purple-400/30 rounded-br-2xl"></div>
 
-              <div className="flex items-center gap-12">
-                {/* Left side - Avatar with initials */}
-                <div className="flex-shrink-0">
-                  <div className="relative">
-                    <div className="absolute -inset-3 bg-gradient-to-r from-[#C084FC]/50 via-[#60A5FA]/50 to-[#F472B6]/50 rounded-2xl blur-2xl"></div>
-                    <div className="relative w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                      <span className="text-5xl font-bold text-white">{teamMembers[teamSlide].initials}</span>
+              <AnimatePresence mode="wait">
+                <motion.div 
+                  key={teamSlide}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12"
+                >
+                  {/* Left side - Avatar with initials */}
+                  <div className="flex-shrink-0">
+                    <div className="relative">
+                      <div className="absolute -inset-3 bg-gradient-to-r from-[#C084FC]/50 via-[#60A5FA]/50 to-[#F472B6]/50 rounded-2xl blur-2xl"></div>
+                      <div className="relative w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span className="text-5xl font-bold text-white">{teamMembers[teamSlide].initials}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Right side - Content */}
-                <div className="flex-1">
-                  {/* Name and Title */}
-                  <div className="mb-6">
-                    <h3 className="text-3xl font-bold text-white mb-1">{teamMembers[teamSlide].name}</h3>
-                    <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-md text-white text-sm font-medium uppercase tracking-wide">
-                      {teamMembers[teamSlide].title}
-                    </span>
+                  {/* Right side - Content */}
+                  <div className="flex-1 text-center md:text-left">
+                    {/* Name and Title */}
+                    <div className="mb-6">
+                      <h3 className="text-3xl font-bold text-white mb-1">{teamMembers[teamSlide].name}</h3>
+                      <span className="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-md text-white text-sm font-medium uppercase tracking-wide">
+                        {teamMembers[teamSlide].title}
+                      </span>
+                    </div>
+
+                    {/* Quote */}
+                    <p className="text-gray-200 text-base leading-relaxed mb-8 italic">
+                      &quot;{teamMembers[teamSlide].quote}&quot;
+                    </p>
+
+                    {/* Expertise Tags */}
+                    <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+                      {teamMembers[teamSlide].expertise.map((exp, idx) => (
+                        <div key={idx} className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
+                          <p className="text-white font-semibold text-sm">{exp.title}</p>
+                          <p className="text-gray-300 text-xs uppercase tracking-wide">{exp.subtitle}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="flex justify-center md:justify-start gap-3">
+                      <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
+                        <Linkedin className="w-5 h-5 text-white" />
+                      </button>
+                      <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
+                        <Github className="w-5 h-5 text-white" />
+                      </button>
+                      <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
+                        <Twitter className="w-5 h-5 text-white" />
+                      </button>
+                    </div>
                   </div>
-
-                  {/* Quote */}
-                  <p className="text-gray-200 text-base leading-relaxed mb-8 italic">
-                    &quot;{teamMembers[teamSlide].quote}&quot;
-                  </p>
-
-                  {/* Expertise Tags */}
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    {teamMembers[teamSlide].expertise.map((exp, idx) => (
-                      <div key={idx} className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
-                        <p className="text-white font-semibold text-sm">{exp.title}</p>
-                        <p className="text-gray-300 text-xs uppercase tracking-wide">{exp.subtitle}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Social Links */}
-                  <div className="flex gap-3">
-                    <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
-                      <Linkedin className="w-5 h-5 text-white" />
-                    </button>
-                    <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
-                      <Github className="w-5 h-5 text-white" />
-                    </button>
-                    <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
-                      <Twitter className="w-5 h-5 text-white" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+                </motion.div>
+              </AnimatePresence>
 
               {/* Carousel Indicators */}
               <div className="flex justify-center gap-2 mt-8">
@@ -958,10 +997,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Expert Talent CTA Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-[#0f0b24] via-[#1f1447] to-[#0f0b24]">
+      <AnimatedSection>
+        <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-[#0f0b24] via-[#1f1447] to-[#0f0b24]">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-15">
           <div className="absolute top-20 left-20 w-96 h-96 bg-purple-600 rounded-full blur-[120px]"></div>
@@ -976,29 +1017,31 @@ export default function Home() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">Informacion clara,</span>
             <br />
             <span className="bg-gradient-to-r from-[#C084FC] to-[#60A5FA] bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(192,132,252,0.8)]">decisiones seguras</span>
           </h2>
 
           {/* Description */}
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed">
             Nos ocupamos de que los datos de la web lleguen directo a tu flujo de trabajo. Sin filtros ni demoras, solo un camino despejado hacia tus objetivos.
           </p>
 
           {/* CTA Button */}
-          <div className="relative inline-block">
+          <div className="relative inline-block w-full sm:w-auto">
             <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
-            <button className="relative bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+            <button className="relative w-full sm:w-auto bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
               Contactar con un experto
             </button>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Social Media Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20">
+      <AnimatedSection>
+        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20">
         {/* Background decorative circles */}
         <div className="absolute top-10 left-10 w-48 h-48 bg-blue-300/40 rounded-full blur-3xl"></div>
         <div className="absolute top-32 right-32 w-56 h-56 bg-purple-300/35 rounded-full blur-3xl"></div>
@@ -1025,104 +1068,114 @@ export default function Home() {
           {/* Social Media Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* LinkedIn Card - Large */}
-            <div className="relative lg:row-span-2 bg-gradient-to-br from-[#0A66C2] to-[#004182] rounded-3xl p-8 shadow-lg text-white">
+            <div className="relative lg:row-span-2 bg-gradient-to-br from-[#0A66C2] to-[#004182] rounded-3xl shadow-lg text-white overflow-hidden flex flex-col">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#60A5FA]/25 via-[#C084FC]/25 to-[#F472B6]/25 rounded-3xl blur-2xl -z-10"></div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                  <Linkedin className="w-7 h-7 text-[#0A66C2]" />
-                </div>
-                <div>
-                  <p className="font-bold text-lg">LinkedIn Update</p>
-                  <p className="text-blue-200 text-sm">2 days ago</p>
-                </div>
+              
+              {/* Post Image */}
+              <div className="relative w-full h-56 lg:h-64 overflow-hidden">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D5622AQHCcasDDuOE1g/feedshare-shrink_2048_1536/B56ZzdmHJnHIAg-/0/1773244281709?e=2147483647&v=beta&t=8rFPr0VtQn0evMkzyVp3Huy_6tMD-uRR0UB0ChEY9I0"
+                  alt="AutoScraping team at Milan international expansion event"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#004182]/80 via-transparent to-transparent"></div>
               </div>
 
-              <h3 className="text-3xl font-bold mb-4">
-                Breaking Records: 3M+ Data Cells Delivered 🚀
-              </h3>
-
-              <p className="text-blue-100 leading-relaxed mb-6">
-                We&apos;re thrilled to announce that we&apos;ve just crossed a major milestone—delivering over 3 million data cells this month! This achievement reflects the trust our clients place in us and our team&apos;s dedication to providing reliable, high-quality data extraction services. From e-commerce pricing to real estate analytics, we&apos;re powering decisions across industries. Here&apos;s to many more milestones ahead!
-              </p>
-
-              <button className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0A66C2] font-medium px-6 py-3 rounded-lg transition mb-6">
-                View on LinkedIn
-                <ExternalLink className="w-4 h-4" />
-              </button>
-
-              <div className="flex items-center gap-6 text-sm border-t border-white/20 pt-6">
-                <div className="flex items-center gap-2">
-                  <ThumbsUp className="w-4 h-4" />
-                  <span>2,341 likes</span>
+              <div className="p-8 flex flex-col flex-1">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                    <Linkedin className="w-7 h-7 text-[#0A66C2]" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">AutoScraping</p>
+                    <p className="text-blue-200 text-sm">1.931 seguidores · Editada</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <MessageCircle className="w-4 h-4" />
-                  <span>178 comments</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ArrowRight className="w-4 h-4" />
-                  <span>89 shares</span>
+
+                <h3 className="text-2xl font-bold mb-3">
+                  Escalar es un deporte de equipo: Nuestra experiencia en Milán 🇦🇷🤝🇮🇹
+                </h3>
+
+                <p className="text-blue-100 leading-relaxed mb-4 text-sm">
+                  Nuestras soluciones de autoscraping y automatización tienen un espacio real y necesario en el mercado global. Compartir el camino con otros fundadores argentinos refuerza la idea de que la tecnología argentina es una marca de calidad exportable.
+                </p>
+
+                <p className="text-blue-200 text-xs mb-5">
+                  #ExpansionInternacional #StartupsArgentina #Italy #TechLeadership #Innovation #Networking #ArgentinaAlMundo
+                </p>
+
+                <a
+                  href="https://www.linkedin.com/posts/autoscraping_expansioninternacional-startupsargentinas-activity-7437525596605304832-boOo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0A66C2] font-medium px-6 py-3 rounded-lg transition mb-6 self-start"
+                >
+                  Ver en LinkedIn
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+
+                <div className="flex items-center gap-6 text-sm border-t border-white/20 pt-5 mt-auto">
+                  <div className="flex items-center gap-2">
+                    <ThumbsUp className="w-4 h-4" />
+                    <span>16 reacciones</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Comentarios</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <ArrowRight className="w-4 h-4" />
+                    <span>Compartir</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Facebook Card */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
+            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 flex flex-col">
+              <div className="flex items-center gap-3 mb-2">
                 <div className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center">
                   <Facebook className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <p className="font-bold text-gray-900">AutoScraping</p>
-                  <p className="text-gray-500 text-sm">3 hours ago</p>
+                  <p className="text-gray-500 text-xs">3 de marzo · Fira Barcelona Gran Via 📍</p>
                 </div>
               </div>
 
-              <p className="text-gray-700 leading-relaxed mb-4">
-                📊 Major API update just went live! 10x faster response times, real-time webhooks, and enhanced error handling. Your data pipelines just got supercharged! 🚀 #WebDev #DataEngineering #API
+              <p className="text-gray-700 leading-relaxed mb-2 text-sm flex-1">
+                ¡Día 1 en el #MWC26: Check! ✅🇦🇷 Deslizá para ver lo que fue la segunda parte de nuestra primera jornada en Barcelona. 🇪🇸 De la adrenalina de presentar en el Hub Argentino ante empresas y partners, a perderse en la inmensidad de los pabellones de Samsung, Microsoft y MediaTek. 🤯
               </p>
 
-              <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-                <div className="flex items-center gap-2">
-                  <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-                  <span className="text-gray-700 font-medium">876</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MessageCircle className="w-4 h-4" />
-                  <span className="text-gray-700 font-medium">142</span>
-                </div>
-              </div>
-            </div>
+              <p className="text-[#1877F2] text-xs mb-4 font-medium">
+                #MWC2026 #Barcelona #TechLife #InnovaciónArgentina
+              </p>
 
-            {/* Instagram Card */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-              <div className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] h-48 flex items-center justify-center">
-                <Instagram className="w-20 h-20 text-white/90" />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    AS
-                  </div>
-                  <p className="font-bold text-gray-900">@autoscraping_team</p>
-                </div>
-
-                <p className="text-gray-700 text-sm mb-4">
-                  Behind the scenes at our data center 🖥️ Building the infrastructure that powers 100k+ daily scraping jobs. #TechLife #DataCenter
-                </p>
-
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-4 text-sm text-gray-500">
                   <div className="flex items-center gap-2">
-                    <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-                    <span className="text-gray-700 font-medium">1,247</span>
+                    <ThumbsUp className="w-4 h-4 text-[#1877F2] fill-[#1877F2]" />
+                    <span className="text-gray-700 font-medium">Me gusta</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MessageCircle className="w-4 h-4" />
-                    <span className="text-gray-700 font-medium">89</span>
+                    <span className="text-gray-700 font-medium">Comentar</span>
                   </div>
                 </div>
+                <a
+                  href="https://www.facebook.com/AutoScraping/posts/pfbid0EFGg8DBNy4fsA9rVXnn9bUScoQgvWVG534WaYLrgsJhBfGEgxT9sPayywLkvDY8ol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1877F2] hover:text-blue-700 text-sm font-medium flex items-center gap-1.5 transition"
+                >
+                  Ver en Facebook
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
+
+            {/* Instagram Card - Dynamic */}
+            <InstagramCard />
 
             {/* GitHub Card */}
             <div className="relative lg:col-span-2 bg-gradient-to-br from-[#24292F] to-[#1C2128] rounded-3xl p-8 shadow-lg text-white">
@@ -1154,10 +1207,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Blog Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-purple-50/20">
+      <AnimatedSection>
+        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-purple-50/20">
         {/* Background decorative circles - matching the image */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-purple-300/40 rounded-full blur-2xl"></div>
         <div className="absolute top-32 left-32 w-24 h-24 bg-blue-300/30 rounded-full blur-xl"></div>
@@ -1299,10 +1354,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Contact Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/20 to-blue-50/10">
+      <AnimatedSection>
+        <section className="relative py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/20 to-blue-50/10">
         {/* Background decorative circles */}
         <div className="absolute top-20 left-20 w-48 h-48 bg-purple-200/40 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-56 h-56 bg-blue-200/40 rounded-full blur-3xl"></div>
@@ -1411,7 +1468,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       <Footer />
     </>
