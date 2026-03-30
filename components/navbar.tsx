@@ -135,11 +135,6 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
                       </div>
 
                       <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition-colors cursor-pointer">
-                        <Monitor className="w-4 h-4 text-orange-600" />
-                        <span className="font-medium">Botcraft</span>
-                      </div>
-
-                      <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition-colors cursor-pointer">
                         <Zap className="w-4 h-4 text-pink-600" />
                         <span className="font-medium">Automation</span>
                       </div>
