@@ -153,7 +153,16 @@ function StepCard({ step }: { step: Step }) {
 
 export default function CicloDelDatoSection() {
   return (
-    <section className="py-24 px-6" style={{ background: 'linear-gradient(180deg, #070d1f 0%, #0c1631 40%, #0a1228 100%)' }}>
+    <section className="relative py-24 px-6 overflow-hidden" style={{ background: 'linear-gradient(180deg, #070d1f 0%, #0c1631 40%, #0a1228 100%)' }}>
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-32 left-20 w-24 h-24 border border-cyan-500/20 rounded-full"></div>
+        <div className="absolute bottom-40 right-32 w-32 h-32 border border-purple-500/20 rounded-full"></div>
+        <div className="absolute top-60 right-1/4 w-16 h-16 border border-blue-500/15 rounded-full"></div>
+      </div>
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-center mb-10">
           <div
@@ -170,7 +179,6 @@ export default function CicloDelDatoSection() {
         <h2 className="text-center font-bold mb-6 leading-tight text-white" style={{ fontSize: '3rem' }}>
           Dominio total del{' '}
           <span
-            className="italic"
             style={{
               background: 'linear-gradient(90deg, #a855f7, #ec4899)',
               WebkitBackgroundClip: 'text',

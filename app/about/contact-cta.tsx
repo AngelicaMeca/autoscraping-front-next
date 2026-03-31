@@ -1,17 +1,15 @@
-import { MessageSquare, Clock, ArrowRight, Calendar, CircleCheck as CheckCircle2, ChartBar as BarChart3 } from 'lucide-react';
+import { MessageSquare, Clock, ArrowRight, Calendar, ChartBar as BarChart3, CircleCheck as CheckCircle2 } from 'lucide-react';
 
-export default function DataFactoryCta() {
+export default function ContactCta() {
   return (
     <section className="relative py-32 overflow-hidden bg-white">
-      {/* Background decorative circles */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-purple-400/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-400/25 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-400/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-40 left-40 w-64 h-64 bg-purple-500/25 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-20 w-72 h-72 bg-purple-400/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-400/25 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-400/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-40 left-40 w-64 h-64 bg-purple-500/25 rounded-full blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Contact Info */}
           <div>
             <span className="inline-flex items-center gap-2 text-purple-600 text-xs font-bold mb-6">
               <MessageSquare className="w-4 h-4" />
@@ -19,14 +17,16 @@ export default function DataFactoryCta() {
             </span>
 
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              ¿Hablamos de como hacer <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Crecer tu negocio?</span>
+              &iquest;Hablamos de como hacer{' '}
+              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">
+                Crecer tu negocio?
+              </span>
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               Nos aseguramos de que lo que sucede en la web se convierta en tu mejor activo. Sin rodeos: nos involucramos en tu proyecto para que cada paso que des sea firme y transparente.
             </p>
 
-            {/* Contact Details */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -50,7 +50,7 @@ export default function DataFactoryCta() {
             </div>
 
             <div className="relative inline-block">
-              <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl" />
               <button className="relative inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
                 <Calendar className="w-5 h-5" />
                 Book a Meeting
@@ -59,7 +59,6 @@ export default function DataFactoryCta() {
             </div>
           </div>
 
-          {/* Right Column - Stats Card */}
           <div className="bg-white rounded-3xl shadow-2xl p-10 border border-gray-100">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center">
@@ -74,7 +73,7 @@ export default function DataFactoryCta() {
             <div className="space-y-6">
               <div className="flex items-center justify-between py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-purple-500 rounded-full" />
                   <p className="text-gray-700 font-medium">Tiempo de respuesta</p>
                 </div>
                 <p className="text-purple-600 font-bold">{'< 1 hour'}</p>
@@ -82,7 +81,7 @@ export default function DataFactoryCta() {
 
               <div className="flex items-center justify-between py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full" />
                   <p className="text-gray-700 font-medium">Proyectos entregados</p>
                 </div>
                 <p className="text-blue-600 font-bold">99.9%</p>
@@ -90,7 +89,7 @@ export default function DataFactoryCta() {
 
               <div className="flex items-center justify-between py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-pink-500 rounded-full" />
                   <p className="text-gray-700 font-medium">Industrias atendidas</p>
                 </div>
                 <p className="text-pink-600 font-bold">+15</p>
@@ -98,8 +97,8 @@ export default function DataFactoryCta() {
 
               <div className="flex items-center justify-between py-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <p className="text-gray-700 font-medium">Años de trayectoria</p>
+                  <div className="w-2 h-2 bg-green-500 rounded-full" />
+                  <p className="text-gray-700 font-medium">A&ntilde;os de trayectoria</p>
                 </div>
                 <p className="text-green-600 font-bold">+6</p>
               </div>

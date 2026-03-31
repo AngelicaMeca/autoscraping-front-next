@@ -148,10 +148,10 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
               <BookText className="w-4 h-4" />
               <span>Recursos</span>
             </button>
-            <button className={`flex items-center gap-2 text-sm transition-colors duration-300 ${textClass}`}>
+            <Link href="/about" className={`flex items-center gap-2 text-sm transition-colors duration-300 ${textClass}`}>
               <Users className="w-4 h-4" />
               <span>Company</span>
-            </button>
+            </Link>
             <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg transition">
               <Calendar className="w-4 h-4" />
               <span>Book a Meeting</span>

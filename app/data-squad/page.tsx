@@ -11,8 +11,6 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
 export default function DataSquadPage() {
-  const [whySlide, setWhySlide] = useState(0);
-
   const whyCards = [
     {
       icon: DollarSign,
@@ -20,54 +18,60 @@ export default function DataSquadPage() {
       subtitle: 'ELIMINA COSTOS DE CONTRATACIÓN',
       description: 'Elimina costos de contratación, onboarding y gestión administrativa. Solo pagas por el talento que necesitas, cuando lo necesitas.',
       tags: ['Inversión optimizada', 'Sin burocracia', 'Eficiencia inmediata'],
+      gradient: 'from-purple-500 to-purple-600',
     },
     {
       icon: BookOpen,
       title: 'Formación continua',
       subtitle: 'TECNOLOGÍA SIEMPRE ACTUALIZADA',
-      description: 'Nuestros especialistas se mantienen actualizados en cada ciclo tecnológico. El equipo que integras, opera con las herramientas y metodologías más avanzadas del sector.',
+      description: 'Nuestros especialistas se mantienen actualizados en cada ciclo tecnológico.',
       tags: ['Aprendizaje constante', 'Adaptable', 'Al día'],
+      gradient: 'from-pink-500 to-rose-600',
     },
     {
       icon: Rocket,
       title: 'Activación en 2 semanas',
       subtitle: 'SIN PROCESOS LARGOS NI DEMORAS',
-      description: 'Seleccionamos, validamos e integramos tu squad en un plazo de dos semanas. Sin procesos largos ni demoras.',
+      description: 'Seleccionamos, validamos e integramos tu squad en un plazo de dos semanas.',
       tags: ['Rápido', 'Sin fricciones', 'Listo para operar'],
+      gradient: 'from-cyan-500 to-blue-600',
     },
     {
       icon: GraduationCap,
       title: 'Mentoría interna',
       subtitle: 'CALIDAD TÉCNICA GARANTIZADA',
-      description: 'Cada miembro cuenta con el respaldo de ingenieros que supervisan la calidad técnica del trabajo, siempre operando como una unidad.',
+      description: 'Cada miembro cuenta con el respaldo de ingenieros que supervisan la calidad técnica del trabajo.',
       tags: ['Respaldo', 'Apoyo', 'En equipo'],
+      gradient: 'from-orange-400 to-amber-500',
     },
     {
       icon: Target,
       title: 'Foco en soluciones',
       subtitle: 'ORIENTADO AL RESULTADO',
-      description: 'No asignamos personas para ejecutar tareas. Sumamos perfiles orientados a resolver; que identifican el problema, proponen el camino y lo ejecutan.',
+      description: 'Sumamos perfiles orientados a resolver; que identifican el problema, proponen el camino y lo ejecutan.',
       tags: ['Resolutivo', 'Proactivo', 'Orientado al resultado'],
+      gradient: 'from-indigo-500 to-violet-600',
     },
   ];
 
-  // Continuous carousel animation
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [whySlide, setWhySlide] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(1);
   const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const goToNextSlide = useCallback(() => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
+    setSlideDirection(1);
     setWhySlide((prev) => (prev >= whyCards.length - 1 ? 0 : prev + 1));
-    setTimeout(() => setIsTransitioning(false), 600);
-  }, [isTransitioning, whyCards.length]);
+  }, [whyCards.length]);
 
   const goToPrevSlide = useCallback(() => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
+    setSlideDirection(-1);
     setWhySlide((prev) => (prev <= 0 ? whyCards.length - 1 : prev - 1));
-    setTimeout(() => setIsTransitioning(false), 600);
-  }, [isTransitioning, whyCards.length]);
+  }, [whyCards.length]);
+
+  const resetAutoplay = useCallback(() => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(goToNextSlide, 4000);
+  }, [goToNextSlide]);
 
   useEffect(() => {
     autoplayRef.current = setInterval(goToNextSlide, 4000);
@@ -75,7 +79,6 @@ export default function DataSquadPage() {
       if (autoplayRef.current) clearInterval(autoplayRef.current);
     };
   }, [goToNextSlide]);
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#1a1247] via-[#2d1b69] to-[#1a1247]">
       <Navbar />
@@ -304,134 +307,15 @@ export default function DataSquadPage() {
         </div>
       </section>
 
-      {/* Por qué elegir DataSquad Section */}
+      {/* Por qué elegir DataSquad + Pilares - unified section */}
       <section className="relative py-24 px-6 overflow-hidden bg-white">
-        {/* Background Decorative Blurred Shapes - matching Data Factory */}
+        {/* Background Decorative Blurred Shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 right-10 w-96 h-96 bg-pink-300/40 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-20 w-80 h-80 bg-purple-300/40 rounded-full blur-3xl"></div>
           <div className="absolute top-40 left-1/4 w-64 h-64 bg-blue-300/30 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-200/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-5xl mx-auto relative z-10">
-          {/* Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
-              <CheckCircle2 className="w-4 h-4 fill-pink-600" />
-              EL ESTÁNDAR QUE NOS EXIGIMOS
-            </div>
-          </div>
-
-          {/* Title */}
-          <div className="text-center mb-6">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-              Por qué elegir
-            </h2>
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              DataSquad
-            </h2>
-          </div>
-
-          {/* Subtitle */}
-          <p className="text-center text-gray-600 text-base max-w-lg mx-auto mb-16 leading-relaxed">
-            Porque la responsabilidad, la precisión y la continuidad no son opcionales para nosotros, son el punto de partida.
-          </p>
-
-          {/* Carousel Container */}
-          <div className="relative max-w-2xl mx-auto">
-            {/* Navigation Buttons */}
-            <button
-              onClick={goToPrevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center transition z-10"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-700" />
-            </button>
-
-            <button
-              onClick={goToNextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center transition z-10"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-700" />
-            </button>
-
-            {/* Card */}
-            <div className="bg-gradient-to-br from-purple-50/80 to-white rounded-3xl shadow-xl p-10 border border-purple-100/50 backdrop-blur-sm transition-all duration-500 min-h-[350px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={whySlide}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                >
-                  {/* Icon */}
-                  <div className="flex justify-start mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-500">
-                      {(() => {
-                        const Icon = whyCards[whySlide].icon;
-                        return <Icon className="w-8 h-8 text-white" />;
-                      })()}
-                    </div>
-                  </div>
-
-                  {/* Title & Badge */}
-                  <div className="mb-4">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-2 transition-all duration-300">
-                      {whyCards[whySlide].title}
-                    </h3>
-                    <div className="inline-block">
-                      <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">
-                        {whyCards[whySlide].subtitle}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6 transition-all duration-300">
-                    {whyCards[whySlide].description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {whyCards[whySlide].tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="bg-white text-purple-600 px-4 py-2 rounded-full text-sm font-medium border border-purple-200 transition-all duration-200 hover:bg-purple-50"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center gap-2 mt-8">
-              {whyCards.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setWhySlide(i); if (autoplayRef.current) { clearInterval(autoplayRef.current); autoplayRef.current = setInterval(goToNextSlide, 4000); } }}
-                  className={`transition-all ${
-                    i === whySlide
-                      ? 'w-8 h-2 bg-pink-500'
-                      : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
-                  } rounded-full`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pilares de DataSquad Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-br from-purple-50 via-white to-blue-50 overflow-hidden">
-        {/* Background decorative circles - matching Data Factory */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Decorative border circles */}
           <div className="absolute top-20 left-10 w-32 h-32 border-2 border-purple-200 rounded-full"></div>
           <div className="absolute top-40 left-32 w-24 h-24 border-2 border-blue-200 rounded-full"></div>
           <div className="absolute bottom-32 right-20 w-40 h-40 border-2 border-purple-100 rounded-full"></div>
@@ -440,78 +324,194 @@ export default function DataSquadPage() {
           <div className="absolute top-32 right-32 w-48 h-48 bg-blue-100/30 rounded-full blur-2xl"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
-          {/* Badge */}
-          <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide">
-              <Zap className="w-3 h-3" />
-              LO QUE NOS DEFINE
+        <div className="relative z-10">
+          {/* --- Por qué elegir DataSquad --- */}
+          <div className="max-w-5xl mx-auto mb-32">
+            {/* Badge */}
+            <div className="flex justify-center mb-8">
+              <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
+                <CheckCircle2 className="w-4 h-4 fill-pink-600" />
+                EL ESTÁNDAR QUE NOS EXIGIMOS
+              </div>
+            </div>
+
+            {/* Title */}
+            <div className="text-center mb-6">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                Por qué elegir
+              </h2>
+              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                DataSquad
+              </h2>
+            </div>
+
+            {/* Subtitle */}
+            <p className="text-center text-gray-600 text-base max-w-lg mx-auto mb-16 leading-relaxed">
+              Porque la responsabilidad, la precisión y la continuidad no son opcionales para nosotros, son el punto de partida.
+            </p>
+
+            {/* Carousel - one card at a time with horizontal slide */}
+            <div className="relative max-w-2xl mx-auto">
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => { goToPrevSlide(); resetAutoplay(); }}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center transition z-10"
+                aria-label="Previous"
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-700" />
+              </button>
+
+              <button
+                onClick={() => { goToNextSlide(); resetAutoplay(); }}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center transition z-10"
+                aria-label="Next"
+              >
+                <ChevronRight className="w-6 h-6 text-gray-700" />
+              </button>
+
+              {/* Card */}
+              <div className="bg-gradient-to-br from-purple-50/80 to-white rounded-3xl shadow-xl p-10 border border-purple-100/50 backdrop-blur-sm min-h-[340px] overflow-hidden">
+                <AnimatePresence mode="wait" custom={slideDirection}>
+                  <motion.div
+                    key={whySlide}
+                    custom={slideDirection}
+                    initial={{ opacity: 0, x: slideDirection * 80 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: slideDirection * -80 }}
+                    transition={{ duration: 0.45, ease: 'easeInOut' }}
+                  >
+                    {/* Icon */}
+                    <div className="flex justify-start mb-6">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${whyCards[whySlide].gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+                        {(() => {
+                          const Icon = whyCards[whySlide].icon;
+                          return <Icon className="w-8 h-8 text-white" />;
+                        })()}
+                      </div>
+                    </div>
+
+                    {/* Title & Badge */}
+                    <div className="mb-4">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                        {whyCards[whySlide].title}
+                      </h3>
+                      <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">
+                        {whyCards[whySlide].subtitle}
+                      </span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                      {whyCards[whySlide].description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {whyCards[whySlide].tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="bg-white text-purple-600 px-4 py-2 rounded-full text-sm font-medium border border-purple-200 hover:bg-purple-50 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Dots Indicator */}
+              <div className="flex justify-center gap-2 mt-8">
+                {whyCards.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setSlideDirection(i > whySlide ? 1 : -1); setWhySlide(i); resetAutoplay(); }}
+                    className={`transition-all ${
+                      i === whySlide
+                        ? 'w-8 h-2 bg-pink-500'
+                        : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
+                    } rounded-full`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Title */}
-          <h3 className="text-center text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Pilares de <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">DataSquad</span>
-          </h3>
+          {/* --- Pilares de DataSquad --- */}
+          <div className="max-w-6xl mx-auto">
+            {/* Badge */}
+            <div className="flex justify-center mb-6">
+              <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide">
+                <Zap className="w-3 h-3" />
+                LO QUE NOS DEFINE
+              </div>
+            </div>
 
-          {/* Subtitle */}
-          <p className="text-center text-gray-600 text-base max-w-3xl mx-auto mb-16 leading-relaxed">
-            Formamos equipos que se integran a tu operación con el rigor y la responsabilidad de quien se hace cargo de verdad.
-          </p>
+            {/* Title */}
+            <h3 className="text-center text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Pilares de <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">DataSquad</span>
+            </h3>
 
-          {/* Cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {[
-              {
-                icon: BookText,
-                gradient: 'from-blue-500 to-blue-700',
-                borderColor: 'border-blue-100',
-                title: 'Ejecución garantizada',
-                description: 'No solo sumamos expertos; asumimos la responsabilidad técnica de tu proyecto. Mantén el control total mediante informes de desempeño y métricas de valor, asegurando resultados medibles en cada etapa.',
-              },
-              {
-                icon: Layers,
-                gradient: 'from-pink-500 to-rose-600',
-                borderColor: 'border-pink-100',
-                title: 'Ingeniería Senior',
-                description: 'Accede a perfiles con más de 5 años de experiencia técnica. Integramos especialistas que ya han superado los desafíos más complejos del sector, eliminando curvas de aprendizaje y riesgos operativos.',
-              },
-              {
-                icon: CheckCircle2,
-                gradient: 'from-teal-400 to-emerald-600',
-                borderColor: 'border-teal-100',
-                title: 'Flujo ininterrumpido',
-                description: 'Monitoreamos y ajustamos proactivamente cada proceso para que tu información fluya sin fricciones, evitando cualquier incidencia en tu sistema.',
-              },
-              {
-                icon: Database,
-                gradient: 'from-orange-400 to-amber-500',
-                borderColor: 'border-orange-100',
-                title: 'Socio estratégico',
-                description: 'Nos fundimos con tu equipo, tus herramientas y tus metas para actuar como un aliado que transforma desafíos técnicos en motores de negocio.',
-              },
-              {
-                icon: Zap,
-                gradient: 'from-yellow-400 to-lime-500',
-                borderColor: 'border-yellow-100',
-                title: 'Integridad y seguridad',
-                description: 'Operamos bajo estándares de seguridad de alto nivel, brindando el respaldo necesario para que tu flujo de información sea siempre legítimo y protegido.',
-              },
-            ].map((pillar, i) => {
-              const Icon = pillar.icon;
-              return (
-                <div
-                  key={i}
-                  className={`bg-white rounded-2xl border ${pillar.borderColor} p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow`}
-                >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${pillar.gradient} rounded-xl flex items-center justify-center`}>
-                    <Icon className="w-6 h-6 text-white" />
+            {/* Subtitle */}
+            <p className="text-center text-gray-600 text-base max-w-3xl mx-auto mb-16 leading-relaxed">
+              Formamos equipos que se integran a tu operación con el rigor y la responsabilidad de quien se hace cargo de verdad.
+            </p>
+
+            {/* Cards grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+              {[
+                {
+                  icon: BookText,
+                  gradient: 'from-blue-500 to-blue-700',
+                  borderColor: 'border-blue-100',
+                  title: 'Ejecución garantizada',
+                  description: 'No solo sumamos expertos; asumimos la responsabilidad técnica de tu proyecto. Mantén el control total mediante informes de desempeño y métricas de valor, asegurando resultados medibles en cada etapa.',
+                },
+                {
+                  icon: Layers,
+                  gradient: 'from-pink-500 to-rose-600',
+                  borderColor: 'border-pink-100',
+                  title: 'Ingeniería Senior',
+                  description: 'Accede a perfiles con más de 5 años de experiencia técnica. Integramos especialistas que ya han superado los desafíos más complejos del sector, eliminando curvas de aprendizaje y riesgos operativos.',
+                },
+                {
+                  icon: CheckCircle2,
+                  gradient: 'from-teal-400 to-emerald-600',
+                  borderColor: 'border-teal-100',
+                  title: 'Flujo ininterrumpido',
+                  description: 'Monitoreamos y ajustamos proactivamente cada proceso para que tu información fluya sin fricciones, evitando cualquier incidencia en tu sistema.',
+                },
+                {
+                  icon: Database,
+                  gradient: 'from-orange-400 to-amber-500',
+                  borderColor: 'border-orange-100',
+                  title: 'Socio estratégico',
+                  description: 'Nos fundimos con tu equipo, tus herramientas y tus metas para actuar como un aliado que transforma desafíos técnicos en motores de negocio.',
+                },
+                {
+                  icon: Zap,
+                  gradient: 'from-yellow-400 to-lime-500',
+                  borderColor: 'border-yellow-100',
+                  title: 'Integridad y seguridad',
+                  description: 'Operamos bajo estándares de seguridad de alto nivel, brindando el respaldo necesario para que tu flujo de información sea siempre legítimo y protegido.',
+                },
+              ].map((pillar, i) => {
+                const Icon = pillar.icon;
+                return (
+                  <div
+                    key={i}
+                    className={`bg-white rounded-2xl border ${pillar.borderColor} p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow`}
+                  >
+                    <div className={`w-12 h-12 bg-gradient-to-br ${pillar.gradient} rounded-xl flex items-center justify-center`}>
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight">{pillar.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight">{pillar.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
