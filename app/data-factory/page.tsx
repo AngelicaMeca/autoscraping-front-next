@@ -101,6 +101,7 @@ export default function DataFactoryPage() {
 
   const capabilities = [
     {
+      slug: 'estrategias-de-pricing',
       title: 'Estrategias de Pricing',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Monitoreo de precios y promociones para ejecutar ajustes competitivos que protejan tus márgenes de beneficio.',
@@ -108,6 +109,7 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'indexacion-inmobiliaria',
       title: 'Indexación Inmobiliaria',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Captura masiva de listados y variaciones de propiedades para valoración y detección de oportunidades.',
@@ -115,6 +117,7 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'monitoreo-de-airbnb',
       title: 'Monitoreo de Airbnb',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Seguimiento de disponibilidad y tarifas en el sector alojamiento para maximizar la rentabilidad mediante precios dinámicos.',
@@ -122,6 +125,7 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'extraccion-de-linkedin',
       title: 'Extracción de Linkedin',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Selección de perfiles profesionales y datos de empresas para nutrir estrategias de captación B2B con precisión.',
@@ -129,6 +133,7 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'generacion-de-leads',
       title: 'Generación de Leads',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Identificación de prospectos calificados para acelerar el ciclo de ventas mediante bases de contacto siempre actualizadas.',
@@ -136,6 +141,15 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'ai-web-scraping',
+      title: 'AI Web Scraping',
+      subtitle: 'COMMITTED TO YOUR SUCCESS',
+      description: 'Recolección automática de altos volúmenes de datos mediante tecnología IA adaptable a cualquier cambio estructural en la web.',
+      icon: Sparkles,
+      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+    },
+    {
+      slug: 'catalogos-de-e-commerce',
       title: 'Catálogos de E-commerce',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Rastreo de inventarios y stock de la competencia para ajustar tu oferta comercial en tiempo real y sin fricciones.',
@@ -143,6 +157,7 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'registro-de-google-maps',
       title: 'Registro de Google Maps',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Consolidación de datos locales y geográficos para el análisis de competencia y expansión en mercados específicos.',
@@ -150,6 +165,7 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'metricas-financieras',
       title: 'Métricas Financieras',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Obtención de indicadores bursátiles y valores económicos para fortalecer la toma de decisiones e inversiones de alto nivel.',
@@ -157,10 +173,19 @@ export default function DataFactoryPage() {
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     },
     {
+      slug: 'entrenamiento-de-ia',
       title: 'Entrenamiento de IA',
       subtitle: 'COMMITTED TO YOUR SUCCESS',
       description: 'Procesamiento de sitios no estructurados para alimentar y escalar la inteligencia artificial de tu producto.',
       icon: Sparkles,
+      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+    },
+    {
+      slug: 'web-scraping-automation',
+      title: 'Web Scraping Automation',
+      subtitle: 'COMMITTED TO YOUR SUCCESS',
+      description: 'Automatiza la recolección de datos masiva y elimina errores operativos, liberando horas de tu equipo para tareas estratégicas.',
+      icon: Zap,
       tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
     }
   ];
@@ -885,8 +910,10 @@ export default function DataFactoryPage() {
         </div>
       </section>
 
-      {/* Capacidades técnicas Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-br from-purple-50 via-white to-blue-50 overflow-hidden">
+      {/* Unified Capabilities and FAQ Section */}
+      <section className="bg-white">
+        {/* Capacidades técnicas Section */}
+        <div className="relative pt-24 pb-16 px-6 overflow-hidden">
         {/* Background decorative circles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-32 h-32 border-2 border-purple-200 rounded-full"></div>
@@ -903,7 +930,7 @@ export default function DataFactoryPage() {
             <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
               <span className="text-gray-900">Capacidades técnicas</span>
               <br />
-              <span className="text-purple-600">aplicadas a tus objetivos</span>
+              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">aplicadas a tus objetivos</span>
             </h2>
             <div className="w-16 h-1 bg-purple-600 mx-auto mt-6"></div>
           </div>
@@ -927,10 +954,13 @@ export default function DataFactoryPage() {
               </button>
 
               {/* Card */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+              <Link
+                href={`/data-factory/${capabilities[currentCapability].slug}`}
+                className="block bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transition-all hover:-translate-y-1 hover:shadow-2xl cursor-pointer group"
+              >
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
                       {(() => {
                         const IconComponent = capabilities[currentCapability].icon;
                         return <IconComponent className="w-7 h-7 text-white" />;
@@ -944,7 +974,7 @@ export default function DataFactoryPage() {
                         {capabilities[currentCapability].subtitle}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
                       {capabilities[currentCapability].title}
                     </h3>
                     <p className="text-gray-600 text-base leading-relaxed mb-4">
@@ -959,7 +989,7 @@ export default function DataFactoryPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Dots Indicator */}
               <div className="flex justify-center gap-2 mt-8">
@@ -1007,10 +1037,10 @@ export default function DataFactoryPage() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* FAQ Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-br from-purple-50 via-white to-purple-100 overflow-hidden">
+        {/* FAQ Section */}
+        <div className="relative pt-16 pb-24 px-6 overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-20 w-40 h-40 border-2 border-purple-200 rounded-full"></div>
@@ -1034,7 +1064,7 @@ export default function DataFactoryPage() {
             <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
               <span className="text-gray-900">Preguntas frecuentes sobre</span>
               <br />
-              <span className="text-purple-600">Data Factory</span>
+              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Data Factory</span>
             </h2>
             <p className="text-gray-600 text-base mt-6 max-w-2xl mx-auto leading-relaxed">
               Todo lo que necesitas saber sobre nuestra arquitectura de extracción, plazos de entrega y cómo cuidamos la legalidad de tus procesos.
@@ -1087,6 +1117,7 @@ export default function DataFactoryPage() {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </section>
 
