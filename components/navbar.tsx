@@ -90,7 +90,7 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
               {showSolutionsDropdown && (
                 <div className="absolute top-full left-0 mt-4 w-[350px] bg-white rounded-3xl shadow-2xl p-6 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="mb-6">
-                    <h3 className="text-purple-600 text-xs font-bold uppercase tracking-wider mb-4">Featured Solutions</h3>
+                    <h3 className="text-purple-600 text-xs font-bold uppercase tracking-wider mb-4">Soluciones Destacadas</h3>
 
                     <div className="space-y-4">
                       <Link href="/data-factory" className="flex items-start gap-3 p-3 rounded-xl hover:bg-purple-50 transition-colors cursor-pointer">
@@ -99,7 +99,7 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
                         </div>
                         <div>
                           <h4 className="font-bold text-gray-900 text-sm mb-1">Data Factory</h4>
-                          <p className="text-xs text-gray-600 leading-relaxed">Automated data delivery tailored to your business needs on a regular basis.</p>
+                          <p className="text-xs text-gray-600 leading-relaxed">Entrega automatizada de datos adaptada a las necesidades de tu negocio de manera regular.</p>
                         </div>
                       </Link>
 
@@ -109,37 +109,12 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
                         </div>
                         <div>
                           <h4 className="font-bold text-gray-900 text-sm mb-1">Data Squad</h4>
-                          <p className="text-xs text-gray-600 leading-relaxed">Expert teams collaborating directly with you throughout the data lifecycle.</p>
+                          <p className="text-xs text-gray-600 leading-relaxed">Equipos expertos colaborando directamente contigo a lo largo del ciclo de vida del dato.</p>
                         </div>
                       </Link>
                     </div>
                   </div>
 
-                  <div className="border-t border-gray-200 pt-4">
-                    <h3 className="text-purple-600 text-xs font-bold uppercase tracking-wider mb-4">All Services</h3>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition-colors cursor-pointer">
-                        <RefreshCw className="w-4 h-4 text-purple-600" />
-                        <span className="font-medium">Data Extraction</span>
-                      </div>
-
-                      <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition-colors cursor-pointer">
-                        <Database className="w-4 h-4 text-blue-600" />
-                        <span className="font-medium">DaaS</span>
-                      </div>
-
-                      <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition-colors cursor-pointer">
-                        <Layers className="w-4 h-4 text-green-600" />
-                        <span className="font-medium">Datadock</span>
-                      </div>
-
-                      <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition-colors cursor-pointer">
-                        <Zap className="w-4 h-4 text-pink-600" />
-                        <span className="font-medium">Automation</span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               )}
             </div>

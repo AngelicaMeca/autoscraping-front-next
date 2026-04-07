@@ -5,7 +5,7 @@ import { servicesData } from './data';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import { useState } from 'react';
-import { ChevronDown, Sparkles, CheckSquare, Calendar, Star, Check } from 'lucide-react';
+import { ChevronDown, Sparkles, CheckSquare, Calendar, Star, Check, MessageSquare, Database, CircleHelp as HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ServicePage({ params }: { params: { slug: string } }) {
@@ -61,7 +61,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
           <button className="bg-gradient-to-r from-pink-300 to-pink-200 hover:from-pink-200 hover:to-white text-purple-900 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2 mx-auto">
             <Calendar className="w-5 h-5" />
-            Book a meeting
+            Agendar llamada
           </button>
         </div>
       </section>
@@ -80,9 +80,9 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <div className="max-w-6xl mx-auto relative z-10 mb-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              What Our Clients <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Say</span>
+              Lo que dicen nuestros <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clientes</span>
             </h2>
-            <p className="text-gray-500">Real results from businesses using our platform</p>
+            <p className="text-gray-500">Resultados reales de empresas que utilizan nuestra plataforma</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -114,9 +114,9 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Powerful <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Features</span>
+              Características <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Principales</span>
             </h2>
-            <p className="text-gray-500">Everything you need to succeed</p>
+            <p className="text-gray-500">Todo lo que necesitas para triunfar</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto">
@@ -181,8 +181,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             </div>
             <div>
               <h3 className="text-3xl font-bold text-white mb-4">
-                {data.needThisTitle.replace('Need This', '')} 
-                <span className="text-purple-400">Need This</span>
+                {data.needThisTitle}
               </h3>
               <p className="text-purple-100/80 leading-relaxed text-lg">
                 {data.needThisDescription}
@@ -202,8 +201,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             {data.helpYouSub}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {data.helpYouTitle.replace('Help You', '')} 
-            <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Help You</span>
+            {data.helpYouTitle}
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-16">
             {data.helpYouDescription}
@@ -234,7 +232,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </p>
           <button className="bg-white text-purple-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-xl transition-all shadow-xl flex items-center gap-2 mx-auto">
             <Calendar className="w-5 h-5" />
-            Book a meeting
+            Agendar llamada
           </button>
         </div>
       </section>
@@ -247,39 +245,67 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked <span className="text-purple-600">Questions</span>
+              Preguntas <span className="text-purple-600">Frecuentes</span>
             </h2>
-            <p className="text-gray-500">Find out more about how our platform handles lead generation.</p>
+            <p className="text-gray-500">Aclara tus dudas sobre cómo funciona nuestro proceso de data.</p>
           </div>
 
           <div className="space-y-4">
             {data.faqs.map((faq, index) => {
-              const faqColors = [
-                'border-purple-500 text-purple-600 bg-purple-50',
-                'border-[#EB4C81] text-[#EB4C81] bg-pink-50',
-                'border-blue-500 text-blue-600 bg-blue-50'
+              const faqStyles = [
+                {
+                  border: 'border-purple-500', 
+                  text: 'text-purple-600', 
+                  bg: 'bg-purple-50',
+                  iconGradient: 'from-purple-500 to-purple-600',
+                  Icon: MessageSquare
+                },
+                {
+                  border: 'border-[#EB4C81]', 
+                  text: 'text-[#EB4C81]', 
+                  bg: 'bg-pink-50',
+                  iconGradient: 'from-[#EB4C81] to-[#FF758C]',
+                  Icon: Database
+                },
+                {
+                  border: 'border-blue-500', 
+                  text: 'text-blue-600', 
+                  bg: 'bg-blue-50',
+                  iconGradient: 'from-blue-500 to-cyan-500',
+                  Icon: HelpCircle
+                }
               ];
-              const colorClasses = faqColors[index % faqColors.length].split(' ');
-              const borderColor = colorClasses[0];
-              const textColor = colorClasses[1];
-              const bgColor = colorClasses[2];
               
+              const style = faqStyles[index % faqStyles.length];
               const isOpen = openFaqIndex === index;
+              const IconComponent = style.Icon;
 
               return (
-                <div key={index} className={`bg-white rounded-2xl border shadow-sm overflow-hidden transition-all hover:shadow-md border-l-[6px] ${isOpen ? borderColor : 'border-gray-100 border-l-transparent'}`}>
+                <div key={index} className={`bg-white rounded-2xl shadow-sm border overflow-hidden transition-all hover:shadow-md border-l-[6px] ${isOpen ? style.border : 'border-gray-100 border-l-transparent'}`}>
                   <button
                     onClick={() => toggleFaq(index)}
-                    className={`w-full flex items-center justify-between p-6 text-left transition-colors ${isOpen ? bgColor : 'hover:bg-gray-50'}`}
+                    className={`w-full flex items-center gap-4 p-6 text-left transition-colors ${isOpen ? style.bg : 'hover:bg-gray-50'}`}
                   >
-                    <span className={`font-bold text-lg ${isOpen ? textColor : 'text-gray-900'}`}>
-                      {faq.question}
-                    </span>
-                    <ChevronDown className={`w-5 h-5 transition-transform ${isOpen ? `rotate-180 ${textColor}` : 'text-gray-400'}`} />
+                    <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${style.iconGradient} rounded-xl flex items-center justify-center`}>
+                      <IconComponent className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className={`font-bold text-lg ${isOpen ? style.text : 'text-gray-900'}`}>
+                        {faq.question}
+                      </h3>
+                      {!isOpen && (
+                        <p className="text-sm text-gray-500 mt-1">Haz click para descubrir más</p>
+                      )}
+                    </div>
+                    <div className="flex-shrink-0">
+                      <ChevronDown className={`w-6 h-6 transition-transform ${isOpen ? `rotate-180 ${style.text}` : 'text-gray-400'}`} />
+                    </div>
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-4 text-gray-600 leading-relaxed bg-white animate-in slide-in-from-top-2">
-                      {faq.answer}
+                    <div className="px-6 pb-6 pt-2 animate-in slide-in-from-top-2">
+                       <p className="text-gray-600 leading-relaxed md:pl-[4.5rem]">
+                         {faq.answer}
+                       </p>
                     </div>
                   )}
                 </div>

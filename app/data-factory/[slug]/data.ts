@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Target, Building2, Home as HomeIcon, Users, UserCheck, ShoppingCart, Globe, CheckSquare, Zap, BarChart, Shield } from 'lucide-react';
+import { Target, Building2, Home as HomeIcon, Users, UserCheck, ShoppingCart, Globe, CheckSquare, Zap, BarChart, Shield, TrendingUp, Database, Sparkles, Plane, Heart, MessageSquare, FileStack } from 'lucide-react';
 
 export interface ServiceData {
   slug: string;
@@ -38,69 +38,69 @@ export const servicesData: Record<string, ServiceData> = {
     titlePart1: '',
     titlePartGradient: 'Web Scraping',
     titlePart2: 'for Lead Generation',
-    description: 'Perfect for businesses that need to gather large volumes of prospect data or automate the lead verification process, reducing time and resources on campaigns.',
+    description: 'Perfecto para empresas que necesitan recopilar grandes volúmenes de datos de prospectos o automatizar el proceso de verificación de leads, reduciendo tiempo y recursos en campañas.',
     testimonials: [
       {
         rating: 5,
-        text: '"This service strictly changed how I manage my partnerships platform, making our lead generation processes significantly faster and more efficient."',
+        text: '"Este servicio cambió rotundamente nuestra forma de gestionar alianzas, haciendo nuestros procesos de captación significativamente más rápidos y eficientes."',
         authorName: 'Sarah J.',
-        authorRole: 'Head of Sales, Tech',
+        authorRole: 'Directora de Ventas, Tecnología',
         authorInitials: 'SJ'
       },
       {
         rating: 5,
-        text: '"We experienced a major leap forward with our automated lead generation process, allowing our team to excel beyond our expectations."',
+        text: '"Experimentamos un gran salto gracias a la automatización en la obtención de leads, permitiendo a nuestro equipo superar las expectativas."',
         authorName: 'Mark D.',
-        authorRole: 'Lead Generation Executive',
+        authorRole: 'Ejecutivo de Generación de Leads',
         authorInitials: 'MD'
       }
     ],
     features: [
       {
         icon: Target,
-        title: 'Up to date contact data',
-        description: 'Access current contact information to build a robust database for your sales efforts.'
+        title: 'Datos de contacto actualizados',
+        description: 'Accede a información de contacto precisa para construir una base de datos sólida para tus esfuerzos de ventas.'
       },
       {
         icon: Zap,
-        title: 'Customizable lead criteria',
-        description: 'Define specific lead criteria to ensure extracted data aligns precisely with your target market.'
+        title: 'Criterios personalizables',
+        description: 'Define criterios específicos para precalificar leads garantizando que los datos extraídos se alineen a tu mercado objetivo.'
       },
       {
         icon: Shield,
-        title: 'Time savings in research',
-        description: 'Automate data collection, enabling your sales team to focus on closing deals instead of searching for leads.'
+        title: 'Ahorro de tiempo comprobado',
+        description: 'Automatiza la recolección, permitiendo a tu equipo comercial enfocarse en cerrar tratos en lugar de buscar clientes.'
       },
       {
         icon: BarChart,
-        title: 'Seamless CRM integration',
-        description: 'Receive data in a format that integrates smoothly into your CRM, streamlining your sales workflow.'
+        title: 'Integración continua',
+        description: 'Recibe datos en un formato que se integra de manera fluida y nativa a tu plataforma de CRM.'
       }
     ],
-    needThisTitle: 'How To Know If You Need This',
-    needThisDescription: 'If your company struggles with generating leads manually, wasting time and resources on low-quality prospects that fail to convert, web scraping for lead generation is the solution for you.',
-    helpYouSub: 'Our Approach',
-    helpYouTitle: 'How We Help You',
-    helpYouDescription: 'Our web scraping solutions automate lead generation by extracting highly relevant prospect information from any source, organizing the data into an actionable format.',
+    needThisTitle: 'Cómo saber si necesitas el Scraping de Leads',
+    needThisDescription: 'Si tu compañía sufre al generar clientes potenciales manualmente, perdiendo tiempo y dinero en prospectos de baja calidad que fallan en convertir, automatizar las bases de contactos es la única salida.',
+    helpYouSub: 'Nuestro Enfoque',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Las soluciones de scraping de contactos que proporcionamos extraen de manera ética y confiable la información altamente relevante sobre responsables en tomar decisiones clave, organizando los datos en un formato ideal.',
     helpYouList: [
-      'Automated prospect extraction',
-      'Data structured in ready-to-use format',
-      'Empowers your sales team to close faster'
+      'Extracción automatizada de prospectos',
+      'Datos estructurados listos para utilizar',
+      'Empodera a tu fuerza de ventas'
     ],
-    ctaTitle: 'Ready to transform your lead generation?',
-    ctaDescription: 'Start automating your reach and routines today, and see results in opening, and converting.',
+    ctaTitle: '¿Listo para transformar tu flujo de clientes?',
+    ctaDescription: 'Comienza a automatizar tu alcance hoy mismo y visualiza resultados instantáneos.',
     faqs: [
       {
-        question: 'What does Web Scraping for Lead Generation involve?',
-        answer: 'Web Scraping for Lead Generation is the process of extracting contact information and relevant data from various websites to build a targeted lead database.'
+        question: '¿Qué involucra la Generación de Leads automatizada?',
+        answer: 'Es el proceso de extraer metodológicamente la información de contacto hipersegmentada a partir de los perfiles digitales para pre-enriquecer listas bases.'
       },
       {
-        question: 'Who is the target audience for this service?',
-        answer: 'This service is aimed at sales teams, marketers, and businesses seeking to identify potential customers and enhance their lead generation efforts.'
+        question: '¿Quién es la audiencia objetivo de este servicio?',
+        answer: 'Está dirigido a departamentos de marketing B2B, fuerzas de venta directa y agencias de crecimiento.'
       },
       {
-        question: 'What are the benefits of using Web Scraping for Lead Generation?',
-        answer: 'By scraping data for leads, you can create a more robust sales pipeline, increase your outreach efficiency, and target your marketing efforts based on specific customer profiles.'
+        question: '¿Qué beneficios reales ofrece frente a comprar bases de datos?',
+        answer: 'Elimina el riesgo de usar bases recicladas y saturadas por tu competidor; la información obtenida a medida es virgen, validada en tiempo real y dispuesta con exactitud a los dolores de tu producto.'
       }
     ]
   },
@@ -110,69 +110,69 @@ export const servicesData: Record<string, ServiceData> = {
     titlePart1: '',
     titlePartGradient: 'AI Web Scraping',
     titlePart2: '',
-    description: 'Perfect for companies that need to efficiently collect large volumes of data or automate repetitive tasks, reducing time and resource consumption with AI Web Scraping services.',
+    description: 'Perfecto para compañías que precisan centralizar grandes volúmenes de datos u optimizar flujos automatizados con Inteligencia Artificial.',
     testimonials: [
       {
         rating: 5,
-        text: '"Thanks to AI Web Scraping, we\'ve reduced operational costs by automating the data collection process. We now get high-quality data without wasting time"',
+        text: '"Gracias a la extracción apoyada en IA, descartamos cientos de miles de falsos positivos en registros gubernamentales en minutos."',
         authorName: 'John D.',
-        authorRole: 'E-commerce Industry',
+        authorRole: 'Director E-commerce',
         authorInitials: 'JD'
       },
       {
         rating: 5,
-        text: '"The accuracy and speed with which AI Web Scraping adapts to website changes have given us a competitive edge we didn\'t have before"',
+        text: '"La rapidez con la que AutoScraping implementó los modelos de visión y refracción sobre el bot nos dio la ventaja temporal ante nuestra competencia."',
         authorName: 'Elena M.',
-        authorRole: 'E-commerce Industry',
+        authorRole: 'Product Owner',
         authorInitials: 'EM'
       }
     ],
     features: [
       {
         icon: Zap,
-        title: 'Adaptability to website changes',
-        description: 'Our AI technology swiftly adapts to website design changes, ensuring you never miss valuable information.'
+        title: 'Adaptabilidad Dinámica',
+        description: 'La navegación en red alimentada con LLMs comprende el esquema del sitio y sobrevive incluso si la página web base cambia su diseño.'
       },
       {
         icon: BarChart,
-        title: 'Enhanced data analysis',
-        description: 'Extracted data is automatically analyzed by our AI tools, giving you relevant insights without manual effort.'
+        title: 'Parseo Mejorado',
+        description: 'La data caótica sin selectores CSS es interpretada semánticamente previniendo roturas o fallos de lectura.'
       },
       {
         icon: Target,
-        title: 'Save time and resources',
-        description: 'Automating data collection allows you to focus on strategic decisions instead of manual data gathering.'
+        title: 'Reducción de QA',
+        description: 'Evita perder sesiones completas revisando scripts manualmente gracias al análisis iterativo del modelo.'
       },
       {
         icon: Shield,
-        title: 'Scalable solutions',
-        description: 'Our AI Web Scraping service scales effortlessly to meet your data extraction needs, supporting seamless business growth.'
+        title: 'Bypass y Soluciones AI',
+        description: 'Solventamos lógicas y captchas hiper-complicos mimetizando los patrones cognitivos que usa el ser humano al interactuar.'
       }
     ],
-    needThisTitle: 'How To Know If You Need AI Web Scraping',
-    needThisDescription: 'If your company struggles to collect data from multiple websites, consumes a lot of time and resources and delays decision-making and impedes growth; AI Web Scraping is for you.',
+    needThisTitle: 'Cómo saber si necesitas el Scraping Clásico o con IA',
+    needThisDescription: 'Si los portales de los que quieres sacar la información están bloqueados detrás de barreras duras (CAPTCHAS, Cloudflare, rotadores biométricos) y diseños no-predecibles (Renderizado de Canvas, JS Dinámico), los spiders clásicos van a fallar y requerirás IA.',
     helpYouSub: 'AI Solutions',
-    helpYouTitle: 'How We Help You',
-    helpYouDescription: 'Our AI Web Scraping service automates data collection efficiently and accurately, adapting to website changes in real-time, so you can make data-driven decisions quickly.',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Nuestra solución se encarga de acoplar modelos avanzados que permiten simular "ojos humanos", interpretando y tomando los datos aunque un portal sea hermético en código fuente.',
     helpYouList: [
-      'Automate repetitive data collection tasks',
-      'Real-time adaptation to website changes',
-      'Enable rapid data-driven decisions'
+      'Automatización de tareas repetitivas frente a páginas cambiantes.',
+      'Adaptación constante en tiempo real.',
+      'Lectura de datos inyectados por renderizado.'
     ],
-    ctaTitle: 'The power of experienced talent ready to provide you with AI Web Scraping',
+    ctaTitle: 'Aprovecha la recolección autónoma apalancada con los últimos algoritmos',
     ctaDescription: '',
     faqs: [
       {
-        question: 'What is AI Web Scraping?',
-        answer: 'AI Web Scraping leverages artificial intelligence to automate the extraction of data from websites, enhancing efficiency and accuracy in data collection.'
+        question: '¿Qué aporta hacer Web Scraping con Inteligencia Artificial?',
+        answer: 'Permite reducir la dependencia de selectores (xPaths, QuerySelectors) que al momento en que el creador de la página decide cambiarlos, el script de extracción explota y requiere mantenimiento manual.'
       },
       {
-        question: 'Who is the target audience for AI Web Scraping?',
-        answer: 'This service is aimed at businesses and organizations that need advanced data extraction capabilities, particularly those looking to analyze large datasets efficiently.'
+        question: '¿Para qué sistemas es fundamental el uso de Scraping basado en IA?',
+        answer: 'Principalmente para sitios modernos (SPAs) donde el contenido vive oculto o está fuertemente enmascarado frente a robots de extracción de la vieja escuela.'
       },
       {
-        question: 'What are the advantages of hiring AI Web Scraping services?',
-        answer: 'By utilizing AI Web Scraping, you can significantly reduce manual data extraction time, increase data accuracy, and gain insights from complex datasets that would be challenging to process manually.'
+        question: '¿Es más costoso implementar Inteligencia Artificial en mis bots?',
+        answer: 'Involucra una carga por computación ligeramente mayor, pero a mediano plazo genera ahorros exponenciales debido a la nula necesidad de mantenimiento técnico frente a la rotura del código habitual de un bot.'
       }
     ]
   },
@@ -182,69 +182,69 @@ export const servicesData: Record<string, ServiceData> = {
     titlePart1: '',
     titlePartGradient: 'Web Scraping LinkedIn',
     titlePart2: '',
-    description: 'Perfect for businesses that need to collect professional data or automate lead generation, reducing time and resource consumption with Web Scraping LinkedIn services.',
+    description: 'Perfecto para negocios que buscan coleccionar datos profesionales o automatizar la generación de leads B2B reduciendo horas operativas.',
     testimonials: [
       {
         rating: 5,
-        text: '"With LinkedIn Web Scraping, we can now access critical professional information quickly, helping us improve our business opportunities."',
+        text: '"Pudimos reconstruir el organigrama entero de las agencias a quienes queríamos vender. LinkedIn Web Scraping fue el abrelatas de nuestros equipos comerciales."',
         authorName: 'Carlos A.',
-        authorRole: 'From the Job Industry',
+        authorRole: 'Industria de Reclutamiento',
         authorInitials: 'CA'
       },
       {
         rating: 5,
-        text: '"The ability to obtain updated and organized LinkedIn data has streamlined our research and outreach strategies."',
+        text: '"El flujo constante de datos organizados nos ahorró semanas completas bloqueadas en prospección manual y armados de bases en Excel."',
         authorName: 'Fabiola T.',
-        authorRole: 'Booking Agents Industry',
+        authorRole: 'CEO de Marketing B2B',
         authorInitials: 'FT'
       }
     ],
     features: [
       {
         icon: UserCheck,
-        title: 'Qualified lead generation',
-        description: 'Extract contact information from LinkedIn to generate qualified leads aligned with your business goals.'
+        title: 'Extracción de Perfiles (MQLs)',
+        description: 'Extrae con alta precisión cargos, áreas y correos públicos corporativos de miembros de LinkedIn acorde a tus roles ideales (B2B).'
       },
       {
         icon: Users,
-        title: 'Competitor analysis',
-        description: 'Gather insights on competitors and industry trends from LinkedIn data to strengthen your business strategy.'
+        title: 'Mapeo Organizacional',
+        description: 'Construye la foto corporativa completa de un competidor u organización objetivo en base al tamaño de su fuerza laboral y crecimiento.'
       },
       {
         icon: Zap,
-        title: 'Regular data updates',
-        description: 'Choose the frequency of data updates to ensure you always have timely, relevant information at hand.'
+        title: 'Data Histórica y Actualizada',
+        description: 'Captura cronologías educativas y laborales para perfilar si el prospecto calza perfectamente con el servicio que planeas ofrecerle.'
       },
       {
         icon: Shield,
-        title: 'Customized data formats',
-        description: 'Receive LinkedIn data in your preferred format and location, allowing for seamless integration into your existing systems.'
+        title: 'Estructura Perfecta',
+        description: 'Proveemos volcados ordenados y saneados de listados de búsqueda, directo al formato que demande tu plataforma analítica.'
       }
     ],
-    needThisTitle: 'How To Know If You Need LinkedIn Web Scraping',
-    needThisDescription: 'If your company struggles to collect relevant professional data from LinkedIn manually, leading to slow and incomplete insights that hinder your ability to make informed business decisions; LinkedIn Web Scraping is for you.',
-    helpYouSub: 'Data Extraction',
-    helpYouTitle: 'How We Help You',
-    helpYouDescription: 'Our LinkedIn Data Automation service extracts up-to-date professional data efficiently, providing you with qualified leads, competitor insights, and customized reports that seamlessly integrate into your systems, empowering smarter, faster decision-making.',
+    needThisTitle: 'Cómo saber si precisas Automatizar sobre LinkedIn',
+    needThisDescription: 'Si tu equipo B2B todavía depende de copias y pegues manuales de cargos hacia un CRM, llegando tarde a las rondas de inversión o perdiendo frente al seguimiento comercial rápido; nuestro scraping dedicado de LinkedIn te pertenece.',
+    helpYouSub: 'Data B2B',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Nuestro servicio intercede y automatiza el tedio de la prospección, proporcionándote cientos o miles de leads cualificados de LinkedIn, armando tableros de insights competitivos o integrando directamente el feed a tus sistemas.',
     helpYouList: [
-      'Extract data from LinkedIn profiles and job postings',
-      'Automate professional trend analysis',
-      'Seamlessly integrate data into your CRM'
+      'Exportación en volumen de empresas y perfiles individuales.',
+      'Sorteo de límites de búsqueda rígidos del portal madre.',
+      'Integración DaaS fluida y programada.'
     ],
-    ctaTitle: 'The power of experienced talent ready to provide you with Web Scraping LinkedIn',
+    ctaTitle: 'Multiplica el impacto de tu Outreach apoyándote en Data Factory',
     ctaDescription: '',
     faqs: [
       {
-        question: 'What is Web Scraping LinkedIn?',
-        answer: 'Web Scraping LinkedIn involves extracting data from LinkedIn profiles and job postings to gather insights about professionals, companies, and job market trends.'
+        question: '¿Qué es exactamente la Extracción de Datos de LinkedIn?',
+        answer: 'Es la metodología autómata para procesar y agrupar grandes listados de resultados corporativos, historiales educativos, perfiles profesionales y vacantes publicadas en la red con motivo analítico o comercial.'
       },
       {
-        question: 'Who benefits from Web Scraping LinkedIn?',
-        answer: 'This service is particularly useful for recruiters, marketers, and businesses looking to analyze professional trends and identify potential candidates or leads.'
+        question: '¿Qué tipo de departamentos se benefician primordialmente?',
+        answer: 'Fundamental para áreas orientadas a account-based marketing, agencias headhunters y analistas de Business Intelligence B2B.'
       },
       {
-        question: 'What are the benefits of using Web Scraping LinkedIn?',
-        answer: 'By scraping LinkedIn, you gain access to a wealth of professional data that can inform your hiring strategies, improve your networking efforts, and help you stay updated on industry trends.'
+        question: '¿Es más rentable que LinkedIn Sales Navigator u otras soluciones?',
+        answer: 'A diferencia de herramientas de UI directa, nosotros entregamos raw data programática. No precisas equipos sentados horas usando nuestro software, simplemente recibes las bases maestras listas y pre-digeridas.'
       }
     ]
   },
@@ -254,69 +254,69 @@ export const servicesData: Record<string, ServiceData> = {
     titlePart1: '',
     titlePartGradient: 'Airbnb Web Scraping Services',
     titlePart2: '',
-    description: 'Perfect for businesses that need to understand large volumes of property and pricing data to automate market tasks, reducing time and resource consumption with Airbnb Web Scraping services.',
+    description: 'Esencial para firmas proptechs, hostings urbanos y managers hoteleros que necesitan auditar el colosal volumen inmobiliario y anticipar la matriz tarifaria en tiempo real.',
     testimonials: [
       {
         rating: 5,
-        text: '"We\'ve been able to stay ahead in the real estate market by using this service to track competitor listings and analyze trends"',
+        text: '"Poder trazar paralelamente la tarifa, descuento escondido o vacancia de nuestros competidores directos en la cuadra transformó el RevPAR por completo."',
         authorName: 'Maria C.',
-        authorRole: 'From the Real Estate Industry',
+        authorRole: 'Asset Manager Proptech',
         authorInitials: 'MC'
       },
       {
         rating: 5,
-        text: '"The periodic market trend reports have been invaluable for planning our investment strategies."',
+        text: '"Los reportes de ocupación y tarifas nos han resultado oro en polvo para saber cuando escalar el precio agresivamente durante temporadas muertas."',
         authorName: 'James P.',
-        authorRole: 'From the Investment Sector',
+        authorRole: 'Fondo Inversor Real Estate',
         authorInitials: 'JP'
       }
     ],
     features: [
       {
         icon: BarChart,
-        title: 'Market trend analysis',
-        description: 'Gather insights on rental market trends to make data-driven investment decisions in the short-term rental space.'
+        title: 'Análisis de Rentabilidad',
+        description: 'Captura diaria de reviews, puntuación de propiedades, políticas y perfiles de huéspedes.'
       },
       {
         icon: Target,
-        title: 'Competitor price tracking',
-        description: 'Analyze competing Airbnb listings to adjust your pricing strategy effectively.'
+        title: 'Radar de Competidores',
+        description: 'Vigila el rango competitivo, listados subvaluados y host principales de la ciudad mapeando su calendario estacional.'
       },
       {
         icon: Zap,
-        title: 'Automated change monitoring',
-        description: 'Set alerts for price or availability changes in Airbnb listings, ensuring you stay updated at all times.'
+        title: 'Alertas de Precios',
+        description: 'Visualiza picos de demanda según las alertas sobre variabilidad general de las tarifas a 1, 3 o 6 meses vistas de una ciudad.'
       },
       {
         icon: Shield,
-        title: 'Structured data delivery',
-        description: 'Receive data in a clean, organized format for straightforward, actionable analysis.'
+        title: 'Formatos Integrados',
+        description: 'Los datos tabulares pueden cruzar tus sistemas contables de forma nativa para actualizar precios dinámicamente.'
       }
     ],
-    needThisTitle: 'How To Know If You Need Airbnb Web Scraping',
-    needThisDescription: 'If your company struggles to track property prices, availability, and market trends manually, leading to inefficiencies and outdated insights, Airbnb Web Scraping is for you.',
-    helpYouSub: 'Data Analytics',
-    helpYouTitle: 'How We Help You',
-    helpYouDescription: 'Our Airbnb Web Scraping service provides real-time property data and trends in a structured format, enabling you to make informed investment and marketing decisions with confidence and precision.',
+    needThisTitle: 'Cómo saber si requieres el tracking automático en Airbnb',
+    needThisDescription: 'Si no puedes responder cuáles fueron las tarifas reales de mercado el último mes en la redonda de tu complejo, ni por qué la competencia estuvo 100% full mientras tu lugar vacante... estás operando a ciegas. AutoScraping resuelve esto.',
+    helpYouSub: 'Data Proptech',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Configuramos redes densas de extracción programática (Scraping) sobre Airbnb mapeando listados, reviews y calendarios georrefenciados para ofrecerte la radiografía final de cómo se comportan los inquilinos y qué precios aceptan.',
     helpYouList: [
-      'Track real-time property prices and availability',
-      'Analyze dynamic market trends efficiently',
-      'Receive structured data for confident decisions'
+      'Seguimiento diario de precios nocturnos de competidores.',
+      'Analíticas profundas (Ocupación, RevPAR estimado, Reglas).',
+      'Minado de comentarios para identificar nichos descuidados.'
     ],
-    ctaTitle: 'The power of experienced talent ready to provide you with Airbnb Web Scraping',
+    ctaTitle: 'El poder del talento experto listo para potenciar tus operaciones turísticas',
     ctaDescription: '',
     faqs: [
       {
-        question: 'What is Airbnb Web Scraping?',
-        answer: 'Airbnb Web Scraping is the process of extracting data from Airbnb listings, reviews, and pricing information to analyze market trends and consumer preferences.'
+        question: '¿Qué es exactamente la Extracción de Datos en Airbnb?',
+        answer: 'Es el proceso metodológico de recorrer el inventario público de propiedades, procesando sus tarifas interconectadas (temporada/fines de semana) y estado (ocupado/libre) para comprender tendencias microeconómicas.'
       },
       {
-        question: 'Who should consider Airbnb Web Scraping services?',
-        answer: 'This service is ideal for property managers, real estate investors, and market analysts who want to understand rental market dynamics and competitive pricing strategies.'
+        question: '¿Para qué usaría esto una agencia hotelera o proptech?',
+        answer: 'Básicamente: "Dynamic Pricing". Si la ciudad está sorpresivamente saturada un fin de semana a razón de un evento no mapeado, la lectura automatizada se encargará de reportarlo para que puedas subir tarifas al instante o identificar el perfil de búsqueda dominador del mes.'
       },
       {
-        question: 'What advantages does Airbnb Web Scraping offer?',
-        answer: 'By utilizing Airbnb Web Scraping, you can gather comprehensive market data, identify pricing trends, and enhance your property management strategies based on real-time insights.'
+        question: '¿Qué ventajas tienen los datos estructurados vs dashboards enlatados?',
+        answer: 'Al brindarte Data Cruda y curada en Datawarehouses privados, tienes la libertad de diseñar tus propios tableros internos con la mezcla de tu flujo de ingresos privados contra los resultados ajenos; y no depender analíticamente del SaaS de un tercero.'
       }
     ]
   },
@@ -326,69 +326,69 @@ export const servicesData: Record<string, ServiceData> = {
     titlePart1: '',
     titlePartGradient: 'Web Scraping Google Maps',
     titlePart2: '',
-    description: 'Perfect for businesses that need to extract location data to automate the collection of geographic information, reducing time and resource consumption with Web Scraping Google Maps services.',
+    description: 'Perfecto para agencias y franquicias que necesitan automatizar la inteligencia locacional, obteniendo reviews, horarios y ratings del comercio local a escala global.',
     testimonials: [
       {
         rating: 5,
-        text: '"This service helped us identify key local businesses for partnerships, making our expansion more targeted and efficient."',
+        text: '"Este servicio nos ayudó a identificar empresas locales clave para alianzas, haciendo nuestra expansión a México mucho más certera y eficiente."',
         authorName: 'Sandra L.',
-        authorRole: 'From the Travel Industry',
+        authorRole: 'Manager de Expansión, Turismo',
         authorInitials: 'SL'
       },
       {
         rating: 5,
-        text: '"The structured data from Google Maps allowed us to map out customer locations, improving our delivery logistics."',
+        text: '"Los datos procesados de Google Maps nos permitieron mapear las ubicaciones y densidad de clientes de nuestra competencia, mejorando la logística radial."',
         authorName: 'Alex T.',
-        authorRole: 'From the Logistics Industry',
+        authorRole: 'Logística y Última Milla',
         authorInitials: 'AT'
       }
     ],
     features: [
       {
         icon: Target,
-        title: 'Competitor analysis',
-        description: 'Extract competitor data to gain insights into local market conditions and refine your strategy.'
+        title: 'Análisis de Competidores',
+        description: 'Extrae información de rivales locales (Reviews, Estrellas, Horarios, Teléfonos) para entender las condiciones del mercado.'
       },
       {
         icon: Globe,
-        title: 'Customer location mapping',
-        description: 'Collect data on potential customer locations to optimize your marketing efforts effectively.'
+        title: 'Mapeo de Clientes Potenciales',
+        description: 'Construye listas frías altamente segmentadas de negocios físicos basados en las coordenadas directas de Maps.'
       },
       {
         icon: Zap,
-        title: 'Real-time data updates',
-        description: 'Stay informed with regularly updated data, ensuring your strategies are always based on the latest information.'
+        title: 'Actualizaciones de Apertura',
+        description: 'Identifica y alerta sobre qué locaciones abrieron o cerraron permanentemente en tu sector cada mes.'
       },
       {
         icon: Shield,
-        title: 'Custom data formats',
-        description: 'Receive Google Maps data in your preferred format for seamless integration with your analysis tools.'
+        title: 'Limpieza de Direcciones (GCP)',
+        description: 'Formateamos y cruzamos los pines contra las bases de datos de Google Cloud Platform para uniformidad.'
       }
     ],
-    needThisTitle: 'How To Know If You Need Google Maps Web Scraping',
-    needThisDescription: 'If your company struggles to extract local business data manually, leading to inefficiencies and incomplete information that make it difficult to target specific areas effectively; Google Maps Web Scraping is for you.',
-    helpYouSub: 'Location Data',
-    helpYouTitle: 'How We Help You',
-    helpYouDescription: 'Our Google Maps Web Scraping service extracts valuable business data, including reviews, ratings, and locations, providing the insights you need to analyze local markets and optimize your strategies with precision.',
+    needThisTitle: 'Cómo saber si necesitas el Scraping de Google Maps',
+    needThisDescription: 'Si tu equipo B2B navega por el mapa buscando agencias, restaurantes u hospitales manualmente para armar una ruta comercial, perdiendo días en el proceso; automatizar dicha extracción de polígonos resuelve tu problema.',
+    helpYouSub: 'Data Georreferenciada',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Nuestro servicio de extracción sobre Maps procesa las coordenadas de las ciudades objetivo, simulando exploraciones para recuperar negocios categorizados, proveyendo bases repletas de números web y opiniones.',
     helpYouList: [
-      'Extract valuable location and business data',
-      'Analyze local markets to optimize strategies',
-      'Use structural insights to target specific areas'
+      'Extracción dentro de polígonos o códigos postales concretos.',
+      'Lectura de opiniones y metadata urbana.',
+      'Construcción de audiencias B2B frías infalibles.'
     ],
-    ctaTitle: 'The power of experienced talent ready to provide you with Web Scraping Google Maps',
+    ctaTitle: 'Impulsa tu crecimiento hiper-local con nuestra inteligencia geográfica',
     ctaDescription: '',
     faqs: [
       {
-        question: 'What is Web Scraping Google Maps?',
-        answer: 'Web Scraping Google Maps involves extracting location-based data, such as business details, reviews, and contact information from Google Maps.'
+        question: '¿Qué información específica extraen de Google Maps?',
+        answer: 'Extráemos título del negocio, categoría, nota global, total de reviews, dirección postal unificada, página web ligada, números de teléfono comerciales y el horario de atención.'
       },
       {
-        question: 'Who can benefit from Web Scraping Google Maps?',
-        answer: 'This service is beneficial for businesses looking to analyze competitor locations, gather customer feedback, and identify new market opportunities.'
+        question: '¿Hay forma de extraer los comentarios dentro de cada negocio?',
+        answer: 'Sí. A través de scripts más profundos (Deep-Crawling) podemos bajar el texto de los comentarios, las estrellas por persona, fecha y la respuesta del negocio si la hay.'
       },
       {
-        question: 'What are the advantages of using Web Scraping Google Maps?',
-        answer: 'By utilizing this service, you can gain valuable insights into local market conditions, enhance your location-based marketing strategies, and stay competitive in your industry.'
+        question: '¿Cuál es la latencia de procesar una ciudad completa?',
+        answer: 'Dependiendo la amplitud y densidad poblacional de la búsqueda (ej: "todos los restaurantes de Madrid" frente a "Todas las empresas de ciberseguridad en Buenos Aires"), el recaudo toma en promedio 24 a 48 horas.'
       }
     ]
   },
@@ -398,69 +398,861 @@ export const servicesData: Record<string, ServiceData> = {
     titlePart1: '',
     titlePartGradient: 'Web Scraping Automation',
     titlePart2: '',
-    description: 'Perfect for businesses that need to automate the collection of large volumes of data or streamline routine tasks, reducing time and resource consumption with Web Scraping Automation services.',
+    description: 'Perfecto para negocios que necesitan orquestar automatizaciones repetitivas de extracción masiva desvinculando la dependencia humana para siempre.',
     testimonials: [
       {
         rating: 5,
-        text: '"Automating our web scraping has allowed us to process data faster, giving us more time for strategic work."',
+        text: '"Automatizar nuestra recolección web, en vez de tercerizarla manualmente cada viernes, nos permitió construir verdaderos esquemas Data-Driven."',
         authorName: 'Tom W.',
-        authorRole: 'From the Content Industry',
+        authorRole: 'CEO Operaciones de Contenido',
         authorInitials: 'TW'
       },
       {
         rating: 5,
-        text: '"The automation features have improved our data accuracy and speed, leading to better customer insights and increased revenue."',
+        text: '"Recuperamos velocidad, exactitud y margen en nuestra oferta comercial. Definitivamente es el activo invisible clave de nuestra empresa."',
         authorName: 'Rachel S.',
-        authorRole: 'From the Entertainment Industry',
+        authorRole: 'Growth & Entertaiment',
         authorInitials: 'RS'
       }
     ],
     features: [
       {
         icon: Shield,
-        title: 'Reduced Human Error',
-        description: 'Automation minimizes the chances of human error, ensuring the accuracy and reliability of the data collected.'
+        title: 'Cero Riesgo Humano',
+        description: 'Los spiders automatizados no copian el campo equivocado ni descansan; aseguran exactitud perpetua al capturar data crítica.'
       },
       {
         icon: Zap,
-        title: 'Continuous Monitoring',
-        description: 'Set schedules for automatic scraping to keep your data updated without manual intervention.'
+        title: 'Orquestación Constante',
+        description: 'Configuramos CRONs y pipelines (Airflow) donde la ingesta de data transcurre por debajo sin demandar intervención.'
       },
       {
         icon: Target,
-        title: 'Flexible Scheduling Options',
-        description: 'Customize how often you want data to be scraped, tailored to your specific business needs.'
+        title: 'Horarios Personalizables',
+        description: 'Independientemente de si necesitas actualizaciones cada hora (como el mercado bursátil) o domingos en la noche, el sistema cumple a rajatabla.'
       },
       {
         icon: BarChart,
-        title: 'Time and Resource Efficiency',
-        description: 'By automating scraping, your team can spend more time on strategic initiatives rather than data collection.'
+        title: 'Eficiencia de Capital',
+        description: 'Asigna el valor intelectual de tus ingenieros a innovar con los analíticos, delegando el peso de conseguir el dato crudo a nosotros.'
       }
     ],
-    needThisTitle: 'How To Know If You Need Web Scraping Automation',
-    needThisDescription: 'If your company struggles with manual web scraping, facing inefficiencies and errors in handling large-scale data extraction tasks, Web Scraping Automation is for you.',
+    needThisTitle: 'Cómo saber si precisas de Arquitecturas de Extracción DaaS',
+    needThisDescription: 'Si tienes un ejército de pasantes transcribiendo tablas para alimentar los analíticos semanales y todo arde cuando cambian las columnas, entonces necesitas arquitectura formal de scrapers.',
     helpYouSub: 'Data Automation',
-    helpYouTitle: 'How We Help You',
-    helpYouDescription: 'Our automation tools streamline the web scraping process, enabling accurate and efficient data collection at scale, so you can focus on making faster, data-driven decisions.',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Te proporcionamos toda la ingeniería de Data Factory que conecta herramientas, saltos de IP, bases en la nube y scripts inyectores; armando la tubería (Pipeline) de principio a fin hacia tus servidores.',
     helpYouList: [
-      'Streamline web scraping processes',
-      'Enable efficient data collection at scale',
-      'Focus on making fast, data-driven decisions'
+      'Infraestructura robusta autogestionada (Serverless).',
+      'Configuración de flujos concurrentes (Millones de peticiones diarias).',
+      'Eliminación de la brecha de recolección manual.'
     ],
-    ctaTitle: 'The power of experienced talent ready to provide you with Web Scraping Automation',
+    ctaTitle: 'Sube al siguiente nivel transformando al dato en el motor invisible de tu rentabilidad',
     ctaDescription: '',
     faqs: [
       {
-        question: 'What is Web Scraping Automation?',
-        answer: 'Web Scraping Automation refers to the use of tools and scripts to automate the data extraction process, making it more efficient and less time-consuming.'
+        question: '¿Qué es exactamente la Automatización de Scraping (DaaS)?',
+        answer: 'Data as a Service. Es consumir la información externa periódicamente mediante endpoints listos sin preocuparte en absoluto en cómo los scripts libran firewalls, bloqueos, o renderizan la inyección requerida para conseguirlos en primera instancia.'
       },
       {
-        question: 'Who should consider Web Scraping Automation services?',
-        answer: 'This service is ideal for businesses that regularly collect data from websites and need a scalable solution to automate their data extraction processes.'
+        question: '¿Qué corporaciones dependen de esta estructura?',
+        answer: 'Desde modelos que alimentan las inteligencias y motores de recomendación, hasta corporaciones masivas de logística que deben auditar cadenas mundiales cada noche para funcionar.'
       },
       {
-        question: 'What are the benefits of implementing Web Scraping Automation?',
-        answer: 'By automating your web scraping efforts, you can significantly reduce the time spent on data collection, minimize human error, and ensure you always have access to the latest data.'
+        question: '¿Garantizan el "Uptime" o vida útil de los conectores?',
+        answer: 'Sí. A través de nuestro "Data Squad" construimos monitoreos de salud de datos. Si el portal fuente cambia drásticamente, nuestras alarmas lo detectan e intercedemos en tiempo récord para corregir la tubería y asegurar tus datos.'
+      }
+    ]
+  },
+  'metricas-financieras': {
+    slug: 'metricas-financieras',
+    badge: 'Financial Data',
+    titlePart1: '',
+    titlePartGradient: 'Web Scraping Financial Data',
+    titlePart2: '',
+    description: 'Crítico para fondos de cobertura, inversionistas y firmas fintech que demandan métricas precisas sobre indicadores económicos de forma constante y automática.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Al automatizar el consumo de reportes e indicadores bursátiles minoristas del mercado asiático pudimos consolidar decisiones con tres horas de ventaja."',
+        authorName: 'Laura T.',
+        authorRole: 'Manager de Inversiones',
+        authorInitials: 'LT'
+      },
+      {
+        rating: 5,
+        text: '"El flujo ininterrumpido sobre la fluctuación de bonos y tasas nos garantizó la creación de estimativas (forecasting) absolutamente estelares."',
+        authorName: 'Robert G.',
+        authorRole: 'Fondo Estructural Analítico',
+        authorInitials: 'RG'
+      }
+    ],
+    features: [
+      {
+        icon: BarChart,
+        title: 'Análisis Macroeconómico',
+        description: 'Obtención masiva de balances, memorias e indicativos del PBI dictados por los entes gubernamentales.'
+      },
+      {
+        icon: TrendingUp,
+        title: 'Monitoreo Bursátil Intradía',
+        description: 'Lectura ultra rápida (Low Latency) del estado e índices de activos en portales de la bolsa.'
+      },
+      {
+        icon: Target,
+        title: 'Tracking de Criptoactivos',
+        description: 'Colección de sentimiento y métricas On-Chain públicas diseminadas a través de docenas de foros y directorios informativos.'
+      },
+      {
+        icon: Shield,
+        title: 'Data Inmaculada',
+        description: 'Cifrado robusto y canalizado de manera tal que los valores porcentuales y divisas siempre preserven el estado y formato esperado.'
+      }
+    ],
+    needThisTitle: 'Por qué priorizar el Levantamiento de Data Financiera Localizada',
+    needThisDescription: 'Si dependes exclusivamente de proveedores de mercado centralizados como Bloomberg que imponen costos exorbitantes, careciendo además de ciertos indicativos regionales y de bonos públicos descentralizados que tú mismo requieres.',
+    helpYouSub: 'Data y Fintech',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Generamos flujos persistentes conectándonos silenciosamente sobre cualquier ente o reporte monetario, descargando PDFs, leyendo el HTML y sirviéndolo a tu core bancario como un servicio de data fresco.',
+    helpYouList: [
+      'Ingeniería enfocada en precisión algorítmica de los valores.',
+      'Lectura de PDFs de asambleas y tabuladores fiscales locales.',
+      'Aseguramiento de entrega ágil vital para las tendencias.'
+    ],
+    ctaTitle: 'Conquista tu ventaja en el mercado aprovechando nuestra extracción analítica',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿De dónde extraen la información financiera?',
+        answer: 'Conectamos puentes hacia bancos centrales regionales (Tasas de Interés, Tipo de Cambio), plataformas accionarias públicas, organismos de auditoria que suben reportes anuales (SEC), y procesadores de divisas.'
+      },
+      {
+        question: '¿Qué es scraping financiero profundo u ORC referencial?',
+        answer: 'Cuando el documento gubernamental vive dentro de una imagen incrustada dentro de un PDF escondido tras una URL antigua; nuestros ingenieros implementan Optical Recognition (IA) para recuperar esos números.'
+      },
+      {
+        question: '¿Es ético / legal hacer web scraping de precios de acciones o bonos?',
+        answer: 'Absolutamente, a día de hoy, y bajo jurisprudencia general, recopilar datos numéricos provistos públicamente en internet con una estructura de rastreo amigable encaja totalmente en el uso legítimo analítico (Fair Use / Data Analytics).'
+      }
+    ]
+  },
+  'catalogos-de-e-commerce': {
+    slug: 'catalogos-de-e-commerce',
+    badge: 'Ecommerce Scraping',
+    titlePart1: '',
+    titlePartGradient: 'Web Scraping Ecommerce',
+    titlePart2: '',
+    description: 'Perfecto para marcas comerciales que precisan de gestionar masivos volúmenes de inventario y auditar el catálogo de sus competidores automatizando su toma de decisiones.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Al automatizar el rastreo de precios y promociones de rivales en eventos de temporada, pudimos ofrecer tickets un 3% más agresivos y agotar stock."',
+        authorName: 'Jenna F.',
+        authorRole: 'Head de E-commerce',
+        authorInitials: 'JF'
+      },
+      {
+        rating: 5,
+        text: '"Poder monitorear las fluctuaciones en tiempo real nos salvó de perder un margen del 15% que no estabamos contemplando en costos de envío ajenos."',
+        authorName: 'Mark K.',
+        authorRole: 'Analista de Growth',
+        authorInitials: 'MK'
+      }
+    ],
+    features: [
+      {
+        icon: Target,
+        title: 'Mapeo de Precios',
+        description: 'Audita los precios base, promociones activas y ofertas ocultas de competidores para proteger tu margen de penetración.'
+      },
+      {
+        icon: BarChart,
+        title: 'Análisis de Reviews',
+        description: 'Extrae cientos de miles de estrellitas y quejas desde los e-commerces competidores para nutrir tus próximos lanzamientos de producto.'
+      },
+      {
+        icon: ShoppingCart,
+        title: 'Monitoreo de Inventario',
+        description: 'Visibilidad constante sobre qué SKUs se agotan frecuentemente en otras tiendas para incrementar el abastecimiento seguro en la tuya.'
+      },
+      {
+        icon: Shield,
+        title: 'Metadata en Limpio',
+        description: 'Despachamos los datos curados en un archivo plano conteniendo el ASIN, Categoría, Precio, Foto y Disponibilidad tabularmente exactos.'
+      }
+    ],
+    needThisTitle: 'Cómo saber si precisas Trackear Catálogos Automáticamente',
+    needThisDescription: 'Si gastas miles de dólares en analistas refrescando portales para encontrar de manera manual cuándo tu competencia activa una promoción sobre categorías compartidas, dejándote días en desventaja... necesitas este servicio.',
+    helpYouSub: 'Data E-commerce',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Nuestro servicio de E-commerce Mapeo navega millones de páginas de productos de las marcas líderes simultáneamente, comparando precios e inventario para enviarte reportes directos sobre cómo debes maniobrar.',
+    helpYouList: [
+      'Alerta inmediata sobre cambios de stock o precio.',
+      'Sorteo técnico de tiendas masivas fuertemente blindadas.',
+      'Tus listados estructurados listos para cruzar datos.'
+    ],
+    ctaTitle: 'Sube las conversiones integrando un motor invisible que vigila tus catálogos',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿De qué tiendas en línea se puede extraer información?',
+        answer: 'Técnicamente de cualquier Retail o Marketplace B2B/B2C, incluyendo gigantes internacionales hiper controlados hasta tiendas particulares montadas sobre Shopify, Vtex, o Magento.'
+      },
+      {
+        question: '¿Consiguen extraer datos bajo registros o "Prices hidden"?',
+        answer: 'Sí. Nuestras automatizaciones se encargan de registrar bots y loggearlos dentro del flujo de compra con perfiles verdaderos simulando ubicuidad de un comprador, desencriptando descuentos ocultos exclusivos a nivel carrito o zipcode.'
+      },
+      {
+        question: '¿Con qué velocidad recomiendan ejecutar este scraping?',
+        answer: 'En temporalidades normales sugerimos extracciones semanales por categoría. Durante eventos como Black Friday o Hot Sale sugerimos un escaneo programático cada 4-6 horas para posibilitar Dynamic Pricing (Ajuste algorítmico automatizado).'
+      }
+    ]
+  },
+  'web-scraping-engineer': {
+    slug: 'web-scraping-engineer',
+    badge: 'Web Scraping',
+    titlePart1: '',
+    titlePartGradient: 'Web Scraping Engineer',
+    titlePart2: '',
+    description: 'Perfecto para compañías que asimilan gigantescos volúmenes de datos o lógicas en constante cambio que demandan intervención experta recurrente de un Ingeniero en Programación.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Tener Data Squads y consultores de Scraping dedicados revolucionó nuestra matriz. Construyen flujos que nosotros no sabíamos que se podían programar."',
+        authorName: 'Emily P.',
+        authorRole: 'Tech Lead en Agencia Turística',
+        authorInitials: 'EP'
+      },
+      {
+        rating: 5,
+        text: '"El equipo de ingeniería de AutoScraping resolvió problemas de latencia que teníamos de larga data. Nuestra arquitectura ahora es rápida y libre de bugs."',
+        authorName: 'Daniel P.',
+        authorRole: 'CEO SaaS Inmobiliario',
+        authorInitials: 'DP'
+      }
+    ],
+    features: [
+      {
+        icon: TrendingUp,
+        title: 'Código Altamente Escalable',
+        description: 'Desarrolladores inmersos que implementan sistemas capaces de procesar desde un centenar hasta millones de records por hora sin sufrir bloqueos de red.'
+      },
+      {
+        icon: Zap,
+        title: 'Mantenimiento Reactivo (QSR)',
+        description: 'Si una red troncal implementa un nuevo Firewall, nuestros ingenieros modifican las cabeceras de los extractores (headers) en cuestión de minutos para revivirlos.'
+      },
+      {
+        icon: Shield,
+        title: 'Protección Jurídica / Técnica',
+        description: 'Programación meticulosa asegurando prácticas Fair-Use, cuidando la saturación de los servidores objetivo, e impidiendo el bloqueo pasivo del ancho de banda.'
+      },
+      {
+        icon: Target,
+        title: 'Conocimiento Multidisciplinar',
+        description: 'Expertos que transicionan desde Python puro (Selenium/Playwright) hacia la inyección de AI Agents o LLMs dependiendo meramente del nivel de abstracción del proyecto.'
+      }
+    ],
+    needThisTitle: 'Cuándo apoyarte netamente en un equipo Web Scraping Engineer',
+    needThisDescription: 'Si cuentas con soluciones enlatadas (No-code / SaaS platforms genéricas) que colapsan cada vez que tus competidores aplican medidas Anti-Bot básicas como CAPTCHAS o verificadores Javascript... te urge delegar la ingeniería a expertos.',
+    helpYouSub: 'SQUAD ENGINEERING',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Data Factory te provee talento calificado y curado de manera que integres un arquitecto de extracción directamente en los objetivos de tu sprint de producto, saltando el tiempo de reclutamiento.',
+    helpYouList: [
+      'Prototipado rápido de arquitecturas de bases documentales y relacionales.',
+      'Soporte continuado y monitoreo de las conexiones web.',
+      'Despliegue robusto de contenedores e instancias.'
+    ],
+    ctaTitle: 'Sácale el máximo provecho al talento con expertise técnico listos para integrarse en tu equipo',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué soluciona un Ingeniero Especializado en Web Scraping?',
+        answer: 'Un SWE enfocado al scraping no sólo extrae datos, sino que blinda y eficientiza las barreras que lo impiden. Aplica Reverse Engineering (Ingeniería Inversa) para entender APIs privadas móviles y elude restricciones IP con rotaciones lógicas.'
+      },
+      {
+        question: '¿Cuál es la diferencia entre solicitar un servicio de Data (DaaS) y un Ingeniero?',
+        answer: 'En DaaS, cobramos en base al volumen del "resultado final estructurado" que ingiere periódicamente tu sistema. Al contratar en modelo "Squad Engineering" accedes exclusivamente al código, las horas del talento programador trabajando bajo tu dirección y eres dueño/operador del stack resultante.'
+      },
+      {
+        question: '¿Manejan flujos basados en Eventos e Infraestructura de Nube?',
+        answer: 'Absolutamente. Estructuramos arquitecturas distribuidas basadas en Event-Driven functions alojadas nativamente en tus cuentas de AWS o Google Cloud garantizando que toda la recolección masiva quede alojada en tu propiedad corporativa.'
+      }
+    ]
+  },
+  'insights-de-marketing': {
+    slug: 'insights-de-marketing',
+    badge: 'Marketing',
+    titlePart1: '',
+    titlePartGradient: 'Web Scraping for Marketing',
+    titlePart2: '',
+    description: 'Perfecto para equipos de marketing que necesitan procesar grandes volúmenes de datos u automatizar tareas vitales, reduciendo tiempos de validación de campañas al apoyarse en el Web Scraping para Marketing.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"El Web Scraping para Marketing transformó nuestra manera de identificar tendencias y estrategias de nuestra competencia, dándonos una clara ventaja analítica dentro de la industria."',
+        authorName: 'Sofia M.',
+        authorRole: 'Agencia de Growth Marketing',
+        authorInitials: 'SM'
+      },
+      {
+        rating: 5,
+        text: '"Hemos utilizado el Web Scraping para automatizar nuestro pre-enriquecimiento de leads resultando en un salto de conversión en correos en frío a un nivel altísimo."',
+        authorName: 'James C.',
+        authorRole: 'Plataforma B2B',
+        authorInitials: 'JC'
+      }
+    ],
+    features: [
+      {
+        icon: Users,
+        title: 'Segmentación de Audiencia Mejorada',
+        description: 'Accede a datos en redes y foros que te permiten segmentar asertivamente a tu audiencia y personalizar tus correos masivos.'
+      },
+      {
+        icon: Target,
+        title: 'Estrategias de Marketing de Competidores',
+        description: 'Monitorea directamente los esfuerzos de tus competidores extrayendo la metadata de sus anuncios y descripciones de producto.'
+      },
+      {
+        icon: Zap,
+        title: 'Actualización Frecuente',
+        description: 'Recibe volcados de datos refrescados constantemente para asegurarte de que tus campañas transpiran un contexto relevante y actual.'
+      },
+      {
+        icon: BarChart,
+        title: 'Reportajes y Dashboards Curados',
+        description: 'Entregamos tableros informados y pre-digeridos centrados en las métricas clave para tu iniciativa publicitaria.'
+      }
+    ],
+    needThisTitle: 'Cómo saber si necesitas Web Scraping de Marketing',
+    needThisDescription: 'Si tu departamento de marketing desperdicia semanas agrupando datos de la competencia en Excels y tabulando audiencias manualmente, el Web Scraping automatizado te urge fuertemente.',
+    helpYouSub: 'Data y Campañas',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Nuestro equipo dedicado de ingenieros orquesta la recuperación de datos sociales, publicidades ajenas y precios para darte la directriz real antes de lanzar o pautar online.',
+    helpYouList: [
+      'Automatizar tableros comparativos sobre precios y pautas.',
+      'Obtención masiva de perfiles y opiniones regadas por la web.',
+      'Empoderar a tu equipo de campañas liberándolos de la búsqueda manual.'
+    ],
+    ctaTitle: 'Multiplica tu ROI y la conversión de prospectos respaldando tus decisiones con datos precisos',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué abarca el Web Scraping para el área de Marketing?',
+        answer: 'Consiste en identificar, ordenar y presentar datos dispersos relativos a las preferencias de consumición, precios estacionales y estrategias competitivas para moldear tu próxima iniciativa comercial.'
+      },
+      {
+        question: '¿Qué industrias se benefician mayoritariamente de esto?',
+        answer: 'Desde agencias creativas que requieren entender de qué se habla en foros antes de crear contenido, hasta Brand Managers de grandes marcas que auditan a su competencia antes de Black Friday.'
+      },
+      {
+        question: '¿Cuáles son las ventajas netas detrás de invertir en esto?',
+        answer: 'Mitigación drástica del riesgo. En vez de lanzar un producto a ciegas asumiendo "a quién le gusta y a qué precio pagaría", la analítica te dice exactamente a cuánto y dónde lo están pagando hoy mismo.'
+      }
+    ]
+  },
+  'indexacion-inmobiliaria': {
+    slug: 'indexacion-inmobiliaria',
+    badge: 'Real Estate',
+    titlePart1: '',
+    titlePartGradient: 'Web Scraping for Real Estate',
+    titlePart2: '',
+    description: 'Perfecto para agentes, franquicias o fondos inversores inmobiliarios que precisan trackear diariamente el valor de las propiedades publicadas dentro de los portales líderes para capitalizar el volumen del mercado.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Pudimos indexar todas las propiedades de nuestros competidores alrededor de Florida y predecir cuándo el mercado estaba bajo una recesión inminente, vendiendo con alto margen a tiempo."',
+        authorName: 'Maria C.',
+        authorRole: 'Gestor Fondo Real Estate',
+        authorInitials: 'MC'
+      },
+      {
+        rating: 5,
+        text: '"Los reportes de la tendencia del mercado hipotecario y las variaciones que conseguimos estructurar nos permitieron invertir sin riesgo con el pool."',
+        authorName: 'James P.',
+        authorRole: 'Family Office Inmobiliario',
+        authorInitials: 'JP'
+      }
+    ],
+    features: [
+      {
+        icon: TrendingUp,
+        title: 'Monitoreo de Precios y Disponibilidad',
+        description: 'Obtén métricas de tasación y estatus de los listados actualizados a diario para fundamentar decisiones.'
+      },
+      {
+        icon: Target,
+        title: 'Análisis de Inventario Competitivo',
+        description: 'Descubre qué ubicaciones, tipo de propiedades o metros cuadrados exactos ofertan tus competidores recurrentemente.'
+      },
+      {
+        icon: BarChart,
+        title: 'Patrones de Renta (Market Trends)',
+        description: 'Correlaciona las políticas de alquiler y la variabilidad en los retornos directos según el ZIP Code o Barrio de los listados.'
+      },
+      {
+        icon: Shield,
+        title: 'Integraciones a CRMs (MLS)',
+        description: 'Suministramos conexiones y exportables para que alimentes de inmediato tu sistema logístico / MLS.'
+      }
+    ],
+    needThisTitle: 'Cómo saber si necesitas Analítica en Real Estate',
+    needThisDescription: 'Si los agentes de tu franquicia deben entrar a mano cruzando comparables por horas enteras solo para tasar una propiedad, mientras la verdadera oportunidad de inversión (Deal) le llega antes a la competencia.',
+    helpYouSub: 'Proptech Data',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Recolectamos el universo entero de publicaciones provenientes de portales inmobiliarios y agregadores, procesando la latitud, m2, descripción y precios para entregarte un Datawarehouse listo para filtrar y atacar.',
+    helpYouList: [
+      'Captura paralela de millones de listados en portales públicos.',
+      'Lectura de amenidades y perfiles de los vendedores.',
+      'Dashboards y comparativas claras sin subjetividades al tasar.'
+    ],
+    ctaTitle: 'Adquiere tu ventaja en el sector inmobiliario asegurándote la toma de decisiones con datos puros',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué se puede extraer desde los portales inmobiliarios comunes?',
+        answer: 'Comúnmente extraemos el precio ofertado a diario (identificando caídas sutiles de precio con el paso del mes), historial de ventas, M2 cubiertos, agente a cargo, fotografías, y toda la metadata adjunta al aviso en línea.'
+      },
+      {
+        question: '¿A quiénes va dirigida la Indexación Inmobiliaria?',
+        answer: 'Fideicomisos en búsqueda de oportunidades subvaluadas (Flipping house), grandes fondos proptech, bancos evaluando tasaciones y agencias tradicionales de enorme flujo inmobiliario (RE/MAX).'
+      },
+      {
+        question: '¿Cuáles son las ventajas cardinales de este servicio?',
+        answer: 'Identificar arbitrariedades. Cuando el mercado dicta X monto el m2, nuestro algoritmo y tabajos pueden detectar una oferta 15% por debajo antes que el comprador general la note, permitiendo comprarla antes que nadie.'
+      }
+    ]
+  },
+  'auditoria-seo': {
+    slug: 'auditoria-seo',
+    badge: 'Scraping for SEO',
+    titlePart1: '',
+    titlePartGradient: 'Web Scraping for SEO',
+    titlePart2: '',
+    description: 'Perfecto para marcas o agencias con presencia digital agresiva que requieren auditar programáticamente millones de URLs, meta tags y clústers de competidores.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Al analizar retrospectivamente cómo se enlazaban las noticias top de nuestro rival (Backlinks), reconstruimos nuestra matriz SEO acaparando su tráfico en tres semanas."',
+        authorName: 'Michael S.',
+        authorRole: 'SEO Lead E-commerce',
+        authorInitials: 'MS'
+      },
+      {
+        rating: 5,
+        text: '"La información diaria provista sobre las búsquedas tendencia (Trends) nos entregó la oportunidad de modificar on-the-fly los H1 de nuestros portales ganando volumen orgánico."',
+        authorName: 'Jessica K.',
+        authorRole: 'Diario Noticiario Nacional',
+        authorInitials: 'JK'
+      }
+    ],
+    features: [
+      {
+        icon: Target,
+        title: 'Auditoría de Backlinks Clandestinos',
+        description: 'Extrae sistemáticamente las conexiones de links entrantes y salientes ocultos (referrals) para entender la fuerza de empuje.'
+      },
+      {
+        icon: Shield,
+        title: 'Monitoreo Periódico de Contenido',
+        description: 'Traquea si competidores directos alteran la densidad de sus palabras claves en tiempo real y ajusta tu posicionamiento ante sus embates.'
+      },
+      {
+        icon: TrendingUp,
+        title: 'Búsqueda de Tendencias y Comportamiento',
+        description: 'Colecciona el resultado (Top 100 SERP) proveniente de los principales motores por hora para dictaminar los artículos más codiciados.'
+      },
+      {
+        icon: BarChart,
+        title: 'Análisis Introspectivo (Tech SEO)',
+        description: 'Podemos rastrear e indexar tu propio portal para corroborar que no existen etiquetas faltantes, 404 ni bucles (loops) de navegación masivos.'
+      }
+    ],
+    needThisTitle: 'Cuándo adoptar el Rastreo y Scraping para SEO Estratégico',
+    needThisDescription: 'Si tu tráfico cae ante actualizaciones de Google sin advertencia; o si tu agencia malgasta fortunas rastreando directorios en tools de baja capacidad en vez de poseer el mapa táctico crudo para generar su propia inteligencia artificial semántica.',
+    helpYouSub: 'Technical Search Intelligence',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Corremos robots hiper-livianos capaces de descargar paralelamente cientos de miles de páginas (incluso renderizadas en SPA Javascript) procesando su jerarquía DOM, links, esquemas, y dándotelas en un volcado absoluto.',
+    helpYouList: [
+      'Lectura de jerarquías H1/H2, metadatos y schemas masiva.',
+      'Sorteo de bloqueadores analíticos para revisar la competencia.',
+      'Mantenimiento continuo y alertamiento SEO.'
+    ],
+    ctaTitle: 'Conquista la cima del buscador fundamentando tu estrategia en volúmenes infalibles de datos',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué involucra extraer Datos para el área de SEO (Search Engine Optimization)?',
+        answer: 'Involucra recorrer portales imitando los comportamientos nativos de los "Crowlers" (arañas) de Google o Bing, parseando la limpieza de su código fuente, etiquetas e hipervínculos.'
+      },
+      {
+        question: '¿Quién puede beneficiarse mayormente de esto en contraposición de SEMRush o Ahrefs?',
+        answer: 'Empresas nativas digitales altísimamente transaccionales que precisan ver a nivel forense qué palabras incrustaron los diez sitios que les ganaron el ranking y agencias digitales que deben auditar sitios PBN con rapidez técnica y a granjas granulares de escalas millonarias.'
+      },
+      {
+        question: '¿Cuáles son los retornos (KPIs) típicos tras el uso logístico?',
+        answer: 'Un incremento en el CTR (Clics en buscador) debido a ajustes de optimizaciones semánticas guiados por un espectro analítico total; y no parcial, aumentando el volumen de tráfico que capta la empresa orgánicamente cada mes, bajando la dependencia de comprar anuncios a Google (PPC).'
+      }
+    ]
+  },
+  'estrategias-de-pricing': {
+    slug: 'estrategias-de-pricing',
+    badge: 'Pricing Intelligence',
+    titlePart1: '',
+    titlePartGradient: 'Estrategias de Pricing',
+    titlePart2: '',
+    description: 'Monitoreo de precios y promociones para ejecutar ajustes competitivos que protejan tus márgenes de beneficio y fortalezcan tu penetración en el mercado.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Al automatizar el rastreo de precios de nuestra competencia, pudimos reaccionar un 80% más rápido ante las variaciones del mercado."',
+        authorName: 'Camila R.',
+        authorRole: 'Directora de Pricing, Retail',
+        authorInitials: 'CR'
+      },
+      {
+        rating: 5,
+        text: '"El monitoreo de promociones dinámicas nos salvó los márgenes corporativos, es la herramienta fundamental de nuestro equipo comercial."',
+        authorName: 'David L.',
+        authorRole: 'Manager Financiero',
+        authorInitials: 'DL'
+      }
+    ],
+    features: [
+      {
+        icon: Target,
+        title: 'Rastreo Dinámico',
+        description: 'Monitorea catálogos completos para detectar alteraciones de precios en tiempo real.'
+      },
+      {
+        icon: TrendingUp,
+        title: 'Protección de Márgenes',
+        description: 'Asegura la rentabilidad configurando estrategias automáticas frente a la fluctuación del sector.'
+      },
+      {
+        icon: Shield,
+        title: 'Análisis de Promociones',
+        description: 'Detecta los ciclos de ofertas de tus rivales para contrarrestar su impacto a tiempo.'
+      },
+      {
+        icon: BarChart,
+        title: 'Reportajes Visuales',
+        description: 'Consume dashboards consolidados que ilustran la comparativa directa entre tus productos y el mercado.'
+      }
+    ],
+    needThisTitle: 'Cómo saber si necesitas Automatizar tus Estrategias de Pricing',
+    needThisDescription: 'Si tu equipo comercial pierde incontables horas homologando el valor de mercado contra tus competidores manualmente mediante hojas de cálculo, y aún así siempre vas detrás de los descuentos... necesitas este servicio.',
+    helpYouSub: 'Data Collection',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Nuestro servicio de Inteligencia de Precios se encarga de extraer, limpiar y estandarizar las fluctuaciones de tarifas en miles de plataformas para brindarte alertas accionables sobre tu catálogo.',
+    helpYouList: [
+      'Configuramos reglas de extracción sobre la competencia directa.',
+      'Alertamos sobre fluctuaciones de precios o falta de stock.',
+      'Maximizamos los márgenes de ganancia manteniendo competitividad.'
+    ],
+    ctaTitle: 'El poder del talento experto listo para proveerte las mejores estrategias de pricing',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué es exactamente la Inteligencia de Precios o Pricing Scraping?',
+        answer: 'Consiste en extraer de manera ética y automática los valores de venta, descriptores y disponibilidad de artículos desde plataformas públicas de competidores para analizarlos y ajustar tu propia estructura de costos y ofertas.'
+      },
+      {
+        question: '¿Con qué frecuencia se actualizan los monitoreos?',
+        answer: 'Puede configurarse desde actualizaciones mensuales hasta barridos por hora en periodos críticos (como Black Friday), asegurando un tiempo de reacción mínimo.'
+      },
+      {
+        question: '¿A qué tipo de empresas beneficia este servicio?',
+        answer: 'Retailers, fabricantes de bienes de consumo, e-commerce, hotelería y agencias de viaje que basan su ventaja competitiva en los tabuladores financieros del mercado directo.'
+      }
+    ]
+  },
+  'entrenamiento-de-ia': {
+    slug: 'entrenamiento-de-ia',
+    badge: 'AI Training',
+    titlePart1: '',
+    titlePartGradient: 'Entrenamiento de IA',
+    titlePart2: '',
+    description: 'Procesamiento masivo de sitios y bases de datos no estructuradas para alimentar, escalar y perfeccionar modelos de lenguaje y algoritmos de machine learning.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Necesitábamos miles de interacciones y datasets multilingües limpios para nuestro LLM. AutoScraping resolvió en semanas lo que prometía demorar años."',
+        authorName: 'Fernando T.',
+        authorRole: 'Lead Machine Learning Engineer',
+        authorInitials: 'FT'
+      },
+      {
+        rating: 5,
+        text: '"Extraer corpus de texto para entrenar nuestro clasificador de sentimiento fue un proceso sin fricción, todo provisto en JSON perfectos."',
+        authorName: 'Ana V.',
+        authorRole: 'Cofundadora de Startup Deep Tech',
+        authorInitials: 'AV'
+      }
+    ],
+    features: [
+      {
+        icon: Database,
+        title: 'Creación de Datasets Masivos',
+        description: 'Recolección de millones de tokens y párrafos de miles de webs de manera paralela e ininterrumpida.'
+      },
+      {
+        icon: Sparkles,
+        title: 'Data Limpia y Parseada',
+        description: 'Eliminamos ruido, ads, y bloatware HTML para entregar data cruda lista para pipelines de machine learning.'
+      },
+      {
+        icon: Shield,
+        title: 'Cumplimiento y Anonimización',
+        description: 'Filtramos información sensible (PII) durante el proceso de extracción para proteger la privacidad.'
+      },
+      {
+        icon: Zap,
+        title: 'Escalabilidad Automática',
+        description: 'Nuestra infraestructura sin servidores escala independientemente de si requieres 1,000 o 1,000,000 de consultas al día.'
+      }
+    ],
+    needThisTitle: 'Cuándo apoyarte en nosotros para Entrenar tu IA',
+    needThisDescription: 'Si tu equipo de científicos de datos pasa más del 60% de su tiempo limpiando código HTML mal formateado o ideando formas de saltar bloqueos para scrapear foros y noticias, es el momento de delegar la obtención del dato.',
+    helpYouSub: 'AI & Data Engineering',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Proveemos la canalización (pipeline) absoluta de la colección y transformación de la información, estructurando inmensos bancos de conocimiento de foros, registros y papers que fungirán como base fundacional para tu próximo algoritmo.',
+    helpYouList: [
+      'Descubrimiento y navegación automática de directorios complejos.',
+      'Extracción de imágenes, metadata y corpus lingüísticos.',
+      'Entrega en repositorios seguros, directo al Data Lake.'
+    ],
+    ctaTitle: 'Alimenta el potencial de tus modelos de IA con nuestra factoría de datos',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué tipo de datos pueden extraer para entrenar un modelo?',
+        answer: 'Podemos procesar casi cualquier formato de origen: texto de noticias, posteos de foros, imágenes de galerías con su respectiva etiqueta, reviews en e-commerce y discusiones técnicas.'
+      },
+      {
+        question: '¿Cómo garantizan que la información sea de calidad?',
+        answer: 'Implementamos chequeos de redundancia, eliminación de lenguajes o caracteres corruptos, validación de integridad referencial y estructurado estricto (JSON/CSV) previamente acordado con tu equipo.'
+      },
+      {
+        question: '¿Es posible adquirir datos de forma periódica o solo de una vez?',
+        answer: 'Al tratarse de modelos iterativos, ofrecemos canales DaaS recurrentes donde nuestro orquestador alimenta continuamente tus bases de datos cada semana con conocimiento "fresco" del mercado.'
+      }
+    ]
+  },
+  'comparativa-de-vuelos': {
+    slug: 'comparativa-de-vuelos',
+    badge: 'Travel Insights',
+    titlePart1: '',
+    titlePartGradient: 'Comparativa de Vuelos',
+    titlePart2: '',
+    description: 'Extracción de tarifas aéreas, trayectos y rutas en tiempo real para optimizar la competitividad de agencias, OTAs y motores de reserva turística.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"El scrap de vuelos redujo el abandono en nuestro portal ofreciendo siempre la tarifa más agresiva contra la aerolínea bandera."',
+        authorName: 'Sebastián M.',
+        authorRole: 'CEO de Agencia Resellers',
+        authorInitials: 'SM'
+      },
+      {
+        rating: 5,
+        text: '"Podemos auditar y encontrar disparidad de precios en tiempo real para millones de pares de ciudades. Un trabajo técnico brillante."',
+        authorName: 'Valeria C.',
+        authorRole: 'Analista de Turismo',
+        authorInitials: 'VC'
+      }
+    ],
+    features: [
+      {
+        icon: Plane,
+        title: 'Scraping de Tarifas Dinámicas',
+        description: 'Tracking de tarifas multi-ruta teniendo en cuenta variaciones por asiento, equipaje de mano y temporadas.'
+      },
+      {
+        icon: BarChart,
+        title: 'Mapeo de Rutas y Escalas',
+        description: 'Análisis minucioso del comportamiento en la conexión de vuelos, permitiendo detectar hubs ineficientes.'
+      },
+      {
+        icon: Zap,
+        title: 'Velocidad en Extracción',
+        description: 'Tiempos de respuesta ultra bajos necesarios para alimentar sistemas de reservas propensos al cambio contínuo.'
+      },
+      {
+        icon: Shield,
+        title: 'Anti-Bloqueos Premium',
+        description: 'Infraestructura de proxies rotativos pesados (residential) y simulación humana para evitar los estrictos firewalls aéreos.'
+      }
+    ],
+    needThisTitle: 'Cómo saber si necesitas el Scraping de Vuelos',
+    needThisDescription: 'Consolidar precios de aerolíneas a través de agregadores de terceros puede resultar costoso, con márgenes limitados y data no siempre fidedigna. Si eres una OTA y buscas prescindir de costosas APIS, esta es la forma.',
+    helpYouSub: 'Travel Data',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Extraemos y cruzamos datos desde los portales raíz de las aerolíneas o motores líderes. Estructuramos la duración, el costo y el tipo de vuelo mediante scripts listos para inyectar este conocimiento directo en la UI de tu software vacacional.',
+    helpYouList: [
+      'Agrupamiento de precios, clase, origen y destino de múltiples aerolíneas.',
+      'Sorteo y bypass de sistemas CAPTCHA rígidos del sector.',
+      'Sincronización en alta frecuencia según la estacionalidad del boleto.'
+    ],
+    ctaTitle: 'Automatiza tu recaudo tarifario y despega sobre la competencia',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué sitios aéros o comparadores se pueden auditar?',
+        answer: 'Virtualmente cualquiera. Nuestro equipo de ingenieros diseña integraciones en motores GDS clásicos y sobre todo de manera pública en portales directos de Low-Costs locales o buscadores masivos multinacionales.'
+      },
+      {
+        question: '¿Cómo lidian con la variabilidad de precios según ubicación (geopricing)?',
+        answer: 'Asignamos nodos de extracción geolocalizados para asegurar que el precio reflejado sea igual al experimentado por el usuario base de la zona donde operan tus esfuerzos de venta.'
+      },
+      {
+        question: '¿Qué grado de latencia existe en las capturas de vuelos?',
+        answer: 'Creamos sistemas paralelos de múltiples hilos que reducen la latencia enormemente. Aunque no sea una conexión API cruda, es lo ideal para construir reportes de tendencias, o sistemas de caching en tu backend.'
+      }
+    ]
+  },
+  'gestion-de-reputacion': {
+    slug: 'gestion-de-reputacion',
+    badge: 'Brand Sentiment',
+    titlePart1: '',
+    titlePartGradient: 'Gestión de Reputación',
+    titlePart2: '',
+    description: 'Recolección constante de reseñas, comentarios sociales y valoraciones en plataformas clave para el análisis de sentimiento y cuidado crítico de la imagen de tu corporación.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Pasamos de responder reviews locales manualmente a tener un dashboard de mando general sobre el estado de marca en toda Latinoamérica."',
+        authorName: 'Patricio F.',
+        authorRole: 'Manager de Comunicación Corporativa',
+        authorInitials: 'PF'
+      },
+      {
+        rating: 5,
+        text: '"El flujo constante de datos nos permitió detectar a tiempo alertas de crisis de producto basadas en comentarios de Twitter y Google Reviews."',
+        authorName: 'Luciana D.',
+        authorRole: 'Customer Success',
+        authorInitials: 'LD'
+      }
+    ],
+    features: [
+      {
+        icon: Heart,
+        title: 'Análisis de Sentimiento',
+        description: 'Estructuración de datos en positivo, negativo y neutral, facilitando la integración con modelos analíticos de lenguaje.'
+      },
+      {
+        icon: Users,
+        title: 'Multicanalidad',
+        description: 'Monitoreo de foros nicho, portales como TrustPilot, Yelp y tiendas de E-commerce unificados en un esquema central.'
+      },
+      {
+        icon: MessageSquare,
+        title: 'Consolidación de Metadata',
+        description: 'Obtención y cruzamiento de data del usuario y la respuesta existente de tu equipo de customer support.'
+      },
+      {
+        icon: CheckSquare,
+        title: 'Detección de Patrones',
+        description: 'Al identificar un incremento anómalo de volumen sobre una queja en específico, ayudamos a prevenir daños irreversibles de PR.'
+      }
+    ],
+    needThisTitle: 'Por qué priorizar la Gestión de la Reputación (Review Scraping)',
+    needThisDescription: 'Si tienes cientos o miles de locaciones, productos y canales digitales que atender, mantener la trazabilidad manual de "qué dice el cliente" es utópico y una potencial bomba de tiempo.',
+    helpYouSub: 'Data Collection',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Manejamos la compleja tarea técnica de conectarnos a decenas de foros y redes de valoración distintas, adaptándonos al diseño de cada uno, extrayendo las estrellas, comentarios, fechas e idiosincracia, para entregértelo en tu propio CRM unificado.',
+    helpYouList: [
+      'Alimentación centralizada del "Customer Response Team".',
+      'Extracción segmentada por locaciones, sucursales y franquicias.',
+      'Construcción de dashboards de salud de marca.'
+    ],
+    ctaTitle: 'Conoce todo lo que opinan tus clientes con nuestra infraestructura Data Factory',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué información recolectan de una "review"?',
+        answer: 'Recolectamos el título, contenido extendido del comentario, fecha de publicación, puntuación global (estrellas), cantidad de "me gustas", metadata de origen y usuario (si es público), y si se han adjuntado imágenes o validaciones de compra.'
+      },
+      {
+        question: '¿Tienen soporte funcional para extraer sitios gubernamentales de reportes o reclamos?',
+        answer: 'Sí, podemos construir scrapers a la medida orientados a plataformas de defensa al consumidor o foros del estado, dotando tu empresa de todos los posibles focos de incendio en la arena pública.'
+      },
+      {
+        question: '¿Ofrecen el despliegue del Dashboard de Sentimiento o sólo la minería?',
+        answer: 'A través de nuestro modelo de Data Squad podemos trabajar iterativa y cercanamente no solo entregando los datos (JSON/CSV), sino también diseñando la visualización mediante Power BI, Tableau u otras interfaces.'
+      }
+    ]
+  },
+  'tendencias-laborales': {
+    slug: 'tendencias-laborales',
+    badge: 'Recruitment Data',
+    titlePart1: '',
+    titlePartGradient: 'Tendencias Laborales',
+    titlePart2: '',
+    description: 'Rastreo profundo de ofertas de empleo (Job Boards) y estructuras salariales para nutrir plataformas de headhunting y analíticas de recursos humanos modernas.',
+    testimonials: [
+      {
+        rating: 5,
+        text: '"Crear el mapa de oportunidades salariales por industria habría tomado nuestra vida entera sin su proceso masivo y refinado de scraping."',
+        authorName: 'Guillermo V.',
+        authorRole: 'CEO Portal Laboral Local',
+        authorInitials: 'GV'
+      },
+      {
+        rating: 5,
+        text: '"Monitorizamos el talento y perfiles que las Fortune 500 están activamente reclutando para anticipar sus lanzamientos tecnológicos."',
+        authorName: 'Mónica A.',
+        authorRole: 'Analista de Negocios Corporativos',
+        authorInitials: 'MA'
+      }
+    ],
+    features: [
+      {
+        icon: FileStack,
+        title: 'Minería Mapeada de Vacantes',
+        description: 'Trazabilidad de puestos, requerimientos crudos, locación de contratación y la urgencia reflejada en la oferta o volumen de candidatos.'
+      },
+      {
+        icon: Building2,
+        title: 'Escaneo Salarial (Benchmarking)',
+        description: 'Recolección de las horquillas de sueldo base y prestaciones prometidas para construir estandarizaciones precisas sobre ingresos.'
+      },
+      {
+        icon: Target,
+        title: 'Skills Clave por Rol',
+        description: 'Parseo de lenguaje natural (NLP) ligero para categorizar y estructurar los stacks tecnológicos u operacionales que demanda el mercado.'
+      },
+      {
+        icon: Globe,
+        title: 'Monitoreo Multi-región',
+        description: 'Tracking específico del ecosistema remoto, comparando salarios nacionales con oportunidades que ofrecen husos horarios solapados y relocalización.'
+      }
+    ],
+    needThisTitle: 'Descubre y anticipa el Capital Humano del mañana',
+    needThisDescription: 'Contratar requiere tener certeza del entorno salarial. O tal vez cuentas con un portal de nicho y requieres agregar los miles de empleos de internet cada noche para abastecer tu sitio. De cualquier manera, requerirás minería constante a gran escala.',
+    helpYouSub: 'Job Board Extraction',
+    helpYouTitle: 'Cómo te ayudamos',
+    helpYouDescription: 'Generamos flujos recurrentes de Data sobre empleos públicos (Scraping de ATS Systems, Directorios B2B y agregadores de búsqueda), proveyéndolos de manera unificada para eliminar duplicados del mercado laboral antes de llegar a tus manos.',
+    helpYouList: [
+      'Levantamiento masivo de datos transitorios sin falsos positivos de listados caídos.',
+      'Sincronización de catálogos inmensos mediante APIs (DaaS).',
+      'Normalización de descripciones caóticas hacia arquitecturas de registro (BDD).'
+    ],
+    ctaTitle: 'Eleva el valor de tu agencia y métricas laborales apoyándote en nuestro Data Squad',
+    ctaDescription: '',
+    faqs: [
+      {
+        question: '¿Qué sitios de empleo específicos extraen?',
+        answer: 'Depende de tus necesidades empresariales. Podemos cubrir desde redes gigantes orientadas al ámbito profesional e integrando portales de carrera directos de las organizaciones objetivo.'
+      },
+      {
+        question: '¿Miden la fecha de apertura y cierre real de las búsquedas laborales?',
+        answer: 'Sí. Diseñamos nuestras lógicas para que guarden histórico o snapshots recurrentes y marquen una vacante (UUID temporal) como resuelta, midiendo con precisión cuántos días cuesta llenar una posición en la industria x o y.'
+      },
+      {
+        question: '¿Cuales son algunos casos de uso comunes?',
+        answer: 'Los más destacados: Proveer datos y alertas a empresas competidoras (ej: si rival contrata 10 expertos en Flutter, lanzarán App móvil); Cajas de consolidación que revenden listados unificados ("Agregadores de Puestos"); Market research y agencias gubernamentales analizando el estado general del empleo.'
       }
     ]
   }
