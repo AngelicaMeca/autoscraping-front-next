@@ -138,10 +138,10 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
               <Users className="w-4 h-4" />
               <span>Company</span>
             </Link>
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg transition">
+            <Link href="/book-a-meeting" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg transition">
               <Calendar className="w-4 h-4" />
               <span>Book a Meeting</span>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -206,10 +206,10 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
               <span className="flex items-center gap-3"><Users className="w-5 h-5 text-purple-400"/> Company</span>
             </Link>
 
-            <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg py-4 rounded-2xl transition w-full mt-6 font-bold shadow-lg shadow-blue-600/20">
+            <Link onClick={() => setIsMobileMenuOpen(false)} href="/book-a-meeting" className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg py-4 rounded-2xl transition w-full mt-6 font-bold shadow-lg shadow-blue-600/20">
               <Calendar className="w-5 h-5" />
               <span>Book a Meeting</span>
-            </button>
+            </Link>
           </div>
         </div>
       )}

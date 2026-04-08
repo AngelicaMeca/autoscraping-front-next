@@ -124,12 +124,12 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition">
+              <Link href="/book-a-meeting" className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition inline-block text-center">
                 Hablemos de tu proyecto
-              </button>
-              <button className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition">
+              </Link>
+              <a href="#infraestructura" className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition inline-block text-center">
                 Descubre más
-              </button>
+              </a>
             </div>
           </div>
           </main>
@@ -137,7 +137,7 @@ export default function Home() {
       </div>
       
       <AnimatedSection>
-        <section className="relative bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20 py-24 pb-64 z-20">
+        <section id="infraestructura" className="relative bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20 py-24 pb-64 z-20">
         {/* Decorative elements - 3 circles with specified colors */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(167, 139, 250, 0.4)' }}></div>
@@ -464,10 +464,10 @@ export default function Home() {
             de extracción de datos para la red más importante del mundo.
           </p>
 
-          <button className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 md:px-8 py-3 md:py-4 rounded-lg transition inline-flex justify-center items-center gap-2 text-base md:text-lg">
+          <a href="https://brightdata.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 md:px-8 py-3 md:py-4 rounded-lg transition inline-flex justify-center items-center gap-2 text-base md:text-lg">
             Conoce nuestra alianza estratégica
             <span>→</span>
-          </button>
+          </a>
         </div>
       </section>
       </AnimatedSection>
@@ -695,9 +695,9 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium px-10 py-4 rounded-lg transition shadow-lg">
+            <Link href="/book-a-meeting" className="inline-block bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium px-10 py-4 rounded-lg transition shadow-lg">
               Book a meeting
-            </button>
+            </Link>
           </div>
         </div>
         </section>
@@ -1031,9 +1031,9 @@ export default function Home() {
           {/* CTA Button */}
           <div className="relative inline-block w-full sm:w-auto">
             <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
-            <button className="relative w-full sm:w-auto bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+            <Link href="/book-a-meeting" className="relative w-full sm:w-auto bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-block text-center">
               Contactar con un experto
-            </button>
+            </Link>
           </div>
         </div>
         </section>
@@ -1407,11 +1407,11 @@ export default function Home() {
 
               <div className="relative inline-block">
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
-                <button className="relative inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                <Link href="/book-a-meeting" className="relative inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
                   <Calendar className="w-5 h-5" />
                   Book a Meeting
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             </div>
 
