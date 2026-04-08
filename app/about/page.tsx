@@ -30,10 +30,10 @@ export default function AboutPage() {
           }}
         />
 
-        <div className="absolute top-[26%] left-[24%] w-2 h-2 bg-blue-400 rounded-full opacity-70" />
-        <div className="absolute top-[32%] right-[24%] w-2 h-2 bg-blue-400 rounded-full opacity-70" />
-        <div className="absolute bottom-[28%] left-[32%] w-1.5 h-1.5 bg-pink-400 rounded-full opacity-70" />
-        <div className="absolute bottom-[24%] right-[22%] w-1.5 h-1.5 bg-gray-400 rounded-full opacity-40" />
+        <div className="hidden md:block absolute top-[26%] left-[24%] w-2 h-2 bg-blue-400 rounded-full opacity-70" />
+        <div className="hidden md:block absolute top-[32%] right-[24%] w-2 h-2 bg-blue-400 rounded-full opacity-70" />
+        <div className="hidden md:block absolute bottom-[28%] left-[32%] w-1.5 h-1.5 bg-pink-400 rounded-full opacity-70" />
+        <div className="hidden md:block absolute bottom-[24%] right-[22%] w-1.5 h-1.5 bg-gray-400 rounded-full opacity-40" />
 
         <div className="relative z-10 text-center max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">

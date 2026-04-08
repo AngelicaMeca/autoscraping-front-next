@@ -324,7 +324,7 @@ export default function DataFactoryPage() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-7xl font-bold mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             <span className="text-white">Data </span>
             <span className="bg-gradient-to-r from-[#60A5FA] via-[#7B92FF] to-[#9D7EFF] bg-clip-text text-transparent">
               Factory
@@ -340,7 +340,7 @@ export default function DataFactoryPage() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16 px-4 md:px-0">
             <button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
               <MessageSquare className="w-5 h-5" />
               <span>Hablar con un experto</span>
@@ -357,7 +357,7 @@ export default function DataFactoryPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center justify-center gap-4 mb-20"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 px-4 md:px-0"
           >
             <div className="bg-gradient-to-br from-[#10b981]/20 to-[#059669]/20 backdrop-blur-sm border border-[#10b981]/30 rounded-2xl px-6 py-4 flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-[#10b981] to-[#059669] rounded-xl flex items-center justify-center">
@@ -395,7 +395,7 @@ export default function DataFactoryPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-3 gap-6 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
           >
             {/* Card 1 */}
             <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-left hover:border-purple-500/30 transition-all">

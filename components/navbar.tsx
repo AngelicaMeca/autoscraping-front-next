@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, BookText, Users, Calendar, RefreshCw, Database, Layers, Monitor, Zap, Beaker, UsersRound } from 'lucide-react';
+import { ChevronDown, BookText, Users, Calendar, RefreshCw, Database, Layers, Monitor, Zap, Beaker, UsersRound, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -12,6 +12,16 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOnLightBg, setIsOnLightBg] = useState(false);
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevenir scroll cuando el menú móvil está abierto
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,7 +86,8 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
             </span>
           </Link>
 
-          <div className="flex items-center gap-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
             <div className="relative solutions-dropdown-container">
               <button
                 onClick={() => setShowSolutionsDropdown(!showSolutionsDropdown)}
@@ -132,8 +143,76 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
               <span>Book a Meeting</span>
             </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors z-50 relative"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className={`w-6 h-6 ${isScrolled || isLight ? 'text-gray-900' : 'text-white'}`} />
+            ) : (
+              <Menu className={`w-6 h-6 ${logoClass}`} />
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl md:hidden overflow-y-auto pt-24 pb-12 px-6 animate-in slide-in-from-top-4 duration-300">
+          <div className="flex flex-col gap-6">
+            <div className="space-y-4 mb-4">
+              <h3 className="text-purple-400 text-xs font-bold uppercase tracking-wider mb-2">Solutions</h3>
+              <Link
+                href="/data-factory"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 active:bg-white/10"
+              >
+                <div className="bg-purple-600 p-2.5 rounded-xl flex-shrink-0">
+                  <Beaker className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-base">Data Factory</h4>
+                  <p className="text-xs text-gray-400">Entrega de datos automatizada</p>
+                </div>
+              </Link>
+              <Link
+                href="/data-squad"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 active:bg-white/10"
+              >
+                <div className="bg-pink-600 p-2.5 rounded-xl flex-shrink-0">
+                  <UsersRound className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-base">Data Squad</h4>
+                  <p className="text-xs text-gray-400">Equipos técnicos expertos</p>
+                </div>
+              </Link>
+            </div>
+
+            <div className="h-px bg-white/10 my-2"></div>
+
+            <button className="flex justify-between items-center w-full py-4 text-white text-lg font-medium border-b border-white/10">
+              <span className="flex items-center gap-3"><BookText className="w-5 h-5 text-purple-400"/> Recursos</span>
+            </button>
+            
+            <Link
+              href="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex justify-between items-center w-full py-4 text-white text-lg font-medium border-b border-white/10"
+            >
+              <span className="flex items-center gap-3"><Users className="w-5 h-5 text-purple-400"/> Company</span>
+            </Link>
+
+            <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg py-4 rounded-2xl transition w-full mt-6 font-bold shadow-lg shadow-blue-600/20">
+              <Calendar className="w-5 h-5" />
+              <span>Book a Meeting</span>
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

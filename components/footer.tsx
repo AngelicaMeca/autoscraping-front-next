@@ -4,8 +4,8 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[#111827] via-[#312E81] to-[#581C87] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div className="mx-auto max-w-7xl px-6 py-10 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           <div>
             <h3 className="text-2xl font-bold mb-4">
               AUTO<span className="text-purple-400">SCRAPING</span>
@@ -112,11 +112,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 text-center md:text-left">
           <p className="text-gray-400 text-sm">
-            &copy; 2026 AUTOSCRAPING. All rights reserved.
+            &copy; {new Date().getFullYear()} AUTOSCRAPING. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition">
               Privacy Policy
             </a>

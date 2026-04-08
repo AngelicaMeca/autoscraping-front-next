@@ -316,20 +316,20 @@ export default function Home() {
         {/* Worldwide Customers Carousel - Overlapping */}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20 w-full max-w-4xl px-4 md:px-6">
           <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-12 border border-gray-200">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-6 md:mb-8">
+            <h3 className="text-xl md:text-3xl font-bold text-gray-900 text-center mb-6 md:mb-8">
               Worldwide customers who trusted us
             </h3>
             <div className="relative">
               {/* Carousel Container */}
-              <div className="overflow-hidden px-12">
+              <div className="overflow-hidden px-8 md:px-12">
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${(logoSlide * 100).toString()}%)` }}
                 >
                   {Array.from({ length: Math.ceil(companies.length / logosPerView) }).map((_, slideIndex) => (
-                    <div key={slideIndex} className="min-w-full flex items-center justify-center gap-12">
+                    <div key={slideIndex} className="min-w-full grid grid-cols-2 md:flex md:items-center md:justify-center gap-6 md:gap-12 place-items-center py-2 md:py-0">
                       {companies.slice(slideIndex * logosPerView, (slideIndex + 1) * logosPerView).map((company, idx) => (
-                        <span key={idx} className="text-gray-900 font-bold text-xl">
+                        <span key={idx} className="text-gray-900 font-bold text-lg md:text-xl text-center">
                           {company}
                         </span>
                       ))}
@@ -341,15 +341,15 @@ export default function Home() {
               {/* Navigation Buttons */}
               <button
                 onClick={prevLogoSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full shadow-md flex items-center justify-center transition"
+                className="absolute -left-2 md:left-0 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 rounded-full shadow-md flex items-center justify-center transition"
               >
-                <ChevronLeft className="w-5 h-5 text-gray-700" />
+                <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
               </button>
               <button
                 onClick={nextLogoSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full shadow-md flex items-center justify-center transition"
+                className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 rounded-full shadow-md flex items-center justify-center transition"
               >
-                <ChevronRight className="w-5 h-5 text-gray-700" />
+                <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
               </button>
             </div>
           </div>
