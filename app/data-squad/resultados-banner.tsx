@@ -1,6 +1,7 @@
 'use client';
 
 import { Zap, CalendarDays, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const stats = [
   { value: '+13.700', label: 'Horas de ingeniería' },
@@ -75,13 +76,14 @@ export default function ResultadosBanner() {
         </p>
 
         <div className="flex justify-center mb-14">
-          <button
+          <Link
+            href="/book-a-meeting"
             className="inline-flex items-center gap-3 bg-white text-gray-900 font-semibold rounded-full px-8 py-4 text-sm hover:shadow-lg hover:shadow-white/20 transition-all duration-300"
           >
             <CalendarDays className="w-5 h-5" />
             <span>Book a Meeting</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">

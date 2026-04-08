@@ -1,4 +1,5 @@
 import { MessageSquare, Clock, ArrowRight, Calendar, CircleCheck as CheckCircle2, ChartBar as BarChart3 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function DataFactoryCta() {
   return (
@@ -51,11 +52,11 @@ export default function DataFactoryCta() {
 
             <div className="relative inline-block">
               <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
-              <button className="relative inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+              <Link href="/book-a-meeting" className="relative inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
                 <Calendar className="w-5 h-5" />
                 Book a Meeting
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
           </div>
 
