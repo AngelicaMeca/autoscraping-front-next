@@ -1472,8 +1472,6 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      <ContactCTA />
-
       <Footer />
     </>
   );
