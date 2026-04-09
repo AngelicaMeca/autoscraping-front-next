@@ -7,7 +7,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
 type ProductType = 'datasquad' | 'datafactory' | null;
-
+  
 const profiles = [
   'Data Engineer', 'RPA Developer', 'DataOps Engineer', 'Data Analyst',
   'Data Scientist', 'ETL Developer', 'BI Developer', 'Machine Learning Engineer',
@@ -113,23 +113,36 @@ export default function BookAMeeting() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log({
-      product: selectedProduct,
-      profiles: selectedProfiles,
-      subProduct: selectedSubProduct,
-      seniorities: selectedSeniorities,
-      languages: selectedLanguages,
-      languageLevels: selectedLangLevels,
-      quantities,
-      additionalInfo,
-      contact: formData
-    });
-    
-    setIsSubmitting(false);
-    setCurrentStep(3);
+    try {
+      const response = await fetch('/api/asana', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          product: selectedProduct,
+          profiles: selectedProfiles,
+          subProduct: selectedSubProduct,
+          seniorities: selectedSeniorities,
+          languages: selectedLanguages,
+          languageLevels: selectedLangLevels,
+          quantities,
+          additionalInfo,
+          contact: formData
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
+
+      setCurrentStep(3);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting the form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

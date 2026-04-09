@@ -22,15 +22,18 @@ export async function POST(request: Request) {
 
     const task_title = `autoscraping.com - ${nombre}`;
 
+    // Nombres legibles
     const productName = product === 'datasquad' ? 'DataSquad' : 'DataFactory';
     let dataFactoryOption = '';
     if (subProduct === 'automation') dataFactoryOption = 'Automation';
     else if (subProduct === 'daas') dataFactoryOption = 'Data as a Service';
     else if (subProduct === 'datadock') dataFactoryOption = 'DataDock';
 
+    // Generar bloque de cantidades
     let quantitiesStr = '';
     if (quantities && typeof quantities === 'object') {
       for (const [key, val] of Object.entries(quantities)) {
+         // Formatear la clave (e.g., 'semi-senior' a 'Semi Senior')
          const niceKey = key.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
          quantitiesStr += `   . ${niceKey}: ${val}\n`;
       }
@@ -68,16 +71,18 @@ DATOS PERSONALES
       unidad_negocio = '1211496805710206';
     }
 
+    const projectId = process.env.ASANA_PROJECT_ID || '1207932529612201';
+    const asanaToken = process.env.ASANA_TOKEN;
+
+    if (!asanaToken) {
+      return NextResponse.json({ error: 'ASANA_TOKEN not configured' }, { status: 500 });
+    }
+
     const data = {
       data: {
         name: task_title,
         notes: task_notes,
-        memberships: [
-          {
-            project: '1207932529612201',
-            section: '1212522172385195' // Prospeccion
-          }
-        ],
+        projects: [projectId],
         assignee: '1200406301286304',
         custom_fields: {
           '1207924907815057': '1211497116209656', // Fuente: web
@@ -90,12 +95,6 @@ DATOS PERSONALES
         },
       },
     };
-
-    const asanaToken = process.env.ASANA_TOKEN;
-    if (!asanaToken) {
-      console.error('ASANA_TOKEN environment variable is not set');
-      return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
-    }
 
     const response = await fetch('https://app.asana.com/api/1.0/tasks', {
       method: 'POST',
