@@ -3,6 +3,7 @@
 import { ChevronDown, BookText, Users, Calendar, RefreshCw, Database, Layers, Monitor, Zap, Beaker, UsersRound, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface NavbarProps {
   variant?: 'adaptive' | 'dark-only';
@@ -63,26 +64,28 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
   const isLight = variant === 'adaptive' && isOnLightBg;
 
   const getContainerClass = () => {
-    if (isScrolled) {
-      if (isLight) {
-        return 'bg-white/80 backdrop-blur-lg border-gray-200/50 shadow-lg';
-      }
-      return 'bg-black/30 backdrop-blur-lg border-white/20 shadow-lg';
-    }
-    return 'bg-white/10 backdrop-blur-md border-white/20';
+    return 'bg-black/60 backdrop-blur-md border-white/20';
   };
 
-  const textClass = isLight ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-white/80';
-  const logoClass = isLight ? 'text-gray-900' : 'text-white';
-  const logoAccentClass = isLight ? 'text-gray-600' : 'text-white/50';
+  const textClass = 'text-white hover:text-white/80';
+  const logoClass = 'text-white';
+  const logoAccentClass = 'text-white/50';
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-7xl px-6 py-6">
         <div className={`flex items-center justify-between rounded-full px-6 py-3 border transition-all duration-300 ${getContainerClass()}`}>
-          <Link href="/" className="flex items-center">
-            <span className={`text-xl font-bold transition-colors duration-300 ${logoClass}`}>
-              AUTO<span className={`transition-colors duration-300 ${logoAccentClass}`}>SCRAPING</span>
+          <Link href="/" className="flex items-center gap-1">
+            <Image 
+              src="/logo.png" 
+              alt="AutoScraping" 
+              width={120} 
+              height={60}
+              className="h-12 w-auto"
+              style={{ transform: 'scaleX(-1)', filter: 'brightness(1.2) contrast(1.1)' }}
+            />
+            <span className="text-xl font-bold text-white transition-colors duration-300">
+              AUTOScraping
             </span>
           </Link>
 

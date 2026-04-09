@@ -5,11 +5,6 @@ import { CircleHelp as HelpCircle, ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: '¿Qué es DataSquad?',
-    subtitle: 'Understanding our service',
-    answer: 'Es el servicio de outsourcing de Autoscraping. Formamos equipos de datos especializados que se integran directamente en tu flujo de trabajo, cubriendo cada etapa del ciclo de vida del dato, desde la captura hasta la entrega.',
-  },
-  {
     question: '¿Cuál es el tiempo de despliegue operativo?',
     subtitle: 'How we work with your team',
     answer: 'La integración es inmediata tras la selección de perfiles y firma de acuerdos. Nuestra estructura nos permite activar especialistas con el stack exacto para tu proyecto, eliminando curvas de aprendizaje y asegurando tracción desde el primer día.',

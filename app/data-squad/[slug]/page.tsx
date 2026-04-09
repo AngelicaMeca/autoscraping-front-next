@@ -83,7 +83,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Lo que dicen nuestros <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clientes</span>
             </h2>
-            <p className="text-gray-500">Resultados reales de empresas que utilizan nuestra plataforma</p>
+            <p className="text-gray-500">Resultados reales de empresas que utilizan nuestro servicio</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -256,7 +256,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Preguntas <span className="text-purple-600">Frecuentes</span>
             </h2>
-            <p className="text-gray-500">Aclara tus dudas sobre cómo funciona nuestro proceso de data.</p>
+            <p className="text-gray-500">Aclara tus dudas sobre este servicio.</p>
           </div>
 
           <div className="space-y-4">
@@ -323,6 +323,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+
+      <ContactCTA />
 
       <Footer />
     </main>

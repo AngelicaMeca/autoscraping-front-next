@@ -1,7 +1,8 @@
 'use client';
 
-import { UsersRound, MessageSquare, Shield, Database, Layers, Zap, TrendingUp, CircleCheck as CheckCircle2, ChartBar as BarChart3, Globe, Sparkles, ChevronDown, ChevronLeft, ChevronRight, DollarSign, BookOpen, Rocket, GraduationCap, Target, BookText } from 'lucide-react';
+import { UsersRound, MessageSquare, Shield, Database, Layers, Zap, TrendingUp, CircleCheck as CheckCircle2, ChartBar as BarChart3, Globe, Sparkles, ChevronDown, ChevronLeft, ChevronRight, DollarSign, BookOpen, Rocket, GraduationCap, Target, BookText, Users, Brain, Home, Briefcase, TrendingDown, Cpu, FileText, ArrowRight } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import CicloDelDatoSection from './ciclo-del-dato';
 import ResultadosBanner from './resultados-banner';
@@ -9,6 +10,7 @@ import FaqSection from './faq-section';
 import DataFactoryCta from './data-factory-cta';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import ContactCTA from '@/components/ContactCTA';
 
 export default function DataSquadPage() {
   const whyCards = [
@@ -79,6 +81,93 @@ export default function DataSquadPage() {
       if (autoplayRef.current) clearInterval(autoplayRef.current);
     };
   }, [goToNextSlide]);
+
+  // Estado y lógica para el carrusel de servicios
+  const [currentService, setCurrentService] = useState(0);
+
+  const services = [
+    {
+      slug: 'data-squad-as-service',
+      title: 'Data Squad As Service',
+      subtitle: 'SOLUCIONES COMPLETAS',
+      description: 'Acceso a un equipo dedicado de especialistas en extracción de datos, disponible bajo demanda para resolver tus proyectos más complejos sin comprometerse a largo plazo.',
+      icon: Users,
+      tags: ['Flexible', 'On-demand', 'Escalable']
+    },
+    {
+      slug: 'data-scientist-squad',
+      title: 'Data Scientist Squad',
+      subtitle: 'ANÁLISIS Y PREDICCIÓN',
+      description: 'Científicos de datos con experiencia en machine learning y análisis predictivo para transformar datos crudos en insights estratégicos y modelos de negocio.',
+      icon: Brain,
+      tags: ['ML', 'Predictivo', 'Insights']
+    },
+    {
+      slug: 'core-data-services',
+      title: 'Core Data Services',
+      subtitle: 'SERVICIOS FUNDAMENTALES',
+      description: 'Servicios esenciales de limpieza, validación y estructuración de datos para asegurar la calidad de tu información desde el primer momento.',
+      icon: Database,
+      tags: ['Calidad', 'Validación', 'Limpieza']
+    },
+    {
+      slug: 'advanced-data-services',
+      title: 'Advanced Data Services',
+      subtitle: 'PROCESAMIENTO AVANZADO',
+      description: 'Soluciones de procesamiento de alto rendimiento incluyendo transformación ETL, integración multi-fuente y operaciones de datos en tiempo real.',
+      icon: Layers,
+      tags: ['ETL', 'Real-time', 'Integración']
+    },
+    {
+      slug: 'data-collection-services',
+      title: 'Data Collection Services',
+      subtitle: 'CAPTURA DE DATOS',
+      description: 'Recopilación exhaustiva de datos de múltiples fuentes con técnicas avanzadas de web scraping, APIs y integraciones personalizadas.',
+      icon: FileText,
+      tags: ['Scraping', 'APIs', 'Recopilación']
+    },
+    {
+      slug: 'big-data-consulting',
+      title: 'Big Data Consulting Services',
+      subtitle: 'ESTRATEGIA A ESCALA',
+      description: 'Asesoramiento estratégico para implementar infraestructuras de big data, seleccionar tecnologías adecuadas y optimizar tus operaciones de datos masivos.',
+      icon: Briefcase,
+      tags: ['Estrategia', 'Infraestructura', 'Optimización']
+    },
+    {
+      slug: 'real-estate-data-entry',
+      title: 'Real Estate Data Entry Services',
+      subtitle: 'DATOS INMOBILIARIOS',
+      description: 'Captura especializada de datos immobiliarios, listados, valuaciones y mercados para potenciar tu estrategia en el sector real estate.',
+      icon: Home,
+      tags: ['Inmobiliario', 'Listados', 'Mercado']
+    },
+    {
+      slug: 'outsource-data-mining',
+      title: 'Outsource Data Mining Services',
+      subtitle: 'EXTRACCIÓN ESPECIALIZADA',
+      description: 'Outsourcing completo de minería de datos con equipos dedicados para extraer patrones, tendencias y oportunidades de tus conjuntos de datos.',
+      icon: TrendingDown,
+      tags: ['Mining', 'Patrones', 'Tendencias']
+    },
+    {
+      slug: 'b2b-data-services',
+      title: 'B2B Data Services',
+      subtitle: 'DATOS EMPRESARIALES',
+      description: 'Bases de datos empresariales actualizadas, prospección B2B, enriquecimiento de contactos y listas de decisores para impulsar tu estrategia comercial.',
+      icon: Cpu,
+      tags: ['B2B', 'Prospección', 'Contactos']
+    }
+  ];
+
+  const nextService = () => {
+    setCurrentService((prev) => (prev >= services.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevService = () => {
+    setCurrentService((prev) => (prev <= 0 ? services.length - 1 : prev - 1));
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#1a1247] via-[#2d1b69] to-[#1a1247]">
       <Navbar />
@@ -204,7 +293,7 @@ export default function DataSquadPage() {
         <div className="absolute bottom-40 right-1/3 w-96 h-96 bg-cyan-300/15 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-200/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           {/* Badge */}
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-200 rounded-full px-4 py-2">
@@ -215,90 +304,152 @@ export default function DataSquadPage() {
             </div>
           </div>
 
-          {/* Title */}
+          {/* Title - Single Line */}
           <h2 className="text-5xl font-bold text-center mb-6">
-            <span className="text-gray-900">La Solución</span>
-            <br />
+            <span className="text-gray-900">La Solución </span>
             <span className="bg-gradient-to-r from-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">DataSquad</span>
           </h2>
 
           {/* Description */}
-          <p className="text-center text-gray-600 text-base max-w-xl mx-auto mb-14 leading-relaxed">
+          <p className="text-center text-gray-600 text-base max-w-2xl mx-auto mb-14 leading-relaxed">
             Delega la gestión de tus datos en un equipo especialista que se hace cargo de principio a fin. Desde la captura hasta la entrega, cada etapa del ciclo está cubierta por el perfil correcto.
           </p>
 
-          {/* Two Column Grid */}
-          <div className="grid lg:grid-cols-2 gap-6">
-            {/* Left Card */}
-            <div className="bg-white rounded-2xl p-7 shadow-md border border-gray-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <BarChart3 className="w-5 h-5 text-white" />
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Left Card - What is DataSquad? */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Adaptado a tu industria</h3>
+                <h3 className="text-2xl font-bold text-gray-900">¿Qué es DataSquad?</h3>
               </div>
 
-              <div className="space-y-3">
-                {/* Item 1 - purple */}
-                <div className="bg-purple-50 rounded-xl p-3.5 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <BarChart3 className="w-4 h-4 text-white" />
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Es el servicio de outsourcing de datos de Autoscraping. Formamos equipos de expertos que se integran directamente en tu flujo de trabajo, cubriendo cada etapa del ciclo de vida del dato.
+              </p>
+
+              {/* Feature List */}
+              <div className="space-y-4 mb-8">
+                <div className="bg-purple-50 rounded-2xl p-4 flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Users className="w-5 h-5 text-white" />
                   </div>
-                  <p className="text-gray-800 text-sm font-medium">Cada Squad de ingenieros que entienden tu sector</p>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Equipos Especializados</h4>
+                    <p className="text-sm text-gray-600">Ingenieros que entienden tu sector</p>
+                  </div>
                 </div>
 
-                {/* Item 2 - blue */}
-                <div className="bg-blue-50 rounded-xl p-3.5 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Database className="w-4 h-4 text-white" />
+                <div className="bg-blue-50 rounded-2xl p-4 flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Database className="w-5 h-5 text-white" />
                   </div>
-                  <p className="text-gray-800 text-sm font-medium">Sin perfiles genéricos</p>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Cobertura Total</h4>
+                    <p className="text-sm text-gray-600">De captura hasta entrega</p>
+                  </div>
                 </div>
 
-                {/* Item 3 - pink */}
-                <div className="bg-pink-50 rounded-xl p-3.5 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Globe className="w-4 h-4 text-white" />
+                <div className="bg-pink-50 rounded-2xl p-4 flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Globe className="w-5 h-5 text-white" />
                   </div>
-                  <p className="text-gray-800 text-sm font-medium">Expertos que hablan tu idioma</p>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Tu Idioma</h4>
+                    <p className="text-sm text-gray-600">Expertos que hablan como tú</p>
+                  </div>
                 </div>
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+                  Outsourcing
+                </span>
+                <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+                  Data Squad
+                </span>
+                <span className="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+                  Equipos
+                </span>
               </div>
             </div>
 
-            {/* Right Card */}
-            <div className="bg-white rounded-2xl p-7 shadow-md border border-gray-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-orange-400 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-5 h-5 text-white" />
+            {/* Right Side - Two Cards */}
+            <div className="space-y-8">
+              {/* Card 1 - Adaptado a tu industria */}
+              <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">Adaptado a tu industria</h3>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Flexible y escalable</h3>
+
+                <div className="space-y-3">
+                  {/* Item 1 - purple */}
+                  <div className="bg-purple-50 rounded-xl p-3.5 flex items-center gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Target className="w-4 h-4 text-white" />
+                    </div>
+                    <p className="text-gray-800 text-sm font-medium">Equipos que entienden tu sector</p>
+                  </div>
+
+                  {/* Item 2 - blue */}
+                  <div className="bg-blue-50 rounded-xl p-3.5 flex items-center gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-4 h-4 text-white" />
+                    </div>
+                    <p className="text-gray-800 text-sm font-medium">Sin perfiles genéricos</p>
+                  </div>
+
+                  {/* Item 3 - pink */}
+                  <div className="bg-pink-50 rounded-xl p-3.5 flex items-center gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-4 h-4 text-white" />
+                    </div>
+                    <p className="text-gray-800 text-sm font-medium">Stack técnico preciso</p>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-5">
-                {/* Item 1 */}
-                <div className="flex items-start gap-3">
-                  <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                  <div>
-                    <p className="text-gray-900 text-sm font-bold">Emplieza con el talento</p>
-                    <p className="text-gray-500 text-sm">que necesitas hoy</p>
+              {/* Card 2 - Flexible y escalable */}
+              <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-orange-400 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Layers className="w-6 h-6 text-white" />
                   </div>
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">Flexible y escalable</h3>
                 </div>
 
-                {/* Item 2 */}
-                <div className="flex items-start gap-3">
-                  <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                  <div>
-                    <p className="text-gray-900 text-sm font-bold">Suma capacidad a medida que</p>
-                    <p className="text-gray-500 text-sm">tu proyecto crece</p>
+                <div className="space-y-5">
+                  {/* Item 1 */}
+                  <div className="flex items-start gap-3">
+                    <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-gray-900 text-sm font-bold">Comienza con el talento</p>
+                      <p className="text-gray-500 text-sm">que necesitas hoy</p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Item 3 */}
-                <div className="flex items-start gap-3">
-                  <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                  <div>
-                    <p className="text-gray-900 text-sm font-bold">Sin recursos desperdiciados,</p>
-                    <p className="text-gray-500 text-sm">sin demoras</p>
+                  {/* Item 2 */}
+                  <div className="flex items-start gap-3">
+                    <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-gray-900 text-sm font-bold">Suma capacidad a medida que</p>
+                      <p className="text-gray-500 text-sm">tu proyecto crece</p>
+                    </div>
+                  </div>
+
+                  {/* Item 3 */}
+                  <div className="flex items-start gap-3">
+                    <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="text-gray-900 text-sm font-bold">Sin recursos desperdiciados,</p>
+                      <p className="text-gray-500 text-sm">sin demoras</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -338,10 +489,7 @@ export default function DataSquadPage() {
             {/* Title */}
             <div className="text-center mb-6">
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-                Por qué elegir
-              </h2>
-              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                DataSquad
+                Por qué elegir <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">DataSquad</span>
               </h2>
             </div>
 
@@ -458,56 +606,87 @@ export default function DataSquadPage() {
               Formamos equipos que se integran a tu operación con el rigor y la responsabilidad de quien se hace cargo de verdad.
             </p>
 
-            {/* Cards grid */}
+            {/* Cards grid with new design */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
               {[
                 {
                   icon: BookText,
                   gradient: 'from-blue-500 to-blue-700',
-                  borderColor: 'border-blue-100',
+                  bgLight: 'bg-blue-50',
+                  borderColor: 'border-blue-200',
+                  accentColor: 'from-blue-400 to-blue-600',
                   title: 'Ejecución garantizada',
-                  description: 'No solo sumamos expertos; asumimos la responsabilidad técnica de tu proyecto. Mantén el control total mediante informes de desempeño y métricas de valor, asegurando resultados medibles en cada etapa.',
+                  description: 'No solo sumamos expertos; asumimos la responsabilidad técnica de tu proyecto.',
+                  decorative: true,
                 },
                 {
                   icon: Layers,
                   gradient: 'from-pink-500 to-rose-600',
-                  borderColor: 'border-pink-100',
+                  bgLight: 'bg-pink-50',
+                  borderColor: 'border-pink-200',
+                  accentColor: 'from-pink-400 to-rose-600',
                   title: 'Ingeniería Senior',
-                  description: 'Accede a perfiles con más de 5 años de experiencia técnica. Integramos especialistas que ya han superado los desafíos más complejos del sector, eliminando curvas de aprendizaje y riesgos operativos.',
+                  description: 'Especialistas con 5+ años de experiencia que han superado desafíos complejos.',
+                  decorative: true,
                 },
                 {
                   icon: CheckCircle2,
                   gradient: 'from-teal-400 to-emerald-600',
-                  borderColor: 'border-teal-100',
+                  bgLight: 'bg-teal-50',
+                  borderColor: 'border-teal-200',
+                  accentColor: 'from-teal-400 to-emerald-600',
                   title: 'Flujo ininterrumpido',
-                  description: 'Monitoreamos y ajustamos proactivamente cada proceso para que tu información fluya sin fricciones, evitando cualquier incidencia en tu sistema.',
+                  description: 'Monitoreamos y ajustamos proactivamente cada proceso sin fricciones.',
+                  decorative: true,
                 },
                 {
                   icon: Database,
                   gradient: 'from-orange-400 to-amber-500',
-                  borderColor: 'border-orange-100',
+                  bgLight: 'bg-orange-50',
+                  borderColor: 'border-orange-200',
+                  accentColor: 'from-orange-400 to-amber-500',
                   title: 'Socio estratégico',
-                  description: 'Nos fundimos con tu equipo, tus herramientas y tus metas para actuar como un aliado que transforma desafíos técnicos en motores de negocio.',
+                  description: 'Nos integramos en tu equipo para transformar desafíos en motores de negocio.',
+                  decorative: true,
                 },
                 {
                   icon: Zap,
                   gradient: 'from-yellow-400 to-lime-500',
-                  borderColor: 'border-yellow-100',
+                  bgLight: 'bg-yellow-50',
+                  borderColor: 'border-yellow-200',
+                  accentColor: 'from-yellow-400 to-lime-500',
                   title: 'Integridad y seguridad',
-                  description: 'Operamos bajo estándares de seguridad de alto nivel, brindando el respaldo necesario para que tu flujo de información sea siempre legítimo y protegido.',
+                  description: 'Estándares de seguridad de alto nivel para proteger tu flujo de información.',
+                  decorative: true,
                 },
               ].map((pillar, i) => {
                 const Icon = pillar.icon;
                 return (
                   <div
                     key={i}
-                    className={`bg-white rounded-2xl border ${pillar.borderColor} p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow`}
+                    className={`relative bg-white rounded-3xl border ${pillar.borderColor} p-6 flex flex-col gap-4`}
                   >
-                    <div className={`w-12 h-12 bg-gradient-to-br ${pillar.gradient} rounded-xl flex items-center justify-center`}>
-                      <Icon className="w-6 h-6 text-white" />
+                    {/* Decorative elements */}
+                    <div className="absolute top-0 right-0 w-20 h-20 opacity-10 pointer-events-none">
+                      <div className={`w-full h-full rounded-full bg-gradient-to-br ${pillar.accentColor}`}></div>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 leading-tight">{pillar.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
+                    <div className="absolute bottom-0 left-0 w-16 h-16 opacity-5 pointer-events-none">
+                      <div className={`w-full h-full rounded-full bg-gradient-to-br ${pillar.accentColor}`}></div>
+                    </div>
+
+                    {/* Icon */}
+                    <div className={`w-14 h-14 bg-gradient-to-br ${pillar.gradient} rounded-2xl flex items-center justify-center relative z-10`}>
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight relative z-10">{pillar.title}</h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm leading-relaxed relative z-10">{pillar.description}</p>
+
+                    {/* Bottom accent line */}
+                    <div className={`h-1 w-full bg-gradient-to-r ${pillar.accentColor} rounded-full mt-auto`}></div>
                   </div>
                 );
               })}
@@ -517,9 +696,104 @@ export default function DataSquadPage() {
       </section>
 
       <CicloDelDatoSection />
+
+      {/* Servicios de Data Squad Section */}
+      <section className="relative py-24 px-6 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-purple-200 rounded-full"></div>
+          <div className="absolute top-40 left-32 w-24 h-24 border-2 border-blue-200 rounded-full"></div>
+          <div className="absolute bottom-32 right-20 w-40 h-40 border-2 border-purple-100 rounded-full"></div>
+          <div className="absolute top-60 right-40 w-28 h-28 border-2 border-blue-100 rounded-full"></div>
+          <div className="absolute bottom-20 left-40 w-36 h-36 bg-purple-100/30 rounded-full blur-2xl"></div>
+          <div className="absolute top-32 right-32 w-48 h-48 bg-blue-100/30 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+              <span className="text-gray-900">Tu Arsenal de </span>
+              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Soluciones en Datos</span>
+            </h2>
+            <div className="w-16 h-1 bg-purple-600 mx-auto mt-6"></div>
+          </div>
+
+          {/* Carousel Card */}
+          <div className="mb-12">
+            <div className="relative max-w-3xl mx-auto">
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevService}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all z-10 border border-gray-200"
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-700" />
+              </button>
+
+              <button
+                onClick={nextService}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all z-10 border border-gray-200"
+              >
+                <ChevronRight className="w-6 h-6 text-gray-700" />
+              </button>
+
+              {/* Card */}
+              <Link
+                href={`/data-squad/${services[currentService].slug}`}
+                className="block bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transition-all hover:-translate-y-1 hover:shadow-2xl cursor-pointer group"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                      {(() => {
+                        const IconComponent = services[currentService].icon;
+                        return <IconComponent className="w-7 h-7 text-white" />;
+                      })()}
+                    </div>
+                  </div>
+
+                  <div className="flex-1">
+                    <div className="mb-2">
+                      <span className="text-purple-600 text-xs font-bold uppercase tracking-wide">
+                        {services[currentService].subtitle}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
+                      {services[currentService].title}
+                    </h3>
+                    <p className="text-gray-600 text-base leading-relaxed mb-4">
+                      {services[currentService].description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {services[currentService].tags.map((tag, idx) => (
+                        <span key={idx} className="text-purple-600 text-sm font-medium">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Dots Indicator */}
+              <div className="flex justify-center gap-2 mt-8">
+                {services.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentService(idx)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${
+                      idx === currentService ? 'bg-purple-600 w-8' : 'bg-purple-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <ResultadosBanner />
       <FaqSection />
-      <DataFactoryCta />
+      <ContactCTA />
       <Footer />
     </main>
   );

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import ContactCTA from '@/components/ContactCTA';
 import InstagramCard from '@/components/InstagramCard';
 import AnimatedSection from '@/components/AnimatedSection';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -1375,7 +1376,7 @@ export default function Home() {
               </span>
 
               <h2 className="text-5xl font-bold text-gray-900 mb-6">
-                ¿Hablamos de como hacer <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Crecer tu negocio?</span>
+                ¿Hablamos de como hacer <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">crecer tu negocio?</span>
               </h2>
 
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -1470,6 +1471,8 @@ export default function Home() {
         </div>
         </section>
       </AnimatedSection>
+
+      <ContactCTA />
 
       <Footer />
     </>

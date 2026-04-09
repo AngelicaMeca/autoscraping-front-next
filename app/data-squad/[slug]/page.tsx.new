@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { servicesData } from './data';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import ContactCTA from '@/components/ContactCTA';
 import { useState } from 'react';
 import { ChevronDown, Sparkles, CheckSquare, Calendar, Star, Check, MessageSquare, Database, CircleHelp as HelpCircle } from 'lucide-react';
 import Link from 'next/link';
@@ -83,7 +82,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Lo que dicen nuestros <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clientes</span>
             </h2>
-            <p className="text-gray-500">Resultados reales de empresas que utilizan nuestra plataforma</p>
+            <p className="text-gray-500">Resultados reales de empresas que utilizan nuestro servicio</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -245,18 +244,10 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <div className="flex justify-center mb-6">
-              <div className="inline-flex items-center gap-2 bg-purple-100 border border-purple-300 rounded-full px-5 py-2.5">
-                <HelpCircle className="w-4 h-4 text-purple-600" />
-                <span className="text-purple-600 text-xs font-bold uppercase tracking-widest">
-                  RESOLVEMOS TUS DUDAS
-                </span>
-              </div>
-            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Preguntas <span className="text-purple-600">Frecuentes</span>
             </h2>
-            <p className="text-gray-500">Aclara tus dudas sobre cómo funciona nuestro proceso de data.</p>
+            <p className="text-gray-500">Aclara tus dudas sobre este servicio.</p>
           </div>
 
           <div className="space-y-4">

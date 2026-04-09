@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { UsersRound, Beaker, Check, ArrowRight, MessageSquare, User, UserPlus, UserCheck, UserCog, Users, Loader2 } from 'lucide-react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import ContactCTA from '@/components/ContactCTA';
 
 type ProductType = 'datasquad' | 'datafactory' | null;
   
@@ -763,6 +764,8 @@ export default function BookAMeeting() {
           </motion.div>
         </div>
       </main>
+
+      <ContactCTA />
 
       <Footer />
     </>
