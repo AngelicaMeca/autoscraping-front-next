@@ -2,6 +2,7 @@
 
 import { Zap, CalendarDays, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useLang } from '@/hooks/useLang';
 
 const stats = [
   { value: '+13.700', label: 'Horas de ingeniería' },
@@ -11,6 +12,8 @@ const stats = [
 ];
 
 export default function ResultadosBanner() {
+  const lang = useLang();
+  const isEn = lang === 'en';
   return (
     <section className="relative overflow-hidden py-28 px-6">
       <div
@@ -77,11 +80,11 @@ export default function ResultadosBanner() {
 
         <div className="flex justify-center mb-14">
           <Link
-            href="/book-a-meeting"
+            href={`/${lang}/book-a-meeting`}
             className="inline-flex items-center gap-3 bg-white text-gray-900 font-semibold rounded-full px-8 py-4 text-sm hover:shadow-lg hover:shadow-white/20 transition-all duration-300"
           >
             <CalendarDays className="w-5 h-5" />
-            <span>Book a Meeting</span>
+            <span>{isEn ? 'Book a Meeting' : 'Agenda una reunión'}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

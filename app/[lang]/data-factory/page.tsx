@@ -7,8 +7,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import ContactCTA from '@/components/ContactCTA';
+import { useLang } from '@/hooks/useLang';
 
 export default function DataFactoryPage() {
+  const lang = useLang();
   const [solutionsSlide, setSolutionsSlide] = useState(0);
   const [currentCapability, setCurrentCapability] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -19,77 +21,77 @@ export default function DataFactoryPage() {
       description: 'Retailers digitales que compiten por precio, stock y posicionamiento global.',
       icon: ShoppingCart,
       iconColor: 'from-purple-500 to-purple-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Real Estate',
       description: 'Plataformas e inversores que basan su rentabilidad en el dinamismo del mercado inmobiliario.',
       icon: HomeIcon,
       iconColor: 'from-blue-500 to-blue-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Turismo y viajes',
       description: 'Agencias y motores de reserva que operan con inventarios y tarifas de alta volatilidad.',
       icon: Plane,
       iconColor: 'from-cyan-500 to-cyan-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Salud y Pharma',
       description: 'Organizaciones sanitarias que gestionan suministros, servicios y tendencias del sector.',
       icon: Heart,
       iconColor: 'from-pink-500 to-pink-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Consumo y Retail',
       description: 'Marcas y distribuidores que necesitan trazabilidad de sus canales y conocimiento de la demanda.',
       icon: ShoppingBag,
       iconColor: 'from-orange-500 to-orange-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Ciberseguridad',
       description: 'Equipos de defensa digital que monitorean amenazas y vulnerabilidad en la red.',
       icon: Lock,
       iconColor: 'from-red-500 to-red-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Fintech',
       description: 'Instituciones financieras que requieren datos alternativos y flujos de mercado precisos.',
       icon: CreditCard,
       iconColor: 'from-green-500 to-green-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Eventos y Ticketing',
       description: 'Plataformas de eventos que enfrentan alta demanda y necesitan control de inventario real.',
       icon: Ticket,
       iconColor: 'from-yellow-500 to-yellow-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Recursos Humanos y Talento',
       description: 'Consultoras de talento y portales que analizan la oferta y demanda laboral masiva.',
       icon: UserCheck,
       iconColor: 'from-indigo-500 to-indigo-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Gobierno y Sector Público',
       description: 'Entidades analistas que requieren transparencia en registros, licitaciones y datos oficiales.',
       icon: Building2,
       iconColor: 'from-slate-500 to-slate-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Consultoría y Analytics',
       description: 'Firmas de análisis que necesitan materia prima de alta fidelidad para alimentar las decisiones de sus clientes.',
       icon: BarChart3,
       iconColor: 'from-violet-500 to-violet-600',
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     }
   ];
 
@@ -115,7 +117,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Monitoreo de precios y promociones para ejecutar ajustes competitivos que protejan tus márgenes de beneficio.',
       icon: Target,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'indexacion-inmobiliaria',
@@ -123,7 +125,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Captura masiva de listados y variaciones de propiedades para valoración y detección de oportunidades.',
       icon: Building2,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'monitoreo-de-airbnb',
@@ -131,7 +133,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Seguimiento de disponibilidad y tarifas en el sector alojamiento para maximizar la rentabilidad mediante precios dinámicos.',
       icon: HomeIcon,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'extraccion-de-linkedin',
@@ -139,7 +141,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Selección de perfiles profesionales y datos de empresas para nutrir estrategias de captación B2B con precisión.',
       icon: Users,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'generacion-de-leads',
@@ -147,7 +149,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Identificación de prospectos calificados para acelerar el ciclo de ventas mediante bases de contacto siempre actualizadas.',
       icon: UserCheck,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'catalogos-de-e-commerce',
@@ -155,7 +157,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Rastreo de inventarios y stock de la competencia para ajustar tu oferta comercial en tiempo real y sin fricciones.',
       icon: ShoppingCart,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'registro-de-google-maps',
@@ -163,7 +165,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Consolidación de datos locales y geográficos para el análisis de competencia y expansión en mercados específicos.',
       icon: Globe,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'metricas-financieras',
@@ -171,7 +173,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Obtención de indicadores bursátiles y valores económicos para fortalecer la toma de decisiones e inversiones de alto nivel.',
       icon: TrendingUp,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'entrenamiento-de-ia',
@@ -179,7 +181,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Procesamiento de sitios no estructurados para alimentar y escalar la inteligencia artificial de tu producto.',
       icon: Sparkles,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'insights-de-marketing',
@@ -187,7 +189,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Detección de tendencias y menciones de marca para medir el impacto de campañas y el posicionamiento en el sector.',
       icon: Users,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'auditoria-seo',
@@ -195,7 +197,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Seguimiento automatizado de resultados de búsqueda para monitorear y mejorar el ranking orgánico de tu plataforma.',
       icon: Search,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'comparativa-de-vuelos',
@@ -203,7 +205,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Extracción de tarifas aéreas y rutas en tiempo real para optimizar la competitividad de agencias y motores de reserva.',
       icon: Plane,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'gestion-de-reputacion',
@@ -211,7 +213,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Recolección de reseñas y valoraciones en plataformas clave para análisis de sentimiento y cuidado de la imagen de la marca.',
       icon: Heart,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'tendencias-laborales',
@@ -219,7 +221,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Rastreo de ofertas de empleo y escalas salariales para alimentar plataformas de reclutamiento y análisis de capital humano.',
       icon: FileStack,
-      tags: ['Result-Driven', 'Strategic Alignment', 'Business Value']
+      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     }
   ];
 
@@ -342,12 +344,15 @@ export default function DataFactoryPage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16 px-4 md:px-0">
-            <button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
+            <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
               <MessageSquare className="w-5 h-5" />
               <span>Hablar con un experto</span>
               <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all">
+            </Link>
+            <button
+              onClick={() => document.getElementById('proceso-df')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all"
+            >
               Conocer el proceso
             </button>
           </div>
@@ -441,7 +446,7 @@ export default function DataFactoryPage() {
       </section>
 
       {/* Resultados recurrentes, Gestion cero Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <section id="proceso-df" className="relative py-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Decorative background shapes and shadows */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-purple-300/20 rounded-full blur-3xl"></div>
         <div className="absolute top-40 right-20 w-80 h-80 bg-pink-300/20 rounded-full blur-3xl"></div>
@@ -461,7 +466,7 @@ export default function DataFactoryPage() {
             <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-200 rounded-full px-4 py-2">
               <Sparkles className="w-4 h-4 text-purple-600" />
               <span className="text-purple-600 text-xs font-bold uppercase tracking-wide">
-                Automated Excellence
+                Excelencia automatizada
               </span>
             </div>
           </div>
@@ -668,7 +673,7 @@ export default function DataFactoryPage() {
                 </h3>
                 <div className="inline-block">
                   <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">
-                    COMMITTED TO YOUR SUCCESS
+                    COMPROMETIDOS CON TU ÉXITO
                   </span>
                 </div>
               </div>
@@ -904,7 +909,7 @@ export default function DataFactoryPage() {
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
               <Puzzle className="w-4 h-4 text-white" />
               <span className="text-white text-xs font-bold uppercase tracking-wide">
-                EXPERT TALENT
+                TALENTO EXPERTO
               </span>
             </div>
           </div>

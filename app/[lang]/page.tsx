@@ -2,6 +2,7 @@
 
 import { ChevronDown, Lightbulb, Monitor, Database, Zap, Shield, TrendingUp, Target, Settings, ShoppingCart, Chrome as HomeIcon, Plane, Heart, ShoppingBag, Lock, CreditCard, Ticket, UserCheck, Building2, ChartBar as BarChart3, ChevronLeft, ChevronRight, Sparkles, ArrowRight, FileText, Infinity, Quote, Star, ExternalLink, MessageCircle, ThumbsUp, Code, File as Document, ArrowUpRight as Growth, Eye, Clock, CircleCheck as CheckCircle, Boxes, Wrench, RefreshCw, Users, UsersRound, Linkedin, Github, Twitter, Facebook, Instagram, BookText, Mail, Phone, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
@@ -9,8 +10,13 @@ import ContactCTA from '@/components/ContactCTA';
 import InstagramCard from '@/components/InstagramCard';
 import AnimatedSection from '@/components/AnimatedSection';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useLang } from '@/hooks/useLang';
+import JsonLd from '@/components/JsonLd';
+import { SITE_URL } from '@/lib/seo';
 
 export default function Home() {
+  const lang = useLang();
+  const isEn = lang === 'en';
   const [currentSlide, setCurrentSlide] = useState(0);
   const [logoSlide, setLogoSlide] = useState(0);
   const [teamSlide, setTeamSlide] = useState(0);
@@ -98,8 +104,23 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [teamMembers.length]);
 
+  const aggregateRatingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: 'Autoscraping',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '500',
+    },
+  };
+
   return (
     <>
+      <JsonLd schema={aggregateRatingSchema} />
       <Navbar variant="adaptive" />
 
       <div className="relative min-h-screen overflow-hidden"
@@ -125,7 +146,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/book-a-meeting" className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition inline-block text-center">
+              <Link href={`/${lang}/book-a-meeting`} className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition inline-block text-center">
                 Hablemos de tu proyecto
               </Link>
               <a href="#infraestructura" className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition inline-block text-center">
@@ -497,7 +518,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto mb-16 md:mb-24">
             {/* Data Factory Card */}
-            <Link href="/data-factory" className="bg-white rounded-3xl p-6 md:p-10 shadow-lg border border-purple-100 hover:shadow-xl transition-shadow block">
+            <Link href={`/${lang}/data-factory`} className="bg-white rounded-3xl p-6 md:p-10 shadow-lg border border-purple-100 hover:shadow-xl transition-shadow block">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <span className="inline-block text-purple-600 text-xs font-bold px-3 py-1 rounded-full bg-purple-100 mb-4">
@@ -520,7 +541,7 @@ export default function Home() {
             </Link>
 
             {/* Data Squad Card */}
-            <Link href="/data-squad" className="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-6 md:p-10 shadow-lg border border-teal-100 hover:shadow-xl transition-shadow block">
+            <Link href={`/${lang}/data-squad`} className="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-6 md:p-10 shadow-lg border border-teal-100 hover:shadow-xl transition-shadow block">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#60A5FA]/20 via-[#C084FC]/20 to-[#F472B6]/20 rounded-3xl blur-2xl -z-10"></div>
               <div className="flex items-start justify-between mb-6">
                 <div>
@@ -696,8 +717,8 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Link href="/book-a-meeting" className="inline-block bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium px-10 py-4 rounded-lg transition shadow-lg">
-              Book a meeting
+            <Link href={`/${lang}/book-a-meeting`} className="inline-block bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium px-10 py-4 rounded-lg transition shadow-lg">
+              {isEn ? 'Book a meeting' : 'Agenda una reunión'}
             </Link>
           </div>
         </div>
@@ -1032,7 +1053,7 @@ export default function Home() {
           {/* CTA Button */}
           <div className="relative inline-block w-full sm:w-auto">
             <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
-            <Link href="/book-a-meeting" className="relative w-full sm:w-auto bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-block text-center">
+            <Link href={`/${lang}/book-a-meeting`} className="relative w-full sm:w-auto bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-block text-center">
               Contactar con un experto
             </Link>
           </div>
@@ -1074,10 +1095,12 @@ export default function Home() {
               
               {/* Post Image */}
               <div className="relative w-full h-56 lg:h-64 overflow-hidden">
-                <img
+                <Image
                   src="https://media.licdn.com/dms/image/v2/D5622AQHCcasDDuOE1g/feedshare-shrink_2048_1536/B56ZzdmHJnHIAg-/0/1773244281709?e=2147483647&v=beta&t=8rFPr0VtQn0evMkzyVp3Huy_6tMD-uRR0UB0ChEY9I0"
                   alt="AutoScraping team at Milan international expansion event"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#004182]/80 via-transparent to-transparent"></div>
               </div>
@@ -1226,7 +1249,7 @@ export default function Home() {
           <div className="mb-16">
             <span className="inline-flex items-center gap-2 text-purple-600 text-xs font-bold mb-4">
               <BookText className="w-4 h-4" />
-              CONOCIMIENTO EN ACCIÓN
+              {isEn ? 'KNOWLEDGE HUB' : 'CONOCIMIENTO EN ACCIÓN'}
             </span>
             <div className="flex items-end justify-between">
               <div>
@@ -1237,10 +1260,10 @@ export default function Home() {
                   Casos reales, decisiones técnicas y lecciones del campo, documentadas por quienes ejecutan la solución.
                 </p>
               </div>
-              <button className="px-6 py-3 rounded-full border-2 border-purple-600 text-purple-600 font-medium hover:bg-purple-50 transition flex items-center gap-2">
-                View All
+              <Link href={`/${lang}/blog`} className="px-6 py-3 rounded-full border-2 border-purple-600 text-purple-600 font-medium hover:bg-purple-50 transition flex items-center gap-2">
+                {isEn ? 'View all' : 'Ver todos los artículos'}
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -1391,7 +1414,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Email Us</p>
-                    <p className="text-gray-600">hello@autoscraping.com</p>
+                    <p className="text-gray-600">info@autoscraping.com</p>
                   </div>
                 </div>
 
@@ -1401,16 +1424,16 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Call Us</p>
-                    <p className="text-gray-600">+1 831-400-4766</p>
+                    <p className="text-gray-600">+1 (631) 400-4766</p>
                   </div>
                 </div>
               </div>
 
               <div className="relative inline-block">
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
-                <Link href="/book-a-meeting" className="relative inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                <Link href={`/${lang}/book-a-meeting`} className="relative inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
                   <Calendar className="w-5 h-5" />
-                  Book a Meeting
+                  {isEn ? 'Book a Meeting' : 'Agenda una reunión'}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

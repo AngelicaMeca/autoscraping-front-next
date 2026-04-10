@@ -5,12 +5,15 @@ import { servicesData } from './data';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import ContactCTA from '@/components/ContactCTA';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useState } from 'react';
 import { ChevronDown, Sparkles, CheckSquare, Calendar, Star, Check, MessageSquare, Database, CircleHelp as HelpCircle } from 'lucide-react';
 import Link from 'next/link';
+import { useLang } from '@/hooks/useLang';
 
 export default function ServicePage({ params }: { params: { slug: string } }) {
   const data = servicesData[params.slug];
+  const lang = useLang();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [openFeatureIndex, setOpenFeatureIndex] = useState<number | null>(0);
 
@@ -30,8 +33,21 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
     <main className="min-h-screen bg-white">
       <Navbar variant="adaptive" />
 
+      {/* Breadcrumb */}
+      <div className="relative z-40 pt-28 pb-0 px-6 bg-gradient-to-b from-[#1E2DC1] to-[#1E2DC1]">
+        <div className="max-w-4xl mx-auto">
+          <Breadcrumb
+            items={[
+              { label: 'Data Factory', href: `/${lang}/data-factory` },
+              { label: data.titlePartGradient },
+            ]}
+            className="text-white/70"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative pt-40 pb-28 px-6 bg-gradient-to-b from-[#1E2DC1] via-[#2D1B85] to-[#4323A0] overflow-hidden">
+      <section className="relative pt-10 pb-28 px-6 bg-gradient-to-b from-[#1E2DC1] via-[#2D1B85] to-[#4323A0] overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-pink-500/20 rounded-full blur-[100px] pointer-events-none"></div>
@@ -60,10 +76,10 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             {data.description}
           </p>
 
-          <button className="bg-gradient-to-r from-pink-300 to-pink-200 hover:from-pink-200 hover:to-white text-purple-900 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2 mx-auto">
+          <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-pink-300 to-pink-200 hover:from-pink-200 hover:to-white text-purple-900 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2 mx-auto">
             <Calendar className="w-5 h-5" />
             Agendar llamada
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -231,10 +247,10 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <p className="text-purple-100 text-lg mb-10">
             {data.ctaDescription}
           </p>
-          <button className="bg-white text-purple-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-xl transition-all shadow-xl flex items-center gap-2 mx-auto">
+          <Link href={`/${lang}/book-a-meeting`} className="bg-white text-purple-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-xl transition-all shadow-xl flex items-center gap-2 mx-auto">
             <Calendar className="w-5 h-5" />
             Agendar llamada
-          </button>
+          </Link>
         </div>
       </section>
 

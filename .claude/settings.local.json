@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls *.config.* next.config.*)",
+      "Bash(grep -rn \"acelera\\\\|aceleraconsulting\\\\|\\\\.com\\\\|site_url\\\\|SITE_URL\" netlify.toml .env*)",
+      "Bash(npx tsc:*)",
+      "Bash(grep -v \"tel:\\\\|mailto:\\\\|#\\\\|^\\\\s*//\")",
+      "Read(//d/as-front-nuevo/app//**)",
+      "Read(//d/as-front-nuevo//**)",
+      "Bash(sed -n '1100,1120p' \"app/[lang]/page.tsx\")",
+      "Bash(sed -n '1160,1180p' \"app/[lang]/page.tsx\")",
+      "Bash(grep -r \"port\\\\|PORT\\\\|3000\\\\|3001\\\\|8080\" D:/as-front-nuevo/.env* D:/as-front-nuevo/next.config.js)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3000)",
+      "Bash(powershell -Command \"Get-Process -Id 25944 | Select-Object Name, Id, MainWindowTitle\")"
+    ]
+  }
+}

@@ -4,6 +4,7 @@ import { UsersRound, MessageSquare, Shield, Database, Layers, Zap, TrendingUp, C
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLang } from '@/hooks/useLang';
 import CicloDelDatoSection from './ciclo-del-dato';
 import ResultadosBanner from './resultados-banner';
 import FaqSection from './faq-section';
@@ -13,6 +14,7 @@ import Footer from '@/components/footer';
 import ContactCTA from '@/components/ContactCTA';
 
 export default function DataSquadPage() {
+  const lang = useLang();
   const whyCards = [
     {
       icon: DollarSign,
@@ -92,7 +94,7 @@ export default function DataSquadPage() {
       subtitle: 'SOLUCIONES COMPLETAS',
       description: 'Acceso a un equipo dedicado de especialistas en extracción de datos, disponible bajo demanda para resolver tus proyectos más complejos sin comprometerse a largo plazo.',
       icon: Users,
-      tags: ['Flexible', 'On-demand', 'Escalable']
+      tags: ['Flexible', 'Bajo demanda', 'Escalable']
     },
     {
       slug: 'data-scientist-squad',
@@ -116,7 +118,7 @@ export default function DataSquadPage() {
       subtitle: 'PROCESAMIENTO AVANZADO',
       description: 'Soluciones de procesamiento de alto rendimiento incluyendo transformación ETL, integración multi-fuente y operaciones de datos en tiempo real.',
       icon: Layers,
-      tags: ['ETL', 'Real-time', 'Integración']
+      tags: ['ETL', 'Tiempo real', 'Integración']
     },
     {
       slug: 'data-collection-services',
@@ -148,7 +150,7 @@ export default function DataSquadPage() {
       subtitle: 'EXTRACCIÓN ESPECIALIZADA',
       description: 'Outsourcing completo de minería de datos con equipos dedicados para extraer patrones, tendencias y oportunidades de tus conjuntos de datos.',
       icon: TrendingDown,
-      tags: ['Mining', 'Patrones', 'Tendencias']
+      tags: ['Minería', 'Patrones', 'Tendencias']
     },
     {
       slug: 'b2b-data-services',
@@ -203,12 +205,15 @@ export default function DataSquadPage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-20 px-4 md:px-0">
-            <button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
+            <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
               <MessageSquare className="w-5 h-5" />
               <span>Hablar con un experto</span>
               <span className="ml-1">→</span>
-            </button>
-            <button className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all">
+            </Link>
+            <button
+              onClick={() => document.getElementById('proceso-ds')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all"
+            >
               Conocer el proceso
             </button>
           </div>
@@ -285,7 +290,7 @@ export default function DataSquadPage() {
       </section>
 
       {/* La Solución DataSquad Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <section id="proceso-ds" className="relative py-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Background decorative blurred shapes */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-purple-300/20 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute top-40 right-20 w-80 h-80 bg-pink-300/20 rounded-full blur-3xl pointer-events-none"></div>
