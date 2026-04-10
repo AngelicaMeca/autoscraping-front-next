@@ -28,70 +28,70 @@ export default function DataFactoryPage() {
       description: 'Plataformas e inversores que basan su rentabilidad en el dinamismo del mercado inmobiliario.',
       icon: HomeIcon,
       iconColor: 'from-blue-500 to-blue-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Valoración de mercado', 'Datos en tiempo real', 'Inteligencia inmobiliaria']
     },
     {
       title: 'Turismo y viajes',
       description: 'Agencias y motores de reserva que operan con inventarios y tarifas de alta volatilidad.',
       icon: Plane,
       iconColor: 'from-cyan-500 to-cyan-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Tarifas dinámicas', 'Alta volatilidad', 'Optimización de reservas']
     },
     {
       title: 'Salud y Pharma',
       description: 'Organizaciones sanitarias que gestionan suministros, servicios y tendencias del sector.',
       icon: Heart,
       iconColor: 'from-pink-500 to-pink-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Trazabilidad de datos', 'Cumplimiento normativo', 'Gestión de suministros']
     },
     {
       title: 'Consumo y Retail',
       description: 'Marcas y distribuidores que necesitan trazabilidad de sus canales y conocimiento de la demanda.',
       icon: ShoppingBag,
       iconColor: 'from-orange-500 to-orange-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Trazabilidad de canales', 'Demanda en tiempo real', 'Inteligencia de mercado']
     },
     {
       title: 'Ciberseguridad',
       description: 'Equipos de defensa digital que monitorean amenazas y vulnerabilidad en la red.',
       icon: Lock,
       iconColor: 'from-red-500 to-red-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Monitoreo de amenazas', 'Defensa proactiva', 'Inteligencia de riesgos']
     },
     {
       title: 'Fintech',
       description: 'Instituciones financieras que requieren datos alternativos y flujos de mercado precisos.',
       icon: CreditCard,
       iconColor: 'from-green-500 to-green-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Datos alternativos', 'Flujos de mercado', 'Análisis financiero']
     },
     {
       title: 'Eventos y Ticketing',
       description: 'Plataformas de eventos que enfrentan alta demanda y necesitan control de inventario real.',
       icon: Ticket,
       iconColor: 'from-yellow-500 to-yellow-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Control de inventario', 'Gestión de demanda', 'Optimización de precios']
     },
     {
       title: 'Recursos Humanos y Talento',
       description: 'Consultoras de talento y portales que analizan la oferta y demanda laboral masiva.',
       icon: UserCheck,
       iconColor: 'from-indigo-500 to-indigo-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Oferta laboral masiva', 'Análisis de talento', 'Inteligencia de mercado']
     },
     {
       title: 'Gobierno y Sector Público',
       description: 'Entidades analistas que requieren transparencia en registros, licitaciones y datos oficiales.',
       icon: Building2,
       iconColor: 'from-slate-500 to-slate-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Transparencia de datos', 'Registros oficiales', 'Datos abiertos']
     },
     {
       title: 'Consultoría y Analytics',
       description: 'Firmas de análisis que necesitan materia prima de alta fidelidad para alimentar las decisiones de sus clientes.',
       icon: BarChart3,
       iconColor: 'from-violet-500 to-violet-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Alta fidelidad', 'Decisiones basadas en datos', 'Análisis avanzado']
     }
   ];
 
@@ -125,7 +125,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Captura masiva de listados y variaciones de propiedades para valoración y detección de oportunidades.',
       icon: Building2,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Captura masiva', 'Valoración de activos', 'Detección de oportunidades']
     },
     {
       slug: 'monitoreo-de-airbnb',
@@ -133,7 +133,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Seguimiento de disponibilidad y tarifas en el sector alojamiento para maximizar la rentabilidad mediante precios dinámicos.',
       icon: HomeIcon,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Precios dinámicos', 'Disponibilidad en tiempo real', 'Rentabilidad maximizada']
     },
     {
       slug: 'extraccion-de-linkedin',
@@ -141,7 +141,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Selección de perfiles profesionales y datos de empresas para nutrir estrategias de captación B2B con precisión.',
       icon: Users,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Captación B2B', 'Datos de perfiles', 'Precisión de targeting']
     },
     {
       slug: 'generacion-de-leads',
@@ -149,7 +149,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Identificación de prospectos calificados para acelerar el ciclo de ventas mediante bases de contacto siempre actualizadas.',
       icon: UserCheck,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Prospectos calificados', 'Aceleración de ventas', 'Bases actualizadas']
     },
     {
       slug: 'catalogos-de-e-commerce',
@@ -157,7 +157,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Rastreo de inventarios y stock de la competencia para ajustar tu oferta comercial en tiempo real y sin fricciones.',
       icon: ShoppingCart,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Rastreo de inventario', 'Competencia en tiempo real', 'Ajuste comercial']
     },
     {
       slug: 'registro-de-google-maps',
@@ -165,7 +165,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Consolidación de datos locales y geográficos para el análisis de competencia y expansión en mercados específicos.',
       icon: Globe,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Datos geográficos', 'Análisis local', 'Expansión de mercado']
     },
     {
       slug: 'metricas-financieras',
@@ -173,7 +173,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Obtención de indicadores bursátiles y valores económicos para fortalecer la toma de decisiones e inversiones de alto nivel.',
       icon: TrendingUp,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Indicadores bursátiles', 'Decisiones de inversión', 'Datos económicos']
     },
     {
       slug: 'entrenamiento-de-ia',
@@ -181,7 +181,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Procesamiento de sitios no estructurados para alimentar y escalar la inteligencia artificial de tu producto.',
       icon: Sparkles,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Datos no estructurados', 'Escalabilidad de modelos', 'Alimentación de LLMs']
     },
     {
       slug: 'insights-de-marketing',
@@ -189,7 +189,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Detección de tendencias y menciones de marca para medir el impacto de campañas y el posicionamiento en el sector.',
       icon: Users,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Tendencias de marca', 'Impacto de campañas', 'Análisis de sentimiento']
     },
     {
       slug: 'auditoria-seo',
@@ -197,7 +197,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Seguimiento automatizado de resultados de búsqueda para monitorear y mejorar el ranking orgánico de tu plataforma.',
       icon: Search,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Ranking orgánico', 'Monitoreo automatizado', 'Posicionamiento SERP']
     },
     {
       slug: 'comparativa-de-vuelos',
@@ -205,7 +205,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Extracción de tarifas aéreas y rutas en tiempo real para optimizar la competitividad de agencias y motores de reserva.',
       icon: Plane,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Tarifas aéreas', 'Rutas en tiempo real', 'Competitividad de reservas']
     },
     {
       slug: 'gestion-de-reputacion',
@@ -213,7 +213,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Recolección de reseñas y valoraciones en plataformas clave para análisis de sentimiento y cuidado de la imagen de la marca.',
       icon: Heart,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Análisis de sentimiento', 'Reseñas y valoraciones', 'Imagen de marca']
     },
     {
       slug: 'tendencias-laborales',
@@ -221,7 +221,7 @@ export default function DataFactoryPage() {
       subtitle: 'COMPROMETIDOS CON TU ÉXITO',
       description: 'Rastreo de ofertas de empleo y escalas salariales para alimentar plataformas de reclutamiento y análisis de capital humano.',
       icon: FileStack,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: ['Ofertas de empleo', 'Escalas salariales', 'Inteligencia de talento']
     }
   ];
 
@@ -301,7 +301,7 @@ export default function DataFactoryPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 px-6 overflow-hidden">
+      <section className="relative pt-40 pb-32 px-6 overflow-hidden">
         {/* Decorative dots */}
         <div className="absolute top-40 left-20 w-2 h-2 bg-purple-400 rounded-full opacity-60"></div>
         <div className="absolute top-60 right-32 w-2 h-2 bg-pink-400 rounded-full opacity-60"></div>
@@ -495,11 +495,11 @@ export default function DataFactoryPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
                   <BarChart3 className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">¿Qué es DataFactory?</h3>
+                <h3 className="text-2xl font-bold text-gray-900">¿Qué es Data Factory?</h3>
               </div>
 
               <p className="text-gray-600 leading-relaxed mb-8">
-                Es el servicio de extracción recurrente de Autoscraping. Diseñado para empresas que necesitan información periódica sin gestionar la infraestructura que la hace posible.
+                Es el servicio de extracción recurrente de AUTOScraping. Diseñado para empresas que necesitan información periódica sin gestionar la infraestructura que la hace posible.
               </p>
 
               {/* Feature List */}
@@ -616,7 +616,7 @@ export default function DataFactoryPage() {
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
               <Heart className="w-4 h-4 fill-pink-600" />
-              KEY BENEFITS
+              Beneficios clave
             </div>
           </div>
 
@@ -632,7 +632,7 @@ export default function DataFactoryPage() {
 
           {/* Subtitle */}
           <p className="text-center text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
-            Our approach delivers tangible advantages that accelerate your data initiatives and maximize ROI
+            Nuestro enfoque entrega ventajas tangibles que aceleran tus iniciativas de datos y maximizan el ROI
           </p>
 
           {/* Carousel Container */}

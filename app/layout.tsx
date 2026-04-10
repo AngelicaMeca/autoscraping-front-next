@@ -12,15 +12,15 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const SITE_NAME = 'Autoscraping';
+const SITE_NAME = 'AUTOScraping';
 const DEFAULT_OG_IMAGE = '/og-image.png';
 const isPreview = isPreviewEnvironment();
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Autoscraping | AI Web Scraping, Data Factory & Data Squad',
-    template: '%s | Autoscraping',
+    default: 'AUTOScraping | AI Web Scraping, Data Factory & Data Squad',
+    template: '%s | AUTOScraping',
   },
   description:
     'AI-powered web scraping, data extraction and enrichment services. Power faster decisions with Data Factory and Data Squad teams.',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Autoscraping - AI Web Scraping, Data Factory & Data Squad',
+        alt: 'AUTOScraping - AI Web Scraping, Data Factory & Data Squad',
       },
     ],
   },
@@ -71,7 +71,7 @@ const organizationSchema = {
     {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
-      name: 'Autoscraping',
+      name: 'AUTOScraping',
       url: SITE_URL,
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
       sameAs: [
@@ -95,13 +95,13 @@ const organizationSchema = {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: 'Autoscraping',
+      name: 'AUTOScraping',
       publisher: { '@id': `${SITE_URL}/#organization` },
     },
     {
       '@type': 'LocalBusiness',
       '@id': `${SITE_URL}/#location-ar`,
-      name: 'Autoscraping',
+      name: 'AUTOScraping',
       image: `${SITE_URL}/logo.png`,
       url: SITE_URL,
       telephone: '+16314004766',
@@ -117,7 +117,7 @@ const organizationSchema = {
     {
       '@type': 'LocalBusiness',
       '@id': `${SITE_URL}/#location-us`,
-      name: 'Autoscraping',
+      name: 'AUTOScraping',
       image: `${SITE_URL}/logo.png`,
       url: SITE_URL,
       telephone: '+16314004766',

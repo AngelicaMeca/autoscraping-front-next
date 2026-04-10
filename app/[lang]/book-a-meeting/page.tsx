@@ -6,6 +6,7 @@ import { UsersRound, Beaker, Check, ArrowRight, MessageSquare, User, UserPlus, U
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import ContactCTA from '@/components/ContactCTA';
+import { useLang } from '@/hooks/useLang';
 
 type ProductType = 'datasquad' | 'datafactory' | null;
   
@@ -42,6 +43,8 @@ const languageLevels = [
 ];
 
 export default function BookAMeeting() {
+  const lang = useLang();
+  const isEn = lang === 'en';
   const [currentStep, setCurrentStep] = useState(1);
 
   // Step 1 States
@@ -140,7 +143,7 @@ export default function BookAMeeting() {
       setCurrentStep(3);
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting the form. Please try again.');
+      alert(isEn ? 'There was an error submitting the form. Please try again.' : 'Hubo un error al enviar el formulario. Por favor intenta nuevamente.');
     } finally {
       setIsSubmitting(false);
     }
@@ -166,9 +169,9 @@ export default function BookAMeeting() {
             className="text-center mb-12"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-              <span className="text-white">Your Data Solution </span>
+              <span className="text-white">{isEn ? 'Your Data Solution ' : 'Tu solución de datos '}</span>
               <span className="bg-gradient-to-r from-[#60A5FA] via-[#7B92FF] to-[#9D7EFF] bg-clip-text text-transparent">
-                Awaits
+                {isEn ? 'Awaits' : 'te espera'}
               </span>
             </h1>
           </motion.div>
@@ -193,7 +196,7 @@ export default function BookAMeeting() {
                         1
                       </div>
                       <span className={`absolute -bottom-6 text-[10px] uppercase tracking-wider font-bold transition-all duration-500 ${currentStep >= 1 ? 'text-purple-400' : 'text-gray-500'}`}>
-                        Requirements
+                        {isEn ? 'Requirements' : 'Requisitos'}
                       </span>
                     </div>
 
@@ -203,7 +206,7 @@ export default function BookAMeeting() {
                         2
                       </div>
                       <span className={`absolute -bottom-6 text-[10px] uppercase tracking-wider font-bold transition-all duration-500 ${currentStep >= 2 ? 'text-purple-400' : 'text-gray-500'}`}>
-                        Details
+                        {isEn ? 'Details' : 'Detalles'}
                       </span>
                     </div>
                   </div>
@@ -223,9 +226,9 @@ export default function BookAMeeting() {
               transition={{ duration: 0.4 }}
             >
               <div className="text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Send us a message</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{isEn ? 'Send us a message' : 'Envíanos un mensaje'}</h2>
                 <p className="text-gray-300 text-sm md:text-base">
-                  Choose between hiring a profile in Contractor mode or Data Factory
+                  {isEn ? 'Choose between hiring a profile in Contractor mode or Data Factory' : 'Elige entre contratar un perfil en modo Contractor o Data Factory'}
                 </p>
               </div>
 
@@ -233,7 +236,7 @@ export default function BookAMeeting() {
                 
                 {/* Product Selection */}
                 <div>
-                  <label className="block text-white font-bold text-sm mb-4">Choose the Product <span className="text-purple-400">*</span></label>
+                  <label className="block text-white font-bold text-sm mb-4">{isEn ? 'Choose the Product' : 'Elige el Producto'} <span className="text-purple-400">*</span></label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
                     
                     {/* DataSquad Option */}
@@ -250,10 +253,10 @@ export default function BookAMeeting() {
                         </div>
                       )}
                       <UsersRound className="w-12 h-12 text-white mb-4" />
-                      <span className="text-white font-bold tracking-wider uppercase text-sm">DataSquad</span>
+                      <span className="text-white font-bold tracking-wider uppercase text-sm">Data Squad</span>
                     </div>
 
-                    {/* DataFactory Option */}
+                    {/* Data Factory Option */}
                     <div 
                       onClick={() => { setSelectedProduct('datafactory'); setSelectedProfiles([]); }}
                       className={`relative cursor-pointer rounded-2xl border-2 transition-all duration-300 flex flex-col items-center justify-center p-8
@@ -267,7 +270,7 @@ export default function BookAMeeting() {
                         </div>
                       )}
                       <Beaker className="w-12 h-12 text-white mb-4" />
-                      <span className="text-white font-bold tracking-wider uppercase text-sm">DataFactory</span>
+                      <span className="text-white font-bold tracking-wider uppercase text-sm">Data Factory</span>
                     </div>
 
                   </div>
@@ -287,8 +290,8 @@ export default function BookAMeeting() {
                       className="overflow-hidden"
                     >
                       <div className="pt-4 pb-4">
-                        <p className="text-gray-300 text-sm mb-6 text-center">Here you can choose the professional profiles you need</p>
-                        <label className="block text-white font-bold text-sm mb-4">Autoscraping Profiles <span className="text-purple-400">*</span></label>
+                        <p className="text-gray-300 text-sm mb-6 text-center">{isEn ? 'Here you can choose the professional profiles you need' : 'Aquí puedes elegir los perfiles profesionales que necesitas'}</p>
+                        <label className="block text-white font-bold text-sm mb-4">{isEn ? 'AUTOScraping Profiles' : 'Perfiles AUTOScraping'} <span className="text-purple-400">*</span></label>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                           {profiles.map((profile) => {
                             const isSelected = selectedProfiles.includes(profile);
@@ -324,8 +327,8 @@ export default function BookAMeeting() {
                             transition={{ duration: 0.4 }}
                             className="pt-6 overflow-hidden"
                           >
-                            <p className="text-gray-300 text-sm mb-6 text-center">Now you can select the professional&apos;s level of seniority</p>
-                            <label className="block text-white font-bold text-sm mb-4">Seniority <span className="text-purple-400">*</span></label>
+                            <p className="text-gray-300 text-sm mb-6 text-center">{isEn ? "Now you can select the professional's level of seniority" : 'Ahora puedes seleccionar el nivel de seniority del profesional'}</p>
+                            <label className="block text-white font-bold text-sm mb-4">{isEn ? 'Seniority' : 'Seniority'} <span className="text-purple-400">*</span></label>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                               {seniorities.map((seniority) => {
                                 const isSelected = selectedSeniorities.includes(seniority.id);
@@ -365,8 +368,8 @@ export default function BookAMeeting() {
                             transition={{ duration: 0.4 }}
                             className="pt-8 overflow-hidden"
                           >
-                            <p className="text-gray-300 text-sm mb-6 text-center">Select the professional&apos;s language</p>
-                            <label className="block text-white font-bold text-sm mb-4">Language <span className="text-purple-400">*</span></label>
+                            <p className="text-gray-300 text-sm mb-6 text-center">{isEn ? "Select the professional's language" : 'Selecciona el idioma del profesional'}</p>
+                            <label className="block text-white font-bold text-sm mb-4">{isEn ? 'Language' : 'Idioma'} <span className="text-purple-400">*</span></label>
                             <div className="flex flex-wrap gap-3">
                               {languages.map((lang) => {
                                 const isSelected = selectedLanguages.includes(lang);
@@ -404,7 +407,7 @@ export default function BookAMeeting() {
                             transition={{ duration: 0.4 }}
                             className="pt-8 overflow-hidden"
                           >
-                            <label className="block text-white font-bold text-sm mb-4">Language level <span className="text-purple-400">*</span></label>
+                            <label className="block text-white font-bold text-sm mb-4">{isEn ? 'Language level' : 'Nivel de idioma'} <span className="text-purple-400">*</span></label>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                               {languageLevels.map((level) => {
                                 const isSelected = selectedLangLevels.includes(level);
@@ -448,7 +451,7 @@ export default function BookAMeeting() {
                                 return (
                                   <div key={seniorityId}>
                                     <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">
-                                       ¿HOW MANY {label}S DO YOU NEED? <span className="text-purple-400">*</span>
+                                       {isEn ? `¿HOW MANY ${label}S DO YOU NEED?` : `¿CUÁNTOS ${label}S NECESITAS?`} <span className="text-purple-400">*</span>
                                     </label>
                                     <input 
                                       type="number" 
@@ -516,16 +519,16 @@ export default function BookAMeeting() {
                       className="overflow-hidden space-y-8 pt-4"
                     >
                       <div>
-                        <label className="block text-white font-bold text-sm tracking-wider uppercase mb-2">TELL US MORE</label>
+                        <label className="block text-white font-bold text-sm tracking-wider uppercase mb-2">{isEn ? 'TELL US MORE' : 'CUÉNTANOS MÁS'}</label>
                         <p className="text-gray-400 text-xs mb-4">
-                          Please provide additional details about your requirements or preferences. The more information you share, the better we can assist you in finding the right professional profile for your needs.
+                          {isEn ? 'Please provide additional details about your requirements or preferences. The more information you share, the better we can assist you in finding the right professional profile for your needs.' : 'Proporciona detalles adicionales sobre tus requisitos o preferencias. Cuanta más información compartas, mejor podremos ayudarte a encontrar el perfil profesional adecuado.'}
                         </p>
-                        <textarea 
+                        <textarea
                           value={additionalInfo}
                           onChange={(e) => setAdditionalInfo(e.target.value)}
                           rows={4}
                           className="w-full bg-[#111827]/50 border border-white/10 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all resize-none"
-                          placeholder="Enter your message here..."
+                          placeholder={isEn ? 'Enter your message here...' : 'Escribe tu mensaje aquí...'}
                         />
                       </div>
 
@@ -536,7 +539,7 @@ export default function BookAMeeting() {
                           disabled={!isStep1Valid()}
                           className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2"
                         >
-                          <span>Next Step</span>
+                          <span>{isEn ? 'Next Step' : 'Siguiente'}</span>
                           <ArrowRight className="w-5 h-5" />
                         </button>
                       </div>
@@ -559,7 +562,7 @@ export default function BookAMeeting() {
             >
               <div className="text-center mb-8">
                 <p className="text-gray-300 text-sm md:text-base">
-                  Fill the fields with your personal data so we can contact you.
+                  {isEn ? 'Fill the fields with your personal data so we can contact you.' : 'Completa los campos con tus datos personales para que podamos contactarte.'}
                 </p>
               </div>
 
@@ -568,21 +571,21 @@ export default function BookAMeeting() {
                 {/* Personal Inputs */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">Full name <span className="text-purple-400">*</span></label>
-                    <input required type="text" value={formData.fullName} onChange={e=>setFormData({...formData, fullName: e.target.value})} placeholder="Name Example" className="w-full bg-[#111827]/50 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50" />
+                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">{isEn ? 'Full name' : 'Nombre completo'} <span className="text-purple-400">*</span></label>
+                    <input required type="text" value={formData.fullName} onChange={e=>setFormData({...formData, fullName: e.target.value})} placeholder={isEn ? 'Name Example' : 'Nombre Ejemplo'} className="w-full bg-[#111827]/50 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50" />
                   </div>
                   <div>
-                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">Email <span className="text-purple-400">*</span></label>
+                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">{isEn ? 'Email' : 'Correo electrónico'} <span className="text-purple-400">*</span></label>
                     <input required type="email" value={formData.email} onChange={e=>setFormData({...formData, email: e.target.value})} placeholder="example@email.com" className="w-full bg-[#111827]/50 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50" />
                   </div>
                   <div>
-                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">Phone number</label>
+                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">{isEn ? 'Phone number' : 'Número de teléfono'}</label>
                     <input type="tel" value={formData.phone} onChange={e=>setFormData({...formData, phone: e.target.value})} placeholder="(123) 456-7890" className="w-full bg-[#111827]/50 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50" />
                   </div>
                   <div>
-                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">Country <span className="text-purple-400">*</span></label>
+                    <label className="block text-white font-bold text-xs mb-2 tracking-wider uppercase">{isEn ? 'Country' : 'País'} <span className="text-purple-400">*</span></label>
                     <select required value={formData.country} onChange={e=>setFormData({...formData, country: e.target.value})} className="w-full bg-[#111827]/50 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 appearance-none">
-                      <option value="" disabled className="text-gray-500">Select a country</option>
+                      <option value="" disabled className="text-gray-500">{isEn ? 'Select a country' : 'Selecciona un país'}</option>
                       <option value="US" className="text-gray-900">United States</option>
                       <option value="UK" className="text-gray-900">United Kingdom</option>
                       <option value="ES" className="text-gray-900">Spain</option>
@@ -600,17 +603,17 @@ export default function BookAMeeting() {
                   {/* Product Header */}
                   <div className="flex flex-col items-center p-8 border-b border-white/10 relative">
                     <button type="button" onClick={() => setCurrentStep(1)} className="absolute right-6 top-6 text-xs text-purple-400 hover:text-purple-300 underline font-bold uppercase tracking-wider">
-                      Edit
+                      {isEn ? 'Edit' : 'Editar'}
                     </button>
                     {selectedProduct === 'datasquad' ? (
                       <>
                         <UsersRound className="w-10 h-10 text-white mb-3" />
-                        <span className="text-white font-bold tracking-wider uppercase text-sm">DataSquad</span>
+                        <span className="text-white font-bold tracking-wider uppercase text-sm">Data Squad</span>
                       </>
                     ) : (
                       <>
                         <Beaker className="w-10 h-10 text-white mb-3" />
-                        <span className="text-white font-bold tracking-wider uppercase text-sm">DataFactory</span>
+                        <span className="text-white font-bold tracking-wider uppercase text-sm">Data Factory</span>
                       </>
                     )}
                   </div>
@@ -619,12 +622,12 @@ export default function BookAMeeting() {
                   {selectedProduct === 'datasquad' && (
                   <div className="flex flex-col">
                     <div className="flex flex-col sm:flex-row justify-between sm:items-center p-5 border-b border-white/5 gap-2">
-                      <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Autoscraping Profiles</span>
+                      <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">{isEn ? 'AUTOScraping Profiles' : 'Perfiles AUTOScraping'}</span>
                       <span className="text-white font-medium text-sm sm:text-right">{selectedProfiles.join(', ')}</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-between sm:items-center p-5 border-b border-white/5 gap-2">
-                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Seniority</span>
+                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">{isEn ? 'Seniority' : 'Nivel'}</span>
                        <div className="flex flex-wrap gap-4 sm:justify-end">
                           {selectedSeniorities.map(sid => {
                              const S = seniorities.find(s => s.id === sid);
@@ -641,18 +644,18 @@ export default function BookAMeeting() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-between sm:items-center p-5 border-b border-white/5 gap-2">
-                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Language</span>
+                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">{isEn ? 'Language' : 'Idioma'}</span>
                        <span className="text-white font-medium text-sm sm:text-right">{selectedLanguages.join(', ')}</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-between sm:items-center p-5 border-b border-white/5 gap-2">
-                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Language level</span>
+                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">{isEn ? 'Language level' : 'Nivel de idioma'}</span>
                        <span className="text-white font-medium text-sm sm:text-right">{selectedLangLevels.join(', ')}</span>
                     </div>
 
                     {selectedSeniorities.map(sid => (
                       <div key={`qty-${sid}`} className="flex flex-col sm:flex-row justify-between sm:items-center p-5 border-b border-white/5 gap-2">
-                         <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">¿How many {seniorities.find(s=>s.id===sid)?.label} do you need?</span>
+                         <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">{isEn ? `¿How many ${seniorities.find(s=>s.id===sid)?.label} do you need?` : `¿Cuántos ${seniorities.find(s=>s.id===sid)?.label} necesitas?`}</span>
                          <span className="text-white font-medium text-sm">{quantities[sid]}</span>
                       </div>
                     ))}
@@ -663,7 +666,7 @@ export default function BookAMeeting() {
                   {selectedProduct === 'datafactory' && (
                   <div className="flex flex-col">
                     <div className="flex flex-col sm:flex-row justify-between sm:items-center p-5 border-b border-white/5 gap-2">
-                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Data Factory Option</span>
+                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">{isEn ? 'Data Factory Option' : 'Opción Data Factory'}</span>
                        <span className="text-white font-medium text-sm sm:text-right">{subProducts.find(s=>s.id===selectedSubProduct)?.name}</span>
                     </div>
                   </div>
@@ -672,7 +675,7 @@ export default function BookAMeeting() {
                   {/* Tell us more Summary */}
                   {additionalInfo && (
                     <div className="flex flex-col p-5 bg-white/[0.02]">
-                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">Tell us more</span>
+                       <span className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2">{isEn ? 'Tell us more' : 'Cuéntanos más'}</span>
                        <span className="text-white font-medium text-sm whitespace-pre-wrap">{additionalInfo}</span>
                     </div>
                   )}
@@ -690,7 +693,7 @@ export default function BookAMeeting() {
                      className="w-5 h-5 accent-purple-500 bg-[#111827]/50 border border-white/10 rounded cursor-pointer transition-all focus:ring-purple-500" 
                   />
                   <label htmlFor="terms" className="text-white text-[10px] sm:text-xs font-bold tracking-wider uppercase cursor-pointer select-none">
-                     I agree to the privacy policy and terms and conditions <span className="text-purple-400">*</span>
+                     {isEn ? 'I agree to the privacy policy and terms and conditions' : 'Acepto la política de privacidad y los términos y condiciones'} <span className="text-purple-400">*</span>
                   </label>
                 </div>
 
@@ -701,7 +704,7 @@ export default function BookAMeeting() {
                     onClick={() => setCurrentStep(1)} 
                     className="w-full bg-white/5 hover:bg-white/10 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 border border-white/10 flex items-center justify-center gap-2"
                   >
-                     Previous
+                     {isEn ? 'Previous' : 'Anterior'}
                   </button>
                   <button 
                     type="submit" 
@@ -709,7 +712,7 @@ export default function BookAMeeting() {
                     className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2"
                   >
                      {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <MessageSquare className="w-5 h-5" />}
-                     <span>{isSubmitting ? 'Sending...' : 'Send'}</span>
+                     <span>{isSubmitting ? (isEn ? 'Sending...' : 'Enviando...') : (isEn ? 'Send' : 'Enviar')}</span>
                   </button>
                 </div>
 
@@ -732,12 +735,15 @@ export default function BookAMeeting() {
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-                  <span className="text-white">Message </span>
-                  <span className="text-green-400">Sent!</span>
+                  <span className="text-white">{isEn ? 'Message ' : 'Mensaje '}</span>
+                  <span className="text-green-400">{isEn ? 'Sent!' : 'Enviado!'}</span>
                 </h2>
-                
+
                 <p className="text-gray-300 text-sm md:text-base max-w-md mx-auto mb-10 leading-relaxed">
-                  Thank you for reaching out, <span className="font-bold text-white">{formData.fullName.split(' ')[0]}</span>. Our team will review your requirements and get back to you shortly at <span className="font-medium text-white">{formData.email}</span>.
+                  {isEn
+                    ? <>{`Thank you for reaching out, `}<span className="font-bold text-white">{formData.fullName.split(' ')[0]}</span>{`. Our team will review your requirements and get back to you shortly at `}<span className="font-medium text-white">{formData.email}</span>.</>
+                    : <>{'Gracias por contactarnos, '}<span className="font-bold text-white">{formData.fullName.split(' ')[0]}</span>{'. Nuestro equipo revisará tus requisitos y te responderá a la brevedad en '}<span className="font-medium text-white">{formData.email}</span>.</>
+                  }
                 </p>
 
                 <button
@@ -756,7 +762,7 @@ export default function BookAMeeting() {
                   }}
                   className="bg-white/5 hover:bg-white/10 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 border border-white/10 shadow-lg inline-flex items-center gap-2"
                 >
-                  Book Another Meeting
+                  {isEn ? 'Book Another Meeting' : 'Agendar otra reunión'}
                 </button>
               </motion.div>
             )}

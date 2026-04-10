@@ -4,14 +4,14 @@ export const en: Dictionary = {
   // ─── METADATA ──────────────────────────────────────────────────────────────
   meta: {
     home: {
-      title: 'Autoscraping | AI Web Scraping, Data Factory & Data Squad',
+      title: 'AUTOScraping | AI Web Scraping, Data Factory & Data Squad',
       description:
         'AI-powered web scraping, data extraction and enrichment services. Power faster decisions with Data Factory pipelines and dedicated Data Squad teams.',
     },
     about: {
       title: 'About Us | AI Web Scraping Experts',
       description:
-        'Meet Autoscraping: a team of experts in AI web scraping, Data Factory and Data Squad. We transform web data into competitive advantage for your business.',
+        'Meet AUTOScraping: a team of experts in AI web scraping, Data Factory and Data Squad. We transform web data into competitive advantage for your business.',
     },
     bookMeeting: {
       title: 'Book a Meeting | Free Data Consulting',
@@ -21,12 +21,12 @@ export const en: Dictionary = {
     dataFactory: {
       title: 'Data Factory | AI-Powered Web Scraping & Data Extraction',
       description:
-        "Autoscraping's Data Factory: web scraping, data extraction and enrichment at scale with AI. Lead generation, LinkedIn, e-commerce and more.",
+        "AUTOScraping's Data Factory: web scraping, data extraction and enrichment at scale with AI. Lead generation, LinkedIn, e-commerce and more.",
     },
     dataSquad: {
       title: 'Data Squad | Expert Data & AI Teams On Demand',
       description:
-        "Autoscraping's Data Squad: dedicated data scientists, engineers and analysts for your project. Big data, consulting and advanced data services.",
+        "AUTOScraping's Data Squad: dedicated data scientists, engineers and analysts for your project. Big data, consulting and advanced data services.",
     },
   },
 
@@ -182,7 +182,7 @@ export const en: Dictionary = {
     faq: {
       badge: 'OPERATIONAL CLARITY',
       title1: 'Frequently asked questions about',
-      title2: 'DataSquad',
+      title2: 'Data Squad',
       subtitle: 'Everything you need to know to decide with confidence.',
     },
   },

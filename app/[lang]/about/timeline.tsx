@@ -6,7 +6,7 @@ const timelineData = [
     yearColor: '#f472b6',
     dotColor: '#a78bfa',
     title: 'De Upwork a marca propia',
-    description: 'Nace Autoscraping tras escalar la demanda global de ingeniería de datos.',
+    description: 'Nace AUTOScraping tras escalar la demanda global de ingeniería de datos.',
     side: 'left' as const,
   },
   {
@@ -37,7 +37,7 @@ const timelineData = [
     year: '2023',
     yearColor: '#60a5fa',
     dotColor: '#f472b6',
-    title: 'Despliegue de DataSquad',
+    title: 'Despliegue de Data Squad',
     description: 'Despliegue de equipos integrados y apertura de sede operativa en Argentina.',
     side: 'left' as const,
   },

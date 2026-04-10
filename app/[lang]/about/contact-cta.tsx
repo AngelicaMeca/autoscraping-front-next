@@ -25,7 +25,7 @@ export default function ContactCta() {
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
               &iquest;Hablamos de como hacer{' '}
               <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">
-                Crecer tu negocio?
+                crecer tu negocio?
               </span>
             </h2>
 

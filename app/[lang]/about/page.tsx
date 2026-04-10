@@ -3,6 +3,7 @@
 import { ChevronDown, Zap, CircleCheck, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import Navbar from '@/components/navbar';
+import { useLang } from '@/hooks/useLang';
 import Footer from '@/components/footer';
 import Timeline from './timeline';
 import CtaBanner from './cta-banner';
@@ -11,6 +12,8 @@ import TeamSection from './team-section';
 import ContactCta from './contact-cta';
 
 export default function AboutPage() {
+  const lang = useLang();
+  const isEn = lang === 'en';
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   return (
@@ -73,7 +76,7 @@ export default function AboutPage() {
 
           <div className="flex flex-col items-center gap-2">
             <span className="text-white text-xs font-bold uppercase tracking-widest">
-              Explore Our Team
+              {isEn ? 'Explore Our Team' : 'Conoce el equipo'}
             </span>
             <div
               className="w-8 h-12 rounded-full flex items-center justify-center"
@@ -169,7 +172,7 @@ export default function AboutPage() {
                 onClick={() => setExpandedCard(expandedCard === 'origin' ? null : 'origin')}
                 className="flex items-center gap-2 text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors mt-2"
               >
-                <span>{expandedCard === 'origin' ? 'Show less' : 'Click to read more'}</span>
+                <span>{expandedCard === 'origin' ? (isEn ? 'Show less' : 'Ver menos') : (isEn ? 'Click to read more' : 'Leer más')}</span>
                 <ArrowRight
                   className="w-4 h-4 transition-transform duration-300"
                   style={{ transform: expandedCard === 'origin' ? 'rotate(90deg)' : 'rotate(0deg)' }}
@@ -221,7 +224,7 @@ export default function AboutPage() {
                 onClick={() => setExpandedCard(expandedCard === 'mission' ? null : 'mission')}
                 className="flex items-center gap-2 text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors mt-2"
               >
-                <span>{expandedCard === 'mission' ? 'Show less' : 'Click to read more'}</span>
+                <span>{expandedCard === 'mission' ? (isEn ? 'Show less' : 'Ver menos') : (isEn ? 'Click to read more' : 'Leer más')}</span>
                 <ArrowRight
                   className="w-4 h-4 transition-transform duration-300"
                   style={{ transform: expandedCard === 'mission' ? 'rotate(90deg)' : 'rotate(0deg)' }}

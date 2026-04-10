@@ -86,7 +86,7 @@ export default function ContactCTA() {
                   <div className="w-2 h-2 bg-purple-500 rounded-full" />
                   <p className="text-gray-700 font-medium">{c.responseTime}</p>
                 </div>
-                <p className="text-purple-600 font-bold">{'< 1 hour'}</p>
+                <p className="text-purple-600 font-bold">{'< 1 hora'}</p>
               </div>
 
               <div className="flex items-center justify-between py-4 border-b border-gray-100">
@@ -94,7 +94,7 @@ export default function ContactCTA() {
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
                   <p className="text-gray-700 font-medium">{c.projectsDelivered}</p>
                 </div>
-                <p className="text-blue-600 font-bold">99.9%</p>
+                <p className="text-blue-600 font-bold">+350</p>
               </div>
 
               <div className="flex items-center justify-between py-4 border-b border-gray-100">

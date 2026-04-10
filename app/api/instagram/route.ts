@@ -17,7 +17,7 @@ const FALLBACK_POST: InstagramPost = {
   imageUrl: 'https://www.instagram.com/p/DUQ0Y2VjjCD/media/?size=l',
   caption:
     'Descubre cómo la extracción de datos transforma negocios. Optimiza tus decisiones y escala con nosotros. \n\n#autoscraping #DataFactory #DataSquad',
-  profileName: 'AutoScraping',
+  profileName: 'AUTOScraping',
   profileHandle: '@autoscraping',
   postUrl: 'https://www.instagram.com/reel/DUQ0Y2VjjCD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   likes: '145',
@@ -106,7 +106,7 @@ async function fetchViaWebAPI(): Promise<InstagramPost | null> {
     return {
       imageUrl,
       caption,
-      profileName: (user.full_name as string) || 'AutoScraping',
+      profileName: (user.full_name as string) || 'AUTOScraping',
       profileHandle: `@${(user.username as string) || 'autoscraping'}`,
       postUrl: `https://www.instagram.com/p/${latestNode.shortcode as string}/`,
       likes: String(likeCount),
@@ -154,7 +154,7 @@ async function fetchViaGraphAPI(): Promise<InstagramPost | null> {
         (latestPost.thumbnail_url as string) ||
         '',
       caption: (latestPost.caption as string) || '',
-      profileName: 'AutoScraping',
+      profileName: 'AUTOScraping',
       profileHandle: '@autoscraping',
       postUrl:
         (latestPost.permalink as string) ||
@@ -232,7 +232,7 @@ async function fetchViaPageScrape(): Promise<InstagramPost | null> {
       return {
         imageUrl: displayUrl,
         caption: '',
-        profileName: 'AutoScraping',
+        profileName: 'AUTOScraping',
         profileHandle: '@autoscraping',
         postUrl: `https://www.instagram.com/p/${shortcode}/`,
         likes: '0',
@@ -261,7 +261,7 @@ async function fetchViaCustomScraper(): Promise<InstagramPost | null> {
     return {
       imageUrl: data.imageUrl || '',
       caption: data.caption || '',
-      profileName: data.profileName || 'AutoScraping',
+      profileName: data.profileName || 'AUTOScraping',
       profileHandle: data.profileHandle || '@autoscraping',
       postUrl: data.postUrl || 'https://www.instagram.com/autoscraping/',
       likes: String(data.likes || '0'),
@@ -316,7 +316,7 @@ function extractPostFromGraphQLUser(
       (latestNode.thumbnail_src as string) ||
       '',
     caption,
-    profileName: (user.full_name as string) || 'AutoScraping',
+    profileName: (user.full_name as string) || 'AUTOScraping',
     profileHandle: `@${(user.username as string) || 'autoscraping'}`,
     postUrl: `https://www.instagram.com/p/${latestNode.shortcode as string}/`,
     likes: String(likeCount),

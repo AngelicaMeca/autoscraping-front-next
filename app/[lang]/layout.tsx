@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     metadataBase: new URL(SITE_URL),
     title: {
       default: t.meta.home.title,
-      template: `%s | Autoscraping`,
+      template: `%s | AUTOScraping`,
     },
     description: t.meta.home.description,
     alternates: {

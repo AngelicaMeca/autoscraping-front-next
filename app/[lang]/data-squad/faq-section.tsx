@@ -71,7 +71,7 @@ export default function FaqSection() {
           <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
             <span className="text-gray-900">Preguntas frecuentes sobre</span>
             <br />
-            <span className="text-purple-600">DataSquad</span>
+            <span className="text-purple-600">Data Squad</span>
           </h2>
           <p className="text-gray-600 text-base mt-6 max-w-2xl mx-auto leading-relaxed">
             Todo lo que necesitas saber para decidir con confianza.

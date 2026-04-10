@@ -24,7 +24,7 @@ export default function CtaBanner() {
           className="text-white font-extrabold leading-tight mb-6"
           style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}
         >
-          El futuro de tu operaci&oacute;n empieza con un aliado que se hace cargo
+          El futuro de tu operación empieza con un aliado que se hace cargo
         </h2>
         <p
           className="leading-relaxed max-w-2xl mx-auto"

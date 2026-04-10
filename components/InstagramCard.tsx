@@ -11,7 +11,7 @@ const CLIENT_FALLBACK: InstagramPost = {
   imageUrl: 'https://www.instagram.com/p/DUQ0Y2VjjCD/media/?size=l',
   caption:
     'Descubre cómo la extracción de datos transforma negocios. Optimiza tus decisiones y escala con nosotros. \n\n#autoscraping #DataFactory #DataSquad',
-  profileName: 'AutoScraping',
+  profileName: 'AUTOScraping',
   profileHandle: '@autoscraping',
   postUrl: 'https://www.instagram.com/reel/DUQ0Y2VjjCD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   likes: '145',

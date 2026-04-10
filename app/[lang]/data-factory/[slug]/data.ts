@@ -121,7 +121,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         rating: 5,
-        text: '"La rapidez con la que AutoScraping implementó los modelos de visión y refracción sobre el bot nos dio la ventaja temporal ante nuestra competencia."',
+        text: '"La rapidez con la que AUTOScraping implementó los modelos de visión y refracción sobre el bot nos dio la ventaja temporal ante nuestra competencia."',
         authorName: 'Elena M.',
         authorRole: 'Product Owner',
         authorInitials: 'EM'
@@ -294,7 +294,7 @@ export const servicesData: Record<string, ServiceData> = {
       }
     ],
     needThisTitle: 'Cómo saber si requieres el tracking automático en Airbnb',
-    needThisDescription: 'Si no puedes responder cuáles fueron las tarifas reales de mercado el último mes en la redonda de tu complejo, ni por qué la competencia estuvo 100% full mientras tu lugar vacante... estás operando a ciegas. AutoScraping resuelve esto.',
+    needThisDescription: 'Si no puedes responder cuáles fueron las tarifas reales de mercado el último mes en la redonda de tu complejo, ni por qué la competencia estuvo 100% full mientras tu lugar vacante... estás operando a ciegas. AUTOScraping resuelve esto.',
     helpYouSub: 'Data Proptech',
     helpYouTitle: 'Cómo te ayudamos',
     helpYouDescription: 'Configuramos redes densas de extracción programática (Scraping) sobre Airbnb mapeando listados, reviews y calendarios georrefenciados para ofrecerte la radiografía final de cómo se comportan los inquilinos y qué precios aceptan.',
@@ -625,7 +625,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         rating: 5,
-        text: '"El equipo de ingeniería de AutoScraping resolvió problemas de latencia que teníamos de larga data. Nuestra arquitectura ahora es rápida y libre de bugs."',
+        text: '"El equipo de ingeniería de AUTOScraping resolvió problemas de latencia que teníamos de larga data. Nuestra arquitectura ahora es rápida y libre de bugs."',
         authorName: 'Daniel P.',
         authorRole: 'CEO SaaS Inmobiliario',
         authorInitials: 'DP'
@@ -978,7 +978,7 @@ export const servicesData: Record<string, ServiceData> = {
     testimonials: [
       {
         rating: 5,
-        text: '"Necesitábamos miles de interacciones y datasets multilingües limpios para nuestro LLM. AutoScraping resolvió en semanas lo que prometía demorar años."',
+        text: '"Necesitábamos miles de interacciones y datasets multilingües limpios para nuestro LLM. AUTOScraping resolvió en semanas lo que prometía demorar años."',
         authorName: 'Fernando T.',
         authorRole: 'Lead Machine Learning Engineer',
         authorInitials: 'FT'

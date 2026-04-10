@@ -312,7 +312,7 @@ export default function DataSquadPage() {
           {/* Title - Single Line */}
           <h2 className="text-5xl font-bold text-center mb-6">
             <span className="text-gray-900">La Solución </span>
-            <span className="bg-gradient-to-r from-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">DataSquad</span>
+            <span className="bg-gradient-to-r from-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">Data Squad</span>
           </h2>
 
           {/* Description */}
@@ -328,11 +328,11 @@ export default function DataSquadPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">¿Qué es DataSquad?</h3>
+                <h3 className="text-2xl font-bold text-gray-900">¿Qué es Data Squad?</h3>
               </div>
 
               <p className="text-gray-600 leading-relaxed mb-8">
-                Es el servicio de outsourcing de datos de Autoscraping. Formamos equipos de expertos que se integran directamente en tu flujo de trabajo, cubriendo cada etapa del ciclo de vida del dato.
+                Es el servicio de outsourcing de datos de AUTOScraping. Formamos equipos de expertos que se integran directamente en tu flujo de trabajo, cubriendo cada etapa del ciclo de vida del dato.
               </p>
 
               {/* Feature List */}
@@ -494,7 +494,7 @@ export default function DataSquadPage() {
             {/* Title */}
             <div className="text-center mb-6">
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-                Por qué elegir <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">DataSquad</span>
+                Por qué elegir <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Data Squad</span>
               </h2>
             </div>
 
@@ -603,7 +603,7 @@ export default function DataSquadPage() {
 
             {/* Title */}
             <h3 className="text-center text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Pilares de <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">DataSquad</span>
+              Pilares de <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Data Squad</span>
             </h3>
 
             {/* Subtitle */}

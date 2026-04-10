@@ -3,14 +3,14 @@ import type { Dictionary } from '../types';
 export const es: Dictionary = {
   meta: {
     home: {
-      title: 'Autoscraping | Web Scraping con IA, Data Factory y Data Squad',
+      title: 'AUTOScraping | Web Scraping con IA, Data Factory y Data Squad',
       description:
         'Servicios de web scraping con IA, extracción y enriquecimiento de datos. Impulsamos decisiones con Data Factory y equipos Data Squad a la medida.',
     },
     about: {
       title: 'Sobre Nosotros | Expertos en Web Scraping con IA',
       description:
-        'Conoce a Autoscraping: un equipo experto en web scraping con IA, data factory y data squad. Transformamos datos web en ventaja competitiva para tu negocio.',
+        'Conoce a AUTOScraping: un equipo experto en web scraping con IA, data factory y data squad. Transformamos datos web en ventaja competitiva para tu negocio.',
     },
     bookMeeting: {
       title: 'Agenda una Reunión | Consultoría Gratuita de Datos',
@@ -20,12 +20,12 @@ export const es: Dictionary = {
     dataFactory: {
       title: 'Data Factory | Web Scraping y Extracción de Datos con IA',
       description:
-        'Data Factory de Autoscraping: servicios de web scraping, extracción y enriquecimiento de datos a escala con IA. Lead generation, LinkedIn, e-commerce y más.',
+        'Data Factory de AUTOScraping: servicios de web scraping, extracción y enriquecimiento de datos a escala con IA. Lead generation, LinkedIn, e-commerce y más.',
     },
     dataSquad: {
       title: 'Data Squad | Equipos Expertos en Datos e IA a la Medida',
       description:
-        'Data Squad de Autoscraping: equipos de data scientists, ingenieros y analistas dedicados a tu proyecto. Big data, consultoría y servicios avanzados de datos.',
+        'Data Squad de AUTOScraping: equipos de data scientists, ingenieros y analistas dedicados a tu proyecto. Big data, consultoría y servicios avanzados de datos.',
     },
   },
   nav: {
@@ -61,7 +61,7 @@ export const es: Dictionary = {
   contactCta: {
     badge: 'Hablemos',
     title: '¿Hablamos de como hacer ',
-    titleHighlight: 'Crecer tu negocio?',
+    titleHighlight: 'crecer tu negocio?',
     description:
       'Nos aseguramos de que lo que sucede en la web se convierta en tu mejor activo. Sin rodeos: nos involucramos en tu proyecto para que cada paso que des sea firme y transparente.',
     emailLabel: 'Escríbenos',
@@ -73,7 +73,7 @@ export const es: Dictionary = {
     projectsDelivered: 'Proyectos entregados',
     industries: 'Industrias atendidas',
     yearsExp: 'Años de trayectoria',
-    trustedBy: 'Trusted by 10,000+ companies',
+    trustedBy: 'Más de 10.000 empresas confían en nosotros',
   },
   home: {
     hero: {

@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
   return {
     title: isEn ? 'Blog | Web Scraping & Data Insights' : 'Blog | Web Scraping y Datos',
     description: isEn
-      ? 'Articles about web scraping, data extraction, AI automation and data-driven strategy from the Autoscraping team.'
-      : 'Artículos sobre web scraping, extracción de datos, automatización con IA y estrategia data-driven del equipo Autoscraping.',
+      ? 'Articles about web scraping, data extraction, AI automation and data-driven strategy from the AUTOScraping team.'
+      : 'Artículos sobre web scraping, extracción de datos, automatización con IA y estrategia data-driven del equipo AUTOScraping.',
     alternates: {
       canonical: `/${lang}/blog`,
       languages: {
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
 const buildSchema = (lang: string) => ({
   '@context': 'https://schema.org',
   '@type': 'Blog',
-  name: lang === 'en' ? 'Autoscraping Blog' : 'Blog de Autoscraping',
+  name: lang === 'en' ? 'AUTOScraping Blog' : 'Blog de AUTOScraping',
   url: `${SITE_URL}/${lang}/blog`,
   publisher: { '@id': `${SITE_URL}/#organization` },
   inLanguage: lang === 'en' ? 'en-US' : 'es-ES',

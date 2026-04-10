@@ -3,7 +3,7 @@ const teamMembers = [
   { name: 'Cesar Farhat', role: 'CTO' },
   { name: 'Benjam\u00edn Arjona', role: 'CCO' },
   { name: 'Rocio Varas', role: 'Accountant Consultant' },
-  { name: 'Jos\u00e9 Cano', role: 'DataSquad Leader' },
+  { name: 'José Cano', role: 'Data Squad Leader' },
   { name: 'Iv\u00e1n Quipildor', role: 'DevOPs' },
   { name: 'Paula Oyarz\u00e1bal', role: 'Administrative Accountant' },
   { name: 'Leandro Ledesma', role: 'Growth Marketer' },

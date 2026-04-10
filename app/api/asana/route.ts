@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     const task_title = `autoscraping.com - ${nombre}`;
 
     // Nombres legibles
-    const productName = product === 'datasquad' ? 'DataSquad' : 'DataFactory';
+    const productName = product === 'datasquad' ? 'Data Squad' : 'Data Factory';
     let dataFactoryOption = '';
     if (subProduct === 'automation') dataFactoryOption = 'Automation';
     else if (subProduct === 'daas') dataFactoryOption = 'Data as a Service';
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
 Product: ${productName}
 
-DATASQUAD
+DATA SQUAD
 - Perfiles: ${profiles?.join(', ') || '-'}
 - Seniority: ${seniorities?.join(', ') || '-'}
 - Lenguaje: ${languages?.join(', ') || '-'}
@@ -51,8 +51,8 @@ DATASQUAD
 - Cantidad:
 ${quantitiesStr || '   -'}
 
-DATAFACTORY
-- DataFactory: ${dataFactoryOption || '-'}
+DATA FACTORY
+- Data Factory: ${dataFactoryOption || '-'}
 
 COMENTARIO
 ${additionalInfo || '-'}

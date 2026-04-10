@@ -54,7 +54,7 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
           <Link href={`/${lang}`} className="flex items-center gap-1">
             <Image
               src="/logo.png"
-              alt="AutoScraping"
+              alt="AUTOScraping"
               width={120}
               height={60}
               className="h-12 w-auto"

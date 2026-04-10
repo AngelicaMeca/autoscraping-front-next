@@ -33,9 +33,16 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
     <main className="min-h-screen bg-white">
       <Navbar variant="adaptive" />
 
-      {/* Breadcrumb */}
-      <div className="relative z-40 pt-28 pb-0 px-6 bg-gradient-to-b from-[#1E2DC1] to-[#1E2DC1]">
-        <div className="max-w-4xl mx-auto">
+      {/* Hero Section (includes breadcrumb for seamless gradient) */}
+      <section className="relative pt-36 pb-28 px-6 bg-gradient-to-b from-[#1E2DC1] via-[#2D1B85] to-[#4323A0] overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-pink-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 border border-purple-400/30 rounded-full pointer-events-none"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 border-2 border-pink-400/20 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-20 right-32 w-48 h-48 border border-purple-300/20 rounded-full pointer-events-none"></div>
+        
+        <div className="max-w-4xl mx-auto mb-6 relative z-10">
           <Breadcrumb
             items={[
               { label: 'Data Factory', href: `/${lang}/data-factory` },
@@ -44,17 +51,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             className="text-white/70"
           />
         </div>
-      </div>
 
-      {/* Hero Section */}
-      <section className="relative pt-10 pb-28 px-6 bg-gradient-to-b from-[#1E2DC1] via-[#2D1B85] to-[#4323A0] overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-pink-500/20 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="absolute top-20 left-10 w-32 h-32 border border-purple-400/30 rounded-full pointer-events-none"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 border-2 border-pink-400/20 rounded-full pointer-events-none"></div>
-        <div className="absolute bottom-20 right-32 w-48 h-48 border border-purple-300/20 rounded-full pointer-events-none"></div>
-        
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md px-4 py-2 rounded-full mb-8">
             <Sparkles className="w-4 h-4 text-purple-300" />
@@ -76,10 +73,12 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             {data.description}
           </p>
 
-          <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-pink-300 to-pink-200 hover:from-pink-200 hover:to-white text-purple-900 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2 mx-auto">
-            <Calendar className="w-5 h-5" />
-            Agendar llamada
-          </Link>
+          <div className="flex justify-center">
+            <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-pink-300 to-pink-200 hover:from-pink-200 hover:to-white text-purple-900 font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-pink-500/30 inline-flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              Agendar llamada
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -247,10 +246,12 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <p className="text-purple-100 text-lg mb-10">
             {data.ctaDescription}
           </p>
-          <Link href={`/${lang}/book-a-meeting`} className="bg-white text-purple-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-xl transition-all shadow-xl flex items-center gap-2 mx-auto">
-            <Calendar className="w-5 h-5" />
-            Agendar llamada
-          </Link>
+          <div className="flex justify-center">
+            <Link href={`/${lang}/book-a-meeting`} className="bg-white text-purple-700 hover:bg-gray-50 font-bold px-6 py-3 rounded-xl transition-all shadow-xl inline-flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              Agendar llamada
+            </Link>
+          </div>
         </div>
       </section>
 
