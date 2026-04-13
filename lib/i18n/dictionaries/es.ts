@@ -68,7 +68,7 @@ export const es: Dictionary = {
     callLabel: 'Llámanos',
     cta: 'Agendar una Reunión',
     statsTitle: 'Experiencia',
-    statsSubtitle: 'Que los datos',
+    statsSubtitle: 'que se mide',
     responseTime: 'Tiempo de respuesta',
     projectsDelivered: 'Proyectos entregados',
     industries: 'Industrias atendidas',
