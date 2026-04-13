@@ -596,7 +596,7 @@ export default function Home() {
                 <p className="text-gray-700 leading-relaxed">
                   {isEn
                     ? 'Data Squad: Add senior specialists to your team to tackle engineering challenges. We handle all technical and administrative management so you can focus solely on leading the project.'
-                    : 'Data Squad: Suma especialistas senior a tu equipo para resolver desafíos de ingeniería. Nosotros nos encargamos de toda la gestión técnica y administrativa para que tú solo te enfoques en liderar el proyecto.'}
+                    : 'Suma especialistas senior a tu equipo para resolver desafíos de ingeniería. Nosotros nos encargamos de toda la gestión técnica y administrativa para que tú solo te enfoques en liderar el proyecto.'}
                 </p>
               </Link>
             </div>
