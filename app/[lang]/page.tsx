@@ -921,7 +921,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
                 <p className="text-5xl font-bold text-purple-600 mb-2">150+</p>
