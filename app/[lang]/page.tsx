@@ -826,14 +826,6 @@ export default function Home() {
           <div className="absolute bottom-1/3 right-1/3 w-52 h-52 bg-pink-300/30 rounded-full blur-3xl"></div>
 
           <div className="relative z-10 mx-auto max-w-7xl px-6">
-            {/* Rating badge */}
-            <div className="flex justify-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200">
-                <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                <span className="text-sm font-medium text-gray-900">{isEn ? 'Rated 4.9/5 from 500+ reviews' : 'Valorado 4.9/5 por más de 500 reseñas'}</span>
-              </div>
-            </div>
-
             {/* Heading */}
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -1266,7 +1258,7 @@ export default function Home() {
               <InstagramCard />
 
               {/* GitHub Card */}
-              <div className="relative lg:col-span-2 bg-gradient-to-br from-[#24292F] to-[#1C2128] rounded-3xl p-8 shadow-lg text-white">
+              <div className="relative bg-gradient-to-br from-[#24292F] to-[#1C2128] rounded-3xl p-8 shadow-lg text-white flex flex-col">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#C084FC]/25 via-[#60A5FA]/25 to-[#F472B6]/25 rounded-3xl blur-2xl -z-10"></div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
@@ -1289,9 +1281,57 @@ export default function Home() {
                   </div>
                 </div>
 
-                <p className="text-gray-300 mt-6">
+                <p className="text-gray-300 mt-6 flex-1">
                   Building open-source tools for the community 🛠️
                 </p>
+              </div>
+
+              {/* YouTube Card */}
+              <div className="relative bg-gradient-to-br from-[#1a0a0a] to-[#0f0505] rounded-3xl p-8 shadow-lg text-white flex flex-col overflow-hidden">
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#FF0000]/20 via-[#FF4444]/15 to-[#CC0000]/10 rounded-3xl blur-2xl -z-10"></div>
+                <div className="absolute top-0 right-0 w-48 h-48 bg-[#FF0000]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-[#FF0000] rounded-full flex items-center justify-center flex-shrink-0">
+                    {/* YouTube SVG icon */}
+                    <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.youtube.com/@Autoscraping"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-lg hover:text-red-400 transition-colors"
+                    >
+                      @Autoscraping
+                    </a>
+                    <p className="text-gray-400 text-sm">YouTube</p>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold mb-3">
+                  {isEn ? 'Tech, data and real cases' : 'Tecnología, datos y casos reales'}
+                </h3>
+
+                <p className="text-gray-400 leading-relaxed mb-6 text-sm flex-1">
+                  {isEn
+                    ? 'Tutorials, behind-the-scenes and technical deep-dives on web scraping, data engineering and automation. Subscribe and stay ahead.'
+                    : 'Tutoriales, behind-the-scenes y análisis técnicos sobre web scraping, ingeniería de datos y automatización. Suscribite y mantente un paso adelante.'}
+                </p>
+
+                <a
+                  href="https://www.youtube.com/@Autoscraping"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#FF0000] hover:bg-[#cc0000] text-white font-semibold px-6 py-3 rounded-xl transition-colors self-start mt-auto"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  {isEn ? 'Watch on YouTube' : 'Ver en YouTube'}
+                </a>
               </div>
             </div>
           </div>

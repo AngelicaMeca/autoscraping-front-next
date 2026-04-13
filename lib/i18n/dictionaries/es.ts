@@ -73,7 +73,7 @@ export const es: Dictionary = {
     projectsDelivered: 'Proyectos entregados',
     industries: 'Industrias atendidas',
     yearsExp: 'Años de trayectoria',
-    trustedBy: 'Más de 10.000 empresas confían en nosotros',
+    trustedBy: 'Más de 150 empresas confían en nosotros',
   },
   home: {
     hero: {
