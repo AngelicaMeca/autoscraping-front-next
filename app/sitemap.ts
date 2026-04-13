@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { servicesData as dataFactoryServices } from './[lang]/data-factory/[slug]/data';
+import { getServicesData as getDataFactoryServices } from './[lang]/data-factory/[slug]/data';
 import { servicesData as dataSquadServices } from './[lang]/data-squad/[slug]/data';
 import { locales } from '@/lib/i18n/config';
 
@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localized('/blog', 'weekly', 0.6),
   ];
 
-  const dataFactoryRoutes: MetadataRoute.Sitemap = Object.keys(dataFactoryServices).flatMap(
+  const dataFactoryRoutes: MetadataRoute.Sitemap = Object.keys(getDataFactoryServices(false)).flatMap(
     (slug) => localized(`/data-factory/${slug}`, 'monthly', 0.7)
   );
 

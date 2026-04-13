@@ -11,6 +11,7 @@ import { useLang } from '@/hooks/useLang';
 
 export default function DataFactoryPage() {
   const lang = useLang();
+  const isEn = lang === 'en';
   const [solutionsSlide, setSolutionsSlide] = useState(0);
   const [currentCapability, setCurrentCapability] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -18,80 +19,124 @@ export default function DataFactoryPage() {
   const solutions = [
     {
       title: 'E-commerce',
-      description: 'Retailers digitales que compiten por precio, stock y posicionamiento global.',
+      description: isEn
+        ? 'Digital retailers competing on price, stock and global positioning.'
+        : 'Retailers digitales que compiten por precio, stock y posicionamiento global.',
       icon: ShoppingCart,
       iconColor: 'from-purple-500 to-purple-600',
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: isEn
+        ? ['Results-oriented', 'Strategic alignment', 'Business value']
+        : ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       title: 'Real Estate',
-      description: 'Plataformas e inversores que basan su rentabilidad en el dinamismo del mercado inmobiliario.',
+      description: isEn
+        ? 'Platforms and investors whose profitability depends on the dynamism of the real estate market.'
+        : 'Plataformas e inversores que basan su rentabilidad en el dinamismo del mercado inmobiliario.',
       icon: HomeIcon,
       iconColor: 'from-blue-500 to-blue-600',
-      tags: ['Valoración de mercado', 'Datos en tiempo real', 'Inteligencia inmobiliaria']
+      tags: isEn
+        ? ['Market valuation', 'Real-time data', 'Real estate intelligence']
+        : ['Valoración de mercado', 'Datos en tiempo real', 'Inteligencia inmobiliaria']
     },
     {
-      title: 'Turismo y viajes',
-      description: 'Agencias y motores de reserva que operan con inventarios y tarifas de alta volatilidad.',
+      title: isEn ? 'Tourism & Travel' : 'Turismo y viajes',
+      description: isEn
+        ? 'Agencies and booking engines operating with high-volatility inventories and rates.'
+        : 'Agencias y motores de reserva que operan con inventarios y tarifas de alta volatilidad.',
       icon: Plane,
       iconColor: 'from-cyan-500 to-cyan-600',
-      tags: ['Tarifas dinámicas', 'Alta volatilidad', 'Optimización de reservas']
+      tags: isEn
+        ? ['Dynamic pricing', 'High volatility', 'Booking optimization']
+        : ['Tarifas dinámicas', 'Alta volatilidad', 'Optimización de reservas']
     },
     {
-      title: 'Salud y Pharma',
-      description: 'Organizaciones sanitarias que gestionan suministros, servicios y tendencias del sector.',
+      title: isEn ? 'Health & Pharma' : 'Salud y Pharma',
+      description: isEn
+        ? 'Healthcare organisations managing supplies, services and industry trends.'
+        : 'Organizaciones sanitarias que gestionan suministros, servicios y tendencias del sector.',
       icon: Heart,
       iconColor: 'from-pink-500 to-pink-600',
-      tags: ['Trazabilidad de datos', 'Cumplimiento normativo', 'Gestión de suministros']
+      tags: isEn
+        ? ['Data traceability', 'Regulatory compliance', 'Supply management']
+        : ['Trazabilidad de datos', 'Cumplimiento normativo', 'Gestión de suministros']
     },
     {
-      title: 'Consumo y Retail',
-      description: 'Marcas y distribuidores que necesitan trazabilidad de sus canales y conocimiento de la demanda.',
+      title: isEn ? 'Consumer & Retail' : 'Consumo y Retail',
+      description: isEn
+        ? 'Brands and distributors that need channel traceability and demand intelligence.'
+        : 'Marcas y distribuidores que necesitan trazabilidad de sus canales y conocimiento de la demanda.',
       icon: ShoppingBag,
       iconColor: 'from-orange-500 to-orange-600',
-      tags: ['Trazabilidad de canales', 'Demanda en tiempo real', 'Inteligencia de mercado']
+      tags: isEn
+        ? ['Channel traceability', 'Real-time demand', 'Market intelligence']
+        : ['Trazabilidad de canales', 'Demanda en tiempo real', 'Inteligencia de mercado']
     },
     {
-      title: 'Ciberseguridad',
-      description: 'Equipos de defensa digital que monitorean amenazas y vulnerabilidad en la red.',
+      title: isEn ? 'Cybersecurity' : 'Ciberseguridad',
+      description: isEn
+        ? 'Digital defence teams monitoring threats and network vulnerabilities.'
+        : 'Equipos de defensa digital que monitorean amenazas y vulnerabilidad en la red.',
       icon: Lock,
       iconColor: 'from-red-500 to-red-600',
-      tags: ['Monitoreo de amenazas', 'Defensa proactiva', 'Inteligencia de riesgos']
+      tags: isEn
+        ? ['Threat monitoring', 'Proactive defence', 'Risk intelligence']
+        : ['Monitoreo de amenazas', 'Defensa proactiva', 'Inteligencia de riesgos']
     },
     {
       title: 'Fintech',
-      description: 'Instituciones financieras que requieren datos alternativos y flujos de mercado precisos.',
+      description: isEn
+        ? 'Financial institutions requiring alternative data and precise market flows.'
+        : 'Instituciones financieras que requieren datos alternativos y flujos de mercado precisos.',
       icon: CreditCard,
       iconColor: 'from-green-500 to-green-600',
-      tags: ['Datos alternativos', 'Flujos de mercado', 'Análisis financiero']
+      tags: isEn
+        ? ['Alternative data', 'Market flows', 'Financial analysis']
+        : ['Datos alternativos', 'Flujos de mercado', 'Análisis financiero']
     },
     {
-      title: 'Eventos y Ticketing',
-      description: 'Plataformas de eventos que enfrentan alta demanda y necesitan control de inventario real.',
+      title: isEn ? 'Events & Ticketing' : 'Eventos y Ticketing',
+      description: isEn
+        ? 'Event platforms facing high demand that need real inventory control.'
+        : 'Plataformas de eventos que enfrentan alta demanda y necesitan control de inventario real.',
       icon: Ticket,
       iconColor: 'from-yellow-500 to-yellow-600',
-      tags: ['Control de inventario', 'Gestión de demanda', 'Optimización de precios']
+      tags: isEn
+        ? ['Inventory control', 'Demand management', 'Price optimisation']
+        : ['Control de inventario', 'Gestión de demanda', 'Optimización de precios']
     },
     {
-      title: 'Recursos Humanos y Talento',
-      description: 'Consultoras de talento y portales que analizan la oferta y demanda laboral masiva.',
+      title: isEn ? 'HR & Talent' : 'Recursos Humanos y Talento',
+      description: isEn
+        ? 'Talent consultancies and portals analysing mass labour supply and demand.'
+        : 'Consultoras de talento y portales que analizan la oferta y demanda laboral masiva.',
       icon: UserCheck,
       iconColor: 'from-indigo-500 to-indigo-600',
-      tags: ['Oferta laboral masiva', 'Análisis de talento', 'Inteligencia de mercado']
+      tags: isEn
+        ? ['Mass job supply', 'Talent analysis', 'Market intelligence']
+        : ['Oferta laboral masiva', 'Análisis de talento', 'Inteligencia de mercado']
     },
     {
-      title: 'Gobierno y Sector Público',
-      description: 'Entidades analistas que requieren transparencia en registros, licitaciones y datos oficiales.',
+      title: isEn ? 'Government & Public Sector' : 'Gobierno y Sector Público',
+      description: isEn
+        ? 'Analytical entities requiring transparency in records, tenders and official data.'
+        : 'Entidades analistas que requieren transparencia en registros, licitaciones y datos oficiales.',
       icon: Building2,
       iconColor: 'from-slate-500 to-slate-600',
-      tags: ['Transparencia de datos', 'Registros oficiales', 'Datos abiertos']
+      tags: isEn
+        ? ['Data transparency', 'Official records', 'Open data']
+        : ['Transparencia de datos', 'Registros oficiales', 'Datos abiertos']
     },
     {
-      title: 'Consultoría y Analytics',
-      description: 'Firmas de análisis que necesitan materia prima de alta fidelidad para alimentar las decisiones de sus clientes.',
+      title: isEn ? 'Consulting & Analytics' : 'Consultoría y Analytics',
+      description: isEn
+        ? 'Analysis firms that need high-fidelity raw material to feed their clients\' decisions.'
+        : 'Firmas de análisis que necesitan materia prima de alta fidelidad para alimentar las decisiones de sus clientes.',
       icon: BarChart3,
       iconColor: 'from-violet-500 to-violet-600',
-      tags: ['Alta fidelidad', 'Decisiones basadas en datos', 'Análisis avanzado']
+      tags: isEn
+        ? ['High fidelity', 'Data-driven decisions', 'Advanced analytics']
+        : ['Alta fidelidad', 'Decisiones basadas en datos', 'Análisis avanzado']
     }
   ];
 
@@ -113,115 +158,171 @@ export default function DataFactoryPage() {
   const capabilities = [
     {
       slug: 'estrategias-de-pricing',
-      title: 'Estrategias de Pricing',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Monitoreo de precios y promociones para ejecutar ajustes competitivos que protejan tus márgenes de beneficio.',
+      title: isEn ? 'Pricing Strategies' : 'Estrategias de Pricing',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Price and promotion monitoring to execute competitive adjustments that protect your profit margins.'
+        : 'Monitoreo de precios y promociones para ejecutar ajustes competitivos que protejan tus márgenes de beneficio.',
       icon: Target,
-      tags: ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
+      tags: isEn
+        ? ['Results-oriented', 'Strategic alignment', 'Business value']
+        : ['Orientado a resultados', 'Alineación estratégica', 'Valor de negocio']
     },
     {
       slug: 'indexacion-inmobiliaria',
-      title: 'Indexación Inmobiliaria',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Captura masiva de listados y variaciones de propiedades para valoración y detección de oportunidades.',
+      title: isEn ? 'Real Estate Indexing' : 'Indexación Inmobiliaria',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Mass capture of property listings and variations for valuation and opportunity detection.'
+        : 'Captura masiva de listados y variaciones de propiedades para valoración y detección de oportunidades.',
       icon: Building2,
-      tags: ['Captura masiva', 'Valoración de activos', 'Detección de oportunidades']
+      tags: isEn
+        ? ['Mass capture', 'Asset valuation', 'Opportunity detection']
+        : ['Captura masiva', 'Valoración de activos', 'Detección de oportunidades']
     },
     {
       slug: 'monitoreo-de-airbnb',
-      title: 'Monitoreo de Airbnb',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Seguimiento de disponibilidad y tarifas en el sector alojamiento para maximizar la rentabilidad mediante precios dinámicos.',
+      title: isEn ? 'Airbnb Monitoring' : 'Monitoreo de Airbnb',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Availability and rate tracking in the accommodation sector to maximise profitability through dynamic pricing.'
+        : 'Seguimiento de disponibilidad y tarifas en el sector alojamiento para maximizar la rentabilidad mediante precios dinámicos.',
       icon: HomeIcon,
-      tags: ['Precios dinámicos', 'Disponibilidad en tiempo real', 'Rentabilidad maximizada']
+      tags: isEn
+        ? ['Dynamic pricing', 'Real-time availability', 'Maximised profitability']
+        : ['Precios dinámicos', 'Disponibilidad en tiempo real', 'Rentabilidad maximizada']
     },
     {
       slug: 'extraccion-de-linkedin',
-      title: 'Extracción de Linkedin',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Selección de perfiles profesionales y datos de empresas para nutrir estrategias de captación B2B con precisión.',
+      title: isEn ? 'LinkedIn Extraction' : 'Extracción de Linkedin',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Selection of professional profiles and company data to fuel B2B acquisition strategies with precision.'
+        : 'Selección de perfiles profesionales y datos de empresas para nutrir estrategias de captación B2B con precisión.',
       icon: Users,
-      tags: ['Captación B2B', 'Datos de perfiles', 'Precisión de targeting']
+      tags: isEn
+        ? ['B2B acquisition', 'Profile data', 'Targeting precision']
+        : ['Captación B2B', 'Datos de perfiles', 'Precisión de targeting']
     },
     {
       slug: 'generacion-de-leads',
-      title: 'Generación de Leads',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Identificación de prospectos calificados para acelerar el ciclo de ventas mediante bases de contacto siempre actualizadas.',
+      title: isEn ? 'Lead Generation' : 'Generación de Leads',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Identification of qualified prospects to accelerate the sales cycle through always up-to-date contact databases.'
+        : 'Identificación de prospectos calificados para acelerar el ciclo de ventas mediante bases de contacto siempre actualizadas.',
       icon: UserCheck,
-      tags: ['Prospectos calificados', 'Aceleración de ventas', 'Bases actualizadas']
+      tags: isEn
+        ? ['Qualified prospects', 'Sales acceleration', 'Updated databases']
+        : ['Prospectos calificados', 'Aceleración de ventas', 'Bases actualizadas']
     },
     {
       slug: 'catalogos-de-e-commerce',
-      title: 'Catálogos de E-commerce',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Rastreo de inventarios y stock de la competencia para ajustar tu oferta comercial en tiempo real y sin fricciones.',
+      title: isEn ? 'E-commerce Catalogues' : 'Catálogos de E-commerce',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Competitor inventory and stock tracking to adjust your commercial offer in real time and without friction.'
+        : 'Rastreo de inventarios y stock de la competencia para ajustar tu oferta comercial en tiempo real y sin fricciones.',
       icon: ShoppingCart,
-      tags: ['Rastreo de inventario', 'Competencia en tiempo real', 'Ajuste comercial']
+      tags: isEn
+        ? ['Inventory tracking', 'Real-time competition', 'Commercial adjustment']
+        : ['Rastreo de inventario', 'Competencia en tiempo real', 'Ajuste comercial']
     },
     {
       slug: 'registro-de-google-maps',
-      title: 'Registro de Google Maps',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Consolidación de datos locales y geográficos para el análisis de competencia y expansión en mercados específicos.',
+      title: isEn ? 'Google Maps Registry' : 'Registro de Google Maps',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Consolidation of local and geographic data for competitive analysis and expansion in specific markets.'
+        : 'Consolidación de datos locales y geográficos para el análisis de competencia y expansión en mercados específicos.',
       icon: Globe,
-      tags: ['Datos geográficos', 'Análisis local', 'Expansión de mercado']
+      tags: isEn
+        ? ['Geographic data', 'Local analysis', 'Market expansion']
+        : ['Datos geográficos', 'Análisis local', 'Expansión de mercado']
     },
     {
       slug: 'metricas-financieras',
-      title: 'Métricas Financieras',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Obtención de indicadores bursátiles y valores económicos para fortalecer la toma de decisiones e inversiones de alto nivel.',
+      title: isEn ? 'Financial Metrics' : 'Métricas Financieras',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Obtaining stock market indicators and economic values to strengthen high-level investment decisions.'
+        : 'Obtención de indicadores bursátiles y valores económicos para fortalecer la toma de decisiones e inversiones de alto nivel.',
       icon: TrendingUp,
-      tags: ['Indicadores bursátiles', 'Decisiones de inversión', 'Datos económicos']
+      tags: isEn
+        ? ['Stock market indicators', 'Investment decisions', 'Economic data']
+        : ['Indicadores bursátiles', 'Decisiones de inversión', 'Datos económicos']
     },
     {
       slug: 'entrenamiento-de-ia',
-      title: 'Entrenamiento de IA',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Procesamiento de sitios no estructurados para alimentar y escalar la inteligencia artificial de tu producto.',
+      title: isEn ? 'AI Training' : 'Entrenamiento de IA',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Processing of unstructured sites to feed and scale the artificial intelligence of your product.'
+        : 'Procesamiento de sitios no estructurados para alimentar y escalar la inteligencia artificial de tu producto.',
       icon: Sparkles,
-      tags: ['Datos no estructurados', 'Escalabilidad de modelos', 'Alimentación de LLMs']
+      tags: isEn
+        ? ['Unstructured data', 'Model scalability', 'LLM feeding']
+        : ['Datos no estructurados', 'Escalabilidad de modelos', 'Alimentación de LLMs']
     },
     {
       slug: 'insights-de-marketing',
-      title: 'Insights de Marketing',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Detección de tendencias y menciones de marca para medir el impacto de campañas y el posicionamiento en el sector.',
+      title: isEn ? 'Marketing Insights' : 'Insights de Marketing',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Detection of trends and brand mentions to measure the impact of campaigns and sector positioning.'
+        : 'Detección de tendencias y menciones de marca para medir el impacto de campañas y el posicionamiento en el sector.',
       icon: Users,
-      tags: ['Tendencias de marca', 'Impacto de campañas', 'Análisis de sentimiento']
+      tags: isEn
+        ? ['Brand trends', 'Campaign impact', 'Sentiment analysis']
+        : ['Tendencias de marca', 'Impacto de campañas', 'Análisis de sentimiento']
     },
     {
       slug: 'auditoria-seo',
-      title: 'Auditoría SEO',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Seguimiento automatizado de resultados de búsqueda para monitorear y mejorar el ranking orgánico de tu plataforma.',
+      title: isEn ? 'SEO Audit' : 'Auditoría SEO',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Automated search result tracking to monitor and improve the organic ranking of your platform.'
+        : 'Seguimiento automatizado de resultados de búsqueda para monitorear y mejorar el ranking orgánico de tu plataforma.',
       icon: Search,
-      tags: ['Ranking orgánico', 'Monitoreo automatizado', 'Posicionamiento SERP']
+      tags: isEn
+        ? ['Organic ranking', 'Automated monitoring', 'SERP positioning']
+        : ['Ranking orgánico', 'Monitoreo automatizado', 'Posicionamiento SERP']
     },
     {
       slug: 'comparativa-de-vuelos',
-      title: 'Comparativa de vuelos',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Extracción de tarifas aéreas y rutas en tiempo real para optimizar la competitividad de agencias y motores de reserva.',
+      title: isEn ? 'Flight Comparison' : 'Comparativa de vuelos',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Real-time extraction of airline fares and routes to optimise the competitiveness of agencies and booking engines.'
+        : 'Extracción de tarifas aéreas y rutas en tiempo real para optimizar la competitividad de agencias y motores de reserva.',
       icon: Plane,
-      tags: ['Tarifas aéreas', 'Rutas en tiempo real', 'Competitividad de reservas']
+      tags: isEn
+        ? ['Airline fares', 'Real-time routes', 'Booking competitiveness']
+        : ['Tarifas aéreas', 'Rutas en tiempo real', 'Competitividad de reservas']
     },
     {
       slug: 'gestion-de-reputacion',
-      title: 'Gestión de reputación',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Recolección de reseñas y valoraciones en plataformas clave para análisis de sentimiento y cuidado de la imagen de la marca.',
+      title: isEn ? 'Reputation Management' : 'Gestión de reputación',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Collection of reviews and ratings on key platforms for sentiment analysis and brand image care.'
+        : 'Recolección de reseñas y valoraciones en plataformas clave para análisis de sentimiento y cuidado de la imagen de la marca.',
       icon: Heart,
-      tags: ['Análisis de sentimiento', 'Reseñas y valoraciones', 'Imagen de marca']
+      tags: isEn
+        ? ['Sentiment analysis', 'Reviews and ratings', 'Brand image']
+        : ['Análisis de sentimiento', 'Reseñas y valoraciones', 'Imagen de marca']
     },
     {
       slug: 'tendencias-laborales',
-      title: 'Tendencias laborales',
-      subtitle: 'COMPROMETIDOS CON TU ÉXITO',
-      description: 'Rastreo de ofertas de empleo y escalas salariales para alimentar plataformas de reclutamiento y análisis de capital humano.',
+      title: isEn ? 'Labour Trends' : 'Tendencias laborales',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Tracking of job offers and salary scales to feed recruitment platforms and human capital analysis.'
+        : 'Rastreo de ofertas de empleo y escalas salariales para alimentar plataformas de reclutamiento y análisis de capital humano.',
       icon: FileStack,
-      tags: ['Ofertas de empleo', 'Escalas salariales', 'Inteligencia de talento']
+      tags: isEn
+        ? ['Job offers', 'Salary scales', 'Talent intelligence']
+        : ['Ofertas de empleo', 'Escalas salariales', 'Inteligencia de talento']
     }
   ];
 
@@ -235,50 +336,82 @@ export default function DataFactoryPage() {
 
   const faqs = [
     {
-      question: '¿En qué consiste exactamente el servicio de Data Factory?',
-      answer: 'Es el suministro regular de datos procesados basado en requerimientos específicos del cliente. No es una herramienta de autoservicio; es una solución de ingeniería donde nosotros ejecutamos la extracción y el envío de forma recurrente según tus definiciones.',
+      question: isEn
+        ? 'What exactly does the Data Factory service consist of?'
+        : '¿En qué consiste exactamente el servicio de Data Factory?',
+      answer: isEn
+        ? 'It is the regular supply of processed data based on specific client requirements. It is not a self-service tool; it is an engineering solution where we execute the extraction and delivery on a recurring basis according to your definitions.'
+        : 'Es el suministro regular de datos procesados basado en requerimientos específicos del cliente. No es una herramienta de autoservicio; es una solución de ingeniería donde nosotros ejecutamos la extracción y el envío de forma recurrente según tus definiciones.',
       icon: FileStack,
       iconColor: 'from-cyan-400 to-cyan-500'
     },
     {
-      question: '¿Qué incluye la contratación del servicio?',
-      answer: 'Recibes un flujo de datos estructurado y validado según tus requerimientos técnicos. El servicio cubre desde el diseño de la arquitectura de extracción hasta el mantenimiento de los scripts y la entrega final, eliminando cualquier carga operativa para tu equipo.',
+      question: isEn
+        ? 'What does the service contract include?'
+        : '¿Qué incluye la contratación del servicio?',
+      answer: isEn
+        ? 'You receive a structured and validated data flow according to your technical requirements. The service covers everything from designing the extraction architecture to maintaining the scripts and the final delivery, eliminating any operational burden for your team.'
+        : 'Recibes un flujo de datos estructurado y validado según tus requerimientos técnicos. El servicio cubre desde el diseño de la arquitectura de extracción hasta el mantenimiento de los scripts y la entrega final, eliminando cualquier carga operativa para tu equipo.',
       icon: CheckCircle2,
       iconColor: 'from-pink-400 to-pink-500'
     },
     {
-      question: '¿Cuál es el tiempo estimado para iniciar la entrega?',
-      answer: 'El cronograma se define tras un análisis de viabilidad técnica. Evaluamos la complejidad de la fuente para presentar una propuesta que garantice plazos de entrega realistas.',
+      question: isEn
+        ? 'What is the estimated time to start delivery?'
+        : '¿Cuál es el tiempo estimado para iniciar la entrega?',
+      answer: isEn
+        ? 'The timeline is defined after a technical feasibility analysis. We evaluate the complexity of the source to present a proposal that guarantees realistic delivery deadlines.'
+        : 'El cronograma se define tras un análisis de viabilidad técnica. Evaluamos la complejidad de la fuente para presentar una propuesta que garantice plazos de entrega realistas.',
       icon: CheckCircle2,
       iconColor: 'from-green-400 to-green-500'
     },
     {
-      question: '¿Con qué frecuencia de pueden recibir los datos?',
-      answer: 'La frecuencia es totalmente personalizada: diaria, semanal, mensual o bajo intervalos técnicos específicos. El objetivo es asegurar que tu base de datos cuente con información actualizada para procesos que dependen de registros en tiempo real.',
+      question: isEn
+        ? 'How often can data be received?'
+        : '¿Con qué frecuencia de pueden recibir los datos?',
+      answer: isEn
+        ? 'The frequency is fully customised: daily, weekly, monthly or at specific technical intervals. The goal is to ensure your database has up-to-date information for processes that depend on real-time records.'
+        : 'La frecuencia es totalmente personalizada: diaria, semanal, mensual o bajo intervalos técnicos específicos. El objetivo es asegurar que tu base de datos cuente con información actualizada para procesos que dependen de registros en tiempo real.',
       icon: Clock,
       iconColor: 'from-orange-400 to-orange-500'
     },
     {
-      question: '¿En qué formatos se realiza la entrega?',
-      answer: 'Entregamos formatos compatibles con tu infraestructura actual (JSON, CSV, bases de datos o integración vía API). El dato llega listo para su uso, eliminando la necesidad de procesamiento adicional por parte de tu equipo de análisis.',
+      question: isEn
+        ? 'In what formats is delivery made?'
+        : '¿En qué formatos se realiza la entrega?',
+      answer: isEn
+        ? 'We deliver formats compatible with your current infrastructure (JSON, CSV, databases or API integration). The data arrives ready to use, eliminating the need for additional processing by your analysis team.'
+        : 'Entregamos formatos compatibles con tu infraestructura actual (JSON, CSV, bases de datos o integración vía API). El dato llega listo para su uso, eliminando la necesidad de procesamiento adicional por parte de tu equipo de análisis.',
       icon: Database,
       iconColor: 'from-cyan-400 to-cyan-500'
     },
     {
-      question: '¿Dónde es indispensable este servicio?',
-      answer: 'Para cualquier flujo operativo que no permita latencia: seguimiento de precios dinámicos, monitoreo de stock de competidores, reportes de mercado en tiempo real y alimentación de modelos de inversión o algoritmos de decisión que requieran una base de información constante y precisa.',
+      question: isEn
+        ? 'Where is this service indispensable?'
+        : '¿Dónde es indispensable este servicio?',
+      answer: isEn
+        ? 'For any operational flow that does not allow latency: dynamic price tracking, competitor stock monitoring, real-time market reports and feeding investment models or decision algorithms that require a constant and precise information base.'
+        : 'Para cualquier flujo operativo que no permita latencia: seguimiento de precios dinámicos, monitoreo de stock de competidores, reportes de mercado en tiempo real y alimentación de modelos de inversión o algoritmos de decisión que requieran una base de información constante y precisa.',
       icon: Target,
       iconColor: 'from-purple-400 to-purple-500'
     },
     {
-      question: '¿Qué sectores se benefician con Data Factory?',
-      answer: 'Aquellos donde su operación dependa de información de alta volatilidad y precisión técnica. Es una arquitectura diseñada para convertir el volumen de datos en una ventaja estratégica inmediata, eliminando la latencia en la toma de decisiones.',
+      question: isEn
+        ? 'Which sectors benefit from Data Factory?'
+        : '¿Qué sectores se benefician con Data Factory?',
+      answer: isEn
+        ? 'Those whose operations depend on high-volatility information and technical precision. It is an architecture designed to convert data volume into an immediate strategic advantage, eliminating latency in decision-making.'
+        : 'Aquellos donde su operación dependa de información de alta volatilidad y precisión técnica. Es una arquitectura diseñada para convertir el volumen de datos en una ventaja estratégica inmediata, eliminando la latencia en la toma de decisiones.',
       icon: BarChart3,
       iconColor: 'from-blue-400 to-blue-500'
     },
     {
-      question: '¿Qué ocurre si un sitio web cambia su estructura?',
-      answer: 'Nuestros sistemas de monitoreo detectan alteraciones en el código fuente de origen. Ante un cambio, el equipo técnico interviene de inmediato para ajustar la lógica de extracción, asegurando que el flujo de información se mantenga ininterrumpido y con la calidad pactada.',
+      question: isEn
+        ? 'What happens if a website changes its structure?'
+        : '¿Qué ocurre si un sitio web cambia su estructura?',
+      answer: isEn
+        ? 'Our monitoring systems detect alterations in the source code of origin. When a change occurs, the technical team intervenes immediately to adjust the extraction logic, ensuring that the information flow remains uninterrupted and at the agreed quality.'
+        : 'Nuestros sistemas de monitoreo detectan alteraciones en el código fuente de origen. Ante un cambio, el equipo técnico interviene de inmediato para ajustar la lógica de extracción, asegurando que el flujo de información se mantenga ininterrumpido y con la calidad pactada.',
       icon: RefreshCw,
       iconColor: 'from-cyan-400 to-cyan-500'
     }
@@ -320,7 +453,7 @@ export default function DataFactoryPage() {
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
               <span className="text-white text-sm font-medium tracking-wide uppercase">
-                Extracción de datos a escala industrial
+                {isEn ? 'Industrial-scale data extraction' : 'Extracción de datos a escala industrial'}
               </span>
               <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
             </div>
@@ -337,23 +470,33 @@ export default function DataFactoryPage() {
 
           {/* Description */}
           <p className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto mb-12">
-            Automatizamos la extracción para que recibas datos estructurados y<br />
-            listos para integrar, eliminando cualquier fricción técnica de tu camino.<br />
-            Tú marcas el objetivo, nosotros ejecutamos la captura.
+            {isEn ? (
+              <>
+                We automate extraction so you receive structured data<br />
+                ready to integrate, eliminating any technical friction from your path.<br />
+                You set the goal, we execute the capture.
+              </>
+            ) : (
+              <>
+                Automatizamos la extracción para que recibas datos estructurados y<br />
+                listos para integrar, eliminando cualquier fricción técnica de tu camino.<br />
+                Tú marcas el objetivo, nosotros ejecutamos la captura.
+              </>
+            )}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16 px-4 md:px-0">
             <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
               <MessageSquare className="w-5 h-5" />
-              <span>Hablar con un experto</span>
+              <span>{isEn ? 'Talk to an expert' : 'Hablar con un experto'}</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
             <button
               onClick={() => document.getElementById('proceso-df')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all"
             >
-              Conocer el proceso
+              {isEn ? 'Learn about the process' : 'Conocer el proceso'}
             </button>
           </div>
 
@@ -370,8 +513,8 @@ export default function DataFactoryPage() {
                 <Clock className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold">Disponibilidad</p>
-                <p className="text-gray-300 text-sm">Inmediata</p>
+                <p className="text-white font-semibold">{isEn ? 'Availability' : 'Disponibilidad'}</p>
+                <p className="text-gray-300 text-sm">{isEn ? 'Immediate' : 'Inmediata'}</p>
               </div>
             </div>
 
@@ -380,8 +523,8 @@ export default function DataFactoryPage() {
                 <Lock className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold">Compromiso</p>
-                <p className="text-gray-300 text-sm">Ético y legal</p>
+                <p className="text-white font-semibold">{isEn ? 'Commitment' : 'Compromiso'}</p>
+                <p className="text-gray-300 text-sm">{isEn ? 'Ethical and legal' : 'Ético y legal'}</p>
               </div>
             </div>
 
@@ -390,7 +533,7 @@ export default function DataFactoryPage() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold">Máximo rigor</p>
+                <p className="text-white font-semibold">{isEn ? 'Maximum rigour' : 'Máximo rigor'}</p>
               </div>
             </div>
           </motion.div>
@@ -409,10 +552,12 @@ export default function DataFactoryPage() {
                 <Clock className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-white text-xl font-bold mb-4">
-                Actualizado a tu medida
+                {isEn ? 'Updated on your terms' : 'Actualizado a tu medida'}
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Recibe tus datos en la frecuencia que tú necesites, desde cada hora hasta una vez al día, para que siempre trabajes con lo más reciente sin esperas.
+                {isEn
+                  ? 'Receive your data at the frequency you need, from every hour to once a day, so you always work with the most recent information without waiting.'
+                  : 'Recibe tus datos en la frecuencia que tú necesites, desde cada hora hasta una vez al día, para que siempre trabajes con lo más reciente sin esperas.'}
               </p>
             </div>
 
@@ -422,10 +567,12 @@ export default function DataFactoryPage() {
                 <Building2 className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-white text-xl font-bold mb-4">
-                Estructura lista para usar
+                {isEn ? 'Structure ready to use' : 'Estructura lista para usar'}
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                JSON, CSV, XML o directo a tu base. Te entregamos la información limpia para que puedas usarla al instante.
+                {isEn
+                  ? 'JSON, CSV, XML or straight to your database. We deliver the information clean so you can use it instantly.'
+                  : 'JSON, CSV, XML o directo a tu base. Te entregamos la información limpia para que puedas usarla al instante.'}
               </p>
             </div>
 
@@ -435,10 +582,12 @@ export default function DataFactoryPage() {
                 <Shield className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-white text-xl font-bold mb-4">
-                Flujo estable y continuo
+                {isEn ? 'Stable and continuous flow' : 'Flujo estable y continuo'}
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Nos encargamos de que la estrategia de extracción supere cualquier bloqueo técnico, manteniendo una operativa siempre activa y confiable.
+                {isEn
+                  ? 'We ensure the extraction strategy overcomes any technical blockage, keeping operations always active and reliable.'
+                  : 'Nos encargamos de que la estrategia de extracción supere cualquier bloqueo técnico, manteniendo una operativa siempre activa y confiable.'}
               </p>
             </div>
           </motion.div>
@@ -466,25 +615,35 @@ export default function DataFactoryPage() {
             <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-200 rounded-full px-4 py-2">
               <Sparkles className="w-4 h-4 text-purple-600" />
               <span className="text-purple-600 text-xs font-bold uppercase tracking-wide">
-                Excelencia automatizada
+                {isEn ? 'Automated excellence' : 'Excelencia automatizada'}
               </span>
             </div>
           </div>
 
           {/* Heading */}
           <h2 className="text-5xl font-bold text-center mb-6">
-            <span className="text-gray-900">Resultados recurrentes,</span>
+            <span className="text-gray-900">{isEn ? 'Recurring results,' : 'Resultados recurrentes,'}</span>
             <br />
             <span className="bg-gradient-to-r from-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">
-              Gestion cero
+              {isEn ? 'zero management' : 'gestión cero'}
             </span>
           </h2>
 
           {/* Description */}
           <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-16">
-            Datafactory es nuestra solución más completa, diseñada para<br />
-            quienes necesitan un flujo de información periódica, sin lidiar con la<br />
-            infraestructura o el mantenimiento.
+            {isEn ? (
+              <>
+                Data Factory is our most complete solution, designed for<br />
+                those who need a periodic information flow, without dealing with<br />
+                infrastructure or maintenance.
+              </>
+            ) : (
+              <>
+                Datafactory es nuestra solución más completa, diseñada para<br />
+                quienes necesitan un flujo de información periódica, sin lidiar con la<br />
+                infraestructura o el mantenimiento.
+              </>
+            )}
           </p>
 
           {/* Cards Grid */}
@@ -495,11 +654,13 @@ export default function DataFactoryPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
                   <BarChart3 className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">¿Qué es Data Factory?</h3>
+                <h3 className="text-2xl font-bold text-gray-900">{isEn ? 'What is Data Factory?' : '¿Qué es Data Factory?'}</h3>
               </div>
 
               <p className="text-gray-600 leading-relaxed mb-8">
-                Es el servicio de extracción recurrente de AUTOScraping. Diseñado para empresas que necesitan información periódica sin gestionar la infraestructura que la hace posible.
+                {isEn
+                  ? 'It is the recurring extraction service from AUTOScraping. Designed for companies that need periodic information without managing the infrastructure that makes it possible.'
+                  : 'Es el servicio de extracción recurrente de AUTOScraping. Diseñado para empresas que necesitan información periódica sin gestionar la infraestructura que la hace posible.'}
               </p>
 
               {/* Feature List */}
@@ -509,8 +670,8 @@ export default function DataFactoryPage() {
                     <Target className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Eliges el Formato</h4>
-                    <p className="text-sm text-gray-600">Tú decides qué datos necesitas, con qué frecuencia y en qué formato.</p>
+                    <h4 className="font-bold text-gray-900 mb-1">{isEn ? 'You choose the format' : 'Eliges el formato'}</h4>
+                    <p className="text-sm text-gray-600">{isEn ? 'You decide what data you need, how often and in what format.' : 'Tú decides qué datos necesitas, con qué frecuencia y en qué formato.'}</p>
                   </div>
                 </div>
 
@@ -519,8 +680,8 @@ export default function DataFactoryPage() {
                     <Database className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Arquitectura Resiliente</h4>
-                    <p className="text-sm text-gray-600">Construimos la arquitectura, superamos los bloqueos técnicos y entregamos registros limpios y validados.</p>
+                    <h4 className="font-bold text-gray-900 mb-1">{isEn ? 'Resilient architecture' : 'Arquitectura resiliente'}</h4>
+                    <p className="text-sm text-gray-600">{isEn ? 'We build the architecture, overcome technical blockages and deliver clean, validated records.' : 'Construimos la arquitectura, superamos los bloqueos técnicos y entregamos registros limpios y validados.'}</p>
                   </div>
                 </div>
 
@@ -529,8 +690,8 @@ export default function DataFactoryPage() {
                     <Clock className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Resultados Continuos</h4>
-                    <p className="text-sm text-gray-600">Entregas ininterrumpidas listas para operar. Detrás de cada hito hay un equipo de ingeniería comprometido.</p>
+                    <h4 className="font-bold text-gray-900 mb-1">{isEn ? 'Continuous results' : 'Resultados continuos'}</h4>
+                    <p className="text-sm text-gray-600">{isEn ? 'Uninterrupted deliveries ready to operate. Behind every milestone is a committed engineering team.' : 'Entregas ininterrumpidas listas para operar. Detrás de cada hito hay un equipo de ingeniería comprometido.'}</p>
                   </div>
                 </div>
               </div>
@@ -560,10 +721,10 @@ export default function DataFactoryPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Settings className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">Tú defines la necesidad</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">{isEn ? 'You define the need' : 'Tú defines la necesidad'}</h3>
                 </div>
                 <div className="pl-16">
-                  <p className="text-gray-600">Nos indicas qué información buscas y el formato de entrega que necesitas.</p>
+                  <p className="text-gray-600">{isEn ? 'You tell us what information you are looking for and the delivery format you need.' : 'Nos indicas qué información buscas y el formato de entrega que necesitas.'}</p>
                 </div>
               </div>
 
@@ -573,10 +734,10 @@ export default function DataFactoryPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Server className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">Nosotros resolvemos la ejecución</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">{isEn ? 'We handle the execution' : 'Nosotros resolvemos la ejecución'}</h3>
                 </div>
                 <div className="pl-16">
-                  <p className="text-gray-600">Superamos bloqueos y gestionamos la infraestructura de forma constante.</p>
+                  <p className="text-gray-600">{isEn ? 'We overcome blockages and manage the infrastructure on a constant basis.' : 'Superamos bloqueos y gestionamos la infraestructura de forma constante.'}</p>
                 </div>
               </div>
 
@@ -586,10 +747,10 @@ export default function DataFactoryPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">Recibe datos listos para usar</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">{isEn ? 'Receive data ready to use' : 'Recibe datos listos para usar'}</h3>
                 </div>
                 <div className="pl-16">
-                  <p className="text-gray-600">Cuentas con entregas periódicas en el formato que mejor se adapte a tu sistema.</p>
+                  <p className="text-gray-600">{isEn ? 'You get periodic deliveries in the format that best fits your system.' : 'Cuentas con entregas periódicas en el formato que mejor se adapte a tu sistema.'}</p>
                 </div>
               </div>
             </div>
@@ -616,23 +777,25 @@ export default function DataFactoryPage() {
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
               <Heart className="w-4 h-4 fill-pink-600" />
-              Beneficios clave
+              {isEn ? 'Key benefits' : 'Beneficios clave'}
             </div>
           </div>
 
           {/* Title */}
           <div className="text-center mb-6">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-              Soluciones adaptadas
+              {isEn ? 'Tailored solutions' : 'Soluciones adaptadas'}
             </h2>
             <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              a tu necesidad de negocio
+              {isEn ? 'to your business need' : 'a tu necesidad de negocio'}
             </h2>
           </div>
 
           {/* Subtitle */}
           <p className="text-center text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
-            Nuestro enfoque entrega ventajas tangibles que aceleran tus iniciativas de datos y maximizan el ROI
+            {isEn
+              ? 'Our approach delivers tangible advantages that accelerate your data initiatives and maximise ROI'
+              : 'Nuestro enfoque entrega ventajas tangibles que aceleran tus iniciativas de datos y maximizan el ROI'}
           </p>
 
           {/* Carousel Container */}
@@ -673,7 +836,7 @@ export default function DataFactoryPage() {
                 </h3>
                 <div className="inline-block">
                   <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">
-                    COMPROMETIDOS CON TU ÉXITO
+                    {isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO'}
                   </span>
                 </div>
               </div>
@@ -719,18 +882,20 @@ export default function DataFactoryPage() {
             <div className="flex justify-center mb-6">
               <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide">
                 <Zap className="w-3 h-3" />
-                METODOLOGÍA SENIOR
+                {isEn ? 'SENIOR METHODOLOGY' : 'METODOLOGÍA SENIOR'}
               </div>
             </div>
 
             {/* Title */}
             <h3 className="text-center text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Pilares del <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Web Scraping</span>
+              {isEn ? 'Pillars of' : 'Pilares del'} <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Web Scraping</span>
             </h3>
 
             {/* Description */}
             <p className="text-center text-gray-600 text-base mb-12 max-w-2xl mx-auto">
-              Aplicamos procesos de ética y rigor en cada etapa para garantizar que el acceso a la información sea siempre constante y seguro.
+              {isEn
+                ? 'We apply ethics and rigour processes at every stage to ensure that access to information is always constant and secure.'
+                : 'Aplicamos procesos de ética y rigor en cada etapa para garantizar que el acceso a la información sea siempre constante y seguro.'}
             </p>
 
             {/* Pillars Grid */}
@@ -740,9 +905,11 @@ export default function DataFactoryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center mb-4">
                   <Zap className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Agilidad técnica</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{isEn ? 'Technical agility' : 'Agilidad técnica'}</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Automatizamos procesos complejos para reducir tiempos de entrega y permitir que tu ejecución avance sin esperas.
+                  {isEn
+                    ? 'We automate complex processes to reduce delivery times and let your execution move forward without delays.'
+                    : 'Automatizamos procesos complejos para reducir tiempos de entrega y permitir que tu ejecución avance sin esperas.'}
                 </p>
               </div>
 
@@ -751,9 +918,11 @@ export default function DataFactoryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-pink-400 to-pink-500 rounded-xl flex items-center justify-center mb-4">
                   <FileStack className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Rigor senior</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{isEn ? 'Senior rigour' : 'Rigor senior'}</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Cada solución cuenta con el respaldo y la mentoría de expertos que garantiza la precisión del dato.
+                  {isEn
+                    ? 'Every solution is backed by expert mentorship that guarantees data precision.'
+                    : 'Cada solución cuenta con el respaldo y la mentoría de expertos que garantiza la precisión del dato.'}
                 </p>
               </div>
 
@@ -762,9 +931,11 @@ export default function DataFactoryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
                   <Smile className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Compromiso ético</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{isEn ? 'Ethical commitment' : 'Compromiso ético'}</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Operamos con total transparencia y bajo los marcos legales vigentes, asegurando la integridad en cada extracción.
+                  {isEn
+                    ? 'We operate with full transparency and under applicable legal frameworks, ensuring integrity in every extraction.'
+                    : 'Operamos con total transparencia y bajo los marcos legales vigentes, asegurando la integridad en cada extracción.'}
                 </p>
               </div>
 
@@ -773,9 +944,11 @@ export default function DataFactoryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
                   <TrendingUp className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Escalabilidad real</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{isEn ? 'Real scalability' : 'Escalabilidad real'}</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Diseñamos arquitecturas pensadas para crecer junto a tu volumen de información sin perder estabilidad.
+                  {isEn
+                    ? 'We design architectures built to grow alongside your information volume without losing stability.'
+                    : 'Diseñamos arquitecturas pensadas para crecer junto a tu volumen de información sin perder estabilidad.'}
                 </p>
               </div>
 
@@ -784,9 +957,11 @@ export default function DataFactoryPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-xl flex items-center justify-center mb-4">
                   <BookOpen className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Cercanía colaborativa</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{isEn ? 'Collaborative closeness' : 'Cercanía colaborativa'}</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Priorizamos el acompañamiento constante para ofrecerte respuestas claras y soluciones al momento.
+                  {isEn
+                    ? 'We prioritise constant support to offer you clear answers and immediate solutions.'
+                    : 'Priorizamos el acompañamiento constante para ofrecerte respuestas claras y soluciones al momento.'}
                 </p>
               </div>
             </div>
@@ -808,19 +983,21 @@ export default function DataFactoryPage() {
             <div className="inline-flex items-center gap-2 bg-white/90 rounded-full px-4 py-2">
               <Zap className="w-4 h-4 text-blue-600" />
               <span className="text-blue-700 text-xs font-bold uppercase tracking-wide">
-                RESPALDO EN CIFRAS
+                {isEn ? 'BACKED BY NUMBERS' : 'RESPALDO EN CIFRAS'}
               </span>
             </div>
           </div>
 
           {/* Heading */}
           <h2 className="text-center text-4xl md:text-5xl font-bold text-white mb-6">
-            Experiencia verificada en cada entrega
+            {isEn ? 'Verified experience in every delivery' : 'Experiencia verificada en cada entrega'}
           </h2>
 
           {/* Description */}
           <p className="text-center text-blue-100 text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">
-            Miles de horas de ejecución y millones de registros procesados validan nuestra capacidad para gestionar proyectos de alta complejidad técnica.
+            {isEn
+              ? 'Thousands of hours of execution and millions of processed records validate our capacity to manage projects of high technical complexity.'
+              : 'Miles de horas de ejecución y millones de registros procesados validan nuestra capacidad para gestionar proyectos de alta complejidad técnica.'}
           </p>
 
           {/* Metrics Grid */}
@@ -833,7 +1010,7 @@ export default function DataFactoryPage() {
                 </div>
               </div>
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">+5000</div>
-              <div className="text-sm text-blue-100 font-medium">Fuentes extraídas</div>
+              <div className="text-sm text-blue-100 font-medium">{isEn ? 'Extracted sources' : 'Fuentes extraídas'}</div>
             </div>
 
             {/* registros entregados */}
@@ -843,8 +1020,8 @@ export default function DataFactoryPage() {
                   <Database className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">+2 billones</div>
-              <div className="text-sm text-blue-100 font-medium">registros entregados</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">{isEn ? '+2 billion' : '+2 billones'}</div>
+              <div className="text-sm text-blue-100 font-medium">{isEn ? 'records delivered' : 'registros entregados'}</div>
             </div>
 
             {/* Proyectos finalizados */}
@@ -855,7 +1032,7 @@ export default function DataFactoryPage() {
                 </div>
               </div>
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">+350</div>
-              <div className="text-sm text-blue-100 font-medium">Proyectos finalizados</div>
+              <div className="text-sm text-blue-100 font-medium">{isEn ? 'Completed projects' : 'Proyectos finalizados'}</div>
             </div>
 
             {/* Jobs done */}
@@ -877,7 +1054,7 @@ export default function DataFactoryPage() {
                 </div>
               </div>
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">+65 000</div>
-              <div className="text-sm text-blue-100 font-medium">Horas de ejecución</div>
+              <div className="text-sm text-blue-100 font-medium">{isEn ? 'Execution hours' : 'Horas de ejecución'}</div>
             </div>
 
             {/* de efectividad */}
@@ -888,7 +1065,7 @@ export default function DataFactoryPage() {
                 </div>
               </div>
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">99,9%</div>
-              <div className="text-sm text-blue-100 font-medium">de efectividad</div>
+              <div className="text-sm text-blue-100 font-medium">{isEn ? 'effectiveness' : 'de efectividad'}</div>
             </div>
           </div>
         </div>
@@ -909,28 +1086,30 @@ export default function DataFactoryPage() {
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
               <Puzzle className="w-4 h-4 text-white" />
               <span className="text-white text-xs font-bold uppercase tracking-wide">
-                TALENTO EXPERTO
+                {isEn ? 'EXPERT TALENT' : 'TALENTO EXPERTO'}
               </span>
             </div>
           </div>
 
           {/* Heading */}
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            <span className="text-white">¿Necesitas un flujo de</span>
+            <span className="text-white">{isEn ? 'Do you need a custom' : '¿Necesitas un flujo de'}</span>
             <br />
             <span className="bg-gradient-to-r from-[#7B92FF] via-[#9D7EFF] to-[#B97EFF] bg-clip-text text-transparent">
-              Extracción a medida?
+              {isEn ? 'Extraction flow?' : 'Extracción a medida?'}
             </span>
           </h2>
 
           {/* Description */}
           <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
-            Desarrollamos arquitecturas de entrega personalizadas que se integran con tu entorno de trabajo.
+            {isEn
+              ? 'We develop personalised delivery architectures that integrate with your working environment.'
+              : 'Desarrollamos arquitecturas de entrega personalizadas que se integran con tu entorno de trabajo.'}
           </p>
 
           {/* CTA Button */}
           <button className="bg-gradient-to-r from-[#7B92FF] to-[#9D7EFF] hover:from-[#6B82EF] hover:to-[#8D6EEF] text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 inline-flex items-center gap-3 text-lg">
-            <span>Validar viabilidad técnica</span>
+            <span>{isEn ? 'Validate technical feasibility' : 'Validar viabilidad técnica'}</span>
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
@@ -954,9 +1133,9 @@ export default function DataFactoryPage() {
           {/* Heading */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-              <span className="text-gray-900">Capacidades técnicas</span>
+              <span className="text-gray-900">{isEn ? 'Technical capabilities' : 'Capacidades técnicas'}</span>
               <br />
-              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">aplicadas a tus objetivos</span>
+              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">{isEn ? 'applied to your goals' : 'aplicadas a tus objetivos'}</span>
             </h2>
             <div className="w-16 h-1 bg-purple-600 mx-auto mt-6"></div>
           </div>
@@ -1040,24 +1219,26 @@ export default function DataFactoryPage() {
                 <div className="inline-flex items-center gap-2 bg-pink-50 border border-pink-200 rounded-full px-4 py-2">
                   <Sparkles className="w-4 h-4 text-pink-600" />
                   <span className="text-pink-600 text-xs font-bold uppercase tracking-wide">
-                    POR QUÉ NOSOTROS
+                    {isEn ? 'WHY US' : 'POR QUÉ NOSOTROS'}
                   </span>
                 </div>
               </div>
 
               {/* Heading */}
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Ingeniería validada por líderes
+                {isEn ? 'Engineering validated by leaders' : 'Ingeniería validada por líderes'}
               </h3>
 
               {/* Description */}
               <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl mx-auto">
-                Nuestra capacidad técnica nos ha permitido consolidarnos como Solution Partner oficial de Bright Data, al fortalecer su ecosistema global de datos.
+                {isEn
+                  ? 'Our technical capability has allowed us to consolidate ourselves as an official Solution Partner of Bright Data, strengthening their global data ecosystem.'
+                  : 'Nuestra capacidad técnica nos ha permitido consolidarnos como Solution Partner oficial de Bright Data, al fortalecer su ecosistema global de datos.'}
               </p>
 
               {/* CTA Button */}
               <Link href="https://brightdata.com/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-lg inline-flex items-center gap-3">
-                <span>Ver perfil de Partner</span>
+                <span>{isEn ? 'View Partner profile' : 'Ver perfil de Partner'}</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -1080,7 +1261,7 @@ export default function DataFactoryPage() {
             <div className="inline-flex items-center gap-2 bg-purple-100 border border-purple-300 rounded-full px-4 py-2">
               <MessageSquare className="w-4 h-4 text-purple-600" />
               <span className="text-purple-600 text-xs font-bold uppercase tracking-wide">
-                RESOLVEMOS TUS DUDAS
+                {isEn ? 'WE ANSWER YOUR QUESTIONS' : 'RESOLVEMOS TUS DUDAS'}
               </span>
             </div>
           </div>
@@ -1088,12 +1269,14 @@ export default function DataFactoryPage() {
           {/* Heading */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-              <span className="text-gray-900">Preguntas frecuentes sobre</span>
+              <span className="text-gray-900">{isEn ? 'Frequently asked questions about' : 'Preguntas frecuentes sobre'}</span>
               <br />
               <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Data Factory</span>
             </h2>
             <p className="text-gray-600 text-base mt-6 max-w-2xl mx-auto leading-relaxed">
-              Todo lo que necesitas saber sobre nuestra arquitectura de extracción, plazos de entrega y cómo cuidamos la legalidad de tus procesos.
+              {isEn
+                ? 'Everything you need to know about our extraction architecture, delivery timelines and how we protect the legality of your processes.'
+                : 'Todo lo que necesitas saber sobre nuestra arquitectura de extracción, plazos de entrega y cómo cuidamos la legalidad de tus procesos.'}
             </p>
           </div>
 
@@ -1120,7 +1303,7 @@ export default function DataFactoryPage() {
                       {faq.question}
                     </h3>
                     {openFaqIndex !== index && (
-                      <p className="text-sm text-purple-600 mt-1">Click to learn more</p>
+                      <p className="text-sm text-purple-600 mt-1">{isEn ? 'Click to learn more' : 'Haz clic para saber más'}</p>
                     )}
                   </div>
 

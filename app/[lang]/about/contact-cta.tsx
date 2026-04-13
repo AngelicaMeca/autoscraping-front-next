@@ -23,14 +23,27 @@ export default function ContactCta() {
             </span>
 
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              &iquest;Hablamos de como hacer{' '}
-              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">
-                crecer tu negocio?
-              </span>
+              {isEn ? (
+                <>
+                  Shall we talk about how to{' '}
+                  <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">
+                    grow your business?
+                  </span>
+                </>
+              ) : (
+                <>
+                  ¿Hablamos de como hacer{' '}
+                  <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">
+                    crecer tu negocio?
+                  </span>
+                </>
+              )}
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Nos aseguramos de que lo que sucede en la web se convierta en tu mejor activo. Sin rodeos: nos involucramos en tu proyecto para que cada paso que des sea firme y transparente.
+              {isEn
+                ? 'We make sure that what happens on the web becomes your best asset. No detours: we get involved in your project so every step you take is solid and transparent.'
+                : 'Nos aseguramos de que lo que sucede en la web se convierta en tu mejor activo. Sin rodeos: nos involucramos en tu proyecto para que cada paso que des sea firme y transparente.'}
             </p>
 
             <div className="space-y-4 mb-8">
@@ -71,8 +84,8 @@ export default function ContactCta() {
                 <BarChart3 className="w-7 h-7 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">Experiencia</p>
-                <p className="text-sm text-gray-500">Que los datos</p>
+                <p className="text-2xl font-bold text-gray-900">{isEn ? 'Experience' : 'Experiencia'}</p>
+                <p className="text-sm text-gray-500">{isEn ? 'That data proves' : 'Que los datos'}</p>
               </div>
             </div>
 
@@ -80,7 +93,7 @@ export default function ContactCta() {
               <div className="flex items-center justify-between py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-500 rounded-full" />
-                  <p className="text-gray-700 font-medium">Tiempo de respuesta</p>
+                  <p className="text-gray-700 font-medium">{isEn ? 'Response time' : 'Tiempo de respuesta'}</p>
                 </div>
                 <p className="text-purple-600 font-bold">{'< 1 hour'}</p>
               </div>
@@ -88,7 +101,7 @@ export default function ContactCta() {
               <div className="flex items-center justify-between py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                  <p className="text-gray-700 font-medium">Proyectos entregados</p>
+                  <p className="text-gray-700 font-medium">{isEn ? 'Delivered projects' : 'Proyectos entregados'}</p>
                 </div>
                 <p className="text-blue-600 font-bold">99.9%</p>
               </div>
@@ -96,7 +109,7 @@ export default function ContactCta() {
               <div className="flex items-center justify-between py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-pink-500 rounded-full" />
-                  <p className="text-gray-700 font-medium">Industrias atendidas</p>
+                  <p className="text-gray-700 font-medium">{isEn ? 'Industries served' : 'Industrias atendidas'}</p>
                 </div>
                 <p className="text-pink-600 font-bold">+15</p>
               </div>
@@ -104,7 +117,7 @@ export default function ContactCta() {
               <div className="flex items-center justify-between py-4">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-green-500 rounded-full" />
-                  <p className="text-gray-700 font-medium">A&ntilde;os de trayectoria</p>
+                  <p className="text-gray-700 font-medium">{isEn ? 'Years of experience' : 'Años de trayectoria'}</p>
                 </div>
                 <p className="text-green-600 font-bold">+6</p>
               </div>

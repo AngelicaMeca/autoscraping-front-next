@@ -50,13 +50,13 @@ export default function AboutPage() {
             >
               <div className="w-2 h-2 bg-green-400 rounded-full" />
               <span className="text-white text-xs font-bold uppercase tracking-[0.15em]">
-                EL EQUIPO DETR&Aacute;S DE LOS DATOS
+                {isEn ? 'THE TEAM BEHIND THE DATA' : 'EL EQUIPO DETRÁS DE LOS DATOS'}
               </span>
             </div>
           </div>
 
           <h1 className="font-extrabold leading-[1.1] mb-8" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
-            <span className="text-white">Conoce a los que</span>
+            <span className="text-white">{isEn ? 'Meet the people who' : 'Conoce a los que'}</span>
             <br />
             <span
               className="bg-clip-text text-transparent"
@@ -64,14 +64,24 @@ export default function AboutPage() {
                 backgroundImage: 'linear-gradient(135deg, #7c6bf0 0%, #a78bfa 30%, #60a5fa 70%, #7dd3fc 100%)',
               }}
             >
-              lo hacen posible
+              {isEn ? 'make it happen' : 'lo hacen posible'}
             </span>
           </h1>
 
           <p className="mx-auto mb-14 leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1.1rem' }}>
-            Ingenieros, analistas y estrategas unidos por una misma convicci&oacute;n: los datos
-            <br />
-            bien gestionados cambian el rumbo de cualquier negocio.
+            {isEn ? (
+              <>
+                Engineers, analysts and strategists united by the same conviction: data
+                <br />
+                well managed can change the course of any business.
+              </>
+            ) : (
+              <>
+                Ingenieros, analistas y estrategas unidos por una misma convicción: los datos
+                <br />
+                bien gestionados cambian el rumbo de cualquier negocio.
+              </>
+            )}
           </p>
 
           <div className="flex flex-col items-center gap-2">
@@ -106,20 +116,30 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="mb-6" style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)' }}>
-              <span className="text-white font-extrabold">Nuestra </span>
+              <span className="text-white font-extrabold">{isEn ? 'Our ' : 'Nuestra '}</span>
               <span
                 className="bg-clip-text text-transparent font-extrabold italic"
                 style={{
                   backgroundImage: 'linear-gradient(135deg, #a78bfa 0%, #c084fc 40%, #f472b6 100%)',
                 }}
               >
-                historia
+                {isEn ? 'story' : 'historia'}
               </span>
             </h2>
             <p className="max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.05rem' }}>
-              Desde una idea clara hasta una operaci&oacute;n global. Este es el camino que
-              <br />
-              construimos con cada proyecto, cada cliente y cada dato entregado.
+              {isEn ? (
+                <>
+                  From a clear idea to a global operation. This is the path we
+                  <br />
+                  build with every project, every client and every data point delivered.
+                </>
+              ) : (
+                <>
+                  Desde una idea clara hasta una operación global. Este es el camino que
+                  <br />
+                  construimos con cada proyecto, cada cliente y cada dato entregado.
+                </>
+              )}
             </p>
           </div>
 
@@ -140,12 +160,13 @@ export default function AboutPage() {
                 <Zap className="w-5 h-5 text-purple-400" />
               </div>
 
-              <h3 className="text-white text-xl font-bold mb-4">Como empezamos</h3>
+              <h3 className="text-white text-xl font-bold mb-4">
+                {isEn ? 'How we started' : 'Como empezamos'}
+              </h3>
               <p className="leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.95rem' }}>
-                Todo empez&oacute; con una certeza simple: la informaci&oacute;n
-                m&aacute;s valiosa del mundo estaba en la web, pero
-                segu&iacute;a siendo inaccesible para quienes m&aacute;s la
-                necesitaban. Decidimos cambiar eso.
+                {isEn
+                  ? 'It all started with a simple certainty: the most valuable information in the world was on the web, but it remained inaccessible to those who needed it most. We decided to change that.'
+                  : 'Todo empezó con una certeza simple: la información más valiosa del mundo estaba en la web, pero seguía siendo inaccesible para quienes más la necesitaban. Decidimos cambiar eso.'}
               </p>
 
               <div
@@ -156,15 +177,31 @@ export default function AboutPage() {
                 }}
               >
                 <div className="pt-2 pb-4 space-y-4" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                  <p>
-                    En 2019, dos ingenieros en Santiago del Estero, Argentina, identificaron un problema concreto: las empresas necesitaban datos masivos con urgencia, y las soluciones que exist&iacute;an eran lentas, manuales y poco confiables.
-                  </p>
-                  <p>
-                    Arrancamos con una meta clara: dominar el web scraping a nivel t&eacute;cnico para ofrecer soluciones que realmente funcionaran. Aprendimos r&aacute;pido, ejecutamos mejor y priorizamos los resultados por encima de cualquier otra cosa.
-                  </p>
-                  <p>
-                    Hoy gestionamos infraestructuras complejas para clientes en mercados de alta exigencia, mientras la determinaci&oacute;n del primer d&iacute;a sigue siendo la misma.
-                  </p>
+                  {isEn ? (
+                    <>
+                      <p>
+                        In 2019, two engineers in Santiago del Estero, Argentina, identified a concrete problem: companies urgently needed massive data, and the solutions that existed were slow, manual and unreliable.
+                      </p>
+                      <p>
+                        We started with a clear goal: to master web scraping at a technical level to offer solutions that actually worked. We learned fast, executed better and prioritized results above everything else.
+                      </p>
+                      <p>
+                        Today we manage complex infrastructures for clients in high-demand markets, while the determination of the first day remains the same.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        En 2019, dos ingenieros en Santiago del Estero, Argentina, identificaron un problema concreto: las empresas necesitaban datos masivos con urgencia, y las soluciones que existían eran lentas, manuales y poco confiables.
+                      </p>
+                      <p>
+                        Arrancamos con una meta clara: dominar el web scraping a nivel técnico para ofrecer soluciones que realmente funcionaran. Aprendimos rápido, ejecutamos mejor y priorizamos los resultados por encima de cualquier otra cosa.
+                      </p>
+                      <p>
+                        Hoy gestionamos infraestructuras complejas para clientes en mercados de alta exigencia, mientras la determinación del primer día sigue siendo la misma.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -196,11 +233,13 @@ export default function AboutPage() {
                 <CircleCheck className="w-5 h-5 text-pink-400" />
               </div>
 
-              <h3 className="text-white text-xl font-bold mb-4">Nuestra misi&oacute;n: convertir datos en decisiones</h3>
+              <h3 className="text-white text-xl font-bold mb-4">
+                {isEn ? 'Our mission: turning data into decisions' : 'Nuestra misión: convertir datos en decisiones'}
+              </h3>
               <p className="leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.95rem' }}>
-                Existimos para que la tecnolog&iacute;a no sea una
-                barrera, sino el motor de crecimiento de nuestros
-                clientes.
+                {isEn
+                  ? 'We exist so that technology is not a barrier, but the growth engine for our clients.'
+                  : 'Existimos para que la tecnología no sea una barrera, sino el motor de crecimiento de nuestros clientes.'}
               </p>
 
               <div
@@ -211,12 +250,25 @@ export default function AboutPage() {
                 }}
               >
                 <div className="pt-2 pb-4 space-y-4" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                  <p>
-                    La extracci&oacute;n de datos es un sector que hist&oacute;ricamente oper&oacute; sin est&aacute;ndares claros. Nosotros llegamos a cambiar eso con ingenier&iacute;a estructurada, equipos especializados y un compromiso real con la calidad de cada entrega.
-                  </p>
-                  <p>
-                    No solo entregamos datos. Construimos la infraestructura que permite a nuestros clientes tomar decisiones respaldadas por informaci&oacute;n real, precisa y disponible cuando la necesitan.
-                  </p>
+                  {isEn ? (
+                    <>
+                      <p>
+                        Data extraction is a sector that historically operated without clear standards. We came to change that with structured engineering, specialized teams and a real commitment to the quality of every delivery.
+                      </p>
+                      <p>
+                        We don't just deliver data. We build the infrastructure that allows our clients to make decisions backed by real, accurate information available when they need it.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        La extracción de datos es un sector que históricamente operó sin estándares claros. Nosotros llegamos a cambiar eso con ingeniería estructurada, equipos especializados y un compromiso real con la calidad de cada entrega.
+                      </p>
+                      <p>
+                        No solo entregamos datos. Construimos la infraestructura que permite a nuestros clientes tomar decisiones respaldadas por información real, precisa y disponible cuando la necesitan.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
 

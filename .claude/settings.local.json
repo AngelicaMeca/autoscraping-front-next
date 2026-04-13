@@ -13,7 +13,20 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(netstat -ano)",
       "Bash(findstr :3000)",
-      "Bash(powershell -Command \"Get-Process -Id 25944 | Select-Object Name, Id, MainWindowTitle\")"
+      "Bash(powershell -Command \"Get-Process -Id 25944 | Select-Object Name, Id, MainWindowTitle\")",
+      "Read(//d/d/**)",
+      "Read(//d/as-front-nuevo/as-front-nuevo/app/[lang/]/**)",
+      "Read(//d/as-front-nuevo/as-front-nuevo/app/[lang/]/data-factory/**)",
+      "Read(//d/as-front-nuevo/as-front-nuevo/app/[lang/]/data-squad/**)",
+      "Bash(wc -l /d/as-front-nuevo/app/[lang]/page.tsx)",
+      "Bash(cat /d/as-front-nuevo/app/[lang]/page.tsx)",
+      "Bash(head -20 /d/as-front-nuevo/app/[lang]/page.tsx)",
+      "Bash(grep -n \"': '\" /d/as-front-nuevo/app/[lang]/page.tsx)",
+      "Bash(grep -nE \"\\(Soluciones|Hablemos|Descubre|Infraestructura|NUESTROS|PILARES|sentido|estrategia\\)\" /d/as-front-nuevo/app/[lang]/page.tsx)",
+      "Bash(grep -nE \"^[^/]*['\\\\\"][A-Za-z]\" /d/as-front-nuevo/app/[lang]/page.tsx)",
+      "Bash(grep -E \"\\\\.\\(ts|tsx|js\\)$\")",
+      "Bash(grep -n \"Defin\\\\|Activam\\\\|Recibes\\\\|Confianza\\\\|TALENTO\\\\|líderes\\\\|Bright\\\\|SOLUCIONES\\\\|dominar\\\\|Elige\" /d/as-front-nuevo/app/[lang]/page.tsx)",
+      "Bash(dir \"D:\\\\as-front-nuevo\\\\app\\\\[lang]\\\\data-squad\\\\\" /b)"
     ]
   }
 }

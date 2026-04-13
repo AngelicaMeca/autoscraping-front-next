@@ -1,23 +1,27 @@
+'use client';
+
+import { useLang } from '@/hooks/useLang';
+
 const teamMembers = [
   { name: 'Francisco Battan', role: 'CEO' },
   { name: 'Cesar Farhat', role: 'CTO' },
-  { name: 'Benjam\u00edn Arjona', role: 'CCO' },
+  { name: 'Benjamín Arjona', role: 'CCO' },
   { name: 'Rocio Varas', role: 'Accountant Consultant' },
   { name: 'José Cano', role: 'Data Squad Leader' },
-  { name: 'Iv\u00e1n Quipildor', role: 'DevOPs' },
-  { name: 'Paula Oyarz\u00e1bal', role: 'Administrative Accountant' },
+  { name: 'Iván Quipildor', role: 'DevOPs' },
+  { name: 'Paula Oyarzábal', role: 'Administrative Accountant' },
   { name: 'Leandro Ledesma', role: 'Growth Marketer' },
-  { name: 'Sof\u00eda Varas', role: 'Lawyer Consultant' },
+  { name: 'Sofía Varas', role: 'Lawyer Consultant' },
   { name: 'Ricardo Gil Gelid', role: 'Web Scraping Consultant' },
-  { name: 'Nicol\u00e1s Rad\u00edn', role: 'Mobile Developer' },
+  { name: 'Nicolás Radín', role: 'Mobile Developer' },
   { name: 'Facundo Loto Battan', role: 'Data Analyst' },
-  { name: 'Nicol\u00e1s Maldonado', role: 'Python Developer' },
-  { name: 'Gabriela Gonz\u00e1lez', role: 'Python Developer' },
-  { name: 'Daniel V\u00e9lez Carrizo', role: 'Python Developer' },
+  { name: 'Nicolás Maldonado', role: 'Python Developer' },
+  { name: 'Gabriela González', role: 'Python Developer' },
+  { name: 'Daniel Vélez Carrizo', role: 'Python Developer' },
   { name: 'Carlos Vivas', role: 'Python Developer' },
-  { name: 'Carlos S\u00e1nchez', role: 'Python Developer' },
+  { name: 'Carlos Sánchez', role: 'Python Developer' },
   { name: 'Carlos Brizuela', role: 'Python Developer' },
-  { name: 'Andr\u00e9s Avido', role: 'Python Developer' },
+  { name: 'Andrés Avido', role: 'Python Developer' },
 ];
 
 function getInitials(name: string) {
@@ -26,9 +30,10 @@ function getInitials(name: string) {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-
-
 export default function TeamSection() {
+  const lang = useLang();
+  const isEn = lang === 'en';
+
   return (
     <section
       className="relative py-28 px-6 overflow-hidden"
@@ -48,7 +53,7 @@ export default function TeamSection() {
             >
               <div className="w-2 h-2 bg-green-400 rounded-full" />
               <span className="text-white text-xs font-bold uppercase tracking-[0.12em]">
-                Conoce al squad
+                {isEn ? 'Meet the squad' : 'Conoce al squad'}
               </span>
             </div>
           </div>
@@ -57,7 +62,7 @@ export default function TeamSection() {
             className="text-white font-extrabold leading-tight"
             style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)' }}
           >
-            Nuestro mayor activo
+            {isEn ? 'Our greatest asset' : 'Nuestro mayor activo'}
           </h2>
         </div>
 

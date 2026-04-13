@@ -1,7 +1,7 @@
 'use client';
 
 import { notFound } from 'next/navigation';
-import { servicesData } from './data';
+import { getServicesData } from './data';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import ContactCTA from '@/components/ContactCTA';
@@ -12,8 +12,9 @@ import Link from 'next/link';
 import { useLang } from '@/hooks/useLang';
 
 export default function ServicePage({ params }: { params: { slug: string } }) {
-  const data = servicesData[params.slug];
   const lang = useLang();
+  const isEn = lang === 'en';
+  const data = getServicesData(isEn)[params.slug];
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [openFeatureIndex, setOpenFeatureIndex] = useState<number | null>(0);
 
@@ -76,7 +77,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div className="flex justify-center">
             <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-pink-300 to-pink-200 hover:from-pink-200 hover:to-white text-purple-900 font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-pink-500/30 inline-flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              Agendar llamada
+              {isEn ? 'Book a call' : 'Agendar llamada'}
             </Link>
           </div>
         </div>
@@ -96,9 +97,15 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <div className="max-w-6xl mx-auto relative z-10 mb-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Lo que dicen nuestros <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clientes</span>
+              {isEn ? (
+                <>What our <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clients</span> say</>
+              ) : (
+                <>Lo que dicen nuestros <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clientes</span></>
+              )}
             </h2>
-            <p className="text-gray-500">Resultados reales de empresas que utilizan nuestro servicio</p>
+            <p className="text-gray-500">
+              {isEn ? 'Real results from companies using our service' : 'Resultados reales de empresas que utilizan nuestro servicio'}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -130,9 +137,15 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Características <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Principales</span>
+              {isEn ? (
+                <>Key <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">features</span></>
+              ) : (
+                <>Características <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">principales</span></>
+              )}
             </h2>
-            <p className="text-gray-500">Todo lo que necesitas para triunfar</p>
+            <p className="text-gray-500">
+              {isEn ? 'Everything you need to succeed' : 'Todo lo que necesitas para triunfar'}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto">
@@ -249,7 +262,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div className="flex justify-center">
             <Link href={`/${lang}/book-a-meeting`} className="bg-white text-purple-700 hover:bg-gray-50 font-bold px-6 py-3 rounded-xl transition-all shadow-xl inline-flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              Agendar llamada
+              {isEn ? 'Book a call' : 'Agendar llamada'}
             </Link>
           </div>
         </div>
@@ -266,14 +279,20 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               <div className="inline-flex items-center gap-2 bg-purple-100 border border-purple-300 rounded-full px-5 py-2.5">
                 <HelpCircle className="w-4 h-4 text-purple-600" />
                 <span className="text-purple-600 text-xs font-bold uppercase tracking-widest">
-                  RESOLVEMOS TUS DUDAS
+                  {isEn ? 'WE ANSWER YOUR QUESTIONS' : 'RESOLVEMOS TUS DUDAS'}
                 </span>
               </div>
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Preguntas <span className="text-purple-600">Frecuentes</span>
+              {isEn ? (
+                <>Frequently asked <span className="text-purple-600">questions</span></>
+              ) : (
+                <>Preguntas <span className="text-purple-600">frecuentes</span></>
+              )}
             </h2>
-            <p className="text-gray-500">Aclara tus dudas sobre este servicio.</p>
+            <p className="text-gray-500">
+              {isEn ? 'Clarify your doubts about this service.' : 'Aclara tus dudas sobre este servicio.'}
+            </p>
           </div>
 
           <div className="space-y-4">
@@ -320,7 +339,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                         {faq.question}
                       </h3>
                       {!isOpen && (
-                        <p className="text-sm text-gray-500 mt-1">Haz click para descubrir más</p>
+                        <p className="text-sm text-gray-500 mt-1">{isEn ? 'Click to discover more' : 'Haz click para descubrir más'}</p>
                       )}
                     </div>
                     <div className="flex-shrink-0">

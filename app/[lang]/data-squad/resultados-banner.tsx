@@ -4,16 +4,17 @@ import { Zap, CalendarDays, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useLang } from '@/hooks/useLang';
 
-const stats = [
-  { value: '+13.700', label: 'Horas de ingeniería' },
-  { value: '99,9%', label: 'Tasa de exito' },
-  { value: '+170', label: 'Repositorios mantenidos' },
-  { value: '+500', label: 'Sitios web procesados' },
-];
-
 export default function ResultadosBanner() {
   const lang = useLang();
   const isEn = lang === 'en';
+
+  const stats = [
+    { value: '+13.700', label: isEn ? 'Engineering hours' : 'Horas de ingeniería' },
+    { value: '99,9%', label: isEn ? 'Success rate' : 'Tasa de éxito' },
+    { value: '+170', label: isEn ? 'Maintained repositories' : 'Repositorios mantenidos' },
+    { value: '+500', label: isEn ? 'Websites processed' : 'Sitios web procesados' },
+  ];
+
   return (
     <section className="relative overflow-hidden py-28 px-6">
       <div
@@ -57,25 +58,49 @@ export default function ResultadosBanner() {
           >
             <Zap className="w-4 h-4 text-yellow-300" />
             <span className="text-white text-xs font-bold uppercase tracking-[0.15em]">
-              HISTORIAL DE EJECUCIÓN COMPROBABLE
+              {isEn ? 'PROVABLE EXECUTION HISTORY' : 'HISTORIAL DE EJECUCIÓN COMPROBABLE'}
             </span>
           </div>
         </div>
 
         <h2 className="text-white font-extrabold leading-[1.15] mb-8" style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)' }}>
-          Resultados de alto valor{'\n'}
-          <br />
-          Respaldados por la experiencia
+          {isEn ? (
+            <>
+              High-value results
+              <br />
+              Backed by experience
+            </>
+          ) : (
+            <>
+              Resultados de alto valor
+              <br />
+              Respaldados por la experiencia
+            </>
+          )}
         </h2>
 
         <p className="mx-auto mb-12 leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem' }}>
-          No teorizamos sobre datos; los dominamos.
-          <br />
-          Transformamos desafíos complejos en sistemas de alto
-          <br />
-          rendimiento, asegurando que cada entrega potencie tu
-          <br />
-          capacidad de respuesta y el crecimiento de tu operación.
+          {isEn ? (
+            <>
+              We don&apos;t theorize about data; we master it.
+              <br />
+              We transform complex challenges into high-performance
+              <br />
+              systems, ensuring every delivery boosts your
+              <br />
+              responsiveness and operational growth.
+            </>
+          ) : (
+            <>
+              No teorizamos sobre datos; los dominamos.
+              <br />
+              Transformamos desafíos complejos en sistemas de alto
+              <br />
+              rendimiento, asegurando que cada entrega potencie tu
+              <br />
+              capacidad de respuesta y el crecimiento de tu operación.
+            </>
+          )}
         </p>
 
         <div className="flex justify-center mb-14">

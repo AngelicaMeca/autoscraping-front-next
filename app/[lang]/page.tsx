@@ -76,15 +76,15 @@ export default function Home() {
   const industries = [
     { name: 'E-COMMERCE', icon: ShoppingCart },
     { name: 'REAL ESTATE', icon: HomeIcon },
-    { name: 'TURISMO Y VIAJES', icon: Plane },
-    { name: 'SALUD Y PHARMA', icon: Heart },
-    { name: 'CONSUMO Y RETAIL', icon: ShoppingBag },
-    { name: 'CIBERSEGURIDAD', icon: Lock },
+    { name: isEn ? 'TOURISM & TRAVEL' : 'TURISMO Y VIAJES', icon: Plane },
+    { name: isEn ? 'HEALTH & PHARMA' : 'SALUD Y PHARMA', icon: Heart },
+    { name: isEn ? 'CONSUMER & RETAIL' : 'CONSUMO Y RETAIL', icon: ShoppingBag },
+    { name: isEn ? 'CYBERSECURITY' : 'CIBERSEGURIDAD', icon: Lock },
     { name: 'FINTECH', icon: CreditCard },
-    { name: 'EVENTOS Y TICKETING', icon: Ticket },
-    { name: 'RECURSOS HUMANOS Y TALENTO', icon: UserCheck },
-    { name: 'GOBIERNO Y SECTOR PÚBLICO', icon: Building2 },
-    { name: 'CONSULTORÍA Y ANALYTICS', icon: BarChart3 },
+    { name: isEn ? 'EVENTS & TICKETING' : 'EVENTOS Y TICKETING', icon: Ticket },
+    { name: isEn ? 'HR & TALENT' : 'RECURSOS HUMANOS Y TALENTO', icon: UserCheck },
+    { name: isEn ? 'GOVERNMENT & PUBLIC SECTOR' : 'GOBIERNO Y SECTOR PÚBLICO', icon: Building2 },
+    { name: isEn ? 'CONSULTING & ANALYTICS' : 'CONSULTORÍA Y ANALYTICS', icon: BarChart3 },
   ];
 
   const companies = [
@@ -96,33 +96,39 @@ export default function Home() {
       name: 'Francisco Battan',
       title: 'CEO',
       initials: 'FB',
-      quote: 'Los datos son nuestro lenguaje, pero lo que realmente importa es lo que significan para tu negocio. Te acompañamos en el proceso de convertir información en decisiones concretas.',
+      quote: isEn
+        ? 'Data is our language, but what really matters is what it means for your business. We guide you through the process of turning information into concrete decisions.'
+        : 'Los datos son nuestro lenguaje, pero lo que realmente importa es lo que significan para tu negocio. Te acompañamos en el proceso de convertir información en decisiones concretas.',
       expertise: [
-        { title: 'Ejecucion', subtitle: 'De Proyectos' },
-        { title: 'Relacion', subtitle: 'Con Clientes' },
-        { title: 'Liderazgo', subtitle: 'Técnico' }
+        { title: isEn ? 'Project' : 'Ejecución', subtitle: isEn ? 'Execution' : 'de proyectos' },
+        { title: isEn ? 'Client' : 'Relación', subtitle: isEn ? 'Relations' : 'con clientes' },
+        { title: isEn ? 'Technical' : 'Liderazgo', subtitle: isEn ? 'Leadership' : 'técnico' }
       ]
     },
     {
       name: 'Benjamín Arjona',
       title: 'CCO',
       initials: 'BA',
-      quote: 'Cada negocio tiene necesidades de datos distintas y únicas. Nos enfocamos en entender las tuyas para construir una solución que se ajuste a lo que necesitas hoy y escale con lo que viene mañana.',
+      quote: isEn
+        ? 'Every business has unique and distinct data needs. We focus on understanding yours to build a solution that fits what you need today and scales with what comes tomorrow.'
+        : 'Cada negocio tiene necesidades de datos distintas y únicas. Nos enfocamos en entender las tuyas para construir una solución que se ajuste a lo que necesitas hoy y escale con lo que viene mañana.',
       expertise: [
-        { title: 'Desarrollo', subtitle: 'Comercial' },
-        { title: 'Soluciones', subtitle: 'A Medida' },
-        { title: 'Partnerships', subtitle: 'Estratégicos' }
+        { title: isEn ? 'Business' : 'Desarrollo', subtitle: isEn ? 'Development' : 'comercial' },
+        { title: isEn ? 'Custom' : 'Soluciones', subtitle: isEn ? 'Solutions' : 'a medida' },
+        { title: isEn ? 'Strategic' : 'Partnerships', subtitle: isEn ? 'Partnerships' : 'estratégicos' }
       ]
     },
     {
       name: 'Cesar Farhat',
       title: 'CTO',
       initials: 'CF',
-      quote: 'Como pioneros en extracción de datos, combinamos tecnología de avanzada con automatización para que lo técnico nunca sea tu problema.',
+      quote: isEn
+        ? 'As pioneers in data extraction, we combine cutting-edge technology with automation so that the technical side is never your problem.'
+        : 'Como pioneros en extracción de datos, combinamos tecnología de avanzada con automatización para que lo técnico nunca sea tu problema.',
       expertise: [
-        { title: 'Arquitectura', subtitle: 'De Datos' },
-        { title: 'Automatización', subtitle: 'A Escala' },
-        { title: 'Innovación', subtitle: 'Técnica' }
+        { title: isEn ? 'Data' : 'Arquitectura', subtitle: isEn ? 'Architecture' : 'de datos' },
+        { title: isEn ? 'Automation' : 'Automatización', subtitle: isEn ? 'at Scale' : 'a escala' },
+        { title: isEn ? 'Technical' : 'Innovación', subtitle: isEn ? 'Innovation' : 'técnica' }
       ]
     }
   ];
@@ -184,25 +190,33 @@ export default function Home() {
           <main className="relative z-10 mx-auto max-w-7xl px-6 pt-24 md:pt-32 pb-16 md:pb-24">
             <div className="max-w-4xl">
               <p className="text-blue-200 text-sm font-medium mb-8">
-                {isEn ? 'Leading Web Scraping Solutions' : 'Soluciones de Web Scraping Líderes'}
+                {isEn ? 'Leading Web Scraping Solutions' : 'Soluciones de Web Scraping líderes'}
               </p>
 
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 md:mb-8">
-                Ingeniería humana<br className="hidden md:block" />
-                para una extracción<br className="hidden md:block" />
-                de datos continua y precisa
+                {isEn ? (
+                  <>Human engineering<br className="hidden md:block" />
+                  for continuous and<br className="hidden md:block" />
+                  precise data extraction</>
+                ) : (
+                  <>Ingeniería humana<br className="hidden md:block" />
+                  para una extracción<br className="hidden md:block" />
+                  de datos continua y precisa</>
+                )}
               </h1>
 
               <p className="text-blue-200 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-2xl">
-                Resolvemos los desafíos técnicos del scraping para que recibas información estructurada y lista para usar. Mientras tú escalas tu negocio, nosotros aseguramos la integridad y transparencia de cada dato.
+                {isEn
+                  ? 'We solve the technical challenges of scraping so you receive structured, ready-to-use information. While you scale your business, we ensure the integrity and transparency of every data point.'
+                  : 'Resolvemos los desafíos técnicos del scraping para que recibas información estructurada y lista para usar. Mientras tú escalas tu negocio, nosotros aseguramos la integridad y transparencia de cada dato.'}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href={`/${lang}/book-a-meeting`} className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition inline-block text-center">
-                  Hablemos de tu proyecto
+                  {isEn ? "Let's talk about your project" : 'Hablemos de tu proyecto'}
                 </Link>
                 <a href="#infraestructura" className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition inline-block text-center">
-                  Descubre más
+                  {isEn ? 'Discover more' : 'Descubre más'}
                 </a>
               </div>
             </div>
@@ -227,14 +241,21 @@ export default function Home() {
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#9D62FA' }}></div>
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#9D62FA' }}></div>
                 </div>
-                NUESTROS PILARES
+                {isEn ? 'OUR PILLARS' : 'NUESTROS PILARES'}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Infraestructura que da<br className="hidden md:inline" />
-                <span className="md:ml-2" style={{ background: 'linear-gradient(to right, #9D62FA, #7B68EE, #2A327A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>sentido a tu estrategia</span>
+                {isEn ? (
+                  <>Infrastructure that gives<br className="hidden md:inline" />
+                  <span className="md:ml-2" style={{ background: 'linear-gradient(to right, #9D62FA, #7B68EE, #2A327A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>meaning to your strategy</span></>
+                ) : (
+                  <>Infraestructura que da<br className="hidden md:inline" />
+                  <span className="md:ml-2" style={{ background: 'linear-gradient(to right, #9D62FA, #7B68EE, #2A327A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>sentido a tu estrategia</span></>
+                )}
               </h2>
               <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-                Combinamos capacidad técnica y soporte directo para que tu equipo se centre en el análisis, delegando en nosotros la complejidad de la extracción.
+                {isEn
+                  ? 'We combine technical capacity and direct support so your team can focus on analysis, delegating the complexity of extraction to us.'
+                  : 'Combinamos capacidad técnica y soporte directo para que tu equipo se centre en el análisis, delegando en nosotros la complejidad de la extracción.'}
               </p>
             </div>
 
@@ -244,19 +265,21 @@ export default function Home() {
                 <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(to bottom right, rgba(157, 98, 250, 0.15), rgba(157, 98, 250, 0.05))', borderColor: 'rgba(157, 98, 250, 0.2)' }}>
                   <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#9D62FA' }}>
                     <Lightbulb className="w-4 h-4" />
-                    INGENIERÍA HUMANA
+                    {isEn ? 'HUMAN ENGINEERING' : 'INGENIERÍA HUMANA'}
                   </span>
                   <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4" style={{ backgroundColor: '#9D62FA' }}>
                     <Lightbulb className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    Acompañamiento real
+                    {isEn ? 'Real accompaniment' : 'Acompañamiento real'}
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Eliminamos la barrera de los tickets. Tratas directamente con los ingenieros que gestionan tus datos, para resolver dudas.
+                    {isEn
+                      ? 'We eliminate the ticket barrier. You deal directly with the engineers managing your data to resolve any questions.'
+                      : 'Eliminamos la barrera de los tickets. Tratas directamente con los ingenieros que gestionan tus datos, para resolver dudas.'}
                   </p>
                   <a href="#" className="font-medium text-sm flex items-center gap-2" style={{ color: '#9D62FA' }}>
-                    Soluciones en tiempo real
+                    {isEn ? 'Real-time solutions' : 'Soluciones en tiempo real'}
                     <span>→</span>
                   </a>
                 </div>
@@ -264,27 +287,29 @@ export default function Home() {
                 <div className="bg-white rounded-3xl p-8 border border-gray-200">
                   <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
                     <Database className="w-4 h-4" />
-                    CALIDAD DEL DATO
+                    {isEn ? 'DATA QUALITY' : 'CALIDAD DEL DATO'}
                   </span>
                   <h3 className="text-xl font-bold text-gray-900 mb-6">
-                    Información lista para usar para que empieces a trabajar de inmediato
+                    {isEn
+                      ? 'Ready-to-use information so you can start working immediately'
+                      : 'Información lista para usar para que empieces a trabajar de inmediato'}
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
                       <Monitor className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                      <p className="text-sm font-semibold text-gray-900">Datos limpios</p>
+                      <p className="text-sm font-semibold text-gray-900">{isEn ? 'Clean data' : 'Datos limpios'}</p>
                     </div>
                     <div className="text-center">
                       <RefreshCw className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                      <p className="text-sm font-semibold text-gray-900">Datos verificados</p>
+                      <p className="text-sm font-semibold text-gray-900">{isEn ? 'Verified data' : 'Datos verificados'}</p>
                     </div>
                     <div className="text-center">
                       <Database className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                      <p className="text-sm font-semibold text-gray-900">Datos estructurados</p>
+                      <p className="text-sm font-semibold text-gray-900">{isEn ? 'Structured data' : 'Datos estructurados'}</p>
                     </div>
                     <div className="text-center">
                       <Zap className="w-10 h-10 mx-auto mb-2" style={{ color: '#9D62FA' }} />
-                      <p className="text-sm font-semibold text-gray-900">Archivos precisos</p>
+                      <p className="text-sm font-semibold text-gray-900">{isEn ? 'Precise files' : 'Archivos precisos'}</p>
                     </div>
                   </div>
                 </div>
@@ -295,10 +320,10 @@ export default function Home() {
                 <div className="bg-white rounded-3xl p-8 border border-gray-200">
                   <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
                     <Shield className="w-4 h-4" />
-                    ÉTICA Y LEGALIDAD
+                    {isEn ? 'ETHICS & LEGALITY' : 'ÉTICA Y LEGALIDAD'}
                   </span>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Transparencia y seguridad legal
+                    {isEn ? 'Transparency and legal security' : 'Transparencia y seguridad legal'}
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
@@ -307,10 +332,10 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm">
-                          Garantizamos una extracción de datos honesta
+                          {isEn ? 'We guarantee honest data extraction' : 'Garantizamos una extracción de datos honesta'}
                         </p>
                         <p className="text-gray-600 text-sm">
-                          Deja estructuras limpias
+                          {isEn ? 'Leaving clean, well-structured data' : 'Deja estructuras limpias'}
                         </p>
                       </div>
                     </div>
@@ -320,10 +345,12 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm">
-                          Tu negocio crece
+                          {isEn ? 'Your business grows' : 'Tu negocio crece'}
                         </p>
                         <p className="text-gray-600 text-sm">
-                          con la tranquilidad de trabajar con procesos éticos y claros.
+                          {isEn
+                            ? 'with the peace of mind of working with ethical and transparent processes.'
+                            : 'con la tranquilidad de trabajar con procesos éticos y claros.'}
                         </p>
                       </div>
                     </div>
@@ -333,26 +360,28 @@ export default function Home() {
                 <div className="rounded-3xl p-8 text-white" style={{ background: 'linear-gradient(to bottom right, #2A327A, #1e2456)' }}>
                   <span className="inline-flex items-center gap-2 text-blue-200 text-xs font-medium mb-4">
                     <Zap className="w-4 h-4" />
-                    AGILIDAD DE LA RESPUESTA
+                    {isEn ? 'RESPONSE AGILITY' : 'AGILIDAD DE LA RESPUESTA'}
                   </span>
                   <div className="w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center mb-4">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-3">
-                    Sin esperas ni intermediarios
+                    {isEn ? 'No wait times, no middlemen' : 'Sin esperas ni intermediarios'}
                   </h3>
                   <p className="text-blue-100 text-sm">
-                    Valoramos tu tiempo. Hablas directamente con los especialistas que gestionan tu solución para obtener respuestas al momento y asegurar que nada detenga el ritmo de tu negocio.
+                    {isEn
+                      ? 'We value your time. You speak directly with the specialists managing your solution to get instant answers and ensure nothing slows down your business rhythm.'
+                      : 'Valoramos tu tiempo. Hablas directamente con los especialistas que gestionan tu solución para obtener respuestas al momento y asegurar que nada detenga el ritmo de tu negocio.'}
                   </p>
                 </div>
 
                 <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(to bottom right, rgba(123, 104, 238, 0.15), rgba(123, 104, 238, 0.05))', borderColor: 'rgba(123, 104, 238, 0.2)' }}>
                   <span className="inline-flex items-center gap-2 text-xs font-medium mb-4" style={{ color: '#7B68EE' }}>
                     <Target className="w-4 h-4" />
-                    POTENCIA TÉCNICA
+                    {isEn ? 'TECHNICAL POWER' : 'POTENCIA TÉCNICA'}
                   </span>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Extracción sin obstáculos
+                    {isEn ? 'Extraction without obstacles' : 'Extracción sin obstáculos'}
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
@@ -361,10 +390,10 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm">
-                          Superamos los bloqueos técnicos
+                          {isEn ? 'We overcome technical blocks' : 'Superamos los bloqueos técnicos'}
                         </p>
                         <p className="text-gray-600 text-sm">
-                          con tecnología que se adapta a la web.
+                          {isEn ? 'with technology that adapts to the web.' : 'con tecnología que se adapta a la web.'}
                         </p>
                       </div>
                     </div>
@@ -374,10 +403,10 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm">
-                          Trabajamos para que recibas un flujo
+                          {isEn ? 'We work so you receive a flow' : 'Trabajamos para que recibas un flujo'}
                         </p>
                         <p className="text-gray-600 text-sm">
-                          de información estable y continuo.
+                          {isEn ? 'of stable and continuous information.' : 'de información estable y continuo.'}
                         </p>
                       </div>
                     </div>
@@ -439,10 +468,12 @@ export default function Home() {
           <div className="relative z-10 mx-auto max-w-7xl px-6">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">
-                Capacidad operativa al servicio de tu negocio
+                {isEn ? 'Operational capacity at the service of your business' : 'Capacidad operativa al servicio de tu negocio'}
               </h2>
               <p className="text-blue-200 text-base md:text-lg max-w-3xl mx-auto">
-                Métricas que garantizan la precisión, legalidad y operativa escalable con el respaldo directo de nuestro equipo.
+                {isEn
+                  ? 'Metrics that guarantee precision, legality and scalable operations with the direct backing of our team.'
+                  : 'Métricas que garantizan la precisión, legalidad y operativa escalable con el respaldo directo de nuestro equipo.'}
               </p>
             </div>
 
@@ -509,19 +540,25 @@ export default function Home() {
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-white">La confianza de</span>
+              <span className="text-white">{isEn ? 'The trust of' : 'La confianza de'}</span>
               <br className="hidden md:block" />
-              <span className="text-blue-400"> Los líderes globales</span>
+              <span className="text-blue-400">{isEn ? ' global leaders' : ' los líderes globales'}</span>
             </h2>
 
             <p className="text-blue-100 text-base md:text-xl leading-relaxed mb-8 md:mb-10 max-w-4xl mx-auto">
-              Somos Solution Partner oficial de Bright Data,<br className="hidden md:block" />
-              colaborando activamente en la resolución de desafíos complejos<br className="hidden md:block" />
-              de extracción de datos para la red más importante del mundo.
+              {isEn ? (
+                <>We are an official Bright Data Solution Partner,<br className="hidden md:block" />
+                actively collaborating in solving complex<br className="hidden md:block" />
+                data extraction challenges for the world&apos;s most important network.</>
+              ) : (
+                <>Somos Solution Partner oficial de Bright Data,<br className="hidden md:block" />
+                colaborando activamente en la resolución de desafíos complejos<br className="hidden md:block" />
+                de extracción de datos para la red más importante del mundo.</>
+              )}
             </p>
 
             <a href="https://brightdata.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 md:px-8 py-3 md:py-4 rounded-lg transition inline-flex justify-center items-center gap-2 text-base md:text-lg">
-              Conoce nuestra alianza estratégica
+              {isEn ? 'Discover our strategic alliance' : 'Conoce nuestra alianza estratégica'}
               <span>→</span>
             </a>
           </div>
@@ -541,11 +578,11 @@ export default function Home() {
             <div className="text-center mb-16">
               <span className="inline-flex items-center gap-2 text-white text-xs font-bold px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-700 mb-6">
                 <Sparkles className="w-4 h-4" />
-                SOLUCIONES A MEDIDA
+                {isEn ? 'TAILORED SOLUTIONS' : 'SOLUCIONES A MEDIDA'}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-2 md:mb-4">
-                <span className="text-gray-900">Elige como quieres </span><br className="block md:hidden" />
-                <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">dominar la web</span>
+                <span className="text-gray-900">{isEn ? 'Choose how you want to ' : 'Elige como quieres '}</span><br className="block md:hidden" />
+                <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">{isEn ? 'dominate the web' : 'dominar la web'}</span>
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-[#9D62FA] to-[#0E155B] mx-auto mt-4 rounded-full"></div>
             </div>
@@ -556,7 +593,7 @@ export default function Home() {
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <span className="inline-block text-purple-600 text-xs font-bold px-3 py-1 rounded-full bg-purple-100 mb-4">
-                      DATOS BAJO DEMANDA
+                      {isEn ? 'DATA ON DEMAND' : 'DATOS BAJO DEMANDA'}
                     </span>
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center shadow-lg">
@@ -570,7 +607,9 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Tú defines qué datos necesitas y nosotros automatizamos su entrega. Recibes información limpia y lista para integrarla de inmediato, sin que tu equipo tenga que gestionar servidores o escribir una sola línea de código.
+                  {isEn
+                    ? 'You define what data you need and we automate its delivery. You receive clean information ready to integrate immediately, without your team having to manage servers or write a single line of code.'
+                    : 'Tú defines qué datos necesitas y nosotros automatizamos su entrega. Recibes información limpia y lista para integrarla de inmediato, sin que tu equipo tenga que gestionar servidores o escribir una sola línea de código.'}
                 </p>
               </Link>
 
@@ -580,7 +619,7 @@ export default function Home() {
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <span className="inline-block text-teal-700 text-xs font-bold px-3 py-1 rounded-full bg-teal-100 mb-4">
-                      TALENTO TÉCNICO
+                      {isEn ? 'TECHNICAL TALENT' : 'TALENTO TÉCNICO'}
                     </span>
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
@@ -603,12 +642,14 @@ export default function Home() {
 
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                <span className="text-gray-900">Tu mercado, con una</span>
+                <span className="text-gray-900">{isEn ? 'Your market, with a' : 'Tu mercado, con una'}</span>
                 <br />
-                <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">visión clara</span>
+                <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">{isEn ? 'clear vision' : 'visión clara'}</span>
               </h2>
               <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                Nos adaptamos a lo que buscas en tu sector. Trabajamos junto a ti para que lo que sucede en la web sea tu mejor ventaja al decidir y avanzar con seguridad.
+                {isEn
+                  ? 'We adapt to what you are looking for in your sector. We work alongside you so that what happens on the web becomes your greatest advantage when making decisions and moving forward with confidence.'
+                  : 'Nos adaptamos a lo que buscas en tu sector. Trabajamos junto a ti para que lo que sucede en la web sea tu mejor ventaja al decidir y avanzar con seguridad.'}
               </p>
             </div>
 
@@ -667,11 +708,13 @@ export default function Home() {
           <div className="relative z-10 mx-auto max-w-6xl px-6">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                <span className="text-white">Un camino directo hacia </span><br className="block md:hidden" />
-                <span className="text-blue-400">tus datos</span>
+                <span className="text-white">{isEn ? 'A direct path to ' : 'Un camino directo hacia '}</span><br className="block md:hidden" />
+                <span className="text-blue-400">{isEn ? 'your data' : 'tus datos'}</span>
               </h2>
               <p className="text-blue-200 text-lg">
-                Te ofrecemos un proceso tan ágil como las decisiones que necesitas tomar.
+                {isEn
+                  ? 'We offer you a process as agile as the decisions you need to make.'
+                  : 'Te ofrecemos un proceso tan ágil como las decisiones que necesitas tomar.'}
               </p>
             </div>
 
@@ -682,13 +725,15 @@ export default function Home() {
                     <span>1</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white text-2xl font-bold mb-3">Alineamos tu objetivo</h3>
+                    <h3 className="text-white text-2xl font-bold mb-3">{isEn ? 'We align your objective' : 'Alineamos tu objetivo'}</h3>
                     <p className="text-blue-200 leading-relaxed mb-4">
-                      Hablamos sobre lo que buscas y cómo necesitas recibirlo. Colaboramos desde el primer minuto para trazar el alcance real de tu proyecto y asegurar que la solución se ajuste a lo que tu negocio necesita.
+                      {isEn
+                        ? 'We talk about what you are looking for and how you need to receive it. We collaborate from the first minute to outline the real scope of your project and ensure the solution fits your business needs.'
+                        : 'Hablamos sobre lo que buscas y cómo necesitas recibirlo. Colaboramos desde el primer minuto para trazar el alcance real de tu proyecto y asegurar que la solución se ajuste a lo que tu negocio necesita.'}
                     </p>
                     <div className="flex items-center gap-2 text-purple-400 text-sm">
                       <FileText className="w-4 h-4" />
-                      <span>Consulta inicial sin compromiso</span>
+                      <span>{isEn ? 'Initial consultation, no commitment' : 'Consulta inicial sin compromiso'}</span>
                     </div>
                   </div>
                 </div>
@@ -701,13 +746,15 @@ export default function Home() {
                     <span>2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white text-2xl font-bold mb-3">Definimos el plan</h3>
+                    <h3 className="text-white text-2xl font-bold mb-3">{isEn ? 'We define the plan' : 'Definimos el plan'}</h3>
                     <p className="text-blue-200 leading-relaxed mb-4">
-                      Preparamos una propuesta clara y transparente. Sabrás exactamente qué vamos a hacer y en qué plazos, para que tengas el control total desde el inicio.
+                      {isEn
+                        ? 'We prepare a clear and transparent proposal. You will know exactly what we are going to do and within what timeframes, so you have full control from the start.'
+                        : 'Preparamos una propuesta clara y transparente. Sabrás exactamente qué vamos a hacer y en qué plazos, para que tengas el control total desde el inicio.'}
                     </p>
                     <div className="flex items-center gap-2 text-purple-400 text-sm">
                       <FileText className="w-4 h-4" />
-                      <span>Propuesta detallada en 48h</span>
+                      <span>{isEn ? 'Detailed proposal in 48h' : 'Propuesta detallada en 48h'}</span>
                     </div>
                   </div>
                 </div>
@@ -720,13 +767,15 @@ export default function Home() {
                     <span>3</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white text-2xl font-bold mb-3">Activamos la solución</h3>
+                    <h3 className="text-white text-2xl font-bold mb-3">{isEn ? 'We activate the solution' : 'Activamos la solución'}</h3>
                     <p className="text-blue-200 leading-relaxed mb-4">
-                      Ponemos en marcha nuestra tecnología o el equipo necesario. Nosotros resolvemos los bloqueos y la parte técnica del día a día para que tú sigas al mando de la estrategia con total tranquilidad.
+                      {isEn
+                        ? 'We launch our technology or the required team. We handle the day-to-day blockers and technical aspects so you stay in command of the strategy with complete peace of mind.'
+                        : 'Ponemos en marcha nuestra tecnología o el equipo necesario. Nosotros resolvemos los bloqueos y la parte técnica del día a día para que tú sigas al mando de la estrategia con total tranquilidad.'}
                     </p>
                     <div className="flex items-center gap-2 text-purple-400 text-sm">
                       <Zap className="w-4 h-4" />
-                      <span>Implementación en días, no meses</span>
+                      <span>{isEn ? 'Implementation in days, not months' : 'Implementación en días, no meses'}</span>
                     </div>
                   </div>
                 </div>
@@ -739,13 +788,15 @@ export default function Home() {
                     <span>4</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white text-2xl font-bold mb-3">Recibes y escalas</h3>
+                    <h3 className="text-white text-2xl font-bold mb-3">{isEn ? 'You receive and scale' : 'Recibes y escalas'}</h3>
                     <p className="text-blue-200 leading-relaxed mb-4">
-                      Te entregamos el valor que necesitas y nos ocupamos del mantenimiento. Cuidamos que el servicio sea constante y el flujo de información no se detenga, para que nada frene tu crecimiento.
+                      {isEn
+                        ? 'We deliver the value you need and take care of maintenance. We ensure the service is constant and the information flow never stops, so nothing holds back your growth.'
+                        : 'Te entregamos el valor que necesitas y nos ocupamos del mantenimiento. Cuidamos que el servicio sea constante y el flujo de información no se detenga, para que nada frene tu crecimiento.'}
                     </p>
                     <div className="flex items-center gap-2 text-purple-400 text-sm">
                       <RefreshCw className="w-4 h-4" />
-                      <span>Soporte continuo incluido</span>
+                      <span>{isEn ? 'Continuous support included' : 'Soporte continuo incluido'}</span>
                     </div>
                   </div>
                 </div>
@@ -786,10 +837,12 @@ export default function Home() {
             {/* Heading */}
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Confianza construida con <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">hechos</span>
+                {isEn ? <>Trust built with <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">facts</span></> : <>Confianza construida con <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">hechos</span></>}
               </h2>
               <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-                Nos integramos en tu día a día para que la información nunca sea un obstáculo. Mira cómo ayudamos a otros líderes a tomar decisiones con total seguridad.
+                {isEn
+                  ? 'We integrate into your day-to-day so information is never an obstacle. See how we help other leaders make decisions with total confidence.'
+                  : 'Nos integramos en tu día a día para que la información nunca sea un obstáculo. Mira cómo ayudamos a otros líderes a tomar decisiones con total seguridad.'}
               </p>
             </div>
 
@@ -871,7 +924,7 @@ export default function Home() {
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
-                <p className="text-5xl font-bold text-purple-600 mb-2">500+</p>
+                <p className="text-5xl font-bold text-purple-600 mb-2">150+</p>
                 <p className="text-gray-700 font-medium">{isEn ? 'Happy Clients' : 'Clientes satisfechos'}</p>
               </div>
 
@@ -919,18 +972,20 @@ export default function Home() {
             <div className="flex justify-center mb-6">
               <div className="inline-flex items-center gap-2 bg-white border border-purple-200 px-4 py-2 rounded-full shadow-sm">
                 <UsersRound className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-semibold text-purple-600 uppercase tracking-wide">Equipo Líder</span>
+                <span className="text-sm font-semibold text-purple-600 uppercase tracking-wide">{isEn ? 'Leadership Team' : 'Equipo líder'}</span>
               </div>
             </div>
 
             {/* Main Heading */}
             <div className="text-center mb-10 md:mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                <span className="text-gray-900">El respaldo detras de tu </span>
-                <span className="bg-gradient-to-r from-[#9D62FA] to-[#6B46C1] bg-clip-text text-transparent">Estrategia</span>
+                <span className="text-gray-900">{isEn ? 'The backing behind your ' : 'El respaldo detrás de tu '}</span>
+                <span className="bg-gradient-to-r from-[#9D62FA] to-[#6B46C1] bg-clip-text text-transparent">{isEn ? 'Strategy' : 'Estrategia'}</span>
               </h2>
               <p className="text-purple-600 text-base md:text-lg">
-                Conoce a los especialistas que lideran la ejecución de cada proyecto.
+                {isEn
+                  ? 'Meet the specialists who lead the execution of every project.'
+                  : 'Conoce a los especialistas que lideran la ejecución de cada proyecto.'}
               </p>
             </div>
 
@@ -1040,21 +1095,23 @@ export default function Home() {
 
             {/* Heading */}
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">Informacion clara,</span>
+              <span className="text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">{isEn ? 'Clear information,' : 'Información clara,'}</span>
               <br />
-              <span className="bg-gradient-to-r from-[#C084FC] to-[#60A5FA] bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(192,132,252,0.8)]">decisiones seguras</span>
+              <span className="bg-gradient-to-r from-[#C084FC] to-[#60A5FA] bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(192,132,252,0.8)]">{isEn ? 'secure decisions' : 'decisiones seguras'}</span>
             </h2>
 
             {/* Description */}
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed">
-              Nos ocupamos de que los datos de la web lleguen directo a tu flujo de trabajo. Sin filtros ni demoras, solo un camino despejado hacia tus objetivos.
+              {isEn
+                ? 'We ensure web data flows directly into your workflow. No filters, no delays — just a clear path to your goals.'
+                : 'Nos ocupamos de que los datos de la web lleguen directo a tu flujo de trabajo. Sin filtros ni demoras, solo un camino despejado hacia tus objetivos.'}
             </p>
 
             {/* CTA Button */}
             <div className="relative inline-block w-full sm:w-auto">
               <div className="absolute -inset-2 bg-gradient-to-r from-[#C084FC]/40 via-[#60A5FA]/40 to-[#F472B6]/40 rounded-xl blur-xl"></div>
               <Link href={`/${lang}/book-a-meeting`} className="relative w-full sm:w-auto bg-gradient-to-r from-[#7B5FE8] to-[#9D62FA] hover:from-[#6B4FD8] hover:to-[#8D52EA] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-block text-center">
-                Contactar con un experto
+                {isEn ? 'Contact an expert' : 'Contactar con un experto'}
               </Link>
             </div>
           </div>
@@ -1077,13 +1134,15 @@ export default function Home() {
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                 </div>
-                SÍGUENOS EN TIEMPO REAL
+                {isEn ? 'FOLLOW US IN REAL TIME' : 'SÍGUENOS EN TIEMPO REAL'}
               </span>
               <h2 className="text-5xl font-bold text-gray-900 mb-6">
-                Nuestro trabajo <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">Sin filtros</span>
+                {isEn ? <>Our work, <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">unfiltered</span></> : <>Nuestro trabajo <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">Sin filtros</span></>}
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                Descubre lo que hacemos, cómo lo resolvemos y quiénes están detrás. Porque la transparencia es parte de cómo operamos.
+                {isEn
+                  ? 'Discover what we do, how we solve it and who is behind it. Because transparency is part of how we operate.'
+                  : 'Descubre lo que hacemos, cómo lo resolvemos y quiénes están detrás. Porque la transparencia es parte de cómo operamos.'}
               </p>
             </div>
 
@@ -1112,20 +1171,24 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-bold text-lg">AUTOScraping</p>
-                      <p className="text-blue-200 text-sm">1.931 seguidores · Editada</p>
+                      <p className="text-blue-200 text-sm">{isEn ? '1,931 followers · Edited' : '1.931 seguidores · Editada'}</p>
                     </div>
                   </div>
 
                   <h3 className="text-2xl font-bold mb-3">
-                    Escalar es un deporte de equipo: Nuestra experiencia en Milán 🇦🇷🤝🇮🇹
+                    {isEn
+                      ? 'Scaling is a team sport: Our experience in Milan 🇦🇷🤝🇮🇹'
+                      : 'Escalar es un deporte de equipo: Nuestra experiencia en Milán 🇦🇷🤝🇮🇹'}
                   </h3>
 
                   <p className="text-blue-100 leading-relaxed mb-4 text-sm">
-                    Nuestras soluciones de autoscraping y automatización tienen un espacio real y necesario en el mercado global. Compartir el camino con otros fundadores argentinos refuerza la idea de que la tecnología argentina es una marca de calidad exportable.
+                    {isEn
+                      ? 'Our autoscraping and automation solutions have a real and necessary place in the global market. Sharing the journey with other Argentine founders reinforces the idea that Argentine technology is an exportable quality brand.'
+                      : 'Nuestras soluciones de autoscraping y automatización tienen un espacio real y necesario en el mercado global. Compartir el camino con otros fundadores argentinos refuerza la idea de que la tecnología argentina es una marca de calidad exportable.'}
                   </p>
 
                   <p className="text-blue-200 text-xs mb-5">
-                    #ExpansionInternacional #StartupsArgentina #Italy #TechLeadership #Innovation #Networking #ArgentinaAlMundo
+                    #InternationalExpansion #ArgentinaStartups #Italy #TechLeadership #Innovation #Networking #ArgentinaToTheWorld
                   </p>
 
                   <a
@@ -1134,22 +1197,22 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0A66C2] font-medium px-6 py-3 rounded-lg transition mb-6 self-start"
                   >
-                    Ver en LinkedIn
+                    {isEn ? 'View on LinkedIn' : 'Ver en LinkedIn'}
                     <ExternalLink className="w-4 h-4" />
                   </a>
 
                   <div className="flex items-center gap-6 text-sm border-t border-white/20 pt-5 mt-auto">
                     <div className="flex items-center gap-2">
                       <ThumbsUp className="w-4 h-4" />
-                      <span>16 reacciones</span>
+                      <span>{isEn ? '16 reactions' : '16 reacciones'}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MessageCircle className="w-4 h-4" />
-                      <span>Comentarios</span>
+                      <span>{isEn ? 'Comments' : 'Comentarios'}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ArrowRight className="w-4 h-4" />
-                      <span>Compartir</span>
+                      <span>{isEn ? 'Share' : 'Compartir'}</span>
                     </div>
                   </div>
                 </div>
@@ -1163,27 +1226,29 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-bold text-gray-900">AUTOScraping</p>
-                    <p className="text-gray-500 text-xs">3 de marzo · Fira Barcelona Gran Via 📍</p>
+                    <p className="text-gray-500 text-xs">{isEn ? 'March 3 · Fira Barcelona Gran Via 📍' : '3 de marzo · Fira Barcelona Gran Via 📍'}</p>
                   </div>
                 </div>
 
                 <p className="text-gray-700 leading-relaxed mb-2 text-sm flex-1">
-                  ¡Día 1 en el #MWC26: Check! ✅🇦🇷 Deslizá para ver lo que fue la segunda parte de nuestra primera jornada en Barcelona. 🇪🇸 De la adrenalina de presentar en el Hub Argentino ante empresas y partners, a perderse en la inmensidad de los pabellones de Samsung, Microsoft y MediaTek. 🤯
+                  {isEn
+                    ? 'Day 1 at #MWC26: Check! ✅🇦🇷 Swipe to see what the second part of our first day in Barcelona was like. 🇪🇸 From the adrenaline of presenting at the Argentine Hub to companies and partners, to getting lost in the vastness of the Samsung, Microsoft and MediaTek pavilions. 🤯'
+                    : '¡Día 1 en el #MWC26: Check! ✅🇦🇷 Deslizá para ver lo que fue la segunda parte de nuestra primera jornada en Barcelona. 🇪🇸 De la adrenalina de presentar en el Hub Argentino ante empresas y partners, a perderse en la inmensidad de los pabellones de Samsung, Microsoft y MediaTek. 🤯'}
                 </p>
 
                 <p className="text-[#1877F2] text-xs mb-4 font-medium">
-                  #MWC2026 #Barcelona #TechLife #InnovaciónArgentina
+                  #MWC2026 #Barcelona #TechLife #ArgentinaInnovation
                 </p>
 
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                   <div className="flex items-center gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-2">
                       <ThumbsUp className="w-4 h-4 text-[#1877F2] fill-[#1877F2]" />
-                      <span className="text-gray-700 font-medium">Me gusta</span>
+                      <span className="text-gray-700 font-medium">{isEn ? 'Like' : 'Me gusta'}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MessageCircle className="w-4 h-4" />
-                      <span className="text-gray-700 font-medium">Comentar</span>
+                      <span className="text-gray-700 font-medium">{isEn ? 'Comment' : 'Comentar'}</span>
                     </div>
                   </div>
                   <a
@@ -1192,7 +1257,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="text-[#1877F2] hover:text-blue-700 text-sm font-medium flex items-center gap-1.5 transition"
                   >
-                    Ver en Facebook
+                    {isEn ? 'View on Facebook' : 'Ver en Facebook'}
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -1254,10 +1319,12 @@ export default function Home() {
               <div className="flex items-end justify-between">
                 <div>
                   <h2 className="text-6xl font-bold text-gray-900 mb-4">
-                    Desde el <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Blog</span>
+                    {isEn ? <>From the <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Blog</span></> : <>Desde el <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Blog</span></>}
                   </h2>
                   <p className="text-gray-600 text-lg max-w-2xl">
-                    Casos reales, decisiones técnicas y lecciones del campo, documentadas por quienes ejecutan la solución.
+                    {isEn
+                      ? 'Real cases, technical decisions and lessons from the field, documented by those who execute the solution.'
+                      : 'Casos reales, decisiones técnicas y lecciones del campo, documentadas por quienes ejecutan la solución.'}
                   </p>
                 </div>
                 <Link href={`/${lang}/blog`} className="px-6 py-3 rounded-full border-2 border-purple-600 text-purple-600 font-medium hover:bg-purple-50 transition flex items-center gap-2">

@@ -1,55 +1,7 @@
-import { Settings, Zap, Heart, Sparkles, BookOpen, RefreshCw } from 'lucide-react';
+'use client';
 
-const values = [
-  {
-    icon: Settings,
-    iconBg: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-    title: 'Obsesi\u00f3n por el dato',
-    description:
-      'Un dato impreciso es una mala decisi\u00f3n en potencia. No aceptamos atajos: la veracidad es el eje de nuestra arquitectura.',
-    borderColor: 'rgba(167,139,250,0.25)',
-  },
-  {
-    icon: Zap,
-    iconBg: 'linear-gradient(135deg, #f472b6 0%, #ec4899 100%)',
-    title: 'Velocidad con criterio',
-    description:
-      'Actuamos r\u00e1pido, pero con rigor. En negocios de alta exigencia, la precisi\u00f3n t\u00e9cnica pesa tanto como el tiempo.',
-    borderColor: 'rgba(244,114,182,0.25)',
-  },
-  {
-    icon: Heart,
-    iconBg: 'linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%)',
-    title: 'Cercan\u00eda real',
-    description:
-      'Sin burocracia ni sistema de tickets. Construimos confianza mediante el trato directo entre los especialistas y quienes necesitan la soluci\u00f3n.',
-    borderColor: 'rgba(34,211,238,0.25)',
-  },
-  {
-    icon: Sparkles,
-    iconBg: 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)',
-    title: 'Transparencia radical',
-    description:
-      'Somos honestos sobre lo que es viable y lo que no. Nuestra pol\u00edtica es la claridad, \u00e9tica y legalidad en cada etapa del proyecto.',
-    borderColor: 'rgba(74,222,128,0.25)',
-  },
-  {
-    icon: BookOpen,
-    iconBg: 'linear-gradient(135deg, #fb923c 0%, #f97316 100%)',
-    title: 'Responsabilidad operativa',
-    description:
-      'No delegamos la calidad. Cada integrante del equipo asume el compromiso total sobre el resultado de la entrega.',
-    borderColor: 'rgba(251,146,60,0.25)',
-  },
-  {
-    icon: RefreshCw,
-    iconBg: 'linear-gradient(135deg, #e879f9 0%, #d946ef 100%)',
-    title: 'Evoluci\u00f3n constante',
-    description:
-      'Quedarse est\u00e1tico es retroceder. Aprendemos y experimentamos cada d\u00eda para asegurar que nuestra metodolog\u00eda siempre sea la m\u00e1s avanzada.',
-    borderColor: 'rgba(232,121,249,0.25)',
-  },
-];
+import { Settings, Zap, Heart, Sparkles, BookOpen, RefreshCw } from 'lucide-react';
+import { useLang } from '@/hooks/useLang';
 
 function ValueCard({
   icon: Icon,
@@ -85,6 +37,66 @@ function ValueCard({
 }
 
 export default function ValuesSection() {
+  const lang = useLang();
+  const isEn = lang === 'en';
+
+  const values = [
+    {
+      icon: Settings,
+      iconBg: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+      title: isEn ? 'Data obsession' : 'Obsesión por el dato',
+      description: isEn
+        ? 'An inaccurate data point is a potential bad decision. We accept no shortcuts: truthfulness is the axis of our architecture.'
+        : 'Un dato impreciso es una mala decisión en potencia. No aceptamos atajos: la veracidad es el eje de nuestra arquitectura.',
+      borderColor: 'rgba(167,139,250,0.25)',
+    },
+    {
+      icon: Zap,
+      iconBg: 'linear-gradient(135deg, #f472b6 0%, #ec4899 100%)',
+      title: isEn ? 'Speed with judgment' : 'Velocidad con criterio',
+      description: isEn
+        ? 'We act fast, but with rigor. In high-demand businesses, technical precision weighs as much as time.'
+        : 'Actuamos rápido, pero con rigor. En negocios de alta exigencia, la precisión técnica pesa tanto como el tiempo.',
+      borderColor: 'rgba(244,114,182,0.25)',
+    },
+    {
+      icon: Heart,
+      iconBg: 'linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%)',
+      title: isEn ? 'Real closeness' : 'Cercanía real',
+      description: isEn
+        ? 'No bureaucracy or ticket systems. We build trust through direct contact between specialists and those who need the solution.'
+        : 'Sin burocracia ni sistema de tickets. Construimos confianza mediante el trato directo entre los especialistas y quienes necesitan la solución.',
+      borderColor: 'rgba(34,211,238,0.25)',
+    },
+    {
+      icon: Sparkles,
+      iconBg: 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)',
+      title: isEn ? 'Radical transparency' : 'Transparencia radical',
+      description: isEn
+        ? 'We are honest about what is viable and what is not. Our policy is clarity, ethics, and legality at every stage of the project.'
+        : 'Somos honestos sobre lo que es viable y lo que no. Nuestra política es la claridad, ética y legalidad en cada etapa del proyecto.',
+      borderColor: 'rgba(74,222,128,0.25)',
+    },
+    {
+      icon: BookOpen,
+      iconBg: 'linear-gradient(135deg, #fb923c 0%, #f97316 100%)',
+      title: isEn ? 'Operational responsibility' : 'Responsabilidad operativa',
+      description: isEn
+        ? 'We do not delegate quality. Every team member assumes full commitment over the result of each delivery.'
+        : 'No delegamos la calidad. Cada integrante del equipo asume el compromiso total sobre el resultado de la entrega.',
+      borderColor: 'rgba(251,146,60,0.25)',
+    },
+    {
+      icon: RefreshCw,
+      iconBg: 'linear-gradient(135deg, #e879f9 0%, #d946ef 100%)',
+      title: isEn ? 'Constant evolution' : 'Evolución constante',
+      description: isEn
+        ? 'Standing still is moving backwards. We learn and experiment every day to ensure our methodology is always the most advanced.'
+        : 'Quedarse estático es retroceder. Aprendemos y experimentamos cada día para asegurar que nuestra metodología siempre sea la más avanzada.',
+      borderColor: 'rgba(232,121,249,0.25)',
+    },
+  ];
+
   return (
     <section className="relative py-28 px-6 overflow-hidden bg-gray-50">
       <div
@@ -108,26 +120,27 @@ export default function ValuesSection() {
             >
               <BookOpen className="w-3.5 h-3.5 text-blue-600" />
               <span className="text-blue-600 text-xs font-bold uppercase tracking-[0.12em]">
-                Lo que nos gu&iacute;a
+                {isEn ? 'What guides us' : 'Lo que nos guía'}
               </span>
             </div>
           </div>
 
           <h2 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)' }}>
-            <span className="text-gray-900 font-extrabold">Nuestros </span>
+            <span className="text-gray-900 font-extrabold">{isEn ? 'Our ' : 'Nuestros '}</span>
             <span
               className="font-extrabold italic bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c084fc 100%)',
               }}
             >
-              valores
+              {isEn ? 'values' : 'valores'}
             </span>
           </h2>
 
           <p className="text-gray-500 mt-5 max-w-xl mx-auto leading-relaxed" style={{ fontSize: '1.05rem' }}>
-            Est&aacute;ndares que rigen nuestro trabajo y garantizan la solidez de cada
-            soluci&oacute;n que ofrecemos.
+            {isEn
+              ? 'Standards that govern our work and guarantee the solidity of every solution we offer.'
+              : 'Estándares que rigen nuestro trabajo y garantizan la solidez de cada solución que ofrecemos.'}
           </p>
         </div>
 

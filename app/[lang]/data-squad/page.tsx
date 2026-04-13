@@ -15,45 +15,46 @@ import ContactCTA from '@/components/ContactCTA';
 
 export default function DataSquadPage() {
   const lang = useLang();
+  const isEn = lang === 'en';
   const whyCards = [
     {
       icon: DollarSign,
-      title: 'Ahorro operativo real',
-      subtitle: 'ELIMINA COSTOS DE CONTRATACIÓN',
-      description: 'Elimina costos de contratación, onboarding y gestión administrativa. Solo pagas por el talento que necesitas, cuando lo necesitas.',
-      tags: ['Inversión optimizada', 'Sin burocracia', 'Eficiencia inmediata'],
+      title: isEn ? 'Real operational savings' : 'Ahorro operativo real',
+      subtitle: isEn ? 'ELIMINATE HIRING COSTS' : 'ELIMINA COSTOS DE CONTRATACIÓN',
+      description: isEn ? 'Eliminate hiring, onboarding, and administrative management costs. You only pay for the talent you need, when you need it.' : 'Elimina costos de contratación, onboarding y gestión administrativa. Solo pagas por el talento que necesitas, cuando lo necesitas.',
+      tags: isEn ? ['Optimized investment', 'No bureaucracy', 'Immediate efficiency'] : ['Inversión optimizada', 'Sin burocracia', 'Eficiencia inmediata'],
       gradient: 'from-purple-500 to-purple-600',
     },
     {
       icon: BookOpen,
-      title: 'Formación continua',
-      subtitle: 'TECNOLOGÍA SIEMPRE ACTUALIZADA',
-      description: 'Nuestros especialistas se mantienen actualizados en cada ciclo tecnológico.',
-      tags: ['Aprendizaje constante', 'Adaptable', 'Al día'],
+      title: isEn ? 'Continuous training' : 'Formación continua',
+      subtitle: isEn ? 'ALWAYS UP-TO-DATE TECHNOLOGY' : 'TECNOLOGÍA SIEMPRE ACTUALIZADA',
+      description: isEn ? 'Our specialists stay current with every technology cycle.' : 'Nuestros especialistas se mantienen actualizados en cada ciclo tecnológico.',
+      tags: isEn ? ['Constant learning', 'Adaptable', 'Up to date'] : ['Aprendizaje constante', 'Adaptable', 'Al día'],
       gradient: 'from-pink-500 to-rose-600',
     },
     {
       icon: Rocket,
-      title: 'Activación en 2 semanas',
-      subtitle: 'SIN PROCESOS LARGOS NI DEMORAS',
-      description: 'Seleccionamos, validamos e integramos tu squad en un plazo de dos semanas.',
-      tags: ['Rápido', 'Sin fricciones', 'Listo para operar'],
+      title: isEn ? 'Activation in 2 weeks' : 'Activación en 2 semanas',
+      subtitle: isEn ? 'NO LONG PROCESSES OR DELAYS' : 'SIN PROCESOS LARGOS NI DEMORAS',
+      description: isEn ? 'We select, validate, and integrate your squad within two weeks.' : 'Seleccionamos, validamos e integramos tu squad en un plazo de dos semanas.',
+      tags: isEn ? ['Fast', 'Frictionless', 'Ready to operate'] : ['Rápido', 'Sin fricciones', 'Listo para operar'],
       gradient: 'from-cyan-500 to-blue-600',
     },
     {
       icon: GraduationCap,
-      title: 'Mentoría interna',
-      subtitle: 'CALIDAD TÉCNICA GARANTIZADA',
-      description: 'Cada miembro cuenta con el respaldo de ingenieros que supervisan la calidad técnica del trabajo.',
-      tags: ['Respaldo', 'Apoyo', 'En equipo'],
+      title: isEn ? 'Internal mentoring' : 'Mentoría interna',
+      subtitle: isEn ? 'GUARANTEED TECHNICAL QUALITY' : 'CALIDAD TÉCNICA GARANTIZADA',
+      description: isEn ? 'Every member has the backing of engineers who supervise the technical quality of the work.' : 'Cada miembro cuenta con el respaldo de ingenieros que supervisan la calidad técnica del trabajo.',
+      tags: isEn ? ['Support', 'Backup', 'Team-driven'] : ['Respaldo', 'Apoyo', 'En equipo'],
       gradient: 'from-orange-400 to-amber-500',
     },
     {
       icon: Target,
-      title: 'Foco en soluciones',
-      subtitle: 'ORIENTADO AL RESULTADO',
-      description: 'Sumamos perfiles orientados a resolver; que identifican el problema, proponen el camino y lo ejecutan.',
-      tags: ['Resolutivo', 'Proactivo', 'Orientado al resultado'],
+      title: isEn ? 'Solution-focused' : 'Foco en soluciones',
+      subtitle: isEn ? 'RESULTS-ORIENTED' : 'ORIENTADO AL RESULTADO',
+      description: isEn ? 'We bring profiles focused on solving; they identify the problem, propose the path, and execute it.' : 'Sumamos perfiles orientados a resolver; que identifican el problema, proponen el camino y lo ejecutan.',
+      tags: isEn ? ['Problem-solver', 'Proactive', 'Results-oriented'] : ['Resolutivo', 'Proactivo', 'Orientado al resultado'],
       gradient: 'from-indigo-500 to-violet-600',
     },
   ];
@@ -90,75 +91,75 @@ export default function DataSquadPage() {
   const services = [
     {
       slug: 'data-squad-as-service',
-      title: 'Equipo de Datos como Servicio',
-      subtitle: 'SOLUCIONES COMPLETAS',
-      description: 'Acceso a un equipo dedicado de especialistas en extracción de datos, disponible bajo demanda para resolver tus proyectos más complejos sin comprometerse a largo plazo.',
+      title: isEn ? 'Data Team as a Service' : 'Equipo de Datos como Servicio',
+      subtitle: isEn ? 'COMPLETE SOLUTIONS' : 'SOLUCIONES COMPLETAS',
+      description: isEn ? 'Access to a dedicated team of data extraction specialists, available on demand to solve your most complex projects without long-term commitments.' : 'Acceso a un equipo dedicado de especialistas en extracción de datos, disponible bajo demanda para resolver tus proyectos más complejos sin comprometerse a largo plazo.',
       icon: Users,
-      tags: ['Flexible', 'Bajo demanda', 'Escalable']
+      tags: isEn ? ['Flexible', 'On demand', 'Scalable'] : ['Flexible', 'Bajo demanda', 'Escalable']
     },
     {
       slug: 'data-scientist-squad',
-      title: 'Equipo de Data Scientists',
-      subtitle: 'ANÁLISIS Y PREDICCIÓN',
-      description: 'Científicos de datos con experiencia en machine learning y análisis predictivo para transformar datos crudos en insights estratégicos y modelos de negocio.',
+      title: isEn ? 'Data Scientists Team' : 'Equipo de Data Scientists',
+      subtitle: isEn ? 'ANALYSIS AND PREDICTION' : 'ANÁLISIS Y PREDICCIÓN',
+      description: isEn ? 'Data scientists experienced in machine learning and predictive analysis to transform raw data into strategic insights and business models.' : 'Científicos de datos con experiencia en machine learning y análisis predictivo para transformar datos crudos en insights estratégicos y modelos de negocio.',
       icon: Brain,
-      tags: ['ML', 'Predictivo', 'Insights']
+      tags: isEn ? ['ML', 'Predictive', 'Insights'] : ['ML', 'Predictivo', 'Insights']
     },
     {
       slug: 'core-data-services',
-      title: 'Servicios Core de Datos',
-      subtitle: 'SERVICIOS FUNDAMENTALES',
-      description: 'Servicios esenciales de limpieza, validación y estructuración de datos para asegurar la calidad de tu información desde el primer momento.',
+      title: isEn ? 'Core Data Services' : 'Servicios Core de Datos',
+      subtitle: isEn ? 'FUNDAMENTAL SERVICES' : 'SERVICIOS FUNDAMENTALES',
+      description: isEn ? 'Essential data cleaning, validation, and structuring services to ensure the quality of your information from the very first moment.' : 'Servicios esenciales de limpieza, validación y estructuración de datos para asegurar la calidad de tu información desde el primer momento.',
       icon: Database,
-      tags: ['Calidad', 'Validación', 'Limpieza']
+      tags: isEn ? ['Quality', 'Validation', 'Cleaning'] : ['Calidad', 'Validación', 'Limpieza']
     },
     {
       slug: 'advanced-data-services',
-      title: 'Servicios Avanzados de Datos',
-      subtitle: 'PROCESAMIENTO AVANZADO',
-      description: 'Soluciones de procesamiento de alto rendimiento incluyendo transformación ETL, integración multi-fuente y operaciones de datos en tiempo real.',
+      title: isEn ? 'Advanced Data Services' : 'Servicios Avanzados de Datos',
+      subtitle: isEn ? 'ADVANCED PROCESSING' : 'PROCESAMIENTO AVANZADO',
+      description: isEn ? 'High-performance processing solutions including ETL transformation, multi-source integration, and real-time data operations.' : 'Soluciones de procesamiento de alto rendimiento incluyendo transformación ETL, integración multi-fuente y operaciones de datos en tiempo real.',
       icon: Layers,
-      tags: ['ETL', 'Tiempo real', 'Integración']
+      tags: isEn ? ['ETL', 'Real time', 'Integration'] : ['ETL', 'Tiempo real', 'Integración']
     },
     {
       slug: 'data-collection-services',
-      title: 'Recolección de Datos',
-      subtitle: 'CAPTURA DE DATOS',
-      description: 'Recopilación exhaustiva de datos de múltiples fuentes con técnicas avanzadas de web scraping, APIs y integraciones personalizadas.',
+      title: isEn ? 'Data Collection' : 'Recolección de Datos',
+      subtitle: isEn ? 'DATA CAPTURE' : 'CAPTURA DE DATOS',
+      description: isEn ? 'Comprehensive data collection from multiple sources using advanced web scraping techniques, APIs, and custom integrations.' : 'Recopilación exhaustiva de datos de múltiples fuentes con técnicas avanzadas de web scraping, APIs y integraciones personalizadas.',
       icon: FileText,
-      tags: ['Scraping', 'APIs', 'Recopilación']
+      tags: isEn ? ['Scraping', 'APIs', 'Collection'] : ['Scraping', 'APIs', 'Recopilación']
     },
     {
       slug: 'big-data-consulting',
-      title: 'Consultoría en Big Data',
-      subtitle: 'ESTRATEGIA A ESCALA',
-      description: 'Asesoramiento estratégico para implementar infraestructuras de big data, seleccionar tecnologías adecuadas y optimizar tus operaciones de datos masivos.',
+      title: isEn ? 'Big Data Consulting' : 'Consultoría en Big Data',
+      subtitle: isEn ? 'STRATEGY AT SCALE' : 'ESTRATEGIA A ESCALA',
+      description: isEn ? 'Strategic consulting to implement big data infrastructures, select appropriate technologies, and optimize your massive data operations.' : 'Asesoramiento estratégico para implementar infraestructuras de big data, seleccionar tecnologías adecuadas y optimizar tus operaciones de datos masivos.',
       icon: Briefcase,
-      tags: ['Estrategia', 'Infraestructura', 'Optimización']
+      tags: isEn ? ['Strategy', 'Infrastructure', 'Optimization'] : ['Estrategia', 'Infraestructura', 'Optimización']
     },
     {
       slug: 'real-estate-data-entry',
-      title: 'Gestión de Datos Inmobiliarios',
-      subtitle: 'DATOS INMOBILIARIOS',
-      description: 'Captura especializada de datos immobiliarios, listados, valuaciones y mercados para potenciar tu estrategia en el sector real estate.',
+      title: isEn ? 'Real Estate Data Management' : 'Gestión de Datos Inmobiliarios',
+      subtitle: isEn ? 'REAL ESTATE DATA' : 'DATOS INMOBILIARIOS',
+      description: isEn ? 'Specialized capture of real estate data, listings, valuations, and markets to boost your strategy in the real estate sector.' : 'Captura especializada de datos immobiliarios, listados, valuaciones y mercados para potenciar tu estrategia en el sector real estate.',
       icon: Home,
-      tags: ['Inmobiliario', 'Listados', 'Mercado']
+      tags: isEn ? ['Real Estate', 'Listings', 'Market'] : ['Inmobiliario', 'Listados', 'Mercado']
     },
     {
       slug: 'outsource-data-mining',
-      title: 'Minería de Datos',
-      subtitle: 'EXTRACCIÓN ESPECIALIZADA',
-      description: 'Outsourcing completo de minería de datos con equipos dedicados para extraer patrones, tendencias y oportunidades de tus conjuntos de datos.',
+      title: isEn ? 'Data Mining' : 'Minería de Datos',
+      subtitle: isEn ? 'SPECIALIZED EXTRACTION' : 'EXTRACCIÓN ESPECIALIZADA',
+      description: isEn ? 'Complete data mining outsourcing with dedicated teams to extract patterns, trends, and opportunities from your datasets.' : 'Outsourcing completo de minería de datos con equipos dedicados para extraer patrones, tendencias y oportunidades de tus conjuntos de datos.',
       icon: TrendingDown,
-      tags: ['Minería', 'Patrones', 'Tendencias']
+      tags: isEn ? ['Mining', 'Patterns', 'Trends'] : ['Minería', 'Patrones', 'Tendencias']
     },
     {
       slug: 'b2b-data-services',
-      title: 'Servicios de Datos B2B',
-      subtitle: 'DATOS EMPRESARIALES',
-      description: 'Bases de datos empresariales actualizadas, prospección B2B, enriquecimiento de contactos y listas de decisores para impulsar tu estrategia comercial.',
+      title: isEn ? 'B2B Data Services' : 'Servicios de Datos B2B',
+      subtitle: isEn ? 'BUSINESS DATA' : 'DATOS EMPRESARIALES',
+      description: isEn ? 'Updated business databases, B2B prospecting, contact enrichment, and decision-maker lists to drive your commercial strategy.' : 'Bases de datos empresariales actualizadas, prospección B2B, enriquecimiento de contactos y listas de decisores para impulsar tu estrategia comercial.',
       icon: Cpu,
-      tags: ['B2B', 'Prospección', 'Contactos']
+      tags: isEn ? ['B2B', 'Prospecting', 'Contacts'] : ['B2B', 'Prospección', 'Contactos']
     }
   ];
 
@@ -187,7 +188,7 @@ export default function DataSquadPage() {
           <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 mb-10">
             <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
             <UsersRound className="w-5 h-5 text-white" />
-            <span className="text-white font-medium text-sm tracking-wide uppercase">TALENTO BAJO DEMANDA</span>
+            <span className="text-white font-medium text-sm tracking-wide uppercase">{isEn ? 'TALENT ON DEMAND' : 'TALENTO BAJO DEMANDA'}</span>
             <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
           </div>
 
@@ -200,21 +201,21 @@ export default function DataSquadPage() {
 
           {/* Description */}
           <p className="text-white/90 text-xl max-w-4xl mx-auto mb-12 leading-relaxed font-light">
-            Escala tu capacidad técnica con un equipo de élite en extracción de datos. Integra especialistas senior a tu flujo de trabajo para resolver la complejidad de la captura, análisis y mantenimiento.
+            {isEn ? 'Scale your technical capacity with an elite data extraction team. Integrate senior specialists into your workflow to tackle the complexity of capture, analysis, and maintenance.' : 'Escala tu capacidad técnica con un equipo de élite en extracción de datos. Integra especialistas senior a tu flujo de trabajo para resolver la complejidad de la captura, análisis y mantenimiento.'}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-20 px-4 md:px-0">
             <Link href={`/${lang}/book-a-meeting`} className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-purple-500/30 flex items-center gap-3">
               <MessageSquare className="w-5 h-5" />
-              <span>Hablar con un experto</span>
+              <span>{isEn ? 'Talk to an expert' : 'Hablar con un experto'}</span>
               <span className="ml-1">→</span>
             </Link>
             <button
               onClick={() => document.getElementById('proceso-ds')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all"
             >
-              Conocer el proceso
+              {isEn ? 'Learn the process' : 'Conocer el proceso'}
             </button>
           </div>
 
@@ -225,7 +226,7 @@ export default function DataSquadPage() {
                 <UsersRound className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold">Talento senior</p>
+                <p className="text-white font-semibold">{isEn ? 'Senior talent' : 'Talento senior'}</p>
                 <p className="text-gray-300 text-sm">1:1</p>
               </div>
             </div>
@@ -235,8 +236,8 @@ export default function DataSquadPage() {
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold">Mantenimiento</p>
-                <p className="text-gray-300 text-sm">Proactivo</p>
+                <p className="text-white font-semibold">{isEn ? 'Maintenance' : 'Mantenimiento'}</p>
+                <p className="text-gray-300 text-sm">{isEn ? 'Proactive' : 'Proactivo'}</p>
               </div>
             </div>
 
@@ -245,8 +246,8 @@ export default function DataSquadPage() {
                 <TrendingUp className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold">Escalabilidad</p>
-                <p className="text-gray-300 text-sm">Inmediata</p>
+                <p className="text-white font-semibold">{isEn ? 'Scalability' : 'Escalabilidad'}</p>
+                <p className="text-gray-300 text-sm">{isEn ? 'Immediate' : 'Inmediata'}</p>
               </div>
             </div>
           </div>
@@ -258,9 +259,9 @@ export default function DataSquadPage() {
               <div className="w-14 h-14 bg-gradient-to-br from-[#ec4899] to-[#db2777] rounded-2xl flex items-center justify-center mb-6">
                 <Zap className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-4">Integración inmediata</h3>
+              <h3 className="text-white text-xl font-bold mb-4">{isEn ? 'Immediate integration' : 'Integración inmediata'}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Potencia tu capacidad operativa integrando especialistas expertos a tus flujos actuales.
+                {isEn ? 'Boost your operational capacity by integrating expert specialists into your current workflows.' : 'Potencia tu capacidad operativa integrando especialistas expertos a tus flujos actuales.'}
               </p>
             </div>
 
@@ -269,9 +270,9 @@ export default function DataSquadPage() {
               <div className="w-14 h-14 bg-gradient-to-br from-[#3b82f6] to-[#2563eb] rounded-2xl flex items-center justify-center mb-6">
                 <CheckCircle2 className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-4">Gestión Garantizada</h3>
+              <h3 className="text-white text-xl font-bold mb-4">{isEn ? 'Guaranteed management' : 'Gestión garantizada'}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Recibe visibilidad total del progreso con reportes regulares, eliminando la carga de la microgestión.
+                {isEn ? 'Get full visibility into progress with regular reports, eliminating the burden of micromanagement.' : 'Recibe visibilidad total del progreso con reportes regulares, eliminando la carga de la microgestión.'}
               </p>
             </div>
 
@@ -280,9 +281,9 @@ export default function DataSquadPage() {
               <div className="w-14 h-14 bg-gradient-to-br from-[#10b981] to-[#059669] rounded-2xl flex items-center justify-center mb-6">
                 <TrendingUp className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-4">Continuidad activa</h3>
+              <h3 className="text-white text-xl font-bold mb-4">{isEn ? 'Active continuity' : 'Continuidad activa'}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Transfiere la complejidad del mantenimiento y la resolución de bloqueos a un equipo dedicado.
+                {isEn ? 'Transfer the complexity of maintenance and blocker resolution to a dedicated team.' : 'Transfiere la complejidad del mantenimiento y la resolución de bloqueos a un equipo dedicado.'}
               </p>
             </div>
           </div>
@@ -304,20 +305,21 @@ export default function DataSquadPage() {
             <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-200 rounded-full px-4 py-2">
               <Sparkles className="w-4 h-4 text-purple-600" />
               <span className="text-purple-600 text-xs font-bold uppercase tracking-wide">
-                CONSTRUIDO PARA TRABAJAR EN EQUIPO
+                {isEn ? 'BUILT TO WORK AS A TEAM' : 'CONSTRUIDO PARA TRABAJAR EN EQUIPO'}
               </span>
             </div>
           </div>
 
           {/* Title - Single Line */}
           <h2 className="text-5xl font-bold text-center mb-6">
-            <span className="text-gray-900">La Solución </span>
+            <span className="text-gray-900">{isEn ? 'The ' : 'La solución '}</span>
             <span className="bg-gradient-to-r from-[#a78bfa] to-[#8b5cf6] bg-clip-text text-transparent">Data Squad</span>
+            {isEn && <span className="text-gray-900"> solution</span>}
           </h2>
 
           {/* Description */}
           <p className="text-center text-gray-600 text-base max-w-2xl mx-auto mb-14 leading-relaxed">
-            Delega la gestión de tus datos en un equipo especialista que se hace cargo de principio a fin. Desde la captura hasta la entrega, cada etapa del ciclo está cubierta por el perfil correcto.
+            {isEn ? 'Delegate your data management to a specialist team that takes charge from start to finish. From capture to delivery, every stage of the cycle is covered by the right profile.' : 'Delega la gestión de tus datos en un equipo especialista que se hace cargo de principio a fin. Desde la captura hasta la entrega, cada etapa del ciclo está cubierta por el perfil correcto.'}
           </p>
 
           {/* Cards Grid */}
@@ -328,11 +330,11 @@ export default function DataSquadPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">¿Qué es Data Squad?</h3>
+                <h3 className="text-2xl font-bold text-gray-900">{isEn ? 'What is Data Squad?' : '¿Qué es Data Squad?'}</h3>
               </div>
 
               <p className="text-gray-600 leading-relaxed mb-8">
-                Es el servicio de outsourcing de datos de AUTOScraping. Formamos equipos de expertos que se integran directamente en tu flujo de trabajo, cubriendo cada etapa del ciclo de vida del dato.
+                {isEn ? "It is AUTOScraping's data outsourcing service. We build expert teams that integrate directly into your workflow, covering every stage of the data lifecycle." : 'Es el servicio de outsourcing de datos de AUTOScraping. Formamos equipos de expertos que se integran directamente en tu flujo de trabajo, cubriendo cada etapa del ciclo de vida del dato.'}
               </p>
 
               {/* Feature List */}
@@ -342,8 +344,8 @@ export default function DataSquadPage() {
                     <Users className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Equipos Especializados</h4>
-                    <p className="text-sm text-gray-600">Ingenieros que entienden tu sector</p>
+                    <h4 className="font-bold text-gray-900 mb-1">{isEn ? 'Specialized teams' : 'Equipos especializados'}</h4>
+                    <p className="text-sm text-gray-600">{isEn ? 'Engineers who understand your sector' : 'Ingenieros que entienden tu sector'}</p>
                   </div>
                 </div>
 
@@ -352,8 +354,8 @@ export default function DataSquadPage() {
                     <Database className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Cobertura Total</h4>
-                    <p className="text-sm text-gray-600">De captura hasta entrega</p>
+                    <h4 className="font-bold text-gray-900 mb-1">{isEn ? 'Full coverage' : 'Cobertura total'}</h4>
+                    <p className="text-sm text-gray-600">{isEn ? 'From capture to delivery' : 'De captura hasta entrega'}</p>
                   </div>
                 </div>
 
@@ -362,8 +364,8 @@ export default function DataSquadPage() {
                     <Globe className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Tu Idioma</h4>
-                    <p className="text-sm text-gray-600">Expertos que hablan como tú</p>
+                    <h4 className="font-bold text-gray-900 mb-1">{isEn ? 'Your language' : 'Tu idioma'}</h4>
+                    <p className="text-sm text-gray-600">{isEn ? 'Experts who speak your language' : 'Expertos que hablan como tú'}</p>
                   </div>
                 </div>
               </div>
@@ -377,7 +379,7 @@ export default function DataSquadPage() {
                   Data Squad
                 </span>
                 <span className="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1.5 rounded-full">
-                  Equipos
+                  {isEn ? 'Teams' : 'Equipos'}
                 </span>
               </div>
             </div>
@@ -390,7 +392,7 @@ export default function DataSquadPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Target className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">Adaptado a tu industria</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">{isEn ? 'Tailored to your industry' : 'Adaptado a tu industria'}</h3>
                 </div>
 
                 <div className="space-y-3">
@@ -399,7 +401,7 @@ export default function DataSquadPage() {
                     <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Target className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-gray-800 text-sm font-medium">Equipos que entienden tu sector</p>
+                    <p className="text-gray-800 text-sm font-medium">{isEn ? 'Teams that understand your sector' : 'Equipos que entienden tu sector'}</p>
                   </div>
 
                   {/* Item 2 - blue */}
@@ -407,7 +409,7 @@ export default function DataSquadPage() {
                     <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Zap className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-gray-800 text-sm font-medium">Sin perfiles genéricos</p>
+                    <p className="text-gray-800 text-sm font-medium">{isEn ? 'No generic profiles' : 'Sin perfiles genéricos'}</p>
                   </div>
 
                   {/* Item 3 - pink */}
@@ -415,7 +417,7 @@ export default function DataSquadPage() {
                     <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Sparkles className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-gray-800 text-sm font-medium">Stack técnico preciso</p>
+                    <p className="text-gray-800 text-sm font-medium">{isEn ? 'Precise technical stack' : 'Stack técnico preciso'}</p>
                   </div>
                 </div>
               </div>
@@ -426,7 +428,7 @@ export default function DataSquadPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-orange-400 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Layers className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">Flexible y escalable</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">{isEn ? 'Flexible and scalable' : 'Flexible y escalable'}</h3>
                 </div>
 
                 <div className="space-y-5">
@@ -434,8 +436,8 @@ export default function DataSquadPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <p className="text-gray-900 text-sm font-bold">Comienza con el talento</p>
-                      <p className="text-gray-500 text-sm">que necesitas hoy</p>
+                      <p className="text-gray-900 text-sm font-bold">{isEn ? 'Start with the talent' : 'Comienza con el talento'}</p>
+                      <p className="text-gray-500 text-sm">{isEn ? 'you need today' : 'que necesitas hoy'}</p>
                     </div>
                   </div>
 
@@ -443,8 +445,8 @@ export default function DataSquadPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <p className="text-gray-900 text-sm font-bold">Suma capacidad a medida que</p>
-                      <p className="text-gray-500 text-sm">tu proyecto crece</p>
+                      <p className="text-gray-900 text-sm font-bold">{isEn ? 'Add capacity as' : 'Suma capacidad a medida que'}</p>
+                      <p className="text-gray-500 text-sm">{isEn ? 'your project grows' : 'tu proyecto crece'}</p>
                     </div>
                   </div>
 
@@ -452,8 +454,8 @@ export default function DataSquadPage() {
                   <div className="flex items-start gap-3">
                     <div className="w-2.5 h-2.5 bg-pink-500 rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <p className="text-gray-900 text-sm font-bold">Sin recursos desperdiciados,</p>
-                      <p className="text-gray-500 text-sm">sin demoras</p>
+                      <p className="text-gray-900 text-sm font-bold">{isEn ? 'No wasted resources,' : 'Sin recursos desperdiciados,'}</p>
+                      <p className="text-gray-500 text-sm">{isEn ? 'no delays' : 'sin demoras'}</p>
                     </div>
                   </div>
                 </div>
@@ -487,20 +489,20 @@ export default function DataSquadPage() {
             <div className="flex justify-center mb-8">
               <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold">
                 <CheckCircle2 className="w-4 h-4 fill-pink-600" />
-                EL ESTÁNDAR QUE NOS EXIGIMOS
+                {isEn ? 'THE STANDARD WE DEMAND OF OURSELVES' : 'EL ESTÁNDAR QUE NOS EXIGIMOS'}
               </div>
             </div>
 
             {/* Title */}
             <div className="text-center mb-6">
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-                Por qué elegir <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Data Squad</span>
+                {isEn ? 'Why choose ' : 'Por qué elegir '}<span className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Data Squad</span>
               </h2>
             </div>
 
             {/* Subtitle */}
             <p className="text-center text-gray-600 text-base max-w-lg mx-auto mb-16 leading-relaxed">
-              Porque la responsabilidad, la precisión y la continuidad no son opcionales para nosotros, son el punto de partida.
+              {isEn ? 'Because accountability, precision, and continuity are not optional for us — they are the starting point.' : 'Porque la responsabilidad, la precisión y la continuidad no son opcionales para nosotros, son el punto de partida.'}
             </p>
 
             {/* Carousel - one card at a time with horizontal slide */}
@@ -597,18 +599,18 @@ export default function DataSquadPage() {
             <div className="flex justify-center mb-6">
               <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide">
                 <Zap className="w-3 h-3" />
-                LO QUE NOS DEFINE
+                {isEn ? 'WHAT DEFINES US' : 'LO QUE NOS DEFINE'}
               </div>
             </div>
 
             {/* Title */}
             <h3 className="text-center text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Pilares de <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Data Squad</span>
+              {isEn ? 'Pillars of ' : 'Pilares de '}<span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Data Squad</span>
             </h3>
 
             {/* Subtitle */}
             <p className="text-center text-gray-600 text-base max-w-3xl mx-auto mb-16 leading-relaxed">
-              Formamos equipos que se integran a tu operación con el rigor y la responsabilidad de quien se hace cargo de verdad.
+              {isEn ? 'We build teams that integrate into your operation with the rigor and accountability of those who truly take ownership.' : 'Formamos equipos que se integran a tu operación con el rigor y la responsabilidad de quien se hace cargo de verdad.'}
             </p>
 
             {/* Cards grid with new design */}
@@ -620,8 +622,8 @@ export default function DataSquadPage() {
                   bgLight: 'bg-blue-50',
                   borderColor: 'border-blue-200',
                   accentColor: 'from-blue-400 to-blue-600',
-                  title: 'Ejecución garantizada',
-                  description: 'No solo sumamos expertos; asumimos la responsabilidad técnica de tu proyecto.',
+                  title: isEn ? 'Guaranteed execution' : 'Ejecución garantizada',
+                  description: isEn ? "We don't just add experts; we take on the technical responsibility of your project." : 'No solo sumamos expertos; asumimos la responsabilidad técnica de tu proyecto.',
                   decorative: true,
                 },
                 {
@@ -630,8 +632,8 @@ export default function DataSquadPage() {
                   bgLight: 'bg-pink-50',
                   borderColor: 'border-pink-200',
                   accentColor: 'from-pink-400 to-rose-600',
-                  title: 'Ingeniería Senior',
-                  description: 'Especialistas con 5+ años de experiencia que han superado desafíos complejos.',
+                  title: isEn ? 'Senior Engineering' : 'Ingeniería Senior',
+                  description: isEn ? 'Specialists with 5+ years of experience who have overcome complex challenges.' : 'Especialistas con 5+ años de experiencia que han superado desafíos complejos.',
                   decorative: true,
                 },
                 {
@@ -640,8 +642,8 @@ export default function DataSquadPage() {
                   bgLight: 'bg-teal-50',
                   borderColor: 'border-teal-200',
                   accentColor: 'from-teal-400 to-emerald-600',
-                  title: 'Flujo ininterrumpido',
-                  description: 'Monitoreamos y ajustamos proactivamente cada proceso sin fricciones.',
+                  title: isEn ? 'Uninterrupted flow' : 'Flujo ininterrumpido',
+                  description: isEn ? 'We proactively monitor and adjust every process without friction.' : 'Monitoreamos y ajustamos proactivamente cada proceso sin fricciones.',
                   decorative: true,
                 },
                 {
@@ -650,8 +652,8 @@ export default function DataSquadPage() {
                   bgLight: 'bg-orange-50',
                   borderColor: 'border-orange-200',
                   accentColor: 'from-orange-400 to-amber-500',
-                  title: 'Socio estratégico',
-                  description: 'Nos integramos en tu equipo para transformar desafíos en motores de negocio.',
+                  title: isEn ? 'Strategic partner' : 'Socio estratégico',
+                  description: isEn ? 'We integrate into your team to transform challenges into business drivers.' : 'Nos integramos en tu equipo para transformar desafíos en motores de negocio.',
                   decorative: true,
                 },
                 {
@@ -660,8 +662,8 @@ export default function DataSquadPage() {
                   bgLight: 'bg-yellow-50',
                   borderColor: 'border-yellow-200',
                   accentColor: 'from-yellow-400 to-lime-500',
-                  title: 'Integridad y seguridad',
-                  description: 'Estándares de seguridad de alto nivel para proteger tu flujo de información.',
+                  title: isEn ? 'Integrity and security' : 'Integridad y seguridad',
+                  description: isEn ? 'High-level security standards to protect your information flow.' : 'Estándares de seguridad de alto nivel para proteger tu flujo de información.',
                   decorative: true,
                 },
               ].map((pillar, i) => {
@@ -718,8 +720,8 @@ export default function DataSquadPage() {
           {/* Heading */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-              <span className="text-gray-900">Tu Arsenal de </span>
-              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Soluciones en Datos</span>
+              <span className="text-gray-900">{isEn ? 'Your Arsenal of ' : 'Tu Arsenal de '}</span>
+              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">{isEn ? 'Data Solutions' : 'Soluciones en Datos'}</span>
             </h2>
             <div className="w-16 h-1 bg-purple-600 mx-auto mt-6"></div>
           </div>

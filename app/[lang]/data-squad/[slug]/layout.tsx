@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { servicesData } from './data';
+import { getServicesData } from './data';
 import JsonLd from '@/components/JsonLd';
 import { SITE_URL } from '@/lib/seo';
 import { type Locale } from '@/lib/i18n/config';
@@ -11,7 +11,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = params;
-  const data = servicesData[slug];
+  const data = getServicesData(lang === 'en')[slug];
 
   if (!data) {
     return {
@@ -45,11 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  return Object.keys(servicesData).map((slug) => ({ slug }));
+  return Object.keys(getServicesData(false)).map((slug) => ({ slug }));
 }
 
 function buildSchemas(lang: Locale, slug: string) {
-  const data = servicesData[slug];
+  const data = getServicesData(lang === 'en')[slug];
   if (!data) return null;
 
   const serviceTitle = [data.titlePart1, data.titlePartGradient, data.titlePart2]
