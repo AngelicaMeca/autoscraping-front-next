@@ -1063,7 +1063,7 @@ export default function Home() {
 
       {/* Social Media Section */}
       <AnimatedSection>
-        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20">
+        <section id="social-media" className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20">
           {/* Background decorative circles */}
           <div className="absolute top-10 left-10 w-48 h-48 bg-blue-300/40 rounded-full blur-3xl"></div>
           <div className="absolute top-32 right-32 w-56 h-56 bg-purple-300/35 rounded-full blur-3xl"></div>

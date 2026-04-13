@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, Layers, BookOpen, Building2, Calendar, Database, UsersRound, Menu, X } from 'lucide-react';
+import { ChevronDown, Layers, BookOpen, Building2, Calendar, Database, UsersRound, Menu, X, Share2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -17,6 +17,7 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
+  const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -37,13 +38,16 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (showSolutionsDropdown && !target.closest('.solutions-dropdown-container')) {
+      if (!target.closest('.solutions-dropdown-container')) {
         setShowSolutionsDropdown(false);
+      }
+      if (!target.closest('.resources-dropdown-container')) {
+        setShowResourcesDropdown(false);
       }
     };
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, [showSolutionsDropdown]);
+  }, []);
 
   const textClass = 'text-white hover:text-white/80';
 
@@ -112,13 +116,52 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
               )}
             </div>
 
-            <Link
-              href={`/${lang}/blog`}
-              className={`flex items-center gap-2 text-sm transition-colors duration-300 ${textClass}`}
-            >
-              <BookOpen className="w-4 h-4" />
-              <span>{t.nav.resources}</span>
-            </Link>
+            <div className="relative resources-dropdown-container">
+              <button
+                onClick={() => setShowResourcesDropdown(!showResourcesDropdown)}
+                className={`flex items-center gap-2 text-sm transition-colors duration-300 ${textClass}`}
+              >
+                <BookOpen className="w-4 h-4" />
+                <span>{t.nav.resources}</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {showResourcesDropdown && (
+                <div className="absolute top-full left-0 mt-4 w-[220px] bg-white rounded-3xl shadow-2xl p-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <h3 className="text-purple-600 text-xs font-bold uppercase tracking-wider mb-3 px-2">
+                    {t.nav.resources}
+                  </h3>
+                  <div className="space-y-1">
+                    <Link
+                      href={`/${lang}/blog`}
+                      onClick={() => setShowResourcesDropdown(false)}
+                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 transition-colors"
+                    >
+                      <div className="bg-purple-600 p-2 rounded-lg flex-shrink-0">
+                        <BookOpen className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-900 text-sm">Blog</p>
+                        <p className="text-xs text-gray-500">{lang === 'en' ? 'Articles & guides' : 'Artículos y guías'}</p>
+                      </div>
+                    </Link>
+                    <Link
+                      href={`/${lang}#social-media`}
+                      onClick={() => setShowResourcesDropdown(false)}
+                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 transition-colors"
+                    >
+                      <div className="bg-pink-500 p-2 rounded-lg flex-shrink-0">
+                        <Share2 className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-900 text-sm">Social Media</p>
+                        <p className="text-xs text-gray-500">{lang === 'en' ? 'Our work, unfiltered' : 'Nuestro trabajo real'}</p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             <Link
               href={`/${lang}/about`}
@@ -189,16 +232,37 @@ export default function Navbar({ variant = 'dark-only' }: NavbarProps) {
 
             <div className="h-px bg-white/10 my-2" />
 
-            <Link
-              href={`/${lang}/blog`}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex justify-between items-center w-full py-4 text-white text-lg font-medium border-b border-white/10"
-            >
-              <span className="flex items-center gap-3">
-                <BookOpen className="w-5 h-5 text-purple-400" />
+            <div className="space-y-2">
+              <h3 className="text-purple-400 text-xs font-bold uppercase tracking-wider mb-2">
                 {t.nav.resources}
-              </span>
-            </Link>
+              </h3>
+              <Link
+                href={`/${lang}/blog`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 active:bg-white/10"
+              >
+                <div className="bg-purple-600 p-2.5 rounded-xl flex-shrink-0">
+                  <BookOpen className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-base">Blog</h4>
+                  <p className="text-xs text-gray-400">{lang === 'en' ? 'Articles & guides' : 'Artículos y guías'}</p>
+                </div>
+              </Link>
+              <Link
+                href={`/${lang}#social-media`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 active:bg-white/10"
+              >
+                <div className="bg-pink-500 p-2.5 rounded-xl flex-shrink-0">
+                  <Share2 className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-base">Social Media</h4>
+                  <p className="text-xs text-gray-400">{lang === 'en' ? 'Our work, unfiltered' : 'Nuestro trabajo real'}</p>
+                </div>
+              </Link>
+            </div>
 
             <Link
               href={`/${lang}/about`}
