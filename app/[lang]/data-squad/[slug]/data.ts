@@ -107,8 +107,8 @@ export const servicesData: Record<string, ServiceData> = {
   'data-scientist-squad': {
     slug: 'data-scientist-squad',
     badge: 'Análisis Avanzado',
-    titlePart1: 'Data Scientist',
-    titlePartGradient: 'Squad',
+    titlePart1: 'Equipo de',
+    titlePartGradient: 'Data Scientists',
     titlePart2: '',
     description: 'Perfecto para empresas que necesitan gestionar grandes volúmenes de datos o automatizar procesos de extracción y análisis. Delega la complejidad de tus datos en especialistas senior que se integran directamente a tu operación.',
     testimonials: [
@@ -179,8 +179,8 @@ export const servicesData: Record<string, ServiceData> = {
   'core-data-services': {
     slug: 'core-data-services',
     badge: 'Servicios de Datos',
-    titlePart1: 'Core Data',
-    titlePartGradient: 'Services',
+    titlePart1: 'Servicios Core de',
+    titlePartGradient: 'Datos',
     titlePart2: '',
     description: 'Soluciones fundamentales para que las empresas gestionen y analicen datos esenciales para sus operaciones. Ideal para organizaciones que buscan establecer una base sólida en la gestión de datos.',
     testimonials: [
@@ -251,8 +251,8 @@ export const servicesData: Record<string, ServiceData> = {
   'advanced-data-services': {
     slug: 'advanced-data-services',
     badge: 'Análisis Avanzado',
-    titlePart1: 'Advanced Data',
-    titlePartGradient: 'Services',
+    titlePart1: 'Servicios',
+    titlePartGradient: 'Avanzados de Datos',
     titlePart2: '',
     description: 'Soluciones complejas de análisis de datos y modelado para empresas que requieren información profunda y capacidades analíticas avanzadas. Perfecto para organizaciones con grandes volúmenes de datos.',
     testimonials: [
@@ -323,8 +323,8 @@ export const servicesData: Record<string, ServiceData> = {
   'data-collection-services': {
     slug: 'data-collection-services',
     badge: 'Recopilación de Datos',
-    titlePart1: 'Data Collection',
-    titlePartGradient: 'Services',
+    titlePart1: '',
+    titlePartGradient: 'Recolección de Datos',
     titlePart2: '',
     description: 'Soluciones para facilitar la recopilación y organización de datos relevantes para tu negocio, garantizando que obtengas información de calidad para la toma de decisiones.',
     testimonials: [
@@ -395,8 +395,8 @@ export const servicesData: Record<string, ServiceData> = {
   'big-data-consulting-services': {
     slug: 'big-data-consulting-services',
     badge: 'Big Data',
-    titlePart1: 'Big Data',
-    titlePartGradient: 'Consulting Services',
+    titlePart1: 'Consultoría en',
+    titlePartGradient: 'Big Data',
     titlePart2: '',
     description: 'Ideal para empresas que necesitan gestionar grandes volúmenes de información o automatizar procesos de extracción y análisis. Delega la complejidad de tus datos en especialistas senior que se integran directamente a tu operación.',
     testimonials: [
@@ -467,8 +467,8 @@ export const servicesData: Record<string, ServiceData> = {
   'real-estate-data-entry-services': {
     slug: 'real-estate-data-entry-services',
     badge: 'Ingreso de Datos Inmobiliario',
-    titlePart1: 'Real Estate',
-    titlePartGradient: 'Data Entry Services',
+    titlePart1: 'Gestión de Datos',
+    titlePartGradient: 'Inmobiliarios',
     titlePart2: '',
     description: 'Servicios especializados en entrada y gestión de datos relacionados con el sector inmobiliario, asegurando que la información sea precisa y esté actualizada.',
     testimonials: [
@@ -539,8 +539,8 @@ export const servicesData: Record<string, ServiceData> = {
   'outsource-data-mining-services': {
     slug: 'outsource-data-mining-services',
     badge: 'Minería de Datos',
-    titlePart1: 'Outsource Data',
-    titlePartGradient: 'Mining Services',
+    titlePart1: '',
+    titlePartGradient: 'Minería de Datos',
     titlePart2: '',
     description: 'Servicios que implican la externalización de procesos de minería de datos, donde expertos analizan grandes conjuntos de datos para identificar patrones y tendencias útiles.',
     testimonials: [
@@ -611,8 +611,8 @@ export const servicesData: Record<string, ServiceData> = {
   'b2b-data-services': {
     slug: 'b2b-data-services',
     badge: 'B2B Data',
-    titlePart1: 'B2B',
-    titlePartGradient: 'Data Services',
+    titlePart1: 'Servicios de Datos',
+    titlePartGradient: 'B2B',
     titlePart2: '',
     description: 'Soluciones de análisis y gestión de datos específicamente diseñadas para empresas que operan en un entorno de negocio a negocio.',
     testimonials: [

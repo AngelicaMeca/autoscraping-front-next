@@ -90,7 +90,7 @@ export default function DataSquadPage() {
   const services = [
     {
       slug: 'data-squad-as-service',
-      title: 'Data Squad As Service',
+      title: 'Equipo de Datos como Servicio',
       subtitle: 'SOLUCIONES COMPLETAS',
       description: 'Acceso a un equipo dedicado de especialistas en extracción de datos, disponible bajo demanda para resolver tus proyectos más complejos sin comprometerse a largo plazo.',
       icon: Users,
@@ -98,7 +98,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'data-scientist-squad',
-      title: 'Data Scientist Squad',
+      title: 'Equipo de Data Scientists',
       subtitle: 'ANÁLISIS Y PREDICCIÓN',
       description: 'Científicos de datos con experiencia en machine learning y análisis predictivo para transformar datos crudos en insights estratégicos y modelos de negocio.',
       icon: Brain,
@@ -106,7 +106,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'core-data-services',
-      title: 'Core Data Services',
+      title: 'Servicios Core de Datos',
       subtitle: 'SERVICIOS FUNDAMENTALES',
       description: 'Servicios esenciales de limpieza, validación y estructuración de datos para asegurar la calidad de tu información desde el primer momento.',
       icon: Database,
@@ -114,7 +114,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'advanced-data-services',
-      title: 'Advanced Data Services',
+      title: 'Servicios Avanzados de Datos',
       subtitle: 'PROCESAMIENTO AVANZADO',
       description: 'Soluciones de procesamiento de alto rendimiento incluyendo transformación ETL, integración multi-fuente y operaciones de datos en tiempo real.',
       icon: Layers,
@@ -122,7 +122,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'data-collection-services',
-      title: 'Data Collection Services',
+      title: 'Recolección de Datos',
       subtitle: 'CAPTURA DE DATOS',
       description: 'Recopilación exhaustiva de datos de múltiples fuentes con técnicas avanzadas de web scraping, APIs y integraciones personalizadas.',
       icon: FileText,
@@ -130,7 +130,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'big-data-consulting',
-      title: 'Big Data Consulting Services',
+      title: 'Consultoría en Big Data',
       subtitle: 'ESTRATEGIA A ESCALA',
       description: 'Asesoramiento estratégico para implementar infraestructuras de big data, seleccionar tecnologías adecuadas y optimizar tus operaciones de datos masivos.',
       icon: Briefcase,
@@ -138,7 +138,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'real-estate-data-entry',
-      title: 'Real Estate Data Entry Services',
+      title: 'Gestión de Datos Inmobiliarios',
       subtitle: 'DATOS INMOBILIARIOS',
       description: 'Captura especializada de datos immobiliarios, listados, valuaciones y mercados para potenciar tu estrategia en el sector real estate.',
       icon: Home,
@@ -146,7 +146,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'outsource-data-mining',
-      title: 'Outsource Data Mining Services',
+      title: 'Minería de Datos',
       subtitle: 'EXTRACCIÓN ESPECIALIZADA',
       description: 'Outsourcing completo de minería de datos con equipos dedicados para extraer patrones, tendencias y oportunidades de tus conjuntos de datos.',
       icon: TrendingDown,
@@ -154,7 +154,7 @@ export default function DataSquadPage() {
     },
     {
       slug: 'b2b-data-services',
-      title: 'B2B Data Services',
+      title: 'Servicios de Datos B2B',
       subtitle: 'DATOS EMPRESARIALES',
       description: 'Bases de datos empresariales actualizadas, prospección B2B, enriquecimiento de contactos y listas de decisores para impulsar tu estrategia comercial.',
       icon: Cpu,

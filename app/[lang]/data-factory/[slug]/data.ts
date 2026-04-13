@@ -36,8 +36,8 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'generacion-de-leads',
     badge: 'Lead Generation Platform',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping',
-    titlePart2: 'for Lead Generation',
+    titlePartGradient: 'Generación de Leads',
+    titlePart2: '',
     description: 'Perfecto para empresas que necesitan recopilar grandes volúmenes de datos de prospectos o automatizar el proceso de verificación de leads, reduciendo tiempo y recursos en campañas.',
     testimonials: [
       {
@@ -180,7 +180,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'extraccion-de-linkedin',
     badge: 'LinkedIn',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping LinkedIn',
+    titlePartGradient: 'Extracción de LinkedIn',
     titlePart2: '',
     description: 'Perfecto para negocios que buscan coleccionar datos profesionales o automatizar la generación de leads B2B reduciendo horas operativas.',
     testimonials: [
@@ -252,7 +252,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'monitoreo-de-airbnb',
     badge: 'Airbnb',
     titlePart1: '',
-    titlePartGradient: 'Airbnb Web Scraping Services',
+    titlePartGradient: 'Monitoreo de Airbnb',
     titlePart2: '',
     description: 'Esencial para firmas proptechs, hostings urbanos y managers hoteleros que necesitan auditar el colosal volumen inmobiliario y anticipar la matriz tarifaria en tiempo real.',
     testimonials: [
@@ -324,7 +324,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'registro-de-google-maps',
     badge: 'Google Maps',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping Google Maps',
+    titlePartGradient: 'Registro de Google Maps',
     titlePart2: '',
     description: 'Perfecto para agencias y franquicias que necesitan automatizar la inteligencia locacional, obteniendo reviews, horarios y ratings del comercio local a escala global.',
     testimonials: [
@@ -468,7 +468,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'metricas-financieras',
     badge: 'Financial Data',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping Financial Data',
+    titlePartGradient: 'Métricas Financieras',
     titlePart2: '',
     description: 'Crítico para fondos de cobertura, inversionistas y firmas fintech que demandan métricas precisas sobre indicadores económicos de forma constante y automática.',
     testimonials: [
@@ -540,7 +540,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'catalogos-de-e-commerce',
     badge: 'Ecommerce Scraping',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping Ecommerce',
+    titlePartGradient: 'Catálogos de E-commerce',
     titlePart2: '',
     description: 'Perfecto para marcas comerciales que precisan de gestionar masivos volúmenes de inventario y auditar el catálogo de sus competidores automatizando su toma de decisiones.',
     testimonials: [
@@ -608,83 +608,11 @@ export const servicesData: Record<string, ServiceData> = {
       }
     ]
   },
-  'web-scraping-engineer': {
-    slug: 'web-scraping-engineer',
-    badge: 'Web Scraping',
-    titlePart1: '',
-    titlePartGradient: 'Web Scraping Engineer',
-    titlePart2: '',
-    description: 'Perfecto para compañías que asimilan gigantescos volúmenes de datos o lógicas en constante cambio que demandan intervención experta recurrente de un Ingeniero en Programación.',
-    testimonials: [
-      {
-        rating: 5,
-        text: '"Tener Data Squads y consultores de Scraping dedicados revolucionó nuestra matriz. Construyen flujos que nosotros no sabíamos que se podían programar."',
-        authorName: 'Emily P.',
-        authorRole: 'Tech Lead en Agencia Turística',
-        authorInitials: 'EP'
-      },
-      {
-        rating: 5,
-        text: '"El equipo de ingeniería de AUTOScraping resolvió problemas de latencia que teníamos de larga data. Nuestra arquitectura ahora es rápida y libre de bugs."',
-        authorName: 'Daniel P.',
-        authorRole: 'CEO SaaS Inmobiliario',
-        authorInitials: 'DP'
-      }
-    ],
-    features: [
-      {
-        icon: TrendingUp,
-        title: 'Código Altamente Escalable',
-        description: 'Desarrolladores inmersos que implementan sistemas capaces de procesar desde un centenar hasta millones de records por hora sin sufrir bloqueos de red.'
-      },
-      {
-        icon: Zap,
-        title: 'Mantenimiento Reactivo (QSR)',
-        description: 'Si una red troncal implementa un nuevo Firewall, nuestros ingenieros modifican las cabeceras de los extractores (headers) en cuestión de minutos para revivirlos.'
-      },
-      {
-        icon: Shield,
-        title: 'Protección Jurídica / Técnica',
-        description: 'Programación meticulosa asegurando prácticas Fair-Use, cuidando la saturación de los servidores objetivo, e impidiendo el bloqueo pasivo del ancho de banda.'
-      },
-      {
-        icon: Target,
-        title: 'Conocimiento Multidisciplinar',
-        description: 'Expertos que transicionan desde Python puro (Selenium/Playwright) hacia la inyección de AI Agents o LLMs dependiendo meramente del nivel de abstracción del proyecto.'
-      }
-    ],
-    needThisTitle: 'Cuándo apoyarte netamente en un equipo Web Scraping Engineer',
-    needThisDescription: 'Si cuentas con soluciones enlatadas (No-code / SaaS platforms genéricas) que colapsan cada vez que tus competidores aplican medidas Anti-Bot básicas como CAPTCHAS o verificadores Javascript... te urge delegar la ingeniería a expertos.',
-    helpYouSub: 'SQUAD ENGINEERING',
-    helpYouTitle: 'Cómo te ayudamos',
-    helpYouDescription: 'Data Factory te provee talento calificado y curado de manera que integres un arquitecto de extracción directamente en los objetivos de tu sprint de producto, saltando el tiempo de reclutamiento.',
-    helpYouList: [
-      'Prototipado rápido de arquitecturas de bases documentales y relacionales.',
-      'Soporte continuado y monitoreo de las conexiones web.',
-      'Despliegue robusto de contenedores e instancias.'
-    ],
-    ctaTitle: 'Sácale el máximo provecho al talento con expertise técnico listos para integrarse en tu equipo',
-    ctaDescription: '',
-    faqs: [
-      {
-        question: '¿Qué soluciona un Ingeniero Especializado en Web Scraping?',
-        answer: 'Un SWE enfocado al scraping no sólo extrae datos, sino que blinda y eficientiza las barreras que lo impiden. Aplica Reverse Engineering (Ingeniería Inversa) para entender APIs privadas móviles y elude restricciones IP con rotaciones lógicas.'
-      },
-      {
-        question: '¿Cuál es la diferencia entre solicitar un servicio de Data (DaaS) y un Ingeniero?',
-        answer: 'En DaaS, cobramos en base al volumen del "resultado final estructurado" que ingiere periódicamente tu sistema. Al contratar en modelo "Squad Engineering" accedes exclusivamente al código, las horas del talento programador trabajando bajo tu dirección y eres dueño/operador del stack resultante.'
-      },
-      {
-        question: '¿Manejan flujos basados en Eventos e Infraestructura de Nube?',
-        answer: 'Absolutamente. Estructuramos arquitecturas distribuidas basadas en Event-Driven functions alojadas nativamente en tus cuentas de AWS o Google Cloud garantizando que toda la recolección masiva quede alojada en tu propiedad corporativa.'
-      }
-    ]
-  },
   'insights-de-marketing': {
     slug: 'insights-de-marketing',
     badge: 'Marketing',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping for Marketing',
+    titlePartGradient: 'Insights de Marketing',
     titlePart2: '',
     description: 'Perfecto para equipos de marketing que necesitan procesar grandes volúmenes de datos u automatizar tareas vitales, reduciendo tiempos de validación de campañas al apoyarse en el Web Scraping para Marketing.',
     testimonials: [
@@ -756,7 +684,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'indexacion-inmobiliaria',
     badge: 'Real Estate',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping for Real Estate',
+    titlePartGradient: 'Indexación Inmobiliaria',
     titlePart2: '',
     description: 'Perfecto para agentes, franquicias o fondos inversores inmobiliarios que precisan trackear diariamente el valor de las propiedades publicadas dentro de los portales líderes para capitalizar el volumen del mercado.',
     testimonials: [
@@ -828,7 +756,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'auditoria-seo',
     badge: 'Scraping for SEO',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping for SEO',
+    titlePartGradient: 'Auditoría SEO',
     titlePart2: '',
     description: 'Perfecto para marcas o agencias con presencia digital agresiva que requieren auditar programáticamente millones de URLs, meta tags y clústers de competidores.',
     testimonials: [

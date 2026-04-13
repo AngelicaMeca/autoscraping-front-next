@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronDown, Lightbulb, Monitor, Database, Zap, Shield, TrendingUp, Target, Settings, ShoppingCart, Chrome as HomeIcon, Plane, Heart, ShoppingBag, Lock, CreditCard, Ticket, UserCheck, Building2, ChartBar as BarChart3, ChevronLeft, ChevronRight, Sparkles, ArrowRight, FileText, Infinity, Quote, Star, ExternalLink, MessageCircle, ThumbsUp, Code, File as Document, ArrowUpRight as Growth, Eye, Clock, CircleCheck as CheckCircle, Boxes, Wrench, RefreshCw, Users, UsersRound, Linkedin, Github, Twitter, Facebook, Instagram, BookText, Mail, Phone, Calendar } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/navbar';
@@ -13,6 +13,58 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useLang } from '@/hooks/useLang';
 import JsonLd from '@/components/JsonLd';
 import { SITE_URL } from '@/lib/seo';
+
+function CountUp({
+  end,
+  duration = 2000,
+  prefix = '',
+  suffix = '',
+  decimals = 0,
+  separator = '.',
+}: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+  separator?: string;
+}) {
+  const [value, setValue] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    const startTime = performance.now();
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(parseFloat((eased * end).toFixed(decimals)));
+      if (progress < 1) requestAnimationFrame(tick);
+      else setValue(end);
+    };
+    requestAnimationFrame(tick);
+  }, [started, end, duration, decimals]);
+
+  const formatted = decimals > 0
+    ? value.toFixed(decimals).replace('.', ',')
+    : Math.floor(value).toLocaleString('de-DE');
+
+  return <span ref={ref}>{prefix}{formatted}{suffix}</span>;
+}
 
 export default function Home() {
   const lang = useLang();
@@ -399,7 +451,7 @@ export default function Home() {
                 <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Database className="w-12 h-12 text-blue-400" />
                 </div>
-                <p className="text-4xl font-bold text-white mb-2">+5.000</p>
+                <p className="text-4xl font-bold text-white mb-2"><CountUp end={5000} prefix="+" separator="." /></p>
                 <p className="text-blue-300 text-sm">{isEn ? 'Sources monitored' : 'Fuentes monitoreadas'}</p>
               </div>
 
@@ -409,7 +461,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <p className="text-4xl font-bold text-white mb-2">+65.000</p>
+                <p className="text-4xl font-bold text-white mb-2"><CountUp end={65000} prefix="+" separator="." /></p>
                 <p className="text-blue-300 text-sm">{isEn ? 'Execution hours' : 'Horas de ejecución'}</p>
               </div>
 
@@ -419,7 +471,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
                   </svg>
                 </div>
-                <p className="text-4xl font-bold text-white mb-2">+5 B</p>
+                <p className="text-4xl font-bold text-white mb-2"><CountUp end={5} prefix="+" suffix=" B" /></p>
                 <p className="text-blue-300 text-sm">{isEn ? 'Records processed' : 'Registros procesados'}</p>
               </div>
 
@@ -429,7 +481,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <p className="text-4xl font-bold text-white mb-2">99,9%</p>
+                <p className="text-4xl font-bold text-white mb-2"><CountUp end={99.9} decimals={1} suffix="%" /></p>
                 <p className="text-blue-300 text-sm">{isEn ? 'Delivery uptime' : 'Uptime de entregas'}</p>
               </div>
             </div>
@@ -542,7 +594,9 @@ export default function Home() {
                   </button>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Tú defines qué datos necesitas y nosotros automatizamos su entrega. Recibes información limpia y lista para integrarla de inmediato, sin que tu equipo tenga que gestionar servidores o escribir una sola línea de código.
+                  {isEn
+                    ? 'Data Squad: Add senior specialists to your team to tackle engineering challenges. We handle all technical and administrative management so you can focus solely on leading the project.'
+                    : 'Data Squad: Suma especialistas senior a tu equipo para resolver desafíos de ingeniería. Nosotros nos encargamos de toda la gestión técnica y administrativa para que tú solo te enfoques en liderar el proyecto.'}
                 </p>
               </Link>
             </div>
@@ -741,116 +795,74 @@ export default function Home() {
 
             {/* Testimonial Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {/* Card 1 */}
+              {/* Card 1 — Jordan Stribling */}
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition">
                 <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
-
                 <div className="flex gap-1 mb-4">
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />)}
                 </div>
-
                 <p className="text-gray-700 italic mb-8 leading-relaxed">
                   {isEn
-                    ? '"AUTOScraping completely revolutionized how we handle data. What used to take days now happens in hours. The quality and reliability are exceptional."'
-                    : '"AUTOScraping revolucionó por completo cómo gestionamos los datos. Lo que antes tomaba días ahora ocurre en horas. La calidad y fiabilidad son excepcionales."'}
+                    ? '"Francisco and his team were wonderful to work with. Great knowledge base and skills for creating many Python web crawlers over an extended period of time. Communication was thorough and timely, as well. I look forward to continuing to work with him."'
+                    : '"Francisco y su equipo fueron maravillosos con quienes trabajar. Gran base de conocimientos y habilidades para crear numerosos web crawlers en Python durante un período prolongado. La comunicación fue minuciosa y oportuna. Espero seguir trabajando con ellos."'}
                 </p>
-
                 <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
-                      JD
-                    </div>
-                    <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    JS
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">John Doe</p>
-                    <p className="text-sm text-gray-600">CEO, TechCorp</p>
-                    <p className="text-xs text-gray-500">{isEn ? 'Using for 3+ years' : 'Cliente desde hace 3+ años'}</p>
-                  </div>
-                  <div className="text-xs font-medium text-purple-600 bg-purple-50 px-3 py-1 rounded-full">
-                    {isEn ? 'Enterprise Client' : 'Cliente Enterprise'}
+                    <p className="font-semibold text-gray-900">Jordan Stribling</p>
+                    <p className="text-sm text-gray-600">Operations Manager Of The Policy &amp; Research Group</p>
                   </div>
                 </div>
               </div>
 
-              {/* Card 2 */}
+              {/* Card 2 — Alfredo Muñoz */}
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition">
                 <div className="w-12 h-12 bg-blue-900 rounded-xl flex items-center justify-center mb-6">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
-
                 <div className="flex gap-1 mb-4">
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />)}
                 </div>
-
                 <p className="text-gray-700 italic mb-8 leading-relaxed">
                   {isEn
-                    ? '"The accuracy and reliability is unmatched. Their technology is years ahead of the competition. We\'ve seen a 300% improvement in data quality."'
-                    : '"La precisión y fiabilidad no tienen comparación. Su tecnología lleva años de ventaja sobre la competencia. Hemos visto una mejora del 300% en la calidad de nuestros datos."'}
+                    ? '"Francisco and his team are incredibly knowledgeable, and they are also very flexible to accommodate changes. The value that AUTOScraping has been bringing to us over the years has become an essential part of our operations."'
+                    : '"Francisco y su equipo son increíblemente expertos, y también muy flexibles para adaptarse a los cambios. El valor que AUTOScraping nos ha aportado a lo largo de los años se ha convertido en una parte esencial de nuestras operaciones."'}
                 </p>
-
                 <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
-                      SM
-                    </div>
-                    <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-800 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    AM
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">Sarah Martinez</p>
-                    <p className="text-sm text-gray-600">{isEn ? 'Data Director' : 'Directora de Datos'}</p>
-                    <p className="text-xs text-gray-500">{isEn ? 'Using for 3+ years' : 'Cliente desde hace 3+ años'}</p>
-                  </div>
-                  <div className="text-xs font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                    50M+ Records
+                    <p className="font-semibold text-gray-900">Alfredo Muñoz</p>
+                    <p className="text-sm text-gray-600">CEO Of Abiboo</p>
                   </div>
                 </div>
               </div>
 
-              {/* Card 3 */}
+              {/* Card 3 — Julian Botero */}
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition">
                 <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-6">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
-
                 <div className="flex gap-1 mb-4">
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />)}
                 </div>
-
                 <p className="text-gray-700 italic mb-8 leading-relaxed">
                   {isEn
-                    ? '"The API integration was seamless. AUTOScraping has become essential to our entire data infrastructure. Couldn\'t imagine our workflow without it."'
-                    : '"La integración via API fue perfecta. AUTOScraping se ha vuelto esencial para toda nuestra infraestructura de datos. No imagino nuestro flujo de trabajo sin ellos."'}
+                    ? '"As always it has been a pleasure to work with Francisco and his team. The deadline was achieved as agreed at the beginning and the quality of the deliverables were beyond our expectations. All the project was managed under Scrum methodology."'
+                    : '"Como siempre, ha sido un placer trabajar con Francisco y su equipo. Los plazos se cumplieron tal como se acordó desde el principio y la calidad de los entregables superó nuestras expectativas. Todo el proyecto fue gestionado bajo metodología Scrum."'}
                 </p>
-
                 <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold">
-                      MK
-                    </div>
-                    <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    JB
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">Michael Kim</p>
-                    <p className="text-sm text-gray-600">CTO, DataFlow Inc</p>
-                    <p className="text-xs text-gray-500">{isEn ? 'Using for 18+ months' : 'Cliente desde hace 18+ meses'}</p>
-                  </div>
-                  <div className="text-xs font-medium text-pink-600 bg-pink-50 px-3 py-1 rounded-full">
-                    {isEn ? 'API Partner' : 'Socio API'}
+                    <p className="font-semibold text-gray-900">Julian Botero</p>
+                    <p className="text-sm text-gray-600">Project Manager Of Data Knowledge Consultants</p>
                   </div>
                 </div>
               </div>
@@ -1117,7 +1129,7 @@ export default function Home() {
                   </p>
 
                   <a
-                    href="https://www.linkedin.com/posts/autoscraping_expansioninternacional-startupsargentinas-activity-7437525596605304832-boOo"
+                    href="https://www.linkedin.com/posts/autoscraping_expansioninternacional-startupsargentina-activity-7437525596605304832-boOo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6NdK4BJzdQ0uiz6MIlSV5KFGhp5cTwDdk"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0A66C2] font-medium px-6 py-3 rounded-lg transition mb-6 self-start"
@@ -1197,7 +1209,7 @@ export default function Home() {
                     <Github className="w-7 h-7 text-gray-900" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">GitHub Activity</p>
+                    <a href="https://github.com/autoscraping" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:text-purple-300 transition-colors">AUTOScraping</a>
                     <p className="text-gray-400 text-sm">This month</p>
                   </div>
                 </div>

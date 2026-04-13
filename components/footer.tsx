@@ -2,6 +2,7 @@
 
 import { Linkedin, Instagram, Facebook, Github, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLang } from '@/hooks/useLang';
 
@@ -14,9 +15,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-2xl font-bold mb-4">
-              AUTO<span className="text-purple-400">SCRAPING</span>
-            </h3>
+            <div className="mb-4 flex items-center gap-3">
+              <Image src="/logo.png" alt="AUTOScraping" width={40} height={40} className="h-10 w-auto brightness-0 invert" />
+              <span className="text-xl font-bold tracking-wide">
+                <span className="text-white">AUTO</span><span className="text-purple-400">Scraping</span>
+              </span>
+            </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.footer.tagline}</p>
 
             <div className="flex items-center gap-4">
@@ -114,7 +118,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 text-center md:text-left">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} AUTOSCRAPING. {t.footer.allRightsReserved}
+            &copy; {new Date().getFullYear()} AUTOScraping. {t.footer.allRightsReserved}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition">{t.footer.privacyPolicy}</a>
