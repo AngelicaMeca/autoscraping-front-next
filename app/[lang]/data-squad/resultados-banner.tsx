@@ -68,13 +68,13 @@ export default function ResultadosBanner() {
             <>
               High-value results
               <br />
-              Backed by experience
+              backed by experience
             </>
           ) : (
             <>
               Resultados de alto valor
               <br />
-              Respaldados por la experiencia
+              respaldados por la experiencia
             </>
           )}
         </h2>

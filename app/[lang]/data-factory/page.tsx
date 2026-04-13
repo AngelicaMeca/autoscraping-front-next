@@ -1096,7 +1096,7 @@ export default function DataFactoryPage() {
             <span className="text-white">{isEn ? 'Do you need a custom' : '¿Necesitas un flujo de'}</span>
             <br />
             <span className="bg-gradient-to-r from-[#7B92FF] via-[#9D7EFF] to-[#B97EFF] bg-clip-text text-transparent">
-              {isEn ? 'Extraction flow?' : 'Extracción a medida?'}
+              {isEn ? 'extraction flow?' : 'extracción a medida?'}
             </span>
           </h2>
 

@@ -720,8 +720,8 @@ export default function DataSquadPage() {
           {/* Heading */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-              <span className="text-gray-900">{isEn ? 'Your Arsenal of ' : 'Tu Arsenal de '}</span>
-              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">{isEn ? 'Data Solutions' : 'Soluciones en Datos'}</span>
+              <span className="text-gray-900">{isEn ? 'Your Arsenal of ' : 'Tu arsenal de '}</span>
+              <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">{isEn ? 'data solutions' : 'soluciones en datos'}</span>
             </h2>
             <div className="w-16 h-1 bg-purple-600 mx-auto mt-6"></div>
           </div>

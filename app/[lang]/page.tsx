@@ -971,7 +971,7 @@ export default function Home() {
             <div className="text-center mb-10 md:mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 <span className="text-gray-900">{isEn ? 'The backing behind your ' : 'El respaldo detrás de tu '}</span>
-                <span className="bg-gradient-to-r from-[#9D62FA] to-[#6B46C1] bg-clip-text text-transparent">{isEn ? 'Strategy' : 'Estrategia'}</span>
+                <span className="bg-gradient-to-r from-[#9D62FA] to-[#6B46C1] bg-clip-text text-transparent">{isEn ? 'strategy' : 'estrategia'}</span>
               </h2>
               <p className="text-purple-600 text-base md:text-lg">
                 {isEn
@@ -1128,7 +1128,7 @@ export default function Home() {
                 {isEn ? 'FOLLOW US IN REAL TIME' : 'SÍGUENOS EN TIEMPO REAL'}
               </span>
               <h2 className="text-5xl font-bold text-gray-900 mb-6">
-                {isEn ? <>Our work, <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">unfiltered</span></> : <>Nuestro trabajo <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">Sin filtros</span></>}
+                {isEn ? <>Our work, <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">unfiltered</span></> : <>Nuestro trabajo <span className="bg-gradient-to-r from-[#9D62FA] to-[#0E155B] bg-clip-text text-transparent">sin filtros</span></>}
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 {isEn
