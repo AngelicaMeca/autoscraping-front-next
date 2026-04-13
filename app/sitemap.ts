@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getServicesData as getDataFactoryServices } from './[lang]/data-factory/[slug]/data';
-import { servicesData as dataSquadServices } from './[lang]/data-squad/[slug]/data';
+import { getServicesData as getDataSquadServices } from './[lang]/data-squad/[slug]/data';
 import { locales } from '@/lib/i18n/config';
 
 const SITE_URL = 'https://www.autoscraping.com';
@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (slug) => localized(`/data-factory/${slug}`, 'monthly', 0.7)
   );
 
-  const dataSquadRoutes: MetadataRoute.Sitemap = Object.keys(dataSquadServices).flatMap(
+  const dataSquadRoutes: MetadataRoute.Sitemap = Object.keys(getDataSquadServices(false)).flatMap(
     (slug) => localized(`/data-squad/${slug}`, 'monthly', 0.7)
   );
 
