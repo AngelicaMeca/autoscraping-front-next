@@ -460,7 +460,7 @@ export default function DataFactoryPage() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          <h1 className="text-3xl sm:text-3xl sm:text-5xl md:text-7xl font-bold mb-8 leading-tight">
             <span className="text-white">Data </span>
             <span className="bg-gradient-to-r from-[#60A5FA] via-[#7B92FF] to-[#9D7EFF] bg-clip-text text-transparent">
               Factory
@@ -783,10 +783,10 @@ export default function DataFactoryPage() {
 
           {/* Title */}
           <div className="text-center mb-6">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               {isEn ? 'Tailored solutions' : 'Soluciones adaptadas'}
             </h2>
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               {isEn ? 'to your business need' : 'a tu necesidad de negocio'}
             </h2>
           </div>
@@ -1092,7 +1092,7 @@ export default function DataFactoryPage() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             <span className="text-white">{isEn ? 'Do you need a custom' : '¿Necesitas un flujo de'}</span>
             <br />
             <span className="bg-gradient-to-r from-[#7B92FF] via-[#9D7EFF] to-[#B97EFF] bg-clip-text text-transparent">
@@ -1132,7 +1132,7 @@ export default function DataFactoryPage() {
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               <span className="text-gray-900">{isEn ? 'Technical capabilities' : 'Capacidades técnicas'}</span>
               <br />
               <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">{isEn ? 'applied to your goals' : 'aplicadas a tus objetivos'}</span>
@@ -1268,7 +1268,7 @@ export default function DataFactoryPage() {
 
           {/* Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               <span className="text-gray-900">{isEn ? 'Frequently asked questions about' : 'Preguntas frecuentes sobre'}</span>
               <br />
               <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">Data Factory</span>

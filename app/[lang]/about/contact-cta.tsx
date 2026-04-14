@@ -8,21 +8,21 @@ export default function ContactCta() {
   const lang = useLang();
   const isEn = lang === 'en';
   return (
-    <section className="relative py-32 overflow-hidden bg-white">
+    <section className="relative py-16 md:py-32 overflow-hidden bg-white">
       <div className="absolute top-20 left-20 w-72 h-72 bg-purple-400/30 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-400/25 rounded-full blur-3xl" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-400/20 rounded-full blur-3xl" />
       <div className="absolute bottom-40 left-40 w-64 h-64 bg-purple-500/25 rounded-full blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
             <span className="inline-flex items-center gap-2 text-purple-600 text-xs font-bold mb-6">
               <MessageSquare className="w-4 h-4" />
               {isEn ? "Let's Talk" : 'Hablemos'}
             </span>
 
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               {isEn ? (
                 <>
                   Shall we talk about how to{' '}
@@ -78,7 +78,7 @@ export default function ContactCta() {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-10 border border-gray-100">
+          <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 border border-gray-100">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center">
                 <BarChart3 className="w-7 h-7 text-white" />

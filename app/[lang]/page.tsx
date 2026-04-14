@@ -193,14 +193,14 @@ export default function Home() {
                 {isEn ? 'Leading Web Scraping Solutions' : 'Soluciones de Web Scraping líderes'}
               </p>
 
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 md:mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6 md:mb-8">
                 {isEn ? (
-                  <>Human engineering<br className="hidden md:block" />
-                  for continuous and<br className="hidden md:block" />
+                  <>Human engineering{' '}<br className="hidden md:block" />
+                  for continuous and{' '}<br className="hidden md:block" />
                   precise data extraction</>
                 ) : (
-                  <>Ingeniería humana<br className="hidden md:block" />
-                  para una extracción<br className="hidden md:block" />
+                  <>Ingeniería humana{' '}<br className="hidden md:block" />
+                  para una extracción{' '}<br className="hidden md:block" />
                   de datos continua y precisa</>
                 )}
               </h1>
@@ -477,43 +477,43 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-8 text-center border border-blue-800">
-                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Database className="w-12 h-12 text-blue-400" />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-4 md:p-8 text-center border border-blue-800">
+                <div className="w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                  <Database className="w-7 h-7 md:w-12 md:h-12 text-blue-400" />
                 </div>
-                <p className="text-4xl font-bold text-white mb-2"><CountUp end={5000} prefix="+" separator="." /></p>
-                <p className="text-blue-300 text-sm">{isEn ? 'Sources monitored' : 'Fuentes monitoreadas'}</p>
+                <p className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2"><CountUp end={5000} prefix="+" separator="." /></p>
+                <p className="text-blue-300 text-xs md:text-sm">{isEn ? 'Sources monitored' : 'Fuentes monitoreadas'}</p>
               </div>
 
-              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-8 text-center border border-blue-800">
-                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-4 md:p-8 text-center border border-blue-800">
+                <div className="w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                  <svg className="w-7 h-7 md:w-12 md:h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <p className="text-4xl font-bold text-white mb-2"><CountUp end={65000} prefix="+" separator="." /></p>
-                <p className="text-blue-300 text-sm">{isEn ? 'Execution hours' : 'Horas de ejecución'}</p>
+                <p className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2"><CountUp end={65000} prefix="+" separator="." /></p>
+                <p className="text-blue-300 text-xs md:text-sm">{isEn ? 'Execution hours' : 'Horas de ejecución'}</p>
               </div>
 
-              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-8 text-center border border-blue-800">
-                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-4 md:p-8 text-center border border-blue-800">
+                <div className="w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                  <svg className="w-7 h-7 md:w-12 md:h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
                   </svg>
                 </div>
-                <p className="text-4xl font-bold text-white mb-2"><CountUp end={5} prefix="+" suffix=" B" /></p>
-                <p className="text-blue-300 text-sm">{isEn ? 'Records processed' : 'Registros procesados'}</p>
+                <p className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2"><CountUp end={5} prefix="+" suffix=" B" /></p>
+                <p className="text-blue-300 text-xs md:text-sm">{isEn ? 'Records processed' : 'Registros procesados'}</p>
               </div>
 
-              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-8 text-center border border-blue-800">
-                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-blue-900/50 backdrop-blur rounded-2xl p-4 md:p-8 text-center border border-blue-800">
+                <div className="w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                  <svg className="w-7 h-7 md:w-12 md:h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <p className="text-4xl font-bold text-white mb-2"><CountUp end={99.9} decimals={1} suffix="%" /></p>
-                <p className="text-blue-300 text-sm">{isEn ? 'Delivery uptime' : 'Uptime de entregas'}</p>
+                <p className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2"><CountUp end={99.9} decimals={1} suffix="%" /></p>
+                <p className="text-blue-300 text-xs md:text-sm">{isEn ? 'Delivery uptime' : 'Uptime de entregas'}</p>
               </div>
             </div>
           </div>
@@ -655,7 +655,7 @@ export default function Home() {
 
             <div className="relative max-w-6xl mx-auto">
               {/* Carousel Container */}
-              <div className="overflow-hidden px-12">
+              <div className="overflow-hidden px-8 sm:px-12">
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${(currentSlide * 100).toString()}%)` }}
@@ -1192,7 +1192,7 @@ export default function Home() {
                     <ExternalLink className="w-4 h-4" />
                   </a>
 
-                  <div className="flex items-center gap-6 text-sm border-t border-white/20 pt-5 mt-auto">
+                  <div className="flex items-center gap-4 text-sm border-t border-white/20 pt-5 mt-auto flex-wrap">
                     <div className="flex items-center gap-2">
                       <ThumbsUp className="w-4 h-4" />
                       <span>{isEn ? '16 reactions' : '16 reacciones'}</span>
@@ -1201,7 +1201,7 @@ export default function Home() {
                       <MessageCircle className="w-4 h-4" />
                       <span>{isEn ? 'Comments' : 'Comentarios'}</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="hidden sm:flex items-center gap-2">
                       <ArrowRight className="w-4 h-4" />
                       <span>{isEn ? 'Share' : 'Compartir'}</span>
                     </div>

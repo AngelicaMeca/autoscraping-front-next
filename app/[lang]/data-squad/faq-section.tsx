@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { CircleHelp as HelpCircle, ChevronDown } from 'lucide-react';
+import { CircleHelp as HelpCircle, ChevronDown, Clock, DollarSign, BadgeCheck, ShieldCheck, MapPin, TrendingUp, Lock, GitMerge } from 'lucide-react';
 import { useLang } from '@/hooks/useLang';
 
 export default function FaqSection() {
@@ -11,57 +11,81 @@ export default function FaqSection() {
 
   const faqs = [
     {
+      icon: Clock,
+      iconBg: 'bg-amber-100',
+      iconColor: 'text-amber-500',
       question: isEn ? 'What is the operational deployment time?' : '¿Cuál es el tiempo de despliegue operativo?',
-      subtitle: 'How we work with your team',
+      subtitle: isEn ? 'How we work with your team' : 'Cómo trabajamos con tu equipo',
       answer: isEn
         ? 'Integration is immediate after profile selection and agreement signing. Our structure allows us to activate specialists with the exact stack for your project, eliminating learning curves and ensuring traction from day one.'
         : 'La integración es inmediata tras la selección de perfiles y firma de acuerdos. Nuestra estructura nos permite activar especialistas con el stack exacto para tu proyecto, eliminando curvas de aprendizaje y asegurando tracción desde el primer día.',
     },
     {
+      icon: DollarSign,
+      iconBg: 'bg-green-100',
+      iconColor: 'text-green-600',
       question: isEn ? 'How is the service cost calculated?' : '¿Cómo se calcula el costo del servicio?',
-      subtitle: 'Pricing structure explained',
+      subtitle: isEn ? 'Pricing structure explained' : 'Estructura de precios',
       answer: isEn
         ? 'The investment is structured on demand, considering the seniority of the specialists, the technical complexity of the project, and the level of dedication required. No generic rates or hidden costs.'
         : 'La inversión se estructura bajo demanda, considerando el seniority de los especialistas, la complejidad técnica del proyecto y el nivel de dedicación requerido. Sin tarifas genéricas ni costos ocultos.',
     },
     {
+      icon: BadgeCheck,
+      iconBg: 'bg-blue-100',
+      iconColor: 'text-blue-600',
       question: isEn ? 'How do you validate the seniority of the assigned talent?' : '¿Cómo validan el seniority del talento asignado?',
-      subtitle: 'Quality assurance process',
+      subtitle: isEn ? 'Quality assurance process' : 'Proceso de validación de calidad',
       answer: isEn
         ? 'Every specialist passes a rigorous internal technical validation process and has an average of 5 to 7 years of verifiable experience in complex projects.'
         : 'Cada especialista supera un riguroso proceso de validación técnica interna y cuenta con un promedio de 5 a 7 años de experiencia comprobable en proyectos complejos.',
     },
     {
+      icon: ShieldCheck,
+      iconBg: 'bg-rose-100',
+      iconColor: 'text-rose-500',
       question: isEn ? 'How is my project data security protected?' : '¿Cómo se protege la seguridad de los datos de mi proyecto?',
-      subtitle: 'Security and confidentiality measures',
+      subtitle: isEn ? 'Security and confidentiality measures' : 'Medidas de seguridad y confidencialidad',
       answer: isEn
         ? 'Under high-level security standards. We implement confidentiality protocols and technical shielding at every node of the project, ensuring your intellectual property and data remain protected at all times.'
         : 'Bajo estándares de seguridad de alto nivel. Implementamos protocolos de confidencialidad y blindaje técnico en cada nodo del proyecto, asegurando que tu propiedad intelectual y tus datos permanezcan siempre protegidos.',
     },
     {
+      icon: MapPin,
+      iconBg: 'bg-cyan-100',
+      iconColor: 'text-cyan-600',
       question: isEn ? 'Where are team members located?' : '¿Dónde están ubicados los miembros del equipo?',
-      subtitle: 'Geographic distribution and time zones',
+      subtitle: isEn ? 'Geographic distribution and time zones' : 'Distribución geográfica y zonas horarias',
       answer: isEn
         ? 'Our offices are in Argentina and the United States, with talent presence throughout Latin America. We operate in different time zones to adapt to your schedule.'
         : 'Nuestras oficinas están en Argentina y Estados Unidos, con presencia de talento en toda Latinoamérica. Operamos en distintas zonas horarias para adaptarnos a tu calendario.',
     },
     {
+      icon: TrendingUp,
+      iconBg: 'bg-purple-100',
+      iconColor: 'text-purple-600',
       question: isEn ? 'Do I have flexibility to scale or change profiles?' : '¿Tengo flexibilidad para escalar o cambiar perfiles?',
-      subtitle: 'Scalability and adaptability',
+      subtitle: isEn ? 'Scalability and adaptability' : 'Escalabilidad y adaptabilidad',
       answer: isEn
         ? 'Yes. We can expand Squad capacity or adjust technical specialties in agile cycles, adapting to the evolution of your roadmap without bureaucracy.'
         : 'Sí. Podemos ampliar la capacidad del Squad o ajustar las especialidades técnicas en ciclos ágiles, adaptándonos a la evolución de tu hoja de ruta sin burocracias.',
     },
     {
+      icon: Lock,
+      iconBg: 'bg-indigo-100',
+      iconColor: 'text-indigo-600',
       question: isEn ? 'Who retains intellectual property of the development?' : '¿Quién mantiene la propiedad intelectual del desarrollo?',
-      subtitle: 'Intellectual property ownership',
+      subtitle: isEn ? 'Intellectual property ownership' : 'Titularidad de la propiedad intelectual',
       answer: isEn
         ? 'Ownership is 100% yours. All code, repositories, and documentation are delivered in full, ensuring the generated asset remains in your infrastructure.'
         : 'La propiedad es 100% tuya. Todo el código, repositorios y documentación se entregan de forma íntegra, asegurando que el activo generado permanezca en tu infraestructura.',
     },
     {
+      icon: GitMerge,
+      iconBg: 'bg-pink-100',
+      iconColor: 'text-pink-600',
       question: isEn ? 'How does the team integrate into my workflow?' : '¿Cómo se integra el equipo a mi flujo de trabajo?',
-      subtitle: 'Workflow integration',
+      subtitle: isEn ? 'Workflow integration' : 'Integración al flujo de trabajo',
       answer: isEn
         ? 'Total synchrony. The Squad operates under your management tools. We report progress through periodic performance reports to audit compliance with every milestone.'
         : 'Sincronía total. El Squad opera bajo tus herramientas de gestión. Reportamos avances mediante informes de desempeño periódicos para auditar el cumplimiento de cada hito.',
@@ -87,7 +111,7 @@ export default function FaqSection() {
         </div>
 
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
             <span className="text-gray-900">
               {isEn ? 'Frequently asked questions about' : 'Preguntas frecuentes sobre'}
             </span>
@@ -102,46 +126,57 @@ export default function FaqSection() {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden transition-all hover:shadow-lg"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center gap-4 p-6 text-left transition-all"
+          {faqs.map((faq, index) => {
+            const Icon = faq.icon;
+            const isOpen = openIndex === index;
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden transition-all hover:shadow-lg"
               >
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {faq.question}
-                  </h3>
-                  {openIndex !== index && (
-                    <p className="text-sm text-purple-600 mt-1">{faq.subtitle}</p>
-                  )}
-                </div>
-
-                <div className="flex-shrink-0">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
-                    openIndex === index ? 'bg-purple-600' : 'bg-purple-100'
-                  }`}>
-                    <ChevronDown
-                      className={`w-5 h-5 transition-transform ${
-                        openIndex === index ? 'rotate-180 text-white' : 'text-purple-600'
-                      }`}
-                    />
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex items-center gap-4 p-6 text-left transition-all"
+                >
+                  {/* Colored icon */}
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${faq.iconBg}`}>
+                    <Icon className={`w-5 h-5 ${faq.iconColor}`} />
                   </div>
-                </div>
-              </button>
 
-              {openIndex === index && (
-                <div className="px-6 pb-6 pt-2 animate-in slide-in-from-top">
-                  <p className="text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900">
+                      {faq.question}
+                    </h3>
+                    {!isOpen && (
+                      <p className="text-sm text-purple-600 mt-1">{faq.subtitle}</p>
+                    )}
+                  </div>
+
+                  <div className="flex-shrink-0">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+                      isOpen ? 'bg-purple-600' : 'bg-purple-100'
+                    }`}>
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform ${
+                          isOpen ? 'rotate-180 text-white' : 'text-purple-600'
+                        }`}
+                      />
+                    </div>
+                  </div>
+                </button>
+
+                {isOpen && (
+                  <div className="px-6 pb-6 pt-2 animate-in slide-in-from-top">
+                    <div className="pl-15">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

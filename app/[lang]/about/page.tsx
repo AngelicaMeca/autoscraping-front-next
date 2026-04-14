@@ -55,9 +55,9 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <h1 className="font-extrabold leading-[1.1] mb-8" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
+          <h1 className="font-extrabold leading-[1.1] mb-8" style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}>
             <span className="text-white">{isEn ? 'Meet the people who' : 'Conoce a los que'}</span>
-            <br />
+            <span className="hidden sm:inline"><br /></span>{' '}
             <span
               className="bg-clip-text text-transparent"
               style={{
@@ -69,19 +69,10 @@ export default function AboutPage() {
           </h1>
 
           <p className="mx-auto mb-14 leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1.1rem' }}>
-            {isEn ? (
-              <>
-                Engineers, analysts and strategists united by the same conviction: data
-                <br />
-                well managed can change the course of any business.
-              </>
-            ) : (
-              <>
-                Ingenieros, analistas y estrategas unidos por una misma convicción: los datos
-                <br />
-                bien gestionados cambian el rumbo de cualquier negocio.
-              </>
-            )}
+            {isEn
+              ? 'Engineers, analysts and strategists united by the same conviction: data well managed can change the course of any business.'
+              : 'Ingenieros, analistas y estrategas unidos por una misma convicción: los datos bien gestionados cambian el rumbo de cualquier negocio.'
+            }
           </p>
 
           <div className="flex flex-col items-center gap-2">
@@ -127,19 +118,9 @@ export default function AboutPage() {
               </span>
             </h2>
             <p className="max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.05rem' }}>
-              {isEn ? (
-                <>
-                  From a clear idea to a global operation. This is the path we
-                  <br />
-                  build with every project, every client and every data point delivered.
-                </>
-              ) : (
-                <>
-                  Desde una idea clara hasta una operación global. Este es el camino que
-                  <br />
-                  construimos con cada proyecto, cada cliente y cada dato entregado.
-                </>
-              )}
+              {isEn
+                ? 'From a clear idea to a global operation. This is the path we build with every project, every client and every data point delivered.'
+                : 'Desde una idea clara hasta una operación global. Este es el camino que construimos con cada proyecto, cada cliente y cada dato entregado.'}
             </p>
           </div>
 

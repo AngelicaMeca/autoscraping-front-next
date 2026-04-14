@@ -61,7 +61,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
             {data.titlePart1 && <span>{data.titlePart1} </span>}
             <span className="bg-gradient-to-r from-[#FBCB67] via-[#FF8A76] to-[#C968FF] bg-clip-text text-transparent">
               {data.titlePartGradient}

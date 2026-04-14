@@ -63,44 +63,26 @@ export default function ResultadosBanner() {
           </div>
         </div>
 
-        <h2 className="text-white font-extrabold leading-[1.15] mb-8" style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)' }}>
+        <h2 className="text-white font-extrabold leading-[1.15] mb-8" style={{ fontSize: 'clamp(1.8rem, 5vw, 3.2rem)' }}>
           {isEn ? (
             <>
-              High-value results
-              <br />
+              High-value results{' '}
+              <br className="hidden md:block" />
               backed by experience
             </>
           ) : (
             <>
-              Resultados de alto valor
-              <br />
+              Resultados de alto valor{' '}
+              <br className="hidden md:block" />
               respaldados por la experiencia
             </>
           )}
         </h2>
 
         <p className="mx-auto mb-12 leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem' }}>
-          {isEn ? (
-            <>
-              We don&apos;t theorize about data; we master it.
-              <br />
-              We transform complex challenges into high-performance
-              <br />
-              systems, ensuring every delivery boosts your
-              <br />
-              responsiveness and operational growth.
-            </>
-          ) : (
-            <>
-              No teorizamos sobre datos; los dominamos.
-              <br />
-              Transformamos desafíos complejos en sistemas de alto
-              <br />
-              rendimiento, asegurando que cada entrega potencie tu
-              <br />
-              capacidad de respuesta y el crecimiento de tu operación.
-            </>
-          )}
+          {isEn
+            ? 'We don\'t theorize about data; we master it. We transform complex challenges into high-performance systems, ensuring every delivery boosts your responsiveness and operational growth.'
+            : 'No teorizamos sobre datos; los dominamos. Transformamos desafíos complejos en sistemas de alto rendimiento, asegurando que cada entrega potencie tu capacidad de respuesta y el crecimiento de tu operación.'}
         </p>
 
         <div className="flex justify-center mb-14">

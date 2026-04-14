@@ -168,7 +168,7 @@ export default function BookAMeeting() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight">
               <span className="text-white">{isEn ? 'Your Data Solution ' : 'Tu solución de datos '}</span>
               <span className="bg-gradient-to-r from-[#60A5FA] via-[#7B92FF] to-[#9D7EFF] bg-clip-text text-transparent">
                 {isEn ? 'Awaits' : 'te espera'}
