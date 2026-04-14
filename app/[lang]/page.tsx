@@ -858,7 +858,7 @@ export default function Home() {
                     JS
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">Jordan Stribling</p>
+                    <p className="font-semibold text-gray-900">Jordan S.</p>
                     <p className="text-sm text-gray-600">Operations Manager Of The Policy &amp; Research Group</p>
                   </div>
                 </div>
@@ -882,7 +882,7 @@ export default function Home() {
                     AM
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">Alfredo Muñoz</p>
+                    <p className="font-semibold text-gray-900">Alfredo M.</p>
                     <p className="text-sm text-gray-600">CEO Of Abiboo</p>
                   </div>
                 </div>
@@ -906,7 +906,7 @@ export default function Home() {
                     JB
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">Julian Botero</p>
+                    <p className="font-semibold text-gray-900">Julian B.</p>
                     <p className="text-sm text-gray-600">Project Manager Of Data Knowledge Consultants</p>
                   </div>
                 </div>
