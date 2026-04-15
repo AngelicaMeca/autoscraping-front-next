@@ -96,6 +96,7 @@ export default function Home() {
       name: 'Francisco Battan',
       title: 'CEO',
       initials: 'FB',
+      photo: '/founders/francisco-battan.png',
       quote: isEn
         ? 'Data is our language, but what really matters is what it means for your business. We guide you through the process of turning information into concrete decisions.'
         : 'Los datos son nuestro lenguaje, pero lo que realmente importa es lo que significan para tu negocio. Te acompañamos en el proceso de convertir información en decisiones concretas.',
@@ -109,6 +110,7 @@ export default function Home() {
       name: 'Benjamín Arjona',
       title: 'CCO',
       initials: 'BA',
+      photo: '/founders/benjamin-arjona.png',
       quote: isEn
         ? 'Every business has unique and distinct data needs. We focus on understanding yours to build a solution that fits what you need today and scales with what comes tomorrow.'
         : 'Cada negocio tiene necesidades de datos distintas y únicas. Nos enfocamos en entender las tuyas para construir una solución que se ajuste a lo que necesitas hoy y escale con lo que viene mañana.',
@@ -122,6 +124,7 @@ export default function Home() {
       name: 'Cesar Farhat',
       title: 'CTO',
       initials: 'CF',
+      photo: '/founders/cesar-farhat.png',
       quote: isEn
         ? 'As pioneers in data extraction, we combine cutting-edge technology with automation so that the technical side is never your problem.'
         : 'Como pioneros en extracción de datos, combinamos tecnología de avanzada con automatización para que lo técnico nunca sea tu problema.',
@@ -841,22 +844,21 @@ export default function Home() {
             {/* Testimonial Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {/* Card 1 — Jordan Stribling */}
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col">
                 <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />)}
                 </div>
-                <p className="text-gray-700 italic mb-8 leading-relaxed">
+                <p className="text-gray-700 italic mb-8 leading-relaxed flex-1">
                   {isEn
                     ? '"Francisco and his team were wonderful to work with. Great knowledge base and skills for creating many Python web crawlers over an extended period of time. Communication was thorough and timely, as well. I look forward to continuing to work with him."'
                     : '"Francisco y su equipo fueron maravillosos con quienes trabajar. Gran base de conocimientos y habilidades para crear numerosos web crawlers en Python durante un período prolongado. La comunicación fue minuciosa y oportuna. Espero seguir trabajando con ellos."'}
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                    JS
-                  </div>
+                <div className="flex items-center gap-3 mt-auto">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/testimonials/jordan.png" alt="Jordan S." style={{ width: 48, height: 48, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} />
                   <div className="flex-1">
                     <p className="font-semibold text-gray-900">Jordan S.</p>
                     <p className="text-sm text-gray-600">Operations Manager Of The Policy &amp; Research Group</p>
@@ -865,22 +867,21 @@ export default function Home() {
               </div>
 
               {/* Card 2 — Alfredo Muñoz */}
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col">
                 <div className="w-12 h-12 bg-blue-900 rounded-xl flex items-center justify-center mb-6">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />)}
                 </div>
-                <p className="text-gray-700 italic mb-8 leading-relaxed">
+                <p className="text-gray-700 italic mb-8 leading-relaxed flex-1">
                   {isEn
                     ? '"Francisco and his team are incredibly knowledgeable, and they are also very flexible to accommodate changes. The value that AUTOScraping has been bringing to us over the years has become an essential part of our operations."'
                     : '"Francisco y su equipo son increíblemente expertos, y también muy flexibles para adaptarse a los cambios. El valor que AUTOScraping nos ha aportado a lo largo de los años se ha convertido en una parte esencial de nuestras operaciones."'}
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-800 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                    AM
-                  </div>
+                <div className="flex items-center gap-3 mt-auto">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/testimonials/alfredo.png" alt="Alfredo M." style={{ width: 48, height: 48, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} />
                   <div className="flex-1">
                     <p className="font-semibold text-gray-900">Alfredo M.</p>
                     <p className="text-sm text-gray-600">CEO Of Abiboo</p>
@@ -889,22 +890,21 @@ export default function Home() {
               </div>
 
               {/* Card 3 — Julian Botero */}
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col">
                 <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-6">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />)}
                 </div>
-                <p className="text-gray-700 italic mb-8 leading-relaxed">
+                <p className="text-gray-700 italic mb-8 leading-relaxed flex-1">
                   {isEn
                     ? '"As always it has been a pleasure to work with Francisco and his team. The deadline was achieved as agreed at the beginning and the quality of the deliverables were beyond our expectations. All the project was managed under Scrum methodology."'
                     : '"Como siempre, ha sido un placer trabajar con Francisco y su equipo. Los plazos se cumplieron tal como se acordó desde el principio y la calidad de los entregables superó nuestras expectativas. Todo el proyecto fue gestionado bajo metodología Scrum."'}
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                    JB
-                  </div>
+                <div className="flex items-center gap-3 mt-auto">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/testimonials/julian.png" alt="Julian B." style={{ width: 48, height: 48, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} />
                   <div className="flex-1">
                     <p className="font-semibold text-gray-900">Julian B.</p>
                     <p className="text-sm text-gray-600">Project Manager Of Data Knowledge Consultants</p>
@@ -1000,13 +1000,17 @@ export default function Home() {
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                     className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12"
                   >
-                    {/* Left side - Avatar with initials */}
+                    {/* Left side - Avatar with photo */}
                     <div className="flex-shrink-0">
                       <div className="relative">
                         <div className="absolute -inset-3 bg-gradient-to-r from-[#C084FC]/50 via-[#60A5FA]/50 to-[#F472B6]/50 rounded-2xl blur-2xl"></div>
-                        <div className="relative w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                          <span className="text-5xl font-bold text-white">{teamMembers[teamSlide].initials}</span>
-                        </div>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={teamMembers[teamSlide].photo}
+                          alt={teamMembers[teamSlide].name}
+                          style={{ width: 128, height: 128, borderRadius: '1rem', objectFit: 'cover', objectPosition: 'top' }}
+                          className="relative shadow-lg"
+                        />
                       </div>
                     </div>
 

@@ -35,7 +35,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
   return {
   'generacion-de-leads': {
     slug: 'generacion-de-leads',
-    badge: 'Lead Generation Platform',
+    badge: isEn ? 'Lead Generation Platform' : 'Plataforma de Generación de Leads',
     titlePart1: '',
     titlePartGradient: isEn ? 'Lead Generation' : 'Generación de Leads',
     titlePart2: '',
@@ -205,7 +205,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
           : '¿Quién mantiene los scrapers cuando algo cambia?',
         answer: isEn
           ? 'We do. Maintenance is included in the Data Factory service. You receive the data; we make sure that keeps happening.'
-          : 'Nosotros. El mantenimiento está incluido en el servicio de Data Factory. Vos recibís los datos, nosotros nos encargamos de que eso siga pasando.'
+          : 'Nosotros. El mantenimiento está incluido en el servicio de Data Factory. Tú recibes los datos, nosotros nos encargamos de que eso siga pasando.'
       },
       {
         question: isEn
@@ -213,7 +213,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
           : '¿Qué tipo de sitios pueden scrapear?',
         answer: isEn
           ? 'E-commerce sites, marketplaces, real estate portals, search engines, directories, content sites, public databases, review platforms, and many others. If you need data from a specific source, we evaluate it in the first meeting.'
-          : 'Sitios de e-commerce, marketplaces, portales inmobiliarios, buscadores, directorios, sitios de contenido, bases públicas, plataformas de reviews y muchos otros. Si necesitás datos de una fuente en particular, lo evaluamos en la primera reunión.'
+          : 'Sitios de e-commerce, marketplaces, portales inmobiliarios, buscadores, directorios, sitios de contenido, bases públicas, plataformas de reviews y muchos otros. Si necesitas datos de una fuente en particular, lo evaluamos en la primera reunión.'
       },
       {
         question: isEn
@@ -544,7 +544,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     ],
     needThisTitle: isEn
       ? 'Still pulling the same data manually every week?'
-      : '¿Seguís pidiendo los mismos datos a mano cada semana?',
+      : '¿Sigues pidiendo los mismos datos a mano cada semana?',
     needThisDescription: isEn
       ? 'If your team is downloading, copying, or requesting the same data on a recurring basis, you are spending people time on something that can run on its own. We automate that process so you never have to think about it.'
       : 'Si tu equipo está descargando, copiando o solicitando los mismos datos de forma recurrente, estás gastando tiempo de personas en algo que puede correr solo. Automatizamos ese proceso para que no tengas que pensar en él.',
@@ -552,22 +552,22 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn
       ? 'You define the source, the fields, and the frequency. We take care of everything else: extraction, maintenance, cleaning, and delivery.'
-      : 'Vos definís la fuente, los campos y la frecuencia. Nosotros nos encargamos de todo lo demás: extracción, mantenimiento, limpieza y entrega.',
+      : 'Tú defines la fuente, los campos y la frecuencia. Nosotros nos encargamos de todo lo demás: extracción, mantenimiento, limpieza y entrega.',
     helpYouList: isEn ? [
       'You define the data once. You receive it every week, month, or day—without asking again.',
       'We handle blocks, site changes, and incidents. You just see the data arriving.',
       'We deliver in CSV, Excel, JSON, API, or directly to your database.',
       'You work with a team that responds in under 1 hour when something changes.'
     ] : [
-      'Definís los datos una vez. Los recibís todas las semanas, meses o días, según lo que necesites, sin pedirlos de nuevo.',
-      'Nosotros resolvemos los bloqueos, los cambios en los sitios y las incidencias. Vos los ves llegar como si nada.',
+      'Defines los datos una vez. Los recibes todas las semanas, meses o días, según lo que necesites, sin pedirlos de nuevo.',
+      'Nosotros resolvemos los bloqueos, los cambios en los sitios y las incidencias. Tú los ves llegar como si nada.',
       'Te entregamos en CSV, Excel, JSON, API o directo a tu base de datos.',
-      'Trabajás con un equipo que responde en menos de 1 hora cuando algo cambia.'
+      'Trabajas con un equipo que responde en menos de 1 hora cuando algo cambia.'
     ],
     ctaTitle: isEn ? 'Schedule a free consultation' : 'Agenda una consulta gratuita',
     ctaDescription: isEn
       ? 'Tell us what data you need. In a 30-minute call we give you a plan and a concrete delivery timeline.'
-      : 'Contanos qué datos necesitas. En una llamada de 30 minutos te damos un plan y un tiempo de entrega concreto.',
+      : 'Cuéntanos qué datos necesitas. En una llamada de 30 minutos te damos un plan y un tiempo de entrega concreto.',
     faqs: [
       {
         question: isEn
@@ -575,7 +575,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
           : '¿Qué significa en la práctica que ustedes automatizan la recolección?',
         answer: isEn
           ? 'You tell us what data you need, from which sites, and how often. After that, you receive it in your email, database, or via API on a recurring basis. You do not have to request it or remember: it arrives on its own.'
-          : 'Significa que vos nos decís qué datos necesitás, de qué sitios y cada cuánto. Después de eso, los recibís en tu correo, en tu base de datos o via API, de forma recurrente. No tenés que pedirlos ni acordarte: llegan solos.'
+          : 'Significa que tú nos dices qué datos necesitas, de qué sitios y cada cuánto. Después de eso, los recibes en tu correo, en tu base de datos o vía API, de forma recurrente. No tienes que pedirlos ni acordarte: llegan solos.'
       },
       {
         question: isEn
@@ -1181,7 +1181,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
       'We match your products with equivalent competitor products so the comparison is useful.',
       'When a store changes, we handle it before your report arrives with gaps.'
     ] : [
-      'Definís qué productos y qué tiendas querés monitorear. Nosotros armamos el seguimiento.',
+      'Defines qué productos y qué tiendas quieres monitorear. Nosotros armamos el seguimiento.',
       'Entregamos precios actualizados con la frecuencia que tu caso necesita.',
       'Alineamos productos tuyos con productos equivalentes de competidores para que la comparación sea útil.',
       'Cuando una tienda cambia, lo resolvemos antes de que tu reporte llegue con huecos.'

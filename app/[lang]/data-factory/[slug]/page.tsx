@@ -377,7 +377,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               href={`/${lang}/data-squad`}
               className="flex-shrink-0 inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm whitespace-nowrap"
             >
-              {isEn ? 'Discover Data Squad' : 'Conocé Data Squad'}
+              {isEn ? 'Discover Data Squad' : 'Conoce Data Squad'}
             </Link>
           </div>
         </div>
