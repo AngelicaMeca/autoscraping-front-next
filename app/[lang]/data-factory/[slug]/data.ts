@@ -327,53 +327,91 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: BarChart,
-        title: isEn ? 'Profitability analysis' : 'Análisis de rentabilidad',
-        description: isEn ? 'Daily capture of reviews, property scores, policies, and guest profiles.' : 'Captura diaria de reviews, puntuación de propiedades, políticas y perfiles de huéspedes.'
+        title: isEn ? 'Monitoring by geographic zone' : 'Monitoreo por zona geográfica',
+        description: isEn
+          ? 'You define the zones that interest you: neighborhoods, cities, tourist districts, or specific coordinates. We collect all active listings within those zones and keep them updated.'
+          : 'Defines las zonas que te interesan: barrios, ciudades, distritos turísticos o coordenadas específicas. Recopilamos todos los listados activos dentro de esas zonas y los mantenemos actualizados.'
       },
       {
         icon: Target,
-        title: isEn ? 'Competitor radar' : 'Radar de competidores',
-        description: isEn ? 'Monitor competitive range, undervalued listings, and top hosts in the city by mapping their seasonal calendar.' : 'Vigila el rango competitivo, listados subvaluados y host principales de la ciudad mapeando su calendario estacional.'
+        title: isEn ? 'Prices and historical availability' : 'Precios y disponibilidad histórica',
+        description: isEn
+          ? 'We track the evolution of prices and occupancy over time. Ideal for teams analyzing trends, seasonality, or the impact of local events.'
+          : 'Seguimos la evolución de precios y ocupación en el tiempo. Ideal para equipos que analizan tendencias, estacionalidad o impacto de eventos locales.'
       },
       {
         icon: Zap,
-        title: isEn ? 'Price alerts' : 'Alertas de precios',
-        description: isEn ? 'Visualize demand spikes based on alerts about general rate variability at 1, 3, or 6 months view for a city.' : 'Visualiza picos de demanda según las alertas sobre variabilidad general de las tarifas a 1, 3 o 6 meses vistas de una ciudad.'
+        title: isEn ? 'Reviews and ratings' : 'Reseñas y valoraciones',
+        description: isEn
+          ? 'We collect public reviews of accommodations so you can analyze sentiment, recurring topics, and reputation evolution by zone or operator.'
+          : 'Recopilamos reseñas públicas de los alojamientos para que puedas analizar sentimiento, temas recurrentes y evolución de la reputación por zona u operador.'
       },
       {
         icon: Shield,
-        title: isEn ? 'Integrated formats' : 'Formatos integrados',
-        description: isEn ? 'Tabular data can cross your accounting systems natively to update prices dynamically.' : 'Los datos tabulares pueden cruzar tus sistemas contables de forma nativa para actualizar precios dinámicamente.'
+        title: isEn ? 'Data delivered, not dashboards to build' : 'Datos entregados, no dashboards para construir',
+        description: isEn
+          ? 'We don\'t give you a tool to use. We give you the data in the format your team already consumes, ready for your BI, your model, or your report.'
+          : 'No te damos una herramienta para que la uses. Te damos los datos en el formato que tu equipo ya consume, listos para tu BI, tu modelo o tu reporte.'
       }
     ],
-    needThisTitle: isEn ? 'How to know if you need automatic tracking on Airbnb' : 'Cómo saber si requieres el tracking automático en Airbnb',
-    needThisDescription: isEn ? 'If you can\'t answer what the real market rates were last month around your complex, or why the competition was 100% full while your place sat vacant... you\'re operating blind. AUTOScraping solves this.' : 'Si no puedes responder cuáles fueron las tarifas reales de mercado el último mes en la redonda de tu complejo, ni por qué la competencia estuvo 100% full mientras tu lugar vacante... estás operando a ciegas. AUTOScraping resuelve esto.',
+    needThisTitle: isEn ? 'How to know if you need automatic tracking on Airbnb' : 'Cómo saber si necesitas el tracking automático en Airbnb',
+    needThisDescription: isEn ? 'If you can\'t answer what the real market rates were last month around your complex, or why the competition was 100% full while your place sat vacant... you\'re operating blind. AUTOScraping solves this.' : 'Si no puedes responder cuáles fueron las tarifas reales de mercado el último mes alrededor de tu complejo, ni por qué la competencia estuvo 100% llena mientras tu lugar estaba vacante... estás operando a ciegas. AUTOScraping resuelve esto.',
     helpYouSub: isEn ? 'Proptech Data' : 'Data Proptech',
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
-    helpYouDescription: isEn ? 'We configure dense programmatic extraction networks (Scraping) on Airbnb, mapping geo-referenced listings, reviews, and calendars to give you the final snapshot of how tenants behave and what prices they accept.' : 'Configuramos redes densas de extracción programática (Scraping) sobre Airbnb mapeando listados, reviews y calendarios georrefenciados para ofrecerte la radiografía final de cómo se comportan los inquilinos y qué precios aceptan.',
+    helpYouDescription: isEn ? 'We configure dense programmatic extraction networks (Scraping) on Airbnb, mapping geo-referenced listings, reviews, and calendars to give you the final snapshot of how tenants behave and what prices they accept.' : 'Configuramos redes densas de extracción programática (Scraping) sobre Airbnb mapeando listados, reseñas y calendarios georreferenciados para ofrecerte la radiografía final de cómo se comportan los huéspedes y qué precios aceptan.',
     helpYouList: isEn ? [
-      'Daily tracking of competitor nightly prices.',
-      'Deep analytics (Occupancy, Estimated RevPAR, Rules).',
-      'Comment mining to identify neglected niches.'
+      'We monitor Airbnb in the zones that interest you, at the level of detail you need.',
+      'We deliver prices, availability, new listings, reviews, and historical data.',
+      'You receive the data at the frequency you use: daily, weekly, monthly, or on demand.',
+      'We handle maintenance. You only receive data ready to analyze.'
     ] : [
-      'Seguimiento diario de precios nocturnos de competidores.',
-      'Analíticas profundas (Ocupación, RevPAR estimado, Reglas).',
-      'Minado de comentarios para identificar nichos descuidados.'
+      'Monitoreamos Airbnb en las zonas que te interesan, al nivel de detalle que necesites.',
+      'Te entregamos precios, disponibilidad, nuevos listados, reseñas y datos históricos.',
+      'Recibes los datos con la frecuencia que uses: diaria, semanal, mensual o a demanda.',
+      'Nos encargamos del mantenimiento. Solo recibes datos listos para analizar.'
     ],
     ctaTitle: isEn ? 'The power of expert talent ready to boost your tourism operations' : 'El poder del talento experto listo para potenciar tus operaciones turísticas',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What exactly is Airbnb Data Extraction?' : '¿Qué es exactamente la Extracción de Datos en Airbnb?',
-        answer: isEn ? 'It is the methodical process of traversing the public property inventory, processing their interlinked rates (season/weekends) and status (occupied/free) to understand microeconomic trends.' : 'Es el proceso metodológico de recorrer el inventario público de propiedades, procesando sus tarifas interconectadas (temporada/fines de semana) y estado (ocupado/libre) para comprender tendencias microeconómicas.'
+        question: isEn
+          ? 'What data can I receive for each listing?'
+          : '¿Qué datos puedo recibir de cada alojamiento?',
+        answer: isEn
+          ? 'Nightly price, availability calendar, property type, capacity, amenities, location, operator, price change history, and public reviews. We define the exact set based on your case.'
+          : 'Precio por noche, calendario de disponibilidad, tipo de propiedad, capacidad, servicios, ubicación, operador, histórico de cambios de precio y reseñas públicas. Definimos el set exacto según tu caso.'
       },
       {
-        question: isEn ? 'What would a hotel agency or proptech use this for?' : '¿Para qué usaría esto una agencia hotelera o proptech?',
-        answer: isEn ? 'Basically: "Dynamic Pricing". If the city is surprisingly saturated on a weekend due to an unmapped event, automated reading will report it so you can raise rates instantly or identify the month\'s dominant search profile.' : 'Básicamente: "Dynamic Pricing". Si la ciudad está sorpresivamente saturada un fin de semana a razón de un evento no mapeado, la lectura automatizada se encargará de reportarlo para que puedas subir tarifas al instante o identificar el perfil de búsqueda dominador del mes.'
+        question: isEn
+          ? 'Can you monitor entire cities or only specific zones?'
+          : '¿Pueden monitorear ciudades completas o solo zonas específicas?',
+        answer: isEn
+          ? 'Both. We can cover everything from a small area to entire cities or multiple cities in parallel. We discuss scope based on the volume and frequency you need.'
+          : 'Las dos cosas. Podemos cubrir desde una zona pequeña hasta ciudades enteras o varias ciudades en paralelo. Lo discutimos en función del volumen y la frecuencia que necesites.'
       },
       {
-        question: isEn ? 'What are the advantages of structured data vs. canned dashboards?' : '¿Qué ventajas tienen los datos estructurados vs dashboards enlatados?',
-        answer: isEn ? 'By providing raw and curated Data in private Datawarehouses, you have the freedom to design your own internal dashboards mixing your private revenue flow against external results, without analytically depending on a third-party SaaS.' : 'Al brindarte Data Cruda y curada en Datawarehouses privados, tienes la libertad de diseñar tus propios tableros internos con la mezcla de tu flujo de ingresos privados contra los resultados ajenos; y no depender analíticamente del SaaS de un tercero.'
+        question: isEn
+          ? 'How often do you update the data?'
+          : '¿Con qué frecuencia actualizan los datos?',
+        answer: isEn
+          ? 'Based on what works for you: daily for those managing dynamic pricing, weekly or monthly for trend analysis. We define the frequency at kickoff.'
+          : 'Según lo que te sirva: diaria para quienes operan precios dinámicos, semanal o mensual para análisis de tendencias. Definimos la frecuencia en el kickoff.'
+      },
+      {
+        question: isEn
+          ? 'Do you also cover other portals (Booking, Vrbo, etc.)?'
+          : '¿También cubren otros portales (Booking, Vrbo, etc.)?',
+        answer: isEn
+          ? 'Yes. If you want to compare Airbnb against other portals, we set it up within the same project, with the same field schema, so the analysis is straightforward.'
+          : 'Sí. Si te interesa comparar Airbnb contra otros portales, lo armamos en el mismo proyecto, con el mismo esquema de campos, para que el análisis sea directo.'
+      },
+      {
+        question: isEn
+          ? 'How do I receive the data?'
+          : '¿Cómo recibo los datos?',
+        answer: isEn
+          ? 'In CSV, Excel, JSON, via API, or direct insertion into your database. We agree on the format at the start.'
+          : 'En CSV, Excel, JSON, via API o inserción directa en tu base de datos. El formato lo acordamos al inicio.'
       }
     ]
   },
@@ -579,7 +617,9 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Financial Metrics' : 'Métricas Financieras',
     titlePart2: '',
-    description: isEn ? 'Critical for hedge funds, investors, and fintech firms that demand precise metrics on economic indicators constantly and automatically.' : 'Crítico para fondos de cobertura, inversionistas y firmas fintech que demandan métricas precisas sobre indicadores económicos de forma constante y automática.',
+    description: isEn
+      ? 'We extract prices, indicators, reports, and metrics from public sources in the financial world. We deliver them structured, validated, and in the format your team already uses to model, decide, and report.'
+      : 'Extraemos precios, indicadores, reportes y métricas de fuentes públicas del mundo financiero. Te los entregamos estructurados, validados y en el formato que tu equipo ya usa para modelar, decidir y reportar.',
     testimonials: [
       {
         rating: 5,
@@ -599,38 +639,48 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: BarChart,
-        title: isEn ? 'Macroeconomic analysis' : 'Análisis macroeconómico',
-        description: isEn ? 'Massive retrieval of balances, reports, and GDP indicators issued by government entities.' : 'Obtención masiva de balances, memorias e indicativos del PBI dictados por los entes gubernamentales.'
+        title: isEn ? 'Data extraction from reports and PDFs' : 'Extracción de datos desde reportes y PDFs',
+        description: isEn
+          ? 'A lot of financial data lives in quarterly reports, regulatory files, prospectuses, or investor relations PDFs. We read them, structure them, and deliver them as data, not documents.'
+          : 'Muchos datos financieros están en reportes trimestrales, archivos de regulador, prospectos o PDFs de investor relations. Los leemos, los estructuramos y te los entregamos como datos, no como documentos.'
       },
       {
         icon: TrendingUp,
-        title: isEn ? 'Intraday market monitoring' : 'Monitoreo bursátil intradía',
-        description: isEn ? 'Ultra-fast (Low Latency) reading of asset status and indices on stock exchange portals.' : 'Lectura ultra rápida (Low Latency) del estado e índices de activos en portales de la bolsa.'
+        title: isEn ? 'Custom delivery frequency' : 'Frecuencia de entrega a medida',
+        description: isEn
+          ? 'You need daily, intraday, weekly, or monthly updates. We configure the frequency to your case and sustain it without any intervention on your end.'
+          : 'Necesitas actualizaciones diarias, intradía, semanales o mensuales. Configuramos la frecuencia según tu caso y la sostenemos sin intervención de tu lado.'
       },
       {
         icon: Target,
-        title: isEn ? 'Crypto asset tracking' : 'Tracking de criptoactivos',
-        description: isEn ? 'Collection of sentiment and public On-Chain metrics disseminated across dozens of informational forums and directories.' : 'Colección de sentimiento y métricas On-Chain públicas diseminadas a través de docenas de foros y directorios informativos.'
+        title: isEn ? 'Validation before delivery' : 'Validación previa a la entrega',
+        description: isEn
+          ? 'Before the data reaches your operation, we check that it makes sense. If something falls outside the historical range, we flag it and review it.'
+          : 'Antes de que los datos lleguen a tu operación, revisamos que tengan sentido. Si algo se sale del rango histórico, lo marcamos y lo revisamos.'
       },
       {
         icon: Shield,
-        title: isEn ? 'Immaculate data' : 'Data inmaculada',
-        description: isEn ? 'Robustly encrypted and channeled so that percentage values and currencies always preserve the expected state and format.' : 'Cifrado robusto y canalizado de manera tal que los valores porcentuales y divisas siempre preserven el estado y formato esperado.'
+        title: isEn ? 'Delivery in the format you already use' : 'Entrega en el formato que ya usas',
+        description: isEn
+          ? 'CSV, Excel, JSON, API, or direct insertion into your database. No intermediate steps or adaptations on your end.'
+          : 'CSV, Excel, JSON, API o inserción directa en tu base de datos. Sin pasos intermedios ni adaptaciones de tu lado.'
       }
     ],
-    needThisTitle: isEn ? 'Why prioritize localized financial data collection' : 'Por qué priorizar el levantamiento de Data financiera localizada',
-    needThisDescription: isEn ? 'If you rely exclusively on centralized market providers like Bloomberg that impose exorbitant costs, lacking certain regional and decentralized public bond indicators that you specifically require.' : 'Si dependes exclusivamente de proveedores de mercado centralizados como Bloomberg que imponen costos exorbitantes, careciendo además de ciertos indicativos regionales y de bonos públicos descentralizados que tú mismo requieres.',
+    needThisTitle: isEn ? 'Why prioritize localized financial data collection' : 'Por qué priorizar el levantamiento de data financiera localizada',
+    needThisDescription: isEn ? 'If you rely exclusively on centralized market providers like Bloomberg that impose exorbitant costs, lacking certain regional and decentralized public bond indicators that you specifically require.' : 'Si dependes exclusivamente de proveedores de mercado centralizados como Bloomberg que imponen costos exorbitantes, careciendo además de ciertos indicadores regionales y de bonos públicos descentralizados que tu mismo requieres.',
     helpYouSub: isEn ? 'Data & Fintech' : 'Data y Fintech',
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
-    helpYouDescription: isEn ? 'We generate persistent flows by silently connecting to any monetary entity or report, downloading PDFs, reading HTML, and serving it to your banking core as a fresh data service.' : 'Generamos flujos persistentes conectándonos silenciosamente sobre cualquier ente o reporte monetario, descargando PDFs, leyendo el HTML y sirviéndolo a tu core bancario como un servicio de data fresco.',
+    helpYouDescription: isEn ? 'We generate persistent flows by silently connecting to any monetary entity or report, downloading PDFs, reading HTML, and serving it to your banking core as a fresh data service.' : 'Generamos flujos persistentes conectándonos silenciosamente sobre cualquier ente o reporte monetario, descargando PDFs, leyendo el HTML y sirviéndolo a tu core bancario como un servicio de datos fresco.',
     helpYouList: isEn ? [
-      'Engineering focused on algorithmic precision of values.',
-      'Reading of assembly PDFs and local tax tabulators.',
-      'Ensuring agile delivery vital for trends.'
+      'We collect financial metrics from public sources: exchanges, regulators, open databases, corporate portals.',
+      'We read numbers inside PDFs, scanned reports, and complex tables.',
+      'We deliver at the frequency your team needs, without waiting or reprocessing.',
+      'We validate data before every delivery so no noise enters your models.'
     ] : [
-      'Ingeniería enfocada en precisión algorítmica de los valores.',
-      'Lectura de PDFs de asambleas y tabuladores fiscales locales.',
-      'Aseguramiento de entrega ágil vital para las tendencias.'
+      'Recopilamos métricas financieras de fuentes públicas: bolsas, reguladores, bases abiertas, portales corporativos.',
+      'Leemos números que están dentro de PDFs, reportes escaneados y tablas complejas.',
+      'Entregamos con la frecuencia que tu equipo necesita, sin esperar ni reprocesar.',
+      'Validamos los datos antes de cada entrega para que no entren ruidos a tus modelos.'
     ],
     ctaTitle: isEn ? 'Conquer your market advantage with our analytical extraction' : 'Conquista tu ventaja en el mercado aprovechando nuestra extracción analítica',
     ctaDescription: '',
@@ -751,23 +801,31 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: Users,
-        title: isEn ? 'Enhanced audience segmentation' : 'Segmentación de audiencia mejorada',
-        description: isEn ? 'Access data from social networks and forums that let you assertively segment your audience and personalize mass emails.' : 'Accede a datos en redes y foros que te permiten segmentar asertivamente a tu audiencia y personalizar tus correos masivos.'
+        title: isEn ? 'Coverage of relevant external sources' : 'Cobertura de fuentes externas relevantes',
+        description: isEn
+          ? 'We work on competitor websites, sector portals, press, forums, directories, and other public sources that matter for your brand. We define the list together at the start.'
+          : 'Trabajamos sobre webs de competidores, portales sectoriales, prensa, foros, directorios y otras fuentes públicas que importen para tu marca. La lista la definimos juntos al inicio.'
       },
       {
         icon: Target,
-        title: isEn ? 'Competitor marketing strategies' : 'Estrategias de marketing de competidores',
-        description: isEn ? 'Directly monitor your competitors\' efforts by extracting metadata from their ads and product descriptions.' : 'Monitorea directamente los esfuerzos de tus competidores extrayendo la metadata de sus anuncios y descripciones de producto.'
+        title: isEn ? 'Data translated into marketing language' : 'Datos traducidos a lenguaje de marketing',
+        description: isEn
+          ? 'Instead of delivering raw HTML, we structure the data into fields your team already understands: product, price, offer, mentions, topics, author, date, channel. Ready for dashboards or reports.'
+          : 'En vez de entregarte HTML crudo, estructuramos los datos en campos que tu equipo ya entiende: producto, precio, oferta, menciones, temas, autor, fecha, canal. Listos para tableros o reportes.'
       },
       {
         icon: Zap,
-        title: isEn ? 'Frequent updates' : 'Actualización frecuente',
-        description: isEn ? 'Receive constantly refreshed data dumps to ensure your campaigns breathe relevant and current context.' : 'Recibe volcados de datos refrescados constantemente para asegurarte de que tus campañas transpiran un contexto relevante y actual.'
+        title: isEn ? 'Recurring delivery without technical friction' : 'Entrega recurrente sin fricción técnica',
+        description: isEn
+          ? 'We define the frequency (daily, weekly, monthly) and updates arrive on their own. No need to manage scrapers or deal with sources that change.'
+          : 'Definimos la frecuencia (diaria, semanal, mensual) y te llegan las actualizaciones solas. No necesitas gestionar scrapers ni pelearte con fuentes que cambian.'
       },
       {
         icon: BarChart,
-        title: isEn ? 'Curated reports and dashboards' : 'Reportajes y dashboards curados',
-        description: isEn ? 'We deliver informed, pre-digested dashboards focused on key metrics for your advertising initiative.' : 'Entregamos tableros informados y pre-digeridos centrados en las métricas clave para tu iniciativa publicitaria.'
+        title: isEn ? 'Integration with the tools you already use' : 'Integración con las herramientas que ya usas',
+        description: isEn
+          ? 'We deliver in CSV, Excel, Google Sheets, or direct import to your BI or data warehouse. No need to change your stack to consume the data.'
+          : 'Entregamos en CSV, Excel, Google Sheets, import directo a tu BI o a tu data warehouse. No tenés que cambiar tu stack para consumir los datos.'
       }
     ],
     needThisTitle: isEn ? 'How to know if you need Marketing Web Scraping' : 'Cómo saber si necesitas Web Scraping de Marketing',
@@ -776,28 +834,58 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn ? 'Our dedicated team of engineers orchestrates the retrieval of social data, competitor advertising, and prices to give you real direction before launching or running ads online.' : 'Nuestro equipo dedicado de ingenieros orquesta la recuperación de datos sociales, publicidades ajenas y precios para darte la directriz real antes de lanzar o pautar online.',
     helpYouList: isEn ? [
-      'Automate comparative dashboards on prices and ads.',
-      'Mass collection of profiles and reviews scattered across the web.',
-      'Empower your campaigns team by freeing them from manual searching.'
+      'We define with you which external data feeds your marketing decisions.',
+      'We monitor sources on a recurring basis, without your team having to do it manually.',
+      'We deliver ready-made tables for your analysts or agency to use directly.',
+      'When a source changes or a new one appears, we handle it.'
     ] : [
-      'Automatizar tableros comparativos sobre precios y pautas.',
-      'Obtención masiva de perfiles y opiniones regadas por la web.',
-      'Empoderar a tu equipo de campañas liberándolos de la búsqueda manual.'
+      'Definimos con vos qué datos externos alimentan tus decisiones de marketing.',
+      'Monitoreamos las fuentes de forma recurrente, sin que tu equipo tenga que hacerlo manual.',
+      'Te entregamos tablas listas para que tus analistas o tu agencia las usen directo.',
+      'Cuando una fuente cambia o aparece una nueva, lo resolvemos nosotros.'
     ],
     ctaTitle: isEn ? 'Multiply your ROI and prospect conversion by backing your decisions with precise data' : 'Multiplica tu ROI y la conversión de prospectos respaldando tus decisiones con datos precisos',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What does Web Scraping for the Marketing area cover?' : '¿Qué abarca el Web Scraping para el área de Marketing?',
-        answer: isEn ? 'It consists of identifying, organizing, and presenting scattered data relating to consumption preferences, seasonal pricing, and competitive strategies to shape your next commercial initiative.' : 'Consiste en identificar, ordenar y presentar datos dispersos relativos a las preferencias de consumición, precios estacionales y estrategias competitivas para moldear tu próxima iniciativa comercial.'
+        question: isEn
+          ? 'How is this different from a marketing analytics tool like GA4?'
+          : '¿En qué se diferencia esto de un marketing analytics como GA4?',
+        answer: isEn
+          ? 'GA4 measures what happens inside your site. We give you what happens outside: competition, mentions, trends, industry content. They complement each other, they don\'t compete.'
+          : 'GA4 mide lo que pasa dentro de tu sitio. Nosotros te damos lo que pasa fuera: competencia, menciones, tendencias, contenido del sector. Se complementan, no compiten.'
       },
       {
-        question: isEn ? 'Which industries benefit most from this?' : '¿Qué industrias se benefician mayoritariamente de esto?',
-        answer: isEn ? 'From creative agencies that need to understand what is being discussed in forums before creating content, to Brand Managers of major brands auditing their competition before Black Friday.' : 'Desde agencias creativas que requieren entender de qué se habla en foros antes de crear contenido, hasta Brand Managers de grandes marcas que auditan a su competencia antes de Black Friday.'
+        question: isEn
+          ? 'What types of external data can you extract?'
+          : '¿Qué tipo de datos externos pueden extraer?',
+        answer: isEn
+          ? 'Whatever is publicly available on the web: competitor prices, launches, promotions, brand mentions, press articles, forum content, rankings, search results, and other sources. The scope is agreed at the start.'
+          : 'Lo que esté públicamente disponible en la web: precios de competidores, lanzamientos, promociones, menciones de marca, artículos de prensa, contenido de foros, rankings, resultados de búsqueda y otras fuentes. El alcance lo acordamos al inicio.'
       },
       {
-        question: isEn ? 'What are the net advantages behind investing in this?' : '¿Cuáles son las ventajas netas detrás de invertir en esto?',
-        answer: isEn ? 'Drastic risk mitigation. Instead of launching a product blindly assuming "who likes it and at what price they would pay," analytics tell you exactly at what price and where it is being paid today.' : 'Mitigación drástica del riesgo. En vez de lanzar un producto a ciegas asumiendo "a quién le gusta y a qué precio pagaría", la analítica te dice exactamente a cuánto y dónde lo están pagando hoy mismo.'
+        question: isEn
+          ? 'How often do you update the data?'
+          : '¿Con qué frecuencia actualizan los datos?',
+        answer: isEn
+          ? 'At whatever frequency works for you. Competitive intelligence cases usually request daily or weekly frequency; trend cases can be monthly. We define it together.'
+          : 'En la que te sirva. Los casos de competencia suelen pedir frecuencia diaria o semanal, los de tendencias pueden ser mensuales. Lo definimos juntos.'
+      },
+      {
+        question: isEn
+          ? 'How do you deliver the data to my marketing team?'
+          : '¿Cómo entregan los datos a mi equipo de marketing?',
+        answer: isEn
+          ? 'In the format they already use: Excel, Google Sheets, CSV, or directly to your BI tool. We can also load it to a database or system of your choice.'
+          : 'En el formato que ya usan: Excel, Google Sheets, CSV, o directo a tu herramienta de BI. También podemos cargar a una base o sistema de tu elección.'
+      },
+      {
+        question: isEn
+          ? 'Do you also do the analysis or just deliver the data?'
+          : '¿Hacen también el análisis o solo entregan los datos?',
+        answer: isEn
+          ? 'Our focus is delivering clean, structured data. The analysis and interpretation are done by your team or agency, because they know the business context better than anyone.'
+          : 'Nuestro foco es entregarte los datos limpios y estructurados. El análisis y la interpretación los hace tu equipo o tu agencia, porque conocen el contexto del negocio mejor que nadie.'
       }
     ]
   },
@@ -827,23 +915,31 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: TrendingUp,
-        title: isEn ? 'Price and availability monitoring' : 'Monitoreo de precios y disponibilidad',
-        description: isEn ? 'Get daily updated valuation metrics and listing status to support decisions.' : 'Obtén métricas de tasación y estatus de los listados actualizados a diario para fundamentar decisiones.'
+        title: isEn ? 'Coverage of portals and geographic areas' : 'Cobertura de portales y zonas geográficas',
+        description: isEn
+          ? 'We define together which portals, cities, provinces, or countries to work on. We can cover one or several portals at once, with the same data structure so you can compare them.'
+          : 'Definimos juntos sobre qué portales, ciudades, provincias o países trabajamos. Podemos cubrir uno o varios portales a la vez, con la misma estructura de datos para que los compares.'
       },
       {
         icon: Target,
-        title: isEn ? 'Competitive inventory analysis' : 'Análisis de inventario competitivo',
-        description: isEn ? 'Discover which locations, property types, or exact square meters your competitors offer regularly.' : 'Descubre qué ubicaciones, tipo de propiedades o metros cuadrados exactos ofertan tus competidores recurrentemente.'
+        title: isEn ? 'Standardized real estate fields' : 'Campos inmobiliarios estandarizados',
+        description: isEn
+          ? 'Each listing arrives with consistent fields: price, currency, area, bedrooms, bathrooms, location, coordinates, attributes, operation type, publication date, status. Defined at the start alongside your schema.'
+          : 'Cada listado llega con campos consistentes: precio, moneda, superficie, habitaciones, baños, ubicación, coordenadas, atributos, tipo de operación, fecha de publicación, estado. Lo definimos al inicio junto con tu esquema.'
       },
       {
         icon: BarChart,
-        title: isEn ? 'Rental patterns (Market Trends)' : 'Patrones de renta (Market Trends)',
-        description: isEn ? 'Correlate rental policies and variability in direct returns by ZIP Code or neighborhood of listings.' : 'Correlaciona las políticas de alquiler y la variabilidad en los retornos directos según el ZIP Code o Barrio de los listados.'
+        title: isEn ? 'Historical data and time evolution' : 'Histórico y evolución temporal',
+        description: isEn
+          ? 'Beyond active listings, we can deliver price history, changes, new listings, and delistings so you can measure real market evolution in the areas that matter to you.'
+          : 'Además de los listados activos, podemos entregar el histórico de precios, cambios, altas y bajas, para que midas la evolución real del mercado en las zonas que te importan.'
       },
       {
         icon: Shield,
-        title: isEn ? 'CRM integrations (MLS)' : 'Integraciones a CRMs (MLS)',
-        description: isEn ? 'We supply connections and exports so you can immediately feed your logistics/MLS system.' : 'Suministramos conexiones y exportables para que alimentes de inmediato tu sistema logístico / MLS.'
+        title: isEn ? 'Delivery to your analysis tool or product' : 'Entrega en tu herramienta de análisis o producto',
+        description: isEn
+          ? 'CSV, Excel, JSON, via API, or direct import to your database or data warehouse. We define the schema at the start so it fits your model.'
+          : 'CSV, Excel, JSON, via API o import directo a tu base o data warehouse. Definimos el esquema al inicio para que encaje con tu modelo.'
       }
     ],
     needThisTitle: isEn ? 'How to know if you need Real Estate analytics' : 'Cómo saber si necesitas analítica en Real Estate',
@@ -852,28 +948,58 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn ? 'We collect the entire universe of listings from real estate portals and aggregators, processing latitude, sqm, description, and prices to deliver a Datawarehouse ready to filter and target.' : 'Recolectamos el universo entero de publicaciones provenientes de portales inmobiliarios y agregadores, procesando la latitud, m2, descripción y precios para entregarte un Datawarehouse listo para filtrar y atacar.',
     helpYouList: isEn ? [
-      'Parallel capture of millions of listings from public portals.',
-      'Reading of amenities and seller profiles.',
-      'Clear dashboards and comparatives without appraisal subjectivity.'
+      'We cover the real estate portals and areas that matter to you, not a generic sample.',
+      'We structure each listing into consistent fields: price, area, bedrooms, location, attributes.',
+      'We deliver historical data and recurring updates so you can measure market evolution.',
+      'When a portal changes, we handle it before you notice.'
     ] : [
-      'Captura paralela de millones de listados en portales públicos.',
-      'Lectura de amenidades y perfiles de los vendedores.',
-      'Dashboards y comparativas claras sin subjetividades al tasar.'
+      'Cubrimos los portales inmobiliarios y las zonas que te importan, no un muestreo genérico.',
+      'Estructuramos cada listado en campos consistentes: precio, superficie, habitaciones, ubicación, atributos.',
+      'Te entregamos datos históricos y actualizaciones recurrentes para que puedas medir evolución.',
+      'Cuando un portal cambia, lo resolvemos antes de que lo notes.'
     ],
     ctaTitle: isEn ? 'Gain your real estate advantage by ensuring decision-making with pure data' : 'Adquiere tu ventaja en el sector inmobiliario asegurándote la toma de decisiones con datos puros',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What can be extracted from common real estate portals?' : '¿Qué se puede extraer desde los portales inmobiliarios comunes?',
-        answer: isEn ? 'We commonly extract the daily listed price (identifying subtle price drops over the month), sales history, covered sqm, listing agent, photographs, and all metadata attached to the online listing.' : 'Comúnmente extraemos el precio ofertado a diario (identificando caídas sutiles de precio con el paso del mes), historial de ventas, M2 cubiertos, agente a cargo, fotografías, y toda la metadata adjunta al aviso en línea.'
+        question: isEn
+          ? 'Which portals can you work with?'
+          : '¿Con qué portales pueden trabajar?',
+        answer: isEn
+          ? 'We work with real estate portals, marketplaces, and public classifieds sites. The specific list depends on your market and we define it in the first meeting.'
+          : 'Trabajamos con portales inmobiliarios, marketplaces y sitios de clasificados públicos. La lista concreta depende de tu mercado y la definimos en la primera reunión.'
       },
       {
-        question: isEn ? 'Who is Real Estate Indexing aimed at?' : '¿A quiénes va dirigida la Indexación Inmobiliaria?',
-        answer: isEn ? 'Trusts seeking undervalued opportunities (Flipping house), large proptech funds, banks evaluating appraisals, and traditional agencies with enormous real estate flow (RE/MAX).' : 'Fideicomisos en búsqueda de oportunidades subvaluadas (Flipping house), grandes fondos proptech, bancos evaluando tasaciones y agencias tradicionales de enorme flujo inmobiliario (RE/MAX).'
+        question: isEn
+          ? 'Can you deliver price history and changes?'
+          : '¿Pueden entregar histórico de precios y cambios?',
+        answer: isEn
+          ? 'Yes. We can deliver the current state of listings and also the history (new listings, delistings, price changes) depending on the scope we define at the start. This is useful for measuring market evolution.'
+          : 'Sí. Podemos entregar el estado actual de los listados y también el histórico (altas, bajas, cambios de precio) según el alcance que definamos al inicio. Esto es útil para medir evolución del mercado.'
       },
       {
-        question: isEn ? 'What are the cardinal advantages of this service?' : '¿Cuáles son las ventajas cardinales de este servicio?',
-        answer: isEn ? 'Identifying arbitrages. When the market dictates X amount per sqm, our algorithm and work can detect an offer 15% below before the general buyer notices it, allowing you to buy it before anyone else.' : 'Identificar arbitrariedades. Cuando el mercado dicta X monto el m2, nuestro algoritmo y tabajos pueden detectar una oferta 15% por debajo antes que el comprador general la note, permitiendo comprarla antes que nadie.'
+        question: isEn
+          ? 'How often do you update the data?'
+          : '¿Con qué frecuencia actualizan los datos?',
+        answer: isEn
+          ? 'Daily, weekly, or monthly, depending on your use case. Active pricing cases require higher frequency; market analysis cases can be monthly.'
+          : 'Diaria, semanal o mensual, según tu caso de uso. Los casos de pricing activo piden mayor frecuencia; los de análisis de mercado pueden ser mensuales.'
+      },
+      {
+        question: isEn
+          ? 'What happens when a portal changes its structure?'
+          : '¿Qué pasa cuando un portal cambia su estructura?',
+        answer: isEn
+          ? 'Our team monitors every delivery and adapts the extraction when needed. If a change affects the schema, we reach out first with concrete options.'
+          : 'Nuestro equipo monitorea cada entrega y adapta la extracción cuando hace falta. Si un cambio afecta el esquema, te escribimos antes con opciones concretas.'
+      },
+      {
+        question: isEn
+          ? 'In what format do I receive the data?'
+          : '¿En qué formato recibo los datos?',
+        answer: isEn
+          ? 'CSV, Excel, JSON, via API, or directly to your database. We define the schema and destination at the start based on your product or analysis model.'
+          : 'CSV, Excel, JSON, via API o directo a tu base. Definimos esquema y destino al inicio según tu producto o tu modelo de análisis.'
       }
     ]
   },
@@ -903,53 +1029,91 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: Target,
-        title: isEn ? 'Clandestine backlink audit' : 'Auditoría de backlinks clandestinos',
-        description: isEn ? 'Systematically extract hidden incoming and outgoing link connections (referrals) to understand the push force.' : 'Extrae sistemáticamente las conexiones de links entrantes y salientes ocultos (referrals) para entender la fuerza de empuje.'
+        title: isEn ? 'Meta, headings, and structure extraction' : 'Extracción de meta, headings y estructura',
+        description: isEn
+          ? 'We crawl your sites or your competitors\' and extract titles, meta descriptions, headings, canonicals, hreflang, schema, and the structure of each page. Ideal for auditing at scale or monitoring changes on large sites.'
+          : 'Recorremos tus sitios o los de tus competidores y extraemos títulos, meta descriptions, headings, canonicales, hreflang, schema y la estructura de cada página. Ideal para auditar a escala o monitorear cambios en sitios grandes.'
       },
       {
         icon: Shield,
-        title: isEn ? 'Periodic content monitoring' : 'Monitoreo periódico de contenido',
-        description: isEn ? 'Track whether direct competitors alter their keyword density in real time and adjust your positioning against their attacks.' : 'Traquea si competidores directos alteran la densidad de sus palabras claves en tiempo real y ajusta tu posicionamiento ante sus embates.'
+        title: isEn ? 'SERP data by keyword and country' : 'Datos de SERPs por keyword y país',
+        description: isEn
+          ? 'We capture the search results your audience sees: positions, featured snippets, local results, and ads. We deliver them so your team can cross-reference with their own data.'
+          : 'Capturamos los resultados de búsqueda que ve tu audiencia: posiciones, featured snippets, resultados locales y anuncios. Te los entregamos para que tu equipo los cruce con sus propios datos.'
       },
       {
         icon: TrendingUp,
-        title: isEn ? 'Trend and behavior search' : 'Búsqueda de tendencias y comportamiento',
-        description: isEn ? 'Collect hourly Top 100 SERP results from major search engines to dictate the most sought-after articles.' : 'Colecciona el resultado (Top 100 SERP) proveniente de los principales motores por hora para dictaminar los artículos más codiciados.'
+        title: isEn ? 'Backlink data at high volume' : 'Datos de backlinks a gran volumen',
+        description: isEn
+          ? 'We extract incoming link data from reference sites for your competitive analyses. We deliver the dataset, not a tool.'
+          : 'Extraemos datos de enlaces entrantes a sitios de referencia para tus análisis competitivos. Te entregamos el dataset, no una herramienta.'
       },
       {
         icon: BarChart,
-        title: isEn ? 'Introspective analysis (Tech SEO)' : 'Análisis introspectivo (Tech SEO)',
-        description: isEn ? 'We can crawl and index your own portal to verify there are no missing tags, 404s, or massive navigation loops.' : 'Podemos rastrear e indexar tu propio portal para corroborar que no existen etiquetas faltantes, 404 ni bucles (loops) de navegación masivos.'
+        title: isEn ? 'Competitor content clusters' : 'Clusters de contenido de competidores',
+        description: isEn
+          ? 'Maps of how the leading sites in your category structure their content: topics covered, depth, formats, internal links. Direct input for your editorial strategy.'
+          : 'Mapas de cómo estructuran su contenido los sitios líderes de tu categoría: temas cubiertos, profundidad, formatos, enlaces internos. Insumo directo para tu estrategia editorial.'
       }
     ],
     needThisTitle: isEn ? 'When to adopt crawling and scraping for strategic SEO' : 'Cuándo adoptar el rastreo y scraping para SEO estratégico',
-    needThisDescription: isEn ? 'If your traffic drops with Google updates without warning; or if your agency wastes fortunes crawling directories with low-capacity tools instead of owning the raw tactical map to generate their own semantic artificial intelligence.' : 'Si tu tráfico cae ante actualizaciones de Google sin advertencia; o si tu agencia malgasta fortunas rastreando directorios en tools de baja capacidad en vez de poseer el mapa táctico crudo para generar su propia inteligencia artificial semántica.',
+    needThisDescription: isEn ? 'If your traffic drops with Google updates without warning; or if your agency wastes fortunes crawling directories with low-capacity tools instead of owning the raw tactical map to generate their own semantic artificial intelligence.' : 'Si tu tráfico cae ante actualizaciones de Google sin advertencia; o si tu agencia gasta demasiado rastreando directorios con herramientas de baja capacidad, en vez de tener el mapa táctico en bruto para generar su propia inteligencia semántica.',
     helpYouSub: isEn ? 'Technical Search Intelligence' : 'Technical Search Intelligence',
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
-    helpYouDescription: isEn ? 'We run hyper-lightweight robots capable of downloading hundreds of thousands of pages (including SPA Javascript-rendered) in parallel, processing their DOM hierarchy, links, schemas, and delivering them in an absolute dump.' : 'Corremos robots hiper-livianos capaces de descargar paralelamente cientos de miles de páginas (incluso renderizadas en SPA Javascript) procesando su jerarquía DOM, links, esquemas, y dándotelas en un volcado absoluto.',
+    helpYouDescription: isEn ? 'We run hyper-lightweight robots capable of downloading hundreds of thousands of pages (including SPA Javascript-rendered) in parallel, processing their DOM hierarchy, links, schemas, and delivering them in an absolute dump.' : 'Ejecutamos robots livianos capaces de descargar en paralelo cientos de miles de páginas (incluso renderizadas en SPA Javascript), procesando su jerarquía DOM, enlaces, esquemas y entregando los resultados en un volcado completo.',
     helpYouList: isEn ? [
-      'Massive reading of H1/H2 hierarchies, metadata, and schemas.',
-      'Bypassing analytical blockers to review competition.',
-      'Continuous maintenance and SEO alerting.'
+      'We extract SEO data from your own sites, competitors, SERPs, and public sources, at the volume you need.',
+      'We deliver raw, structured data ready for your analysis, model, or dashboard.',
+      'We support volumes that standard tools don\'t cover, or charge a premium to extend.',
+      'We update datasets at the frequency your SEO team needs.'
     ] : [
-      'Lectura de jerarquías H1/H2, metadatos y schemas masiva.',
-      'Sorteo de bloqueadores analíticos para revisar la competencia.',
-      'Mantenimiento continuo y alertamiento SEO.'
+      'Extraemos datos SEO desde sitios propios, competidores, SERPs y fuentes públicas, al volumen que necesites.',
+      'Te entregamos los datos crudos y estructurados, listos para tu análisis, tu modelo o tu dashboard.',
+      'Soportamos volúmenes que las herramientas estándar no cubren, o que cobran caro por extenderlos.',
+      'Actualizamos los datasets con la frecuencia que tu equipo SEO necesita.'
     ],
     ctaTitle: isEn ? 'Conquer search engine rankings by grounding your strategy in infallible data volumes' : 'Conquista la cima del buscador fundamentando tu estrategia en volúmenes infalibles de datos',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What does extracting Data for SEO (Search Engine Optimization) involve?' : '¿Qué involucra extraer Datos para el área de SEO (Search Engine Optimization)?',
-        answer: isEn ? 'It involves traversing portals imitating the native behaviors of Google or Bing "Crawlers" (spiders), parsing the cleanliness of their source code, tags, and hyperlinks.' : 'Involucra recorrer portales imitando los comportamientos nativos de los "Crowlers" (arañas) de Google o Bing, parseando la limpieza de su código fuente, etiquetas e hipervínculos.'
+        question: isEn
+          ? 'How is this different from an SEO tool like Ahrefs or Semrush?'
+          : '¿En qué se diferencia esto de una herramienta SEO como Ahrefs o Semrush?',
+        answer: isEn
+          ? 'Those tools are ready-made products that cover many use cases. We solve what falls outside: huge volumes, specific sources, custom data structures, or direct integration into your database—without going through a monthly export.'
+          : 'Esas herramientas son productos listos que cubren muchos casos. Nosotros resolvemos lo que queda afuera: volúmenes grandes, fuentes específicas, estructuras de datos a medida o integración directa en tu base de datos, sin pasar por un export mensual.'
       },
       {
-        question: isEn ? 'Who can benefit most from this over SEMRush or Ahrefs?' : '¿Quién puede beneficiarse mayormente de esto en contraposición de SEMRush o Ahrefs?',
-        answer: isEn ? 'Highly transactional digital-native companies that need to forensically see what words the ten sites that outranked them embedded, and digital agencies that must audit PBN sites with technical speed at granular million-scale farms.' : 'Empresas nativas digitales altísimamente transaccionales que precisan ver a nivel forense qué palabras incrustaron los diez sitios que les ganaron el ranking y agencias digitales que deben auditar sitios PBN con rapidez técnica y a granjas granulares de escalas millonarias.'
+        question: isEn
+          ? 'Is this a consultative SEO audit?'
+          : '¿Esto es una auditoría SEO consultiva?',
+        answer: isEn
+          ? 'No. This is raw, structured SEO data extraction for in-house SEO teams and agencies that already have analysts. If you need an audit with recommendations, ask us about our SEO consulting service.'
+          : 'No. Esto es extracción de datos SEO en bruto y estructurados, para equipos SEO in-house y agencias que ya tienen analistas. Si necesitas una auditoría con recomendaciones, consúltanos por el servicio de consultoría SEO.'
       },
       {
-        question: isEn ? 'What are the typical returns (KPIs) after logistical use?' : '¿Cuáles son los retornos (KPIs) típicos tras el uso logístico?',
-        answer: isEn ? 'An increase in CTR (Clicks in search engine) due to semantic optimization adjustments guided by a total (not partial) analytical spectrum; increasing the organic traffic volume captured by the company each month, reducing dependence on buying Google ads (PPC).' : 'Un incremento en el CTR (Clics en buscador) debido a ajustes de optimizaciones semánticas guiados por un espectro analítico total; y no parcial, aumentando el volumen de tráfico que capta la empresa orgánicamente cada mes, bajando la dependencia de comprar anuncios a Google (PPC).'
+        question: isEn
+          ? 'Can you extract data from my competitors\' sites?'
+          : '¿Pueden extraer datos de los sitios de mis competidores?',
+        answer: isEn
+          ? 'Yes, as long as it is public information. We crawl their pages and extract meta, headings, structure, internal links, and more. We give you the dataset in the format you use.'
+          : 'Sí, siempre que sea información pública. Crawleamos sus páginas, extraemos meta, headings, estructura, enlaces internos y más. Te damos el dataset en el formato que uses.'
+      },
+      {
+        question: isEn
+          ? 'What volumes do you work at?'
+          : '¿A qué volúmenes trabajan?',
+        answer: isEn
+          ? 'Whatever you need. We handle projects ranging from dozens of sites to millions of URLs in parallel. We discuss it based on your case.'
+          : 'A los que necesites. Hacemos proyectos desde decenas de sitios hasta millones de URLs en paralelo. Lo discutimos en función de tu caso.'
+      },
+      {
+        question: isEn
+          ? 'How do I receive the data?'
+          : '¿Cómo recibo los datos?',
+        answer: isEn
+          ? 'In CSV, JSON, API, or directly to your database. Many SEO teams load them into BigQuery, their internal data warehouse, or their analytics stack. We adapt to your setup.'
+          : 'En CSV, JSON, API o directo a tu base de datos. Muchos equipos SEO los cargan en BigQuery, en su data warehouse interno o en su stack de análisis. Nos adaptamos.'
       }
     ]
   },
@@ -979,23 +1143,31 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: Target,
-        title: isEn ? 'Dynamic tracking' : 'Rastreo dinámico',
-        description: isEn ? 'Monitor complete catalogs to detect price changes in real time.' : 'Monitorea catálogos completos para detectar alteraciones de precios en tiempo real.'
+        title: isEn ? 'Coverage of products and stores tailored to you' : 'Cobertura de productos y tiendas a tu medida',
+        description: isEn
+          ? 'We work on the list of products and stores you define. We can start with a small subset and scale as the use case grows.'
+          : 'Trabajamos sobre la lista de productos y tiendas que definas. Podemos arrancar con un subset pequeño y escalar a medida que el caso de uso crezca.'
       },
       {
         icon: TrendingUp,
-        title: isEn ? 'Margin protection' : 'Protección de márgenes',
-        description: isEn ? 'Ensure profitability by configuring automatic strategies against sector fluctuation.' : 'Asegura la rentabilidad configurando estrategias automáticas frente a la fluctuación del sector.'
+        title: isEn ? 'Matching between your products and competitors\'' : 'Matching entre tus productos y los del competidor',
+        description: isEn
+          ? 'We define the matching key together (code, normalized title, attributes) so the price comparison is valid. This avoids comparing against non-equivalent products.'
+          : 'Definimos juntos la clave de matching (código, título normalizado, atributos) para que la comparación de precios sea válida. Así evitas comparar contra productos que no son equivalentes.'
       },
       {
         icon: Shield,
-        title: isEn ? 'Promotion analysis' : 'Análisis de promociones',
-        description: isEn ? 'Detect your rivals\' offer cycles to counter their impact in time.' : 'Detecta los ciclos de ofertas de tus rivales para contrarrestar su impacto a tiempo.'
+        title: isEn ? 'Configurable frequency for your case' : 'Frecuencia configurable según tu caso',
+        description: isEn
+          ? 'Some pricing decisions need daily updates; others work fine with a weekly or monthly run. We define the optimal frequency in the first meeting.'
+          : 'Hay decisiones de pricing que piden actualización diaria y otras que funcionan con una corrida semanal o mensual. Definimos la frecuencia óptima en la primera reunión.'
       },
       {
         icon: BarChart,
-        title: isEn ? 'Visual reports' : 'Reportajes visuales',
-        description: isEn ? 'Consume consolidated dashboards illustrating the direct comparison between your products and the market.' : 'Consume dashboards consolidados que ilustran la comparativa directa entre tus productos y el mercado.'
+        title: isEn ? 'Delivery ready for your pricing tool' : 'Entrega lista para tu herramienta de pricing',
+        description: isEn
+          ? 'CSV, Excel, JSON, via API, or direct import to your database or pricing tool. We define the schema at the start.'
+          : 'CSV, Excel, JSON, via API o import directo a tu base o a tu herramienta de pricing. Definimos el esquema al inicio.'
       }
     ],
     needThisTitle: isEn ? 'How to know if you need to automate your Pricing Strategies' : 'Cómo saber si necesitas automatizar tus Estrategias de Pricing',
@@ -1004,28 +1176,58 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn ? 'Our Price Intelligence service extracts, cleanses, and standardizes rate fluctuations across thousands of platforms to provide you with actionable alerts about your catalog.' : 'Nuestro servicio de Inteligencia de Precios se encarga de extraer, limpiar y estandarizar las fluctuaciones de tarifas en miles de plataformas para brindarte alertas accionables sobre tu catálogo.',
     helpYouList: isEn ? [
-      'We configure extraction rules on direct competition.',
-      'We alert on price fluctuations or out-of-stock.',
-      'We maximize profit margins while maintaining competitiveness.'
+      'You define which products and stores to monitor. We set up the tracking.',
+      'We deliver updated prices at the frequency your case needs.',
+      'We match your products with equivalent competitor products so the comparison is useful.',
+      'When a store changes, we handle it before your report arrives with gaps.'
     ] : [
-      'Configuramos reglas de extracción sobre la competencia directa.',
-      'Alertamos sobre fluctuaciones de precios o falta de stock.',
-      'Maximizamos los márgenes de ganancia manteniendo competitividad.'
+      'Definís qué productos y qué tiendas querés monitorear. Nosotros armamos el seguimiento.',
+      'Entregamos precios actualizados con la frecuencia que tu caso necesita.',
+      'Alineamos productos tuyos con productos equivalentes de competidores para que la comparación sea útil.',
+      'Cuando una tienda cambia, lo resolvemos antes de que tu reporte llegue con huecos.'
     ],
     ctaTitle: isEn ? 'The power of expert talent ready to provide you with the best pricing strategies' : 'El poder del talento experto listo para proveerte las mejores estrategias de pricing',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What exactly is Price Intelligence or Pricing Scraping?' : '¿Qué es exactamente la Inteligencia de Precios o Pricing Scraping?',
-        answer: isEn ? 'It consists of ethically and automatically extracting selling values, descriptors, and availability of items from public competitor platforms to analyze and adjust your own cost structure and offers.' : 'Consiste en extraer de manera ética y automática los valores de venta, descriptores y disponibilidad de artículos desde plataformas públicas de competidores para analizarlos y ajustar tu propia estructura de costos y ofertas.'
+        question: isEn
+          ? 'How do you match my products with my competitors\'?'
+          : '¿Cómo hacen el matching entre mis productos y los de mis competidores?',
+        answer: isEn
+          ? 'We define the key together: universal code (if it exists), normalized title, brand, model, key attributes. With that key we group equivalent products so your comparison is useful.'
+          : 'Definimos juntos la clave: código universal (si existe), título normalizado, marca, modelo, atributos clave. Con esa clave agrupamos productos equivalentes para que tu comparación sea útil.'
       },
       {
-        question: isEn ? 'How often are monitors updated?' : '¿Con qué frecuencia se actualizan los monitoreos?',
-        answer: isEn ? 'It can be configured from monthly updates to hourly sweeps during critical periods (like Black Friday), ensuring minimum reaction time.' : 'Puede configurarse desde actualizaciones mensuales hasta barridos por hora en periodos críticos (como Black Friday), asegurando un tiempo de reacción mínimo.'
+        question: isEn
+          ? 'How often do you deliver prices?'
+          : '¿Con qué frecuencia entregan los precios?',
+        answer: isEn
+          ? 'At the frequency your case needs: daily, several times a day, weekly, or monthly. For active pricing we usually recommend at least daily; for strategic analysis, weekly is sufficient.'
+          : 'En la frecuencia que tu caso necesita: diaria, varias veces al día, semanal o mensual. Para pricing activo solemos recomendar al menos diario; para análisis estratégico, semanal es suficiente.'
       },
       {
-        question: isEn ? 'What type of companies benefit from this service?' : '¿A qué tipo de empresas beneficia este servicio?',
-        answer: isEn ? 'Retailers, consumer goods manufacturers, e-commerce, hospitality, and travel agencies that base their competitive advantage on direct market financial tabulators.' : 'Retailers, fabricantes de bienes de consumo, e-commerce, hotelería y agencias de viaje que basan su ventaja competitiva en los tabuladores financieros del mercado directo.'
+        question: isEn
+          ? 'Can you also monitor stock and promotions?'
+          : '¿Pueden monitorear también stock y promociones?',
+        answer: isEn
+          ? 'Yes. Beyond price we can capture stock, promotions, discounts, coupons, bundles, and other attributes that affect the pricing decision. We agree on this in the scope definition at the start.'
+          : 'Sí. Además del precio podemos capturar stock, promociones, descuentos, cupones, bundles y otros atributos que afectan la decisión de pricing. Lo acordamos en el alcance al inicio.'
+      },
+      {
+        question: isEn
+          ? 'What happens when a competitor changes their site or hides prices?'
+          : '¿Qué pasa cuando un competidor cambia su sitio o esconde los precios?',
+        answer: isEn
+          ? 'Our team monitors every delivery. When there are changes that affect the capture, we adjust the extraction before the next run. If the change prevents covering that source, we notify you with options.'
+          : 'Nuestro equipo monitorea cada entrega. Cuando hay cambios que afectan la captura, ajustamos la extracción antes de la siguiente corrida. Si el cambio impide seguir cubriendo esa fuente, te avisamos con opciones.'
+      },
+      {
+        question: isEn
+          ? 'In what format do I receive the data?'
+          : '¿En qué formato recibo los datos?',
+        answer: isEn
+          ? 'CSV, Excel, JSON, API, or direct import to your database or pricing tool. We define the schema and destination at the start.'
+          : 'CSV, Excel, JSON, API o import directo a tu base de datos o herramienta de pricing. Definimos el esquema y el destino al inicio.'
       }
     ]
   },
@@ -1055,53 +1257,91 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: Database,
-        title: isEn ? 'Massive dataset creation' : 'Creación de datasets masivos',
-        description: isEn ? 'Collection of millions of tokens and paragraphs from thousands of websites in parallel and uninterrupted.' : 'Recolección de millones de tokens y párrafos de miles de webs de manera paralela e ininterrumpida.'
+        title: isEn ? 'Source coverage agreed case by case' : 'Cobertura de fuentes acordada caso por caso',
+        description: isEn
+          ? 'We define together which sites go into the dataset, with what criteria, and what volume. We can start with a small pilot, measure quality, and scale.'
+          : 'Definimos juntos qué sitios entran al dataset, con qué criterios y qué volumen. Podemos arrancar con un piloto pequeño, medir la calidad y escalar.'
       },
       {
         icon: Sparkles,
-        title: isEn ? 'Clean and parsed data' : 'Data limpia y parseada',
-        description: isEn ? 'We eliminate noise, ads, and HTML bloatware to deliver raw data ready for machine learning pipelines.' : 'Eliminamos ruido, ads, y bloatware HTML para entregar data cruda lista para pipelines de machine learning.'
+        title: isEn ? 'Cleaning before delivery' : 'Limpieza antes de entregar',
+        description: isEn
+          ? 'Each dataset is delivered clean: duplicates removed, normalized text, consistent encoding, ordered metadata. Your team does not spend time preprocessing.'
+          : 'Cada dataset se entrega limpio: duplicados removidos, texto normalizado, encoding consistente, metadata ordenada. Tu equipo no pierde tiempo en preprocesar.'
       },
       {
         icon: Shield,
-        title: isEn ? 'Compliance and anonymization' : 'Cumplimiento y anonimización',
-        description: isEn ? 'We filter sensitive information (PII) during the extraction process to protect privacy.' : 'Filtramos información sensible (PII) durante el proceso de extracción para proteger la privacidad.'
+        title: isEn ? 'Labeling according to your training schema' : 'Etiquetado según tu esquema de training',
+        description: isEn
+          ? 'If your model needs pairs, classes, spans, bounding boxes, or another format, we apply it during extraction. We define the schema at the start and follow it in every delivery.'
+          : 'Si tu modelo necesita pares, clases, spans, bounding boxes u otro formato, lo aplicamos al extraer. Definimos el esquema al inicio y lo respetamos en cada entrega.'
       },
       {
         icon: Zap,
-        title: isEn ? 'Automatic scalability' : 'Escalabilidad automática',
-        description: isEn ? 'Our serverless infrastructure scales regardless of whether you need 1,000 or 1,000,000 queries per day.' : 'Nuestra infraestructura sin servidores escala independientemente de si requieres 1,000 o 1,000,000 de consultas al día.'
+        title: isEn ? 'Delivery in the format your training pipeline consumes' : 'Entrega en el formato que tu pipeline de training consume',
+        description: isEn
+          ? 'JSONL, CSV, parquet, files by class, or directly to your storage. We define the destination at the start so your team can begin training without intermediate steps.'
+          : 'JSONL, CSV, parquet, archivos por clase, o directo a tu almacenamiento. Definimos el destino al inicio para que tu equipo pueda empezar a entrenar sin pasos intermedios.'
       }
     ],
     needThisTitle: isEn ? 'When to rely on us for training your AI' : 'Cuándo apoyarte en nosotros para entrenar tu IA',
-    needThisDescription: isEn ? 'If your data science team spends more than 60% of their time cleaning malformed HTML code or devising ways to bypass blocks to scrape forums and news, it\'s time to delegate data acquisition.' : 'Si tu equipo de científicos de datos pasa más del 60% de su tiempo limpiando código HTML mal formateado o ideando formas de saltar bloqueos para scrapear foros y noticias, es el momento de delegar la obtención del dato.',
+    needThisDescription: isEn ? 'If your data science team spends more than 60% of their time cleaning malformed HTML code or devising ways to bypass blocks to scrape forums and news, it\'s time to delegate data acquisition.' : 'Si tu equipo de científicos de datos pasa más del 60% de su tiempo limpiando código HTML mal formateado o buscando formas de sortear bloqueos para extraer datos de foros y noticias, es el momento de delegar la obtención del dato.',
     helpYouSub: isEn ? 'AI & Data Engineering' : 'AI & Data Engineering',
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
-    helpYouDescription: isEn ? 'We provide the absolute pipeline for collection and transformation of information, structuring immense knowledge banks from forums, records, and papers that will serve as the foundational base for your next algorithm.' : 'Proveemos la canalización (pipeline) absoluta de la colección y transformación de la información, estructurando inmensos bancos de conocimiento de foros, registros y papers que fungirán como base fundacional para tu próximo algoritmo.',
+    helpYouDescription: isEn ? 'We provide the absolute pipeline for collection and transformation of information, structuring immense knowledge banks from forums, records, and papers that will serve as the foundational base for your next algorithm.' : 'Proveemos el flujo completo de recolección y transformación de la información, estructurando grandes bases de conocimiento de foros, registros y documentos que servirán como base fundacional para tu próximo modelo.',
     helpYouList: isEn ? [
-      'Automatic discovery and navigation of complex directories.',
-      'Extraction of images, metadata, and linguistic corpora.',
-      'Delivery in secure repositories, directly to the Data Lake.'
+      'We define together what data your model needs and in what format.',
+      'We extract from the agreed sources and clean the data before delivery.',
+      'We apply the labeling schema you use: JSONL format, input-output pairs, structured columns, or whatever your training pipeline requires.',
+      'When you need more data (volume, domain, language), we add it without starting from scratch.'
     ] : [
-      'Descubrimiento y navegación automática de directorios complejos.',
-      'Extracción de imágenes, metadata y corpus lingüísticos.',
-      'Entrega en repositorios seguros, directo al Data Lake.'
+      'Definimos juntos qué datos necesita tu modelo y en qué formato.',
+      'Extraemos desde las fuentes acordadas y limpiamos los datos antes de entregarlos.',
+      'Aplicamos el esquema de etiquetado que uses: formato JSONL, pares input-output, columnas estructuradas, o lo que tu pipeline de training pida.',
+      'Cuando necesites más datos (volumen, dominio, idioma), los incorporamos sin empezar de cero.'
     ],
     ctaTitle: isEn ? 'Feed the potential of your AI models with our data factory' : 'Alimenta el potencial de tus modelos de IA con nuestra factoría de datos',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What type of data can you extract to train a model?' : '¿Qué tipo de datos pueden extraer para entrenar un modelo?',
-        answer: isEn ? 'We can process almost any source format: news text, forum posts, gallery images with their respective labels, e-commerce reviews, and technical discussions.' : 'Podemos procesar casi cualquier formato de origen: texto de noticias, posteos de foros, imágenes de galerías con su respectiva etiqueta, reviews en e-commerce y discusiones técnicas.'
+        question: isEn
+          ? 'What types of data can you extract for training?'
+          : '¿Qué tipos de datos pueden extraer para training?',
+        answer: isEn
+          ? 'Text (articles, documentation, forums, reviews), tables, full pages, multilingual content, images, PDFs, or scanned documents. The specific scope depends on your model\'s use case.'
+          : 'Texto (artículos, documentación, foros, reseñas), tablas, páginas completas, contenido multilingüe, imágenes, documentos en PDF o escaneados. El alcance concreto depende del caso de uso de tu modelo.'
       },
       {
-        question: isEn ? 'How do you guarantee the quality of the information?' : '¿Cómo garantizan que la información sea de calidad?',
-        answer: isEn ? 'We implement redundancy checks, elimination of corrupt languages or characters, referential integrity validation, and strict structuring (JSON/CSV) previously agreed with your team.' : 'Implementamos chequeos de redundancia, eliminación de lenguajes o caracteres corruptos, validación de integridad referencial y estructurado estricto (JSON/CSV) previamente acordado con tu equipo.'
+        question: isEn
+          ? 'Can you deliver labeled data?'
+          : '¿Pueden entregar los datos con etiquetas?',
+        answer: isEn
+          ? 'Yes, when labels can be derived from the source or from a schema we define together. For complex human labeling we evaluate it case by case depending on the project.'
+          : 'Sí, cuando las etiquetas se pueden derivar de la fuente o de un esquema que definamos juntos. Para etiquetado humano complejo lo evaluamos caso a caso según el proyecto.'
       },
       {
-        question: isEn ? 'Is it possible to acquire data periodically or only once?' : '¿Es posible adquirir datos de forma periódica o solo de una vez?',
-        answer: isEn ? 'Since these are iterative models, we offer recurring DaaS channels where our orchestrator continuously feeds your databases each week with "fresh" market knowledge.' : 'Al tratarse de modelos iterativos, ofrecemos canales DaaS recurrentes donde nuestro orquestador alimenta continuamente tus bases de datos cada semana con conocimiento "fresco" del mercado.'
+        question: isEn
+          ? 'How do you handle duplicates and dataset quality?'
+          : '¿Cómo manejan duplicados y calidad del dataset?',
+        answer: isEn
+          ? 'We apply deduplication, text normalization, and schema validation before each delivery. If the dataset has special quality requirements (class balance, minimum length, language), we apply them to the process.'
+          : 'Aplicamos deduplicación, normalización de texto y validación de esquema antes de cada entrega. Si el dataset tiene requisitos especiales de calidad (balance por clase, longitud mínima, idioma), los aplicamos al proceso.'
+      },
+      {
+        question: isEn
+          ? 'In what format do you deliver datasets?'
+          : '¿En qué formato entregan los datasets?',
+        answer: isEn
+          ? 'JSONL, CSV, parquet, or files organized according to the structure your training pipeline expects. We define this at the start.'
+          : 'JSONL, CSV, parquet, o archivos organizados según la estructura que tu pipeline de training espera. Lo definimos al inicio.'
+      },
+      {
+        question: isEn
+          ? 'Can you grow the dataset over time?'
+          : '¿Pueden crecer el dataset con el tiempo?',
+        answer: isEn
+          ? 'Yes. Many training projects start with a base dataset and then grow with additional batches (more sources, more domains, more languages). We run those cycles on a recurring basis.'
+          : 'Sí. Muchos proyectos de training arrancan con un dataset base y después crecen con lotes adicionales (más fuentes, más dominios, más idiomas). Operamos esos ciclos de forma recurrente.'
       }
     ]
   },
@@ -1130,24 +1370,24 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     ],
     features: [
       {
-        icon: Plane,
-        title: isEn ? 'Dynamic fare scraping' : 'Scraping de tarifas dinámicas',
-        description: isEn ? 'Multi-route fare tracking considering variations by seat, carry-on luggage, and seasons.' : 'Tracking de tarifas multi-ruta teniendo en cuenta variaciones por asiento, equipaje de mano y temporadas.'
-      },
-      {
-        icon: BarChart,
-        title: isEn ? 'Route and stopover mapping' : 'Mapeo de rutas y escalas',
-        description: isEn ? 'Detailed analysis of flight connection behavior, allowing detection of inefficient hubs.' : 'Análisis minucioso del comportamiento en la conexión de vuelos, permitiendo detectar hubs ineficientes.'
+        icon: Target,
+        title: isEn ? 'Route and origin coverage tailored to your operation' : 'Cobertura de rutas y orígenes a tu medida',
+        description: isEn ? 'We work on the routes, origins, and sources that your operation defines. We can cover a few critical routes or a broad map, depending on the case.' : 'Trabajamos sobre las rutas, orígenes y fuentes que defina tu operación. Podemos cubrir un par de rutas críticas o un mapa amplio, según el caso.'
       },
       {
         icon: Zap,
-        title: isEn ? 'Extraction speed' : 'Velocidad en extracción',
-        description: isEn ? 'Ultra-low response times needed to feed booking systems prone to continuous changes.' : 'Tiempos de respuesta ultra bajos necesarios para alimentar sistemas de reservas propensos al cambio contínuo.'
+        title: isEn ? 'Configurable freshness for your use case' : 'Frescura configurable según tu caso',
+        description: isEn ? 'Flight prices move fast. We define the capture frequency your product needs and make sure it keeps running over time.' : 'Los precios de vuelos se mueven rápido. Definimos la frecuencia de captura que tu producto necesita, y nos encargamos de que siga funcionando en el tiempo.'
       },
       {
-        icon: Shield,
-        title: isEn ? 'Premium anti-blocking' : 'Anti-bloqueos premium',
-        description: isEn ? 'Heavy rotating residential proxy infrastructure and human simulation to avoid strict airline firewalls.' : 'Infraestructura de proxies rotativos pesados (residential) y simulación humana para evitar los estrictos firewalls aéreos.'
+        icon: Database,
+        title: isEn ? 'Full context for every fare' : 'Contexto completo de cada tarifa',
+        description: isEn ? 'Each record arrives with the relevant fields: price, currency, airline, flight date and time, stopovers, class, baggage, availability, and capture date. So your analysis has all the context.' : 'Cada registro llega con los campos relevantes: precio, moneda, aerolínea, fecha y hora de vuelo, escalas, clase, equipaje, disponibilidad y fecha de captura. Así tu análisis tiene todo el contexto.'
+      },
+      {
+        icon: BarChart,
+        title: isEn ? 'Delivery into your product or your model' : 'Entrega en tu producto o tu modelo',
+        description: isEn ? 'CSV, Excel, JSON, via API, or direct import to your database or data warehouse. We define the destination upfront so it fits your stack.' : 'CSV, Excel, JSON, vía API o import directo a tu base o data warehouse. Definimos el destino al inicio para que encaje con tu stack.'
       }
     ],
     needThisTitle: isEn ? 'How to know if you need Flight Scraping' : 'Cómo saber si necesitas el Scraping de Vuelos',
@@ -1156,28 +1396,38 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn ? 'We extract and cross-reference data from root airline portals or leading engines. We structure duration, cost, and flight type via scripts ready to inject this knowledge directly into your vacation software UI.' : 'Extraemos y cruzamos datos desde los portales raíz de las aerolíneas o motores líderes. Estructuramos la duración, el costo y el tipo de vuelo mediante scripts listos para inyectar este conocimiento directo en la UI de tu software vacacional.',
     helpYouList: isEn ? [
-      'Grouping prices, class, origin, and destination from multiple airlines.',
-      'Bypassing rigid CAPTCHA systems in the sector.',
-      'High-frequency synchronization based on ticket seasonality.'
+      'We define together the routes, origins, and sources that go into each cycle.',
+      'We monitor at the frequency that works for you: several times a day, daily, or weekly.',
+      'We deliver each fare with its full context: stopovers, airline, class, baggage, and capture date.',
+      'When a source changes, we adjust the flow so your product is never left in the dark.'
     ] : [
-      'Agrupamiento de precios, clase, origen y destino de múltiples aerolíneas.',
-      'Sorteo y bypass de sistemas CAPTCHA rígidos del sector.',
-      'Sincronización en alta frecuencia según la estacionalidad del boleto.'
+      'Definimos juntos las rutas, los orígenes y las fuentes que entran en cada ciclo.',
+      'Monitoreamos con la frecuencia que te sirve: varias veces al día, diario, semanal.',
+      'Te entregamos cada tarifa con su contexto: escalas, aerolínea, clase, equipaje, fecha de captura.',
+      'Cuando una fuente cambia, ajustamos el flujo para que tu producto no quede a ciegas.'
     ],
     ctaTitle: isEn ? 'Automate your fare collection and take off above the competition' : 'Automatiza tu recaudo tarifario y despega sobre la competencia',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'Which airline sites or comparison engines can be audited?' : '¿Qué sitios aéros o comparadores se pueden auditar?',
-        answer: isEn ? 'Virtually any. Our team of engineers designs integrations in classic GDS engines and especially publicly on direct portals of local Low-Costs or massive multinational search engines.' : 'Virtualmente cualquiera. Nuestro equipo de ingenieros diseña integraciones en motores GDS clásicos y sobre todo de manera pública en portales directos de Low-Costs locales o buscadores masivos multinacionales.'
+        question: isEn ? 'Which routes can you monitor?' : '¿Qué rutas pueden monitorear?',
+        answer: isEn ? 'The ones we define in the proposal based on your use case. They can be critical routes for your product, specific markets, or a broad map by region. The scope adjusts to your operation.' : 'Las que definamos en la propuesta según tu caso de uso. Pueden ser rutas críticas para tu producto, mercados concretos o un mapa amplio por región. El alcance se ajusta a tu operación.'
       },
       {
-        question: isEn ? 'How do you handle price variability by location (geopricing)?' : '¿Cómo lidian con la variabilidad de precios según ubicación (geopricing)?',
-        answer: isEn ? 'We assign geolocated extraction nodes to ensure the reflected price is the same as experienced by the base user in the area where your sales efforts operate.' : 'Asignamos nodos de extracción geolocalizados para asegurar que el precio reflejado sea igual al experimentado por el usuario base de la zona donde operan tus esfuerzos de venta.'
+        question: isEn ? 'How often do you update fares?' : '¿Con qué frecuencia actualizan las tarifas?',
+        answer: isEn ? 'At the frequency your product needs. Operational cases (OTA, active agency) usually request capture several times a day; trend analysis cases, daily or weekly.' : 'En la frecuencia que tu producto necesita. Los casos operativos (OTA, agencia activa) suelen pedir captura varias veces al día; los casos de análisis de tendencias, diaria o semanal.'
       },
       {
-        question: isEn ? 'What degree of latency exists in flight captures?' : '¿Qué grado de latencia existe en las capturas de vuelos?',
-        answer: isEn ? 'We create parallel multi-threaded systems that enormously reduce latency. Although it\'s not a raw API connection, it\'s ideal for building trend reports or caching systems in your backend.' : 'Creamos sistemas paralelos de múltiples hilos que reducen la latencia enormemente. Aunque no sea una conexión API cruda, es lo ideal para construir reportes de tendencias, o sistemas de caching en tu backend.'
+        question: isEn ? 'What fields do you deliver per fare?' : '¿Qué campos entregan por tarifa?',
+        answer: isEn ? 'Origin, destination, date and time, airline, flight code, stopovers, class, price, currency, baggage, availability, capture date. The final list is agreed upon at the start based on your case.' : 'Origen, destino, fecha y hora, aerolínea, código de vuelo, escalas, clase, precio, moneda, equipaje, disponibilidad, fecha de captura. El listado final se acuerda al inicio según tu caso.'
+      },
+      {
+        question: isEn ? 'What happens when a source changes or starts restricting access?' : '¿Qué pasa cuando una fuente cambia o empieza a restringir?',
+        answer: isEn ? 'We monitor every delivery. When there are changes, we adapt the extraction before the next run. If a source is no longer viable, we reach out with alternatives.' : 'Monitoreamos cada entrega. Cuando hay cambios, adaptamos la extracción antes de la siguiente corrida. Si una fuente deja de ser viable, te escribimos con alternativas.'
+      },
+      {
+        question: isEn ? 'In what format do I receive the data?' : '¿En qué formato recibo los datos?',
+        answer: isEn ? 'CSV, Excel, JSON, via API, or directly to your database or data warehouse. We define the schema and destination at the start.' : 'CSV, Excel, JSON, vía API o directo a tu base o tu data warehouse. Definimos el esquema y el destino al inicio.'
       }
     ]
   },
@@ -1206,24 +1456,24 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     ],
     features: [
       {
-        icon: Heart,
-        title: isEn ? 'Sentiment analysis' : 'Análisis de sentimiento',
-        description: isEn ? 'Data structuring into positive, negative, and neutral, facilitating integration with language analytical models.' : 'Estructuración de datos en positivo, negativo y neutral, facilitando la integración con modelos analíticos de lenguaje.'
+        icon: Globe,
+        title: isEn ? 'Coverage of public sources' : 'Cobertura de fuentes públicas',
+        description: isEn ? 'We work on review portals, forums, opinion sites, press, marketplaces, and other public sources where your brand appears. We define the specific list together.' : 'Trabajamos sobre portales de reseñas, foros, sitios de opinión, prensa, marketplaces y otras fuentes públicas donde aparezca tu marca. La lista concreta la definimos juntos.'
       },
       {
-        icon: Users,
-        title: isEn ? 'Multi-channel' : 'Multicanalidad',
-        description: isEn ? 'Monitoring of niche forums, portals like TrustPilot, Yelp, and E-commerce stores unified in a central schema.' : 'Monitoreo de foros nicho, portales como TrustPilot, Yelp y tiendas de E-commerce unificados en un esquema central.'
+        icon: Database,
+        title: isEn ? 'Structured mentions, not loose text' : 'Menciones estructuradas, no texto suelto',
+        description: isEn ? 'Each mention arrives with source, URL, author (when public), date, content type, rating (if applicable), full text, and relevant metadata. Your team does not have to scrape anything.' : 'Cada mención llega con fuente, URL, autor (cuando es público), fecha, tipo de contenido, rating (si aplica), texto completo y metadatos relevantes. Tu equipo no tiene que raspar nada.'
       },
       {
-        icon: MessageSquare,
-        title: isEn ? 'Metadata consolidation' : 'Consolidación de metadata',
-        description: isEn ? 'Retrieval and crossing of user data and existing response from your customer support team.' : 'Obtención y cruzamiento de data del usuario y la respuesta existente de tu equipo de customer support.'
+        icon: TrendingUp,
+        title: isEn ? 'Recurring updates with historical data' : 'Actualización recurrente con histórico',
+        description: isEn ? 'We capture new mentions at the frequency that works for you and maintain the historical record so you can measure the evolution of the conversation, not just the snapshot of the day.' : 'Capturamos las menciones nuevas en la frecuencia que te sirva y mantenemos el histórico para que puedas medir evolución de la conversación, no solo el snapshot del día.'
       },
       {
-        icon: CheckSquare,
-        title: isEn ? 'Pattern detection' : 'Detección de patrones',
-        description: isEn ? 'By identifying an anomalous volume increase on a specific complaint, we help prevent irreversible PR damage.' : 'Al identificar un incremento anómalo de volumen sobre una queja en específico, ayudamos a prevenir daños irreversibles de PR.'
+        icon: BarChart,
+        title: isEn ? 'Delivery into your analytics tool' : 'Entrega en tu herramienta de análisis',
+        description: isEn ? 'CSV, Excel, JSON, via API, or direct import to your database or analytics tool. We define the schema at the start.' : 'CSV, Excel, JSON, vía API o import directo a tu base o a tu herramienta de analítica. El esquema lo definimos al inicio.'
       }
     ],
     needThisTitle: isEn ? 'Why prioritize reputation management (Review Scraping)' : 'Por qué priorizar la gestión de la reputación (Review Scraping)',
@@ -1232,28 +1482,38 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn ? 'We handle the complex technical task of connecting to dozens of different rating forums and networks, adapting to each design, extracting stars, comments, dates, and idiosyncrasies, delivering it to your unified CRM.' : 'Manejamos la compleja tarea técnica de conectarnos a decenas de foros y redes de valoración distintas, adaptándonos al diseño de cada uno, extrayendo las estrellas, comentarios, fechas e idiosincracia, para entregártelo en tu propio CRM unificado.',
     helpYouList: isEn ? [
-      'Centralized feeding of the "Customer Response Team".',
-      'Segmented extraction by locations, branches, and franchises.',
-      'Building brand health dashboards.'
+      'We define together the sources where your brand appears and the ones you care about monitoring.',
+      'We capture each new mention with its context, at the frequency that works for you.',
+      'We deliver structured data — not screenshots or loose threads.',
+      'We can build a historical record so you can measure the evolution of the conversation over time.'
     ] : [
-      'Alimentación centralizada del "Customer Response Team".',
-      'Extracción segmentada por locaciones, sucursales y franquicias.',
-      'Construcción de dashboards de salud de marca.'
+      'Definimos juntos las fuentes donde tu marca aparece y las que te importa monitorear.',
+      'Capturamos cada mención nueva con su contexto, en la frecuencia que te sirva.',
+      'Te entregamos datos estructurados, no capturas de pantalla ni hilos sueltos.',
+      'Podemos armar histórico para que midas evolución de la conversación en el tiempo.'
     ],
     ctaTitle: isEn ? 'Know everything your customers say with our Data Factory infrastructure' : 'Conoce todo lo que opinan tus clientes con nuestra infraestructura Data Factory',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What information do you collect from a "review"?' : '¿Qué información recolectan de una "review"?',
-        answer: isEn ? 'We collect the title, extended comment content, publication date, overall score (stars), number of "likes", origin and user metadata (if public), and whether images or purchase validations have been attached.' : 'Recolectamos el título, contenido extendido del comentario, fecha de publicación, puntuación global (estrellas), cantidad de "me gustas", metadata de origen y usuario (si es público), y si se han adjuntado imágenes o validaciones de compra.'
+        question: isEn ? 'Which sources can you monitor?' : '¿Qué fuentes pueden monitorear?',
+        answer: isEn ? 'Review portals, public forums, opinion sites, online press, marketplaces, sector directories, and other sources where your brand or products appear. The specific list depends on your case and is agreed upon in the first meeting.' : 'Portales de reseñas, foros públicos, sitios de opinión, prensa online, marketplaces, directorios sectoriales y otras fuentes donde tu marca o tus productos aparezcan. La lista concreta depende de tu caso y se acuerda en la primera reunión.'
       },
       {
-        question: isEn ? 'Do you have functional support for extracting government complaint reports?' : '¿Tienen soporte funcional para extraer sitios gubernamentales de reportes o reclamos?',
-        answer: isEn ? 'Yes, we can build custom scrapers oriented to consumer defense platforms or government forums, providing your company with all possible flashpoints in the public arena.' : 'Sí, podemos construir scrapers a la medida orientados a plataformas de defensa al consumidor o foros del estado, dotando tu empresa de todos los posibles focos de incendio en la arena pública.'
+        question: isEn ? 'How often do you capture new mentions?' : '¿Con qué frecuencia capturan menciones nuevas?',
+        answer: isEn ? 'Daily, weekly, or at custom intervals. Brands with high exposure usually request daily capture; smaller categories work well with weekly.' : 'Diaria, semanal o en intervalos personalizados. Las marcas con alta exposición suelen pedir captura diaria; las categorías más pequeñas funcionan bien con semanal.'
       },
       {
-        question: isEn ? 'Do you offer Sentiment Dashboard deployment or only mining?' : '¿Ofrecen el despliegue del Dashboard de Sentimiento o sólo la minería?',
-        answer: isEn ? 'Through our Data Squad model we can work iteratively and closely not only delivering data (JSON/CSV), but also designing visualization via Power BI, Tableau, or other interfaces.' : 'A través de nuestro modelo de Data Squad podemos trabajar iterativa y cercanamente no solo entregando los datos (JSON/CSV), sino también diseñando la visualización mediante Power BI, Tableau u otras interfaces.'
+        question: isEn ? 'Do you work case by case or with a fixed catalog?' : '¿Trabajan caso por caso o con un catálogo fijo?',
+        answer: isEn ? 'Each client has their own configuration: sources, keywords, languages, regions, delivery schema. We define it together at kickoff and adjust as the case evolves, with close communication between our team and yours.' : 'Cada cliente tiene una configuración propia: fuentes, keywords, idiomas, regiones, esquema de entrega. Lo definimos juntos en el kickoff y lo ajustamos a medida que el caso evoluciona, con comunicación cercana entre nuestro equipo y el tuyo.'
+      },
+      {
+        question: isEn ? 'Do you analyze the sentiment of mentions?' : '¿Analizan el sentimiento de las menciones?',
+        answer: isEn ? 'When applicable, we deliver a sentiment estimate as an additional field. The business interpretation is done by your team, who knows the context. We do not promise an exhaustive emotional analysis.' : 'Cuando aplica, entregamos una estimación de sentimiento como campo adicional. La interpretación de negocio la hace tu equipo, que conoce el contexto. No prometemos un análisis exhaustivo de emociones.'
+      },
+      {
+        question: isEn ? 'In what format do I receive the data?' : '¿En qué formato recibo los datos?',
+        answer: isEn ? 'CSV, Excel, JSON, via API, or directly to your database or analytics tool. We define the schema and destination at the start.' : 'CSV, Excel, JSON, vía API o directo a tu base de datos o herramienta de analítica. Definimos esquema y destino al inicio.'
       }
     ]
   },
@@ -1282,24 +1542,24 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     ],
     features: [
       {
-        icon: FileStack,
-        title: isEn ? 'Mapped vacancy mining' : 'Minería mapeada de vacantes',
-        description: isEn ? 'Traceability of positions, raw requirements, hiring location, and urgency reflected in the offer or candidate volume.' : 'Trazabilidad de puestos, requerimientos crudos, locación de contratación y la urgencia reflejada en la oferta o volumen de candidatos.'
-      },
-      {
-        icon: Building2,
-        title: isEn ? 'Salary scan (Benchmarking)' : 'Escaneo salarial (Benchmarking)',
-        description: isEn ? 'Collection of base salary ranges and promised benefits to build precise income standardizations.' : 'Recolección de las horquillas de sueldo base y prestaciones prometidas para construir estandarizaciones precisas sobre ingresos.'
-      },
-      {
-        icon: Target,
-        title: isEn ? 'Key skills by role' : 'Skills clave por rol',
-        description: isEn ? 'Light NLP parsing to categorize and structure the technological or operational stacks demanded by the market.' : 'Parseo de lenguaje natural (NLP) ligero para categorizar y estructurar los stacks tecnológicos u operacionales que demanda el mercado.'
-      },
-      {
         icon: Globe,
-        title: isEn ? 'Multi-region monitoring' : 'Monitoreo multi-región',
-        description: isEn ? 'Specific tracking of the remote ecosystem, comparing national salaries with opportunities offering overlapping time zones and relocation.' : 'Tracking específico del ecosistema remoto, comparando salarios nacionales con oportunidades que ofrecen husos horarios solapados y relocalización.'
+        title: isEn ? 'Portal and region coverage' : 'Cobertura de portales y regiones',
+        description: isEn ? 'We work on public job portals, sector boards, and company sites in the regions that matter to you. The specific list is defined at the start based on your product or coverage area.' : 'Trabajamos sobre portales de empleo públicos, bolsas sectoriales y sitios de empresa en las regiones que te importen. La lista concreta se define al inicio según tu producto o tu área de cobertura.'
+      },
+      {
+        icon: FileStack,
+        title: isEn ? 'Structured job postings with the fields that matter' : 'Avisos estructurados con los campos que importan',
+        description: isEn ? 'Each job posting arrives with company, position, location, modality (on-site, remote, hybrid), publication date, description, listed skills, and salary ranges when available.' : 'Cada job posting llega con empresa, puesto, ubicación, modalidad (presencial, remoto, híbrido), fecha de publicación, descripción, skills listadas y rangos salariales cuando están disponibles.'
+      },
+      {
+        icon: TrendingUp,
+        title: isEn ? 'Historical data to measure evolution' : 'Histórico para medir evolución',
+        description: isEn ? 'In addition to the daily snapshot, we build a history of postings, changes, additions, and removals so your product can show how the labor market evolves in the categories you cover.' : 'Además del snapshot del día, armamos histórico de avisos, cambios, altas y bajas para que tu producto muestre evolución del mercado laboral en las categorías que cubras.'
+      },
+      {
+        icon: Database,
+        title: isEn ? 'Delivery into your product or talent model' : 'Entrega en tu producto o tu modelo de talent',
+        description: isEn ? 'CSV, Excel, JSON, via API, or directly to your database or data warehouse. We define the schema and destination at the start based on your pipeline.' : 'CSV, Excel, JSON, vía API o directo a tu base o data warehouse. Definimos esquema y destino al inicio según tu pipeline.'
       }
     ],
     needThisTitle: isEn ? 'Discover and anticipate tomorrow\'s human capital' : 'Descubre y anticipa el capital humano del mañana',
@@ -1308,28 +1568,38 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn ? 'We generate recurring data flows on public jobs (Scraping of ATS Systems, B2B Directories, and search aggregators), providing them in a unified way to eliminate labor market duplicates before they reach your hands.' : 'Generamos flujos recurrentes de Data sobre empleos públicos (Scraping de ATS Systems, Directorios B2B y agregadores de búsqueda), proveyéndolos de manera unificada para eliminar duplicados del mercado laboral antes de llegar a tus manos.',
     helpYouList: isEn ? [
-      'Massive collection of transient data without false positives from dropped listings.',
-      'Synchronization of immense catalogs via APIs (DaaS).',
-      'Normalization of chaotic descriptions toward record architectures (BDD).'
+      'We define together the portals, regions, and position types we cover.',
+      'We extract each job posting with its relevant fields: company, position, location, modality, skills, salary.',
+      'We deliver historical data so your product can measure the evolution of the labor market.',
+      'When a portal changes, we fix it before your dashboard ends up with gaps.'
     ] : [
-      'Levantamiento masivo de datos transitorios sin falsos positivos de listados caídos.',
-      'Sincronización de catálogos inmensos mediante APIs (DaaS).',
-      'Normalización de descripciones caóticas hacia arquitecturas de registro (BDD).'
+      'Definimos juntos los portales, las regiones y los tipos de puesto que cubrimos.',
+      'Extraemos cada aviso con sus campos relevantes: empresa, puesto, ubicación, modalidad, skills, salario.',
+      'Entregamos histórico para que tu producto pueda medir evolución del mercado laboral.',
+      'Cuando un portal cambia, lo resolvemos antes de que tu dashboard quede con huecos.'
     ],
     ctaTitle: isEn ? 'Elevate the value of your agency and labor metrics with our Data Squad' : 'Eleva el valor de tu agencia y métricas laborales apoyándote en nuestro Data Squad',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'Which specific job sites do you extract?' : '¿Qué sitios de empleo específicos extraen?',
-        answer: isEn ? 'It depends on your business needs. We can cover from giant professional networks to integrating direct career portals of target organizations.' : 'Depende de tus necesidades empresariales. Podemos cubrir desde redes gigantes orientadas al ámbito profesional e integrando portales de carrera directos de las organizaciones objetivo.'
+        question: isEn ? 'Which portals can you cover?' : '¿Qué portales pueden cubrir?',
+        answer: isEn ? 'Public job portals, sector boards, and company sites in the regions that matter to you. The specific list depends on your market and we define it in the first meeting.' : 'Portales de empleo públicos, bolsas sectoriales y sitios de empresa en las regiones que te importen. La lista concreta depende de tu mercado y la definimos en la primera reunión.'
       },
       {
-        question: isEn ? 'Do you measure the actual opening and closing date of job searches?' : '¿Miden la fecha de apertura y cierre real de las búsquedas laborales?',
-        answer: isEn ? 'Yes. We design our logic to keep history or recurring snapshots and mark a vacancy (temporary UUID) as resolved, precisely measuring how many days it takes to fill a position in industry x or y.' : 'Sí. Diseñamos nuestras lógicas para que guarden histórico o snapshots recurrentes y marquen una vacante (UUID temporal) como resuelta, midiendo con precisión cuántos días cuesta llenar una posición en la industria x o y.'
+        question: isEn ? 'Can you extract required skills by position?' : '¿Pueden extraer skills requeridas por puesto?',
+        answer: isEn ? 'Yes, when the posting lists them in a structured way or they can be identified in the description text. We define it case by case based on the portals and the level of structure of the data.' : 'Sí, cuando el aviso las lista de forma estructurada o se pueden identificar en el texto de la descripción. Lo definimos caso a caso según los portales y el nivel de estructura de los datos.'
       },
       {
-        question: isEn ? 'What are some common use cases?' : '¿Cuales son algunos casos de uso comunes?',
-        answer: isEn ? 'The most notable: Providing data and alerts to competing companies (e.g., if a rival hires 10 Flutter experts, they will launch a mobile App); Consolidation boxes that resell unified listings ("Job Aggregators"); Market research and government agencies analyzing the overall state of employment.' : 'Los más destacados: Proveer datos y alertas a empresas competidoras (ej: si rival contrata 10 expertos en Flutter, lanzarán App móvil); Cajas de consolidación que revenden listados unificados ("Agregadores de Puestos"); Market research y agencias gubernamentales analizando el estado general del empleo.'
+        question: isEn ? 'What happens with salaries when portals do not publish them?' : '¿Qué pasa con los salarios cuando los portales no los publican?',
+        answer: isEn ? 'Some portals publish ranges, others do not. When there is a range, we extract it. When there is not, we leave it empty or infer it from complementary sources if that is part of the agreed scope. We do not invent data that is not there.' : 'Algunos portales publican rangos, otros no. Cuando hay rango, lo extraemos. Cuando no, lo dejamos vacío o lo inferimos desde fuentes complementarias si forma parte del alcance acordado. No inventamos datos que no están.'
+      },
+      {
+        question: isEn ? 'How often do you update the data?' : '¿Con qué frecuencia actualizan los datos?',
+        answer: isEn ? 'Daily, weekly, or monthly. Operational products request high frequency; strategic analysis cases work well with lower cadences.' : 'Diaria, semanal o mensual. Los productos operativos piden frecuencia alta; los casos de análisis estratégico funcionan con cadencias más bajas.'
+      },
+      {
+        question: isEn ? 'In what format do I receive the data?' : '¿En qué formato recibo los datos?',
+        answer: isEn ? 'CSV, Excel, JSON, via API, or directly to your database or data warehouse. The schema is defined at the start so it fits your product or model.' : 'CSV, Excel, JSON, vía API o directo a tu base o data warehouse. El esquema se define al inicio para que encaje con tu producto o modelo.'
       }
     ]
   }
