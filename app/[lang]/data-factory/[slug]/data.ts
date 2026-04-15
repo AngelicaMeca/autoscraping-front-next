@@ -111,11 +111,13 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
   },
   'ai-web-scraping': {
     slug: 'ai-web-scraping',
-    badge: 'AI Scraping',
+    badge: isEn ? 'AI Scraping' : 'Scraping con IA',
     titlePart1: '',
-    titlePartGradient: 'AI Web Scraping',
+    titlePartGradient: isEn ? 'AI Web Scraping' : 'Web Scraping con IA',
     titlePart2: '',
-    description: isEn ? 'Perfect for companies that need to centralize large volumes of data or optimize automated workflows with Artificial Intelligence.' : 'Perfecto para compañías que precisan centralizar grandes volúmenes de datos u optimizar flujos automatizados con Inteligencia Artificial.',
+    description: isEn
+      ? 'We use AI models so our scrapers adapt when a site\'s structure changes, when new sections appear, or when content is in images and PDFs. The result: fewer interruptions, fewer alerts, less time lost on adjustments.'
+      : 'Usamos modelos de IA para que nuestros scrapers se adapten cuando la estructura de un sitio cambia, cuando aparecen nuevas secciones o cuando el contenido está en imágenes y PDFs. El resultado: menos cortes, menos avisos, menos tiempo perdido en ajustes.',
     testimonials: [
       {
         rating: 5,
@@ -135,53 +137,91 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: Zap,
-        title: isEn ? 'Dynamic adaptability' : 'Adaptabilidad dinámica',
-        description: isEn ? 'LLM-powered network navigation understands site schemas and survives even when the base webpage changes its design.' : 'La navegación en red alimentada con LLMs comprende el esquema del sitio y sobrevive incluso si la página web base cambia su diseño.'
+        title: isEn ? 'Automatic adaptation to site changes' : 'Adaptación automática a cambios del sitio',
+        description: isEn
+          ? 'When a website changes its structure, many scrapers break silently. Ours detect the change and adjust, and our team reviews before every delivery.'
+          : 'Cuando una web cambia su estructura, muchos scrapers se rompen en silencio. Los nuestros detectan el cambio y se ajustan, y nuestro equipo revisa antes de cada entrega.'
       },
       {
         icon: BarChart,
-        title: isEn ? 'Enhanced parsing' : 'Parseo mejorado',
-        description: isEn ? 'Chaotic data without CSS selectors is interpreted semantically, preventing breakages or reading failures.' : 'La data caótica sin selectores CSS es interpretada semánticamente previniendo roturas o fallos de lectura.'
+        title: isEn ? 'Extraction from images, PDFs, and complex tables' : 'Extracción desde imágenes, PDFs y tablas complejas',
+        description: isEn
+          ? 'A lot of valuable information lives in PDFs, invoices, scanned reports, or tables inside images. We extract that data and deliver it structured, ready to use.'
+          : 'Mucha información valiosa está en PDFs, facturas, reportes escaneados o tablas que están dentro de imágenes. Extraemos esos datos y los entregamos estructurados, listos para usar.'
       },
       {
         icon: Target,
-        title: isEn ? 'QA reduction' : 'Reducción de QA',
-        description: isEn ? 'Avoid losing entire sessions reviewing scripts manually thanks to the model\'s iterative analysis.' : 'Evita perder sesiones completas revisando scripts manualmente gracias al análisis iterativo del modelo.'
+        title: isEn ? 'Quality validation before every delivery' : 'Validación de calidad antes de cada entrega',
+        description: isEn
+          ? 'We check that the data makes sense before it reaches your operation. If something deviates from the historical baseline, we flag it and fix it.'
+          : 'Revisamos que los datos tengan sentido antes de que lleguen a tu operación. Si algo se desvía del histórico, lo marcamos y lo corregimos.'
       },
       {
         icon: Shield,
-        title: isEn ? 'Bypass and AI solutions' : 'Bypass y soluciones AI',
-        description: isEn ? 'We solve hyper-complex captchas and logics by mimicking the cognitive patterns humans use when interacting.' : 'Solventamos lógicas y captchas hiper-complicos mimetizando los patrones cognitivos que usa el ser humano al interactuar.'
+        title: isEn ? 'Handling restrictions without involving you' : 'Superación de restricciones sin que te involucres',
+        description: isEn
+          ? 'When a site gets harder to scrape, we handle it. Your team keeps receiving the data without knowing there was a hiccup.'
+          : 'Cuando un sitio se pone más difícil, nos encargamos nosotros. Tu equipo sigue recibiendo los datos sin saber que hubo un bache.'
       }
     ],
     needThisTitle: isEn ? 'How to know if you need Classic or AI Scraping' : 'Cómo saber si necesitas el Scraping Clásico o con IA',
     needThisDescription: isEn ? 'If the portals you want to extract information from are blocked behind hard barriers (CAPTCHAs, Cloudflare, biometric rotators) and unpredictable designs (Canvas rendering, Dynamic JS), classic spiders will fail and you will need AI.' : 'Si los portales de los que quieres sacar la información están bloqueados detrás de barreras duras (CAPTCHAS, Cloudflare, rotadores biométricos) y diseños no-predecibles (Renderizado de Canvas, JS Dinámico), los spiders clásicos van a fallar y requerirás IA.',
-    helpYouSub: 'AI Solutions',
+    helpYouSub: isEn ? 'AI Solutions' : 'Soluciones con IA',
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
     helpYouDescription: isEn ? 'Our solution couples advanced models that simulate "human eyes", interpreting and capturing data even when a portal is hermetically sealed in source code.' : 'Nuestra solución se encarga de acoplar modelos avanzados que permiten simular "ojos humanos", interpretando y tomando los datos aunque un portal sea hermético en código fuente.',
     helpYouList: isEn ? [
-      'Automation of repetitive tasks against changing pages.',
-      'Constant real-time adaptation.',
-      'Reading of injection-rendered data.'
+      'Our scrapers adapt when sites change, without you having to tell us.',
+      'We read text, tables, PDFs and images—not just plain HTML.',
+      'We validate data before delivering it. If something breaks, we see it first.',
+      'We deliver in the format your team already uses.'
     ] : [
-      'Automatización de tareas repetitivas frente a páginas cambiantes.',
-      'Adaptación constante en tiempo real.',
-      'Lectura de datos inyectados por renderizado.'
+      'Nuestros scrapers se adaptan cuando los sitios cambian, sin que tengas que avisarnos.',
+      'Leemos texto, tablas, PDFs e imágenes, no solo HTML plano.',
+      'Validamos los datos antes de entregarlos. Si algo se rompe, lo vemos nosotros primero.',
+      'Entregamos en el formato que tu equipo ya usa.'
     ],
     ctaTitle: isEn ? 'Leverage autonomous collection powered by the latest algorithms' : 'Aprovecha la recolección autónoma apalancada con los últimos algoritmos',
     ctaDescription: '',
     faqs: [
       {
-        question: isEn ? 'What does Web Scraping with Artificial Intelligence bring?' : '¿Qué aporta hacer Web Scraping con Inteligencia Artificial?',
-        answer: isEn ? 'It reduces dependence on selectors (xPaths, QuerySelectors) that break when the page creator changes them, requiring manual maintenance of the extraction script.' : 'Permite reducir la dependencia de selectores (xPaths, QuerySelectors) que al momento en que el creador de la página decide cambiarlos, el script de extracción explota y requiere mantenimiento manual.'
+        question: isEn
+          ? 'How is this different from a traditional scraper?'
+          : '¿En qué se diferencia esto de un scraper tradicional?',
+        answer: isEn
+          ? 'A traditional scraper depends on fixed rules about the site\'s structure. If the site changes, the scraper breaks. With AI, we can recognize the content even if the structure changes and keep deliveries stable for longer.'
+          : 'Un scraper tradicional depende de reglas fijas sobre la estructura del sitio. Si el sitio cambia, el scraper se rompe. Con IA, podemos reconocer el contenido aunque la estructura cambie y mantener las entregas estables por más tiempo.'
       },
       {
-        question: isEn ? 'For what systems is AI-based Scraping essential?' : '¿Para qué sistemas es fundamental el uso de Scraping basado en IA?',
-        answer: isEn ? 'Mainly for modern sites (SPAs) where content is hidden or heavily masked against old-school extraction robots.' : 'Principalmente para sitios modernos (SPAs) donde el contenido vive oculto o está fuertemente enmascarado frente a robots de extracción de la vieja escuela.'
+        question: isEn
+          ? 'Can you extract data from PDFs and scanned documents?'
+          : '¿Pueden extraer datos de PDFs y documentos escaneados?',
+        answer: isEn
+          ? 'Yes. We read PDFs, invoices, financial reports, and documents with complex tables, even when they are scanned. We deliver them structured in the format you use.'
+          : 'Sí. Leemos PDFs, facturas, reportes financieros y documentos con tablas complejas, incluso cuando están escaneados. Te los entregamos estructurados en el formato que uses.'
       },
       {
-        question: isEn ? 'Is implementing Artificial Intelligence in my bots more expensive?' : '¿Es más costoso implementar Inteligencia Artificial en mis bots?',
-        answer: isEn ? 'It involves a slightly higher compute load, but in the medium term generates exponential savings due to zero need for technical maintenance against typical bot code breakage.' : 'Involucra una carga por computación ligeramente mayor, pero a mediano plazo genera ahorros exponenciales debido a la nula necesidad de mantenimiento técnico frente a la rotura del código habitual de un bot.'
+        question: isEn
+          ? 'Who maintains the scrapers when something changes?'
+          : '¿Quién mantiene los scrapers cuando algo cambia?',
+        answer: isEn
+          ? 'We do. Maintenance is included in the Data Factory service. You receive the data; we make sure that keeps happening.'
+          : 'Nosotros. El mantenimiento está incluido en el servicio de Data Factory. Vos recibís los datos, nosotros nos encargamos de que eso siga pasando.'
+      },
+      {
+        question: isEn
+          ? 'What types of sites can you scrape?'
+          : '¿Qué tipo de sitios pueden scrapear?',
+        answer: isEn
+          ? 'E-commerce sites, marketplaces, real estate portals, search engines, directories, content sites, public databases, review platforms, and many others. If you need data from a specific source, we evaluate it in the first meeting.'
+          : 'Sitios de e-commerce, marketplaces, portales inmobiliarios, buscadores, directorios, sitios de contenido, bases públicas, plataformas de reviews y muchos otros. Si necesitás datos de una fuente en particular, lo evaluamos en la primera reunión.'
+      },
+      {
+        question: isEn
+          ? 'How do I receive the data?'
+          : '¿Cómo recibo los datos?',
+        answer: isEn
+          ? 'In the format your team already uses: CSV, Excel, JSON, API, or directly to your database. We define frequency and schema at kickoff.'
+          : 'En el formato que tu equipo ya usa: CSV, Excel, JSON, API o directo a tu base de datos. Definimos frecuencia y esquema en el kickoff.'
       }
     ]
   },
@@ -415,9 +455,9 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
   },
   'web-scraping-automation': {
     slug: 'web-scraping-automation',
-    badge: 'Automation',
+    badge: isEn ? 'Automation' : 'Automatización',
     titlePart1: '',
-    titlePartGradient: 'Web Scraping Automation',
+    titlePartGradient: isEn ? 'Web Scraping Automation' : 'Web Scraping Automatizado',
     titlePart2: '',
     description: isEn ? 'Perfect for businesses that need to orchestrate repetitive mass extraction automations, permanently eliminating human dependency.' : 'Perfecto para negocios que necesitan orquestar automatizaciones repetitivas de extracción masiva desvinculando la dependencia humana para siempre.',
     testimonials: [
@@ -439,18 +479,24 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     features: [
       {
         icon: Shield,
-        title: isEn ? 'Zero human risk' : 'Cero riesgo humano',
-        description: isEn ? 'Automated spiders don\'t copy the wrong field or take breaks; they ensure perpetual accuracy when capturing critical data.' : 'Los spiders automatizados no copian el campo equivocado ni descansan; aseguran exactitud perpetua al capturar data crítica.'
+        title: isEn ? 'Continuous delivery, no maintenance on your end' : 'Entrega continua, sin mantenimiento de tu lado',
+        description: isEn
+          ? 'We configure the frequency that works for you (daily, weekly, monthly, or on-demand) and make sure data arrives on time. If the source site changes, we adapt before you notice.'
+          : 'Configuramos la frecuencia que te sirve (diaria, semanal, mensual o a demanda) y nos encargamos de que los datos lleguen puntuales. Si el sitio origen cambia, lo adaptamos antes de que lo notes.'
       },
       {
         icon: Zap,
-        title: isEn ? 'Constant orchestration' : 'Orquestación constante',
-        description: isEn ? 'We configure CRONs and pipelines (Airflow) where data ingestion runs in the background without requiring intervention.' : 'Configuramos CRONs y pipelines (Airflow) donde la ingesta de data transcurre por debajo sin demandar intervención.'
+        title: isEn ? 'Data ready to decide with, not to clean' : 'Datos listos para decidir, no para limpiar',
+        description: isEn
+          ? 'We clean, validate, and structure data before delivery. Your team consumes it directly in their reports, models, or dashboards—no intermediate steps.'
+          : 'Limpiamos, validamos y estructuramos los datos antes de entregarlos. Tu equipo los consume directo en sus reportes, modelos o dashboards, sin pasos intermedios.'
       },
       {
-        icon: Target,
-        title: isEn ? 'Customizable schedules' : 'Horarios personalizables',
-        description: isEn ? 'Whether you need hourly updates (like the stock market) or Sunday nights, the system delivers without fail.' : 'Independientemente de si necesitas actualizaciones cada hora (como el mercado bursátil) o domingos en la noche, el sistema cumple a rajatabla.'
+        icon: MessageSquare,
+        title: isEn ? 'A team that responds when something happens' : 'Un equipo que responde cuando algo pasa',
+        description: isEn
+          ? 'When there are incidents, we notify you first with a concrete resolution time. No ticket to open, no waiting.'
+          : 'Cuando hay incidencias, te avisamos nosotros primero, con un tiempo de resolución concreto. No hay que abrir un ticket ni esperar.'
       },
       {
         icon: BarChart,
@@ -458,34 +504,72 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
         description: isEn ? 'Assign the intellectual value of your engineers to innovating with analytics, delegating the burden of obtaining raw data to us.' : 'Asigna el valor intelectual de tus ingenieros a innovar con los analíticos, delegando el peso de conseguir el dato crudo a nosotros.'
       }
     ],
-    needThisTitle: isEn ? 'How to know if you need DaaS extraction architectures' : 'Cómo saber si precisas de arquitecturas de extracción DaaS',
-    needThisDescription: isEn ? 'If you have an army of interns transcribing tables to feed weekly analytics and everything breaks when columns change, then you need a formal scraper architecture.' : 'Si tienes un ejército de pasantes transcribiendo tablas para alimentar los analíticos semanales y todo arde cuando cambian las columnas, entonces necesitas arquitectura formal de scrapers.',
-    helpYouSub: isEn ? 'Data Automation' : 'Data Automation',
+    needThisTitle: isEn
+      ? 'Still pulling the same data manually every week?'
+      : '¿Seguís pidiendo los mismos datos a mano cada semana?',
+    needThisDescription: isEn
+      ? 'If your team is downloading, copying, or requesting the same data on a recurring basis, you are spending people time on something that can run on its own. We automate that process so you never have to think about it.'
+      : 'Si tu equipo está descargando, copiando o solicitando los mismos datos de forma recurrente, estás gastando tiempo de personas en algo que puede correr solo. Automatizamos ese proceso para que no tengas que pensar en él.',
+    helpYouSub: isEn ? 'Our Approach' : 'Nuestro Enfoque',
     helpYouTitle: isEn ? 'How we help you' : 'Cómo te ayudamos',
-    helpYouDescription: isEn ? 'We provide all the Data Factory engineering that connects tools, IP rotations, cloud databases, and injection scripts; building the pipeline from start to finish to your servers.' : 'Te proporcionamos toda la ingeniería de Data Factory que conecta herramientas, saltos de IP, bases en la nube y scripts inyectores; armando la tubería (Pipeline) de principio a fin hacia tus servidores.',
+    helpYouDescription: isEn
+      ? 'You define the source, the fields, and the frequency. We take care of everything else: extraction, maintenance, cleaning, and delivery.'
+      : 'Vos definís la fuente, los campos y la frecuencia. Nosotros nos encargamos de todo lo demás: extracción, mantenimiento, limpieza y entrega.',
     helpYouList: isEn ? [
-      'Robust self-managed infrastructure (Serverless).',
-      'Concurrent flow configuration (Millions of daily requests).',
-      'Elimination of the manual collection gap.'
+      'You define the data once. You receive it every week, month, or day—without asking again.',
+      'We handle blocks, site changes, and incidents. You just see the data arriving.',
+      'We deliver in CSV, Excel, JSON, API, or directly to your database.',
+      'You work with a team that responds in under 1 hour when something changes.'
     ] : [
-      'Infraestructura robusta autogestionada (Serverless).',
-      'Configuración de flujos concurrentes (Millones de peticiones diarias).',
-      'Eliminación de la brecha de recolección manual.'
+      'Definís los datos una vez. Los recibís todas las semanas, meses o días, según lo que necesites, sin pedirlos de nuevo.',
+      'Nosotros resolvemos los bloqueos, los cambios en los sitios y las incidencias. Vos los ves llegar como si nada.',
+      'Te entregamos en CSV, Excel, JSON, API o directo a tu base de datos.',
+      'Trabajás con un equipo que responde en menos de 1 hora cuando algo cambia.'
     ],
-    ctaTitle: isEn ? 'Level up by turning data into the invisible engine of your profitability' : 'Sube al siguiente nivel transformando al dato en el motor invisible de tu rentabilidad',
-    ctaDescription: '',
+    ctaTitle: isEn ? 'Schedule a free consultation' : 'Agenda una consulta gratuita',
+    ctaDescription: isEn
+      ? 'Tell us what data you need. In a 30-minute call we give you a plan and a concrete delivery timeline.'
+      : 'Contanos qué datos necesitas. En una llamada de 30 minutos te damos un plan y un tiempo de entrega concreto.',
     faqs: [
       {
-        question: isEn ? 'What exactly is Scraping Automation (DaaS)?' : '¿Qué es exactamente la Automatización de Scraping (DaaS)?',
-        answer: isEn ? 'Data as a Service. It means consuming external information periodically via ready endpoints without worrying at all about how scripts bypass firewalls, blocks, or render the required injection to obtain them in the first place.' : 'Data as a Service. Es consumir la información externa periódicamente mediante endpoints listos sin preocuparte en absoluto en cómo los scripts libran firewalls, bloqueos, o renderizan la inyección requerida para conseguirlos en primera instancia.'
+        question: isEn
+          ? 'What does it mean in practice that you automate collection?'
+          : '¿Qué significa en la práctica que ustedes automatizan la recolección?',
+        answer: isEn
+          ? 'You tell us what data you need, from which sites, and how often. After that, you receive it in your email, database, or via API on a recurring basis. You do not have to request it or remember: it arrives on its own.'
+          : 'Significa que vos nos decís qué datos necesitás, de qué sitios y cada cuánto. Después de eso, los recibís en tu correo, en tu base de datos o via API, de forma recurrente. No tenés que pedirlos ni acordarte: llegan solos.'
       },
       {
-        question: isEn ? 'What corporations depend on this structure?' : '¿Qué corporaciones dependen de esta estructura?',
-        answer: isEn ? 'From models that feed intelligence and recommendation engines, to massive logistics corporations that must audit global supply chains every night to function.' : 'Desde modelos que alimentan las inteligencias y motores de recomendación, hasta corporaciones masivas de logística que deben auditar cadenas mundiales cada noche para funcionar.'
+        question: isEn
+          ? 'What happens if the source site changes or starts blocking?'
+          : '¿Qué pasa si el sitio origen cambia o empieza a bloquear?',
+        answer: isEn
+          ? 'Our team monitors the quality of every delivery. When the site changes or adds restrictions, we resolve it and keep delivering. If the change requires revisiting the scope, we reach out before you notice.'
+          : 'Nuestro equipo monitorea la calidad de cada entrega. Cuando el sitio cambia o pone más restricciones, lo resolvemos y seguimos entregando. Si el cambio requiere rediscutir el alcance, te escribimos antes de que lo notes.'
       },
       {
-        question: isEn ? 'Do you guarantee the "Uptime" or lifespan of connectors?' : '¿Garantizan el "Uptime" o vida útil de los conectores?',
-        answer: isEn ? 'Yes. Through our "Data Squad" we build data health monitors. If the source portal changes dramatically, our alarms detect it and we intervene in record time to correct the pipeline and secure your data.' : 'Sí. A través de nuestro "Data Squad" construimos monitoreos de salud de datos. Si el portal fuente cambia drásticamente, nuestras alarmas lo detectan e intercedemos en tiempo récord para corregir la tubería y asegurar tus datos.'
+        question: isEn
+          ? 'Do you deliver the scraper code?'
+          : '¿Me entregan el código del scraper?',
+        answer: isEn
+          ? 'By default, no. The product is the data, not the code. This lets us maintain and update the extraction without passing the work to you. If your case requires receiving the code (for compliance or internal strategy), we discuss it as an exception.'
+          : 'Por defecto no. El producto son los datos, no el código. Eso nos permite mantener y actualizar la extracción sin pasarte el trabajo. Si tu caso requiere recibir el código (por compliance o estrategia interna), lo conversamos como excepción.'
+      },
+      {
+        question: isEn
+          ? 'In what format do I receive the data?'
+          : '¿En qué formato recibo los datos?',
+        answer: isEn
+          ? 'In whatever works for you: CSV, Excel, JSON, via API, or directly to your database. We define the format at the start along with the field schema your team needs to consume.'
+          : 'En el que te sirva: CSV, Excel, JSON, via API o directo a tu base de datos. Definimos el formato al inicio junto con el esquema de campos que tu equipo necesita consumir.'
+      },
+      {
+        question: isEn
+          ? 'How long does it take to get started?'
+          : '¿Cuánto tarda arrancar?',
+        answer: isEn
+          ? 'It depends on the source and volume, but in most cases we deliver the first extraction in days, not weeks. In our first meeting we give you a concrete timeline for your case.'
+          : 'Depende de la fuente y el volumen, pero en la mayoría de los casos entregamos la primera extracción en días, no en semanas. En la primera reunión te damos un plazo concreto para tu caso.'
       }
     ]
   },

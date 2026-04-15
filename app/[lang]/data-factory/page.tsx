@@ -323,6 +323,30 @@ export default function DataFactoryPage() {
       tags: isEn
         ? ['Job offers', 'Salary scales', 'Talent intelligence']
         : ['Ofertas de empleo', 'Escalas salariales', 'Inteligencia de talento']
+    },
+    {
+      slug: 'web-scraping-automation',
+      title: isEn ? 'Web Scraping Automation' : 'Web Scraping Automatizado',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Automated data pipelines that collect, structure, and deliver what you need every day—without manual intervention.'
+        : 'Flujos de datos automatizados que recolectan, estructuran y entregan lo que necesitas cada día, sin intervención manual.',
+      icon: RefreshCw,
+      tags: isEn
+        ? ['Daily automation', 'Structured delivery', 'Zero manual effort']
+        : ['Automatización diaria', 'Entrega estructurada', 'Sin esfuerzo manual']
+    },
+    {
+      slug: 'ai-web-scraping',
+      title: isEn ? 'AI Web Scraping' : 'Web Scraping con IA',
+      subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
+      description: isEn
+        ? 'Intelligent extraction that adapts to site changes and keeps your data flowing even when layouts shift.'
+        : 'Extracción inteligente que se adapta a los cambios de los sitios y mantiene tus datos fluyendo aunque los diseños cambien.',
+      icon: Zap,
+      tags: isEn
+        ? ['Adaptive extraction', 'Layout resilience', 'Continuous data flow']
+        : ['Extracción adaptativa', 'Resiliencia de diseño', 'Flujo continuo de datos']
     }
   ];
 

@@ -92,46 +92,48 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div className="absolute bottom-20 left-20 w-64 h-64 bg-pink-100/30 rounded-full blur-3xl"></div>
           <div className="absolute top-20 right-40 w-32 h-32 border-2 border-blue-100/50 rounded-full"></div>
         </div>
-        
-        {/* Testimonials */}
-        <div className="max-w-6xl mx-auto relative z-10 mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              {isEn ? (
-                <>What our <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clients</span> say</>
-              ) : (
-                <>Lo que dicen nuestros <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clientes</span></>
-              )}
-            </h2>
-            <p className="text-gray-500">
-              {isEn ? 'Real results from companies using our platform' : 'Resultados reales de empresas que utilizan nuestra plataforma'}
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {data.testimonials.map((test, index) => (
-              <div key={index} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl shadow-gray-100/50 hover:-translate-y-1 transition-transform">
-                <div className="flex text-yellow-400 mb-4 gap-1">
-                  {[...Array(test.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-8">
-                  {test.text}
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
-                    {test.authorInitials}
+        {/* Testimonials — only shown when data is available */}
+        {data.testimonials.length > 0 && (
+          <div className="max-w-6xl mx-auto relative z-10 mb-32">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                {isEn ? (
+                  <>What our <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clients</span> say</>
+                ) : (
+                  <>Lo que dicen nuestros <span className="bg-gradient-to-r from-[#9D62FA] to-[#7B5FE8] bg-clip-text text-transparent">clientes</span></>
+                )}
+              </h2>
+              <p className="text-gray-500">
+                {isEn ? 'Real results from companies using our platform' : 'Resultados reales de empresas que utilizan nuestra plataforma'}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {data.testimonials.map((test, index) => (
+                <div key={index} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl shadow-gray-100/50 hover:-translate-y-1 transition-transform">
+                  <div className="flex text-yellow-400 mb-4 gap-1">
+                    {[...Array(test.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-current" />
+                    ))}
                   </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">{test.authorName}</h4>
-                    <p className="text-sm text-gray-500">{test.authorRole}</p>
+                  <p className="text-gray-700 leading-relaxed mb-8">
+                    {test.text}
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+                      {test.authorInitials}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">{test.authorName}</h4>
+                      <p className="text-sm text-gray-500">{test.authorRole}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Features */}
         <div className="max-w-6xl mx-auto relative z-10">
@@ -236,7 +238,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             {data.helpYouDescription}
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
             {data.helpYouList.map((item, idx) => (
               <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-4 shadow-sm">
@@ -359,6 +361,29 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+
+      {/* Data Squad cross-link — visually separated, never in body copy */}
+      <section className="py-16 px-6 bg-white border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-[#F5F7FF] to-[#EEF0FF] rounded-2xl px-8 py-6 border border-indigo-100 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex-1 text-center sm:text-left">
+              <p className="text-gray-700 font-medium leading-snug">
+                {isEn
+                  ? 'Need to add engineers to your team instead of receiving ready-made data?'
+                  : '¿Necesitás sumar ingenieros a tu equipo en lugar de recibir datos llave en mano?'}
+              </p>
+            </div>
+            <Link
+              href={`/${lang}/data-squad`}
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm whitespace-nowrap"
+            >
+              {isEn ? 'Discover Data Squad' : 'Conocé Data Squad'}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA />
 
       <Footer />
     </main>
