@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, Lightbulb, Monitor, Database, Zap, Shield, TrendingUp, Target, Settings, ShoppingCart, Chrome as HomeIcon, Plane, Heart, ShoppingBag, Lock, CreditCard, Ticket, UserCheck, Building2, ChartBar as BarChart3, ChevronLeft, ChevronRight, Sparkles, ArrowRight, FileText, Infinity, Quote, Star, ExternalLink, MessageCircle, ThumbsUp, Code, File as Document, ArrowUpRight as Growth, Eye, Clock, CircleCheck as CheckCircle, Boxes, Wrench, RefreshCw, Users, UsersRound, Linkedin, Github, Twitter, Facebook, Instagram, BookText, Mail, Phone, Calendar } from 'lucide-react';
+import { ChevronDown, Lightbulb, Monitor, Database, Zap, Shield, TrendingUp, Target, Settings, ShoppingCart, Chrome as HomeIcon, Plane, Heart, ShoppingBag, Lock, CreditCard, Ticket, UserCheck, Building2, ChartBar as BarChart3, Sparkles, ArrowRight, FileText, Quote, Star, ExternalLink, MessageCircle, ThumbsUp, Code, File as Document, ArrowUpRight as Growth, Eye, Clock, CircleCheck as CheckCircle, RefreshCw, Users, UsersRound, Linkedin, Github, Twitter, Facebook, Instagram, BookText, Mail, Phone, Calendar } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -69,7 +69,6 @@ function CountUp({
 export default function Home() {
   const lang = useLang();
   const isEn = lang === 'en';
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [teamSlide, setTeamSlide] = useState(0);
 
   const industries = [
@@ -144,18 +143,6 @@ export default function Home() {
       ]
     }
   ];
-
-  const itemsPerView = 4;
-  const maxSlide = Math.ceil(industries.length / itemsPerView) - 1;
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev >= maxSlide ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev <= 0 ? maxSlide : prev - 1));
-  };
-
 
   // Autoplay para el carrusel de líderes
   useEffect(() => {
@@ -656,48 +643,37 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="relative max-w-6xl mx-auto">
-              {/* Carousel Container */}
-              <div className="overflow-hidden px-8 sm:px-12">
-                <div
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${(currentSlide * 100).toString()}%)` }}
-                >
-                  {Array.from({ length: Math.ceil(industries.length / itemsPerView) }).map((_, slideIndex) => (
-                    <div key={slideIndex} className="min-w-full flex items-center">
-                      {industries.slice(slideIndex * itemsPerView, (slideIndex + 1) * itemsPerView).map((industry, idx) => {
-                        const Icon = industry.icon;
-                        const isLastInSlide = Boolean(idx === itemsPerView - 1 || slideIndex * itemsPerView + idx === industries.length - 1);
-                        return (
-                          <div key={idx} className="flex items-center flex-1">
-                            <div className="flex flex-col items-center justify-center text-center py-8 flex-1">
-                              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-3 hover:bg-purple-200 transition">
-                                <Icon className="w-8 h-8 text-purple-600" />
-                              </div>
-                              <p className="text-purple-600 text-xs font-bold tracking-wide uppercase">{industry.name}</p>
-                            </div>
-                            {!isLastInSlide && <div className="w-px h-24 bg-gray-200"></div>}
-                          </div>
-                        );
-                      })}
+            <div className="relative max-w-6xl mx-auto overflow-hidden">
+              {/* Fade edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+              <div
+                className="flex items-stretch gap-0"
+                style={{ animation: 'marquee-industries 32s linear infinite', width: 'max-content' }}
+              >
+                {[...industries, ...industries].map((industry, idx) => {
+                  const Icon = industry.icon;
+                  return (
+                    <div key={idx} className="flex items-center">
+                      <div className="flex flex-col items-center justify-center text-center py-6 px-8 md:px-12" style={{ width: 160 }}>
+                        <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-3 hover:bg-purple-200 transition">
+                          <Icon className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />
+                        </div>
+                        <p className="text-purple-600 text-[10px] md:text-xs font-bold tracking-wide uppercase leading-tight">{industry.name}</p>
+                      </div>
+                      <div className="w-px h-16 bg-gray-200 flex-shrink-0" />
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
 
-              {/* Navigation Buttons */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition"
-              >
-                <ChevronLeft className="w-5 h-5 text-gray-700" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition"
-              >
-                <ChevronRight className="w-5 h-5 text-gray-700" />
-              </button>
+              <style>{`
+                @keyframes marquee-industries {
+                  0%   { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+              `}</style>
             </div>
           </div>
         </section>
@@ -803,6 +779,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                <div className="absolute left-7 top-14 w-px h-full bg-gradient-to-b from-pink-500/50 to-transparent"></div>
               </div>
             </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useLang } from '@/hooks/useLang';
-import { ArrowRight, Footprints } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function BlogCta() {

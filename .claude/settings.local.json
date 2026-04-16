@@ -48,7 +48,8 @@
       "Bash(ls -la D:/as-front-nuevo/public/empleados/*.png)",
       "Bash(awk '{print $6, $7, $8, $9}')",
       "Bash(awk '{print $6, $7, $9}')",
-      "Bash(stat D:/as-front-nuevo/public/empleados/*.png)"
+      "Bash(stat D:/as-front-nuevo/public/empleados/*.png)",
+      "Bash(del \"D:\\\\as-front-nuevo\\\\tmp_asana.js\" \"D:\\\\as-front-nuevo\\\\tmp_asana2.js\" \"D:\\\\as-front-nuevo\\\\tmp_asana_section.js\" \"D:\\\\as-front-nuevo\\\\tmp_find.js\" \"D:\\\\as-front-nuevo\\\\tmp_sections.js\")"
     ]
   }
 }
