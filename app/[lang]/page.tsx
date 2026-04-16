@@ -70,7 +70,6 @@ export default function Home() {
   const lang = useLang();
   const isEn = lang === 'en';
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [logoSlide, setLogoSlide] = useState(0);
   const [teamSlide, setTeamSlide] = useState(0);
 
   const industries = [
@@ -88,7 +87,17 @@ export default function Home() {
   ];
 
   const companies = [
-    'Metalist', 'Clau', 'Cella', 'DataCo', 'TechPro', 'InfoSys', 'WebFlow', 'DataLink'
+    { name: 'Abiboo',           src: '/customers/abiboo.png',           scale: 1 },
+    { name: 'Cocha Travel',     src: '/customers/cochatravel.png',      scale: 1 },
+    { name: 'Complif',          src: '/customers/complif.png',          scale: 1 },
+    { name: 'Data Knowledge',   src: '/customers/dataknowledge.png',    scale: 1 },
+    { name: 'Inmarket',         src: '/customers/inmarket.png',         scale: 1 },
+    { name: 'Intelimetrica',    src: '/customers/intelimetrica.png',    scale: 1 },
+    { name: 'PRG',              src: '/customers/prg.png',              scale: 1 },
+    { name: 'Propiedades UY',   src: '/customers/propiedades-uy.png',   scale: 2.4 },
+    { name: 'Soda Capital',     src: '/customers/sodacapital.png',      scale: 2.4 },
+    { name: 'Tella',            src: '/customers/tella.png',            scale: 1 },
+    { name: 'Todo Musica',      src: '/customers/todomusica.png',       scale: 2.4 },
   ];
 
   const teamMembers = [
@@ -138,8 +147,6 @@ export default function Home() {
 
   const itemsPerView = 4;
   const maxSlide = Math.ceil(industries.length / itemsPerView) - 1;
-  const logosPerView = 4;
-  const maxLogoSlide = Math.ceil(companies.length / logosPerView) - 1;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev >= maxSlide ? 0 : prev + 1));
@@ -149,13 +156,6 @@ export default function Home() {
     setCurrentSlide((prev) => (prev <= 0 ? maxSlide : prev - 1));
   };
 
-  const nextLogoSlide = () => {
-    setLogoSlide((prev) => (prev >= maxLogoSlide ? 0 : prev + 1));
-  };
-
-  const prevLogoSlide = () => {
-    setLogoSlide((prev) => (prev <= 0 ? maxLogoSlide : prev - 1));
-  };
 
   // Autoplay para el carrusel de líderes
   useEffect(() => {
@@ -422,42 +422,42 @@ export default function Home() {
           {/* Worldwide Customers Carousel - Overlapping */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20 w-full max-w-4xl px-4 md:px-6">
             <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-12 border border-gray-200">
-              <h3 className="text-xl md:text-3xl font-bold text-gray-900 text-center mb-6 md:mb-8">
+              <h3 className="text-base md:text-lg font-semibold text-gray-500 text-center mb-6 md:mb-8 uppercase tracking-widest">
                 {isEn ? 'Worldwide customers who trusted us' : 'Clientes de todo el mundo que confían en nosotros'}
               </h3>
-              <div className="relative">
-                {/* Carousel Container */}
-                <div className="overflow-hidden px-8 md:px-12">
-                  <div
-                    className="flex transition-transform duration-500 ease-in-out"
-                    style={{ transform: `translateX(-${(logoSlide * 100).toString()}%)` }}
-                  >
-                    {Array.from({ length: Math.ceil(companies.length / logosPerView) }).map((_, slideIndex) => (
-                      <div key={slideIndex} className="min-w-full grid grid-cols-2 md:flex md:items-center md:justify-center gap-6 md:gap-12 place-items-center py-2 md:py-0">
-                        {companies.slice(slideIndex * logosPerView, (slideIndex + 1) * logosPerView).map((company, idx) => (
-                          <span key={idx} className="text-gray-900 font-bold text-lg md:text-xl text-center">
-                            {company}
-                          </span>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              {/* Infinite auto-scroll carousel */}
+              <div className="overflow-hidden relative">
+                {/* Fade edges */}
+                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-                {/* Navigation Buttons */}
-                <button
-                  onClick={prevLogoSlide}
-                  className="absolute -left-2 md:left-0 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 rounded-full shadow-md flex items-center justify-center transition"
+                <div
+                  className="flex items-center gap-12"
+                  style={{
+                    animation: 'marquee 28s linear infinite',
+                    width: 'max-content',
+                  }}
                 >
-                  <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
-                </button>
-                <button
-                  onClick={nextLogoSlide}
-                  className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 rounded-full shadow-md flex items-center justify-center transition"
-                >
-                  <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
-                </button>
+                  {/* Duplicate logos for seamless loop */}
+                  {[...companies, ...companies].map((company, idx) => (
+                    <div key={idx} style={{ width: 120, height: 48, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={company.src}
+                        alt={company.name}
+                        style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain', opacity: 0.7, transform: `scale(${company.scale})` }}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
+
+              <style>{`
+                @keyframes marquee {
+                  0%   { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+              `}</style>
             </div>
           </div>
         </section>
