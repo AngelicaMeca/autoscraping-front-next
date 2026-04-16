@@ -44,7 +44,11 @@
       "Bash(python3 -c \"import rembg; print\\('ok'\\)\")",
       "Bash(py -3 -c \"import rembg; print\\('ok'\\)\")",
       "Bash(mkdir -p D:/pip-temp D:/pip-cache)",
-      "Bash(TEMP=D:/pip-temp TMPDIR=D:/pip-temp pip install --no-user \"rembg[cpu]\" --target D:/pip-packages --cache-dir D:/pip-cache)"
+      "Bash(TEMP=D:/pip-temp TMPDIR=D:/pip-temp pip install --no-user \"rembg[cpu]\" --target D:/pip-packages --cache-dir D:/pip-cache)",
+      "Bash(ls -la D:/as-front-nuevo/public/empleados/*.png)",
+      "Bash(awk '{print $6, $7, $8, $9}')",
+      "Bash(awk '{print $6, $7, $9}')",
+      "Bash(stat D:/as-front-nuevo/public/empleados/*.png)"
     ]
   }
 }

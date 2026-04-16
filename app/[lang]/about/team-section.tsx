@@ -7,7 +7,7 @@ const teamMembers = [
   { name: 'Cesar Farhat',         role: 'CTO',                       photo: '/founders/cesar-farhat.png' },
   { name: 'Benjamín Arjona',      role: 'CCO',                       photo: '/founders/benjamin-arjona.png' },
   { name: 'Rocio Varas',          role: 'Accountant Consultant',     photo: '/empleados/rocio-varas.png' },
-  { name: 'Franco Tarchini',       role: 'Business Development Representative · Business, Data & Finance Analyst', photo: '/empleados/franco-tarchini.png' },
+  { name: 'Franco Tarchini',       role: 'Business Development Representative', photo: '/empleados/franco-tarchini.png' },
   { name: 'José Cano',            role: 'Data Squad Leader',         photo: '/empleados/jose-cano.png' },
   { name: 'Iván Quipildor',       role: 'DevOPs',                    photo: '/empleados/ivan-quipildor.png' },
   { name: 'Paula Oyarzábal',      role: 'Administrative Accountant', photo: '/empleados/paula-oyarzabal.png' },
@@ -22,6 +22,8 @@ const teamMembers = [
   { name: 'Carlos Brizuela',      role: 'Python Developer',          photo: '/empleados/carlos-brizuela.png' },
   { name: 'Andrés Avido',         role: 'Python Developer',          photo: '/empleados/andres-avido.png' },
   { name: 'Miguel Fernandez',     role: 'Python Developer',          photo: '/empleados/miguel-fernandez.png' },
+  { name: 'Emiliano Muratore',    role: 'Python Developer & Automation', photo: '/empleados/emiliano-muratore.png' },
+  { name: 'Angélica Meca Molina', role: 'Front-End Developer & Graphic Designer', photo: '/empleados/angelica-meca-molina.png' },
 ];
 
 export default function TeamSection() {
@@ -60,7 +62,7 @@ export default function TeamSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {teamMembers.map((member, index) => {
             const nameParts = member.name.split(' ');
             return (
@@ -69,20 +71,22 @@ export default function TeamSection() {
                 className="flex flex-col items-center justify-center text-center bg-[#13193c] rounded-[2rem] p-8 pb-10 border border-white/5 shadow-2xl transition hover:-translate-y-1 duration-300"
               >
                 {/* Gradient Ring + Photo */}
-                <div className="w-[120px] h-[120px] p-[3px] rounded-full bg-gradient-to-br from-[#4f46e5] via-[#a855f7] to-[#d946ef] mb-6 shadow-xl">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      objectPosition: 'top',
-                      display: 'block',
-                    }}
-                  />
+                <div className="w-[180px] h-[180px] p-[3px] rounded-full bg-gradient-to-br from-[#4f46e5] via-[#a855f7] to-[#d946ef] mb-6 shadow-xl">
+                  {/* Dark inner bg so transparent photo areas don't bleed the gradient */}
+                  <div className="w-full h-full rounded-full bg-[#13193c] overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'top center',
+                        display: 'block',
+                      }}
+                    />
+                  </div>
                 </div>
 
                 {/* Name */}
