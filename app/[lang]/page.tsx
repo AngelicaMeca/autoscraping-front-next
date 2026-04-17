@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, Lightbulb, Monitor, Database, Zap, Shield, TrendingUp, Target, Settings, ShoppingCart, Chrome as HomeIcon, Plane, Heart, ShoppingBag, Lock, CreditCard, Ticket, UserCheck, Building2, ChartBar as BarChart3, Sparkles, ArrowRight, FileText, Quote, Star, ExternalLink, MessageCircle, ThumbsUp, Code, File as Document, ArrowUpRight as Growth, Eye, Clock, CircleCheck as CheckCircle, RefreshCw, Users, UsersRound, Linkedin, Github, Twitter, Facebook, Instagram, BookText, Mail, Phone, Calendar } from 'lucide-react';
+import { ChevronDown, Lightbulb, Monitor, Database, Zap, Shield, TrendingUp, Target, Settings, ShoppingCart, Home as HomeIcon, Plane, Heart, ShoppingBag, Lock, CreditCard, Ticket, UserCheck, Building2, ChartBar as BarChart3, Sparkles, ArrowRight, FileText, Quote, Star, ExternalLink, MessageCircle, ThumbsUp, Code, File as Document, ArrowUpRight as Growth, Eye, Clock, CircleCheck as CheckCircle, RefreshCw, Users, UsersRound, Linkedin, Github, Twitter, Facebook, Instagram, BookText, Mail, Phone, Calendar } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -105,6 +105,7 @@ export default function Home() {
       title: 'CEO',
       initials: 'FB',
       photo: '/founders/francisco-battan.png',
+      linkedin: 'https://www.linkedin.com/in/franciscobattan-autoscraping/',
       quote: isEn
         ? 'Data is our language, but what really matters is what it means for your business. We guide you through the process of turning information into concrete decisions.'
         : 'Los datos son nuestro lenguaje, pero lo que realmente importa es lo que significan para tu negocio. Te acompañamos en el proceso de convertir información en decisiones concretas.',
@@ -119,6 +120,7 @@ export default function Home() {
       title: 'CCO',
       initials: 'BA',
       photo: '/founders/benjamin-arjona.png',
+      linkedin: 'https://www.linkedin.com/in/benjaminarjona/',
       quote: isEn
         ? 'Every business has unique and distinct data needs. We focus on understanding yours to build a solution that fits what you need today and scales with what comes tomorrow.'
         : 'Cada negocio tiene necesidades de datos distintas y únicas. Nos enfocamos en entender las tuyas para construir una solución que se ajuste a lo que necesitas hoy y escale con lo que viene mañana.',
@@ -133,6 +135,7 @@ export default function Home() {
       title: 'CTO',
       initials: 'CF',
       photo: '/founders/cesar-farhat.png',
+      linkedin: 'https://www.linkedin.com/in/cesar-farhat/',
       quote: isEn
         ? 'As pioneers in data extraction, we combine cutting-edge technology with automation so that the technical side is never your problem.'
         : 'Como pioneros en extracción de datos, combinamos tecnología de avanzada con automatización para que lo técnico nunca sea tu problema.',
@@ -656,11 +659,11 @@ export default function Home() {
                   const Icon = industry.icon;
                   return (
                     <div key={idx} className="flex items-center">
-                      <div className="flex flex-col items-center justify-center text-center py-6 px-8 md:px-12" style={{ width: 160 }}>
-                        <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-3 hover:bg-purple-200 transition">
+                      <div className="flex flex-col items-center justify-start text-center pt-6 pb-5 px-6 md:px-8" style={{ width: 200 }}>
+                        <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-3 hover:bg-purple-200 transition flex-shrink-0">
                           <Icon className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />
                         </div>
-                        <p className="text-purple-600 text-[10px] md:text-xs font-bold tracking-wide uppercase leading-tight">{industry.name}</p>
+                        <p className="text-purple-600 text-[10px] md:text-xs font-bold tracking-wide uppercase leading-tight" style={{ minHeight: '2.5rem', display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>{industry.name}</p>
                       </div>
                       <div className="w-px h-16 bg-gray-200 flex-shrink-0" />
                     </div>
@@ -960,7 +963,7 @@ export default function Home() {
             {/* Carousel Container */}
             <div className="relative max-w-4xl mx-auto">
               {/* Main Card */}
-              <div className="relative bg-gradient-to-br from-[#0E155B] via-[#1a1f5f] to-[#2d2180] rounded-3xl p-8 md:p-12 shadow-2xl min-h-[650px] md:min-h-[450px] lg:min-h-[420px]">
+              <div className="relative bg-gradient-to-br from-[#0E155B] via-[#1a1f5f] to-[#2d2180] rounded-3xl p-8 md:p-12 shadow-2xl h-[700px] md:h-[500px] lg:h-[460px] flex flex-col">
                 <div className="absolute -inset-6 bg-gradient-to-r from-[#C084FC]/30 via-[#60A5FA]/30 to-[#F472B6]/30 rounded-3xl blur-3xl -z-10"></div>
                 {/* Decorative corner brackets */}
                 <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-purple-400/30 rounded-tl-2xl"></div>
@@ -968,6 +971,7 @@ export default function Home() {
                 <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-purple-400/30 rounded-bl-2xl"></div>
                 <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-purple-400/30 rounded-br-2xl"></div>
 
+                <div className="flex-1">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={teamSlide}
@@ -975,7 +979,7 @@ export default function Home() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12"
+                    className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 h-full"
                   >
                     {/* Left side - Avatar with photo */}
                     <div className="flex-shrink-0">
@@ -1016,24 +1020,24 @@ export default function Home() {
                         ))}
                       </div>
 
-                      {/* Social Links */}
-                      <div className="flex justify-center md:justify-start gap-3">
-                        <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
+                      {/* LinkedIn */}
+                      <div className="flex justify-center md:justify-start">
+                        <a
+                          href={teamMembers[teamSlide].linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors"
+                        >
                           <Linkedin className="w-5 h-5 text-white" />
-                        </button>
-                        <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
-                          <Github className="w-5 h-5 text-white" />
-                        </button>
-                        <button className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center transition-colors">
-                          <Twitter className="w-5 h-5 text-white" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </motion.div>
                 </AnimatePresence>
+                </div>
 
                 {/* Carousel Indicators */}
-                <div className="flex justify-center gap-2 mt-8">
+                <div className="flex justify-center gap-2 mt-6">
                   {teamMembers.map((_, idx) => (
                     <button
                       key={idx}

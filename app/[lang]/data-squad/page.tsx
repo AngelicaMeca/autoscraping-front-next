@@ -1,6 +1,6 @@
 'use client';
 
-import { UsersRound, MessageSquare, Shield, Database, Layers, Zap, TrendingUp, CircleCheck as CheckCircle2, ChartBar as BarChart3, Globe, Sparkles, ChevronDown, ChevronLeft, ChevronRight, DollarSign, BookOpen, Rocket, GraduationCap, Target, BookText, Users, Brain, Home, Briefcase, TrendingDown, Cpu, FileText, ArrowRight } from 'lucide-react';
+import { UsersRound, MessageSquare, Shield, Database, Layers, Zap, TrendingUp, CircleCheck as CheckCircle2, Globe, Sparkles, ChevronLeft, ChevronRight, DollarSign, BookOpen, Rocket, GraduationCap, Target, BookText, Users, Brain, Briefcase, TrendingDown, Cpu, FileText, ArrowRight } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -90,14 +90,6 @@ export default function DataSquadPage() {
 
   const services = [
     {
-      slug: 'data-squad-as-service',
-      title: isEn ? 'Data Team as a Service' : 'Equipo de Datos como Servicio',
-      subtitle: isEn ? 'COMPLETE SOLUTIONS' : 'SOLUCIONES COMPLETAS',
-      description: isEn ? 'Access to a dedicated team of data extraction specialists, available on demand to solve your most complex projects without long-term commitments.' : 'Acceso a un equipo dedicado de especialistas en extracción de datos, disponible bajo demanda para resolver tus proyectos más complejos sin comprometerse a largo plazo.',
-      icon: Users,
-      tags: isEn ? ['Flexible', 'On demand', 'Scalable'] : ['Flexible', 'Bajo demanda', 'Escalable']
-    },
-    {
       slug: 'data-scientist-squad',
       title: isEn ? 'Data Scientists Team' : 'Equipo de Data Scientists',
       subtitle: isEn ? 'ANALYSIS AND PREDICTION' : 'ANÁLISIS Y PREDICCIÓN',
@@ -138,14 +130,6 @@ export default function DataSquadPage() {
       tags: isEn ? ['Strategy', 'Infrastructure', 'Optimization'] : ['Estrategia', 'Infraestructura', 'Optimización']
     },
     {
-      slug: 'real-estate-data-entry',
-      title: isEn ? 'Real Estate Data Management' : 'Gestión de Datos Inmobiliarios',
-      subtitle: isEn ? 'REAL ESTATE DATA' : 'DATOS INMOBILIARIOS',
-      description: isEn ? 'Specialized capture of real estate data, listings, valuations, and markets to boost your strategy in the real estate sector.' : 'Captura especializada de datos immobiliarios, listados, valuaciones y mercados para potenciar tu estrategia en el sector real estate.',
-      icon: Home,
-      tags: isEn ? ['Real Estate', 'Listings', 'Market'] : ['Inmobiliario', 'Listados', 'Mercado']
-    },
-    {
       slug: 'outsource-data-mining',
       title: isEn ? 'Data Mining' : 'Minería de Datos',
       subtitle: isEn ? 'SPECIALIZED EXTRACTION' : 'EXTRACCIÓN ESPECIALIZADA',
@@ -153,14 +137,6 @@ export default function DataSquadPage() {
       icon: TrendingDown,
       tags: isEn ? ['Mining', 'Patterns', 'Trends'] : ['Minería', 'Patrones', 'Tendencias']
     },
-    {
-      slug: 'b2b-data-services',
-      title: isEn ? 'B2B Data Services' : 'Servicios de Datos B2B',
-      subtitle: isEn ? 'BUSINESS DATA' : 'DATOS EMPRESARIALES',
-      description: isEn ? 'Updated business databases, B2B prospecting, contact enrichment, and decision-maker lists to drive your commercial strategy.' : 'Bases de datos empresariales actualizadas, prospección B2B, enriquecimiento de contactos y listas de decisores para impulsar tu estrategia comercial.',
-      icon: Cpu,
-      tags: isEn ? ['B2B', 'Prospecting', 'Contacts'] : ['B2B', 'Prospección', 'Contactos']
-    }
   ];
 
   const nextService = () => {

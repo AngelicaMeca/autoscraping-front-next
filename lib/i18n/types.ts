@@ -24,6 +24,7 @@ export interface Dictionary {
     privacyPolicy: string;
     termsOfService: string;
     cookiePolicy: string;
+    disclaimer: string;
     allRightsReserved: string;
     emailUs: string;
     callUs: string;

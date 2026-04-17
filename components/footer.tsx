@@ -132,9 +132,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} AUTOScraping. {t.footer.allRightsReserved}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition">{t.footer.privacyPolicy}</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition">{t.footer.termsOfService}</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition">{t.footer.cookiePolicy}</a>
+            <Link href={`/${lang}/privacy-policy`} className="text-gray-400 hover:text-white text-sm transition">{t.footer.privacyPolicy}</Link>
+            <Link href={`/${lang}/terms-and-conditions`} className="text-gray-400 hover:text-white text-sm transition">{t.footer.termsOfService}</Link>
+            <Link href={`/${lang}/disclaimer`} className="text-gray-400 hover:text-white text-sm transition">{t.footer.disclaimer}</Link>
+            <Link href={`/${lang}/cookie-policy`} className="text-gray-400 hover:text-white text-sm transition">{t.footer.cookiePolicy}</Link>
           </div>
         </div>
       </div>

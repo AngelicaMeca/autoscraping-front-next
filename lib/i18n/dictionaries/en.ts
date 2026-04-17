@@ -61,6 +61,7 @@ export const en: Dictionary = {
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Terms of Service',
     cookiePolicy: 'Cookie Policy',
+    disclaimer: 'Disclaimer',
     allRightsReserved: 'All rights reserved.',
     emailUs: 'Email Us',
     callUs: 'Call Us',

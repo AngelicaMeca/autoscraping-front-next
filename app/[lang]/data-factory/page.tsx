@@ -162,7 +162,7 @@ export default function DataFactoryPage() {
       subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
       description: isEn
         ? 'Price and promotion monitoring to execute competitive adjustments that protect your profit margins.'
-        : 'Monitoreo de precios y promociones para ejecutar ajustes competitivos que protejan tus márgenes de beneficio.',
+        : 'Protege tus márgenes de beneficio con una visión total del mercado. Ejecuta ajustes competitivos basados en el monitoreo de precios y promociones.',
       icon: Target,
       tags: isEn
         ? ['Results-oriented', 'Strategic alignment', 'Business value']
@@ -174,7 +174,7 @@ export default function DataFactoryPage() {
       subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
       description: isEn
         ? 'Mass capture of property listings and variations for valuation and opportunity detection.'
-        : 'Captura masiva de listados y variaciones de propiedades para valoración y detección de oportunidades.',
+        : 'Capitaliza cada oportunidad mediante la detección temprana de ofertas. Accede a valoraciones precisas con la captura masiva de listados y variaciones.',
       icon: Building2,
       tags: isEn
         ? ['Mass capture', 'Asset valuation', 'Opportunity detection']
@@ -186,7 +186,7 @@ export default function DataFactoryPage() {
       subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
       description: isEn
         ? 'Availability and rate tracking in the accommodation sector to maximise profitability through dynamic pricing.'
-        : 'Seguimiento de disponibilidad y tarifas en el sector alojamiento para maximizar la rentabilidad mediante precios dinámicos.',
+        : 'Maximiza tu rentabilidad mediante estrategias de precios dinámicos. Domina el sector alojamiento con un seguimiento constante de disponibilidad y tarifas.',
       icon: HomeIcon,
       tags: isEn
         ? ['Dynamic pricing', 'Real-time availability', 'Maximised profitability']
@@ -198,7 +198,7 @@ export default function DataFactoryPage() {
       subtitle: isEn ? 'COMMITTED TO YOUR SUCCESS' : 'COMPROMETIDOS CON TU ÉXITO',
       description: isEn
         ? 'Selection of professional profiles and company data to fuel B2B acquisition strategies with precision.'
-        : 'Selección de perfiles profesionales y datos de empresas para nutrir estrategias de captación B2B con precisión.',
+        : 'Nutre tus estrategias de captación B2B con datos de alta precisión. Accede a perfiles profesionales y empresas para acelerar tu prospección comercial',
       icon: Users,
       tags: isEn
         ? ['B2B acquisition', 'Profile data', 'Targeting precision']

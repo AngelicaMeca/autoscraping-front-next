@@ -54,6 +54,7 @@ export const es: Dictionary = {
     privacyPolicy: 'Política de Privacidad',
     termsOfService: 'Términos de Servicio',
     cookiePolicy: 'Política de Cookies',
+    disclaimer: 'Aviso Legal',
     allRightsReserved: 'Todos los derechos reservados.',
     emailUs: 'Escríbenos',
     callUs: 'Llámanos',

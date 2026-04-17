@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "Bash(dir /b /s \"D:\\\\as-front-nuevo\\\\app\")",
+      "Bash(findstr -i \"about\")"
+    ]
+  }
+}

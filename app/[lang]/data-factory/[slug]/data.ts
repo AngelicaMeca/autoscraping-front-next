@@ -39,7 +39,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Lead Generation' : 'Generación de Leads',
     titlePart2: '',
-    description: isEn ? 'Perfect for companies that need to collect large volumes of prospect data or automate the lead verification process, reducing time and resources in campaigns.' : 'Perfecto para empresas que necesitan recopilar grandes volúmenes de datos de prospectos o automatizar el proceso de verificación de leads, reduciendo tiempo y recursos en campañas.',
+    description: isEn ? 'Accelerate your sales cycle with qualified prospects. Keep your commercial reach always active through contact databases updated at the source.' : 'Acelera tu ciclo de ventas con prospectos calificados. Mantén tu alcance comercial siempre activo mediante bases de contacto actualizadas en origen.',
     testimonials: [
       {
         rating: 5,
@@ -115,9 +115,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'AI Web Scraping' : 'Web Scraping con IA',
     titlePart2: '',
-    description: isEn
-      ? 'We use AI models so our scrapers adapt when a site\'s structure changes, when new sections appear, or when content is in images and PDFs. The result: fewer interruptions, fewer alerts, less time lost on adjustments.'
-      : 'Usamos modelos de IA para que nuestros scrapers se adapten cuando la estructura de un sitio cambia, cuando aparecen nuevas secciones o cuando el contenido está en imágenes y PDFs. El resultado: menos cortes, menos avisos, menos tiempo perdido en ajustes.',
+    description: isEn ? 'Guarantee the availability of your data against structural changes. Ensure an uninterrupted flow through scrapers that adapt automatically.' : 'Garantiza la disponibilidad de tus datos frente a cambios estructurales. Asegura un flujo ininterrumpido mediante scrapers que se adaptan automáticamente.',
     testimonials: [
       {
         rating: 5,
@@ -231,7 +229,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'LinkedIn Extraction' : 'Extracción de LinkedIn',
     titlePart2: '',
-    description: isEn ? 'Perfect for businesses looking to collect professional data or automate B2B lead generation, reducing operational hours.' : 'Perfecto para negocios que buscan coleccionar datos profesionales o automatizar la generación de leads B2B reduciendo horas operativas.',
+    description: isEn ? 'Fuel your B2B acquisition strategies with high-precision data. Access professional profiles and companies to accelerate your commercial prospecting.' : 'Nutre tus estrategias de captación B2B con datos de alta precisión. Accede a perfiles profesionales y empresas para acelerar tu prospección comercial.',
     testimonials: [
       {
         rating: 5,
@@ -307,7 +305,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Airbnb Monitoring' : 'Monitoreo de Airbnb',
     titlePart2: '',
-    description: isEn ? 'Essential for proptech firms, urban hosting companies, and hotel managers who need to audit the colossal real estate volume and anticipate the pricing matrix in real time.' : 'Esencial para firmas proptechs, hostings urbanos y managers hoteleros que necesitan auditar el colosal volumen inmobiliario y anticipar la matriz tarifaria en tiempo real.',
+    description: isEn ? 'Maximize your profitability through dynamic pricing strategies. Dominate the accommodation sector with constant tracking of availability and rates.' : 'Maximiza tu rentabilidad mediante estrategias de precios dinámicos. Domina el sector alojamiento con un seguimiento constante de disponibilidad y tarifas.',
     testimonials: [
       {
         rating: 5,
@@ -421,7 +419,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Google Maps Registration' : 'Registro de Google Maps',
     titlePart2: '',
-    description: isEn ? 'Perfect for agencies and franchises that need to automate location intelligence, obtaining reviews, hours, and ratings of local businesses at global scale.' : 'Perfecto para agencias y franquicias que necesitan automatizar la inteligencia locacional, obteniendo reviews, horarios y ratings del comercio local a escala global.',
+    description: isEn ? 'Expand your presence in specific markets with location intelligence. Consolidate geographic data for an in-depth analysis of your local competition.' : 'Expande tu presencia en mercados específicos con inteligencia locacional. Consolida datos geográficos para un análisis profundo de tu competencia local.',
     testimonials: [
       {
         rating: 5,
@@ -497,7 +495,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Web Scraping Automation' : 'Web Scraping Automatizado',
     titlePart2: '',
-    description: isEn ? 'Perfect for businesses that need to orchestrate repetitive mass extraction automations, permanently eliminating human dependency.' : 'Perfecto para negocios que necesitan orquestar automatizaciones repetitivas de extracción masiva desvinculando la dependencia humana para siempre.',
+    description: isEn ? 'Eliminate human dependency in your extractions. Orchestrate repetitive processes so your team can focus on strategic value.' : 'Elimina la dependencia humana en tus extracciones. Orquesta procesos repetitivos para que tu equipo se enfoque en el valor estratégico.',
     testimonials: [
       {
         rating: 5,
@@ -617,9 +615,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Financial Metrics' : 'Métricas Financieras',
     titlePart2: '',
-    description: isEn
-      ? 'We extract prices, indicators, reports, and metrics from public sources in the financial world. We deliver them structured, validated, and in the format your team already uses to model, decide, and report.'
-      : 'Extraemos precios, indicadores, reportes y métricas de fuentes públicas del mundo financiero. Te los entregamos estructurados, validados y en el formato que tu equipo ya usa para modelar, decidir y reportar.',
+    description: isEn ? 'Strengthen your high-level investments with constant market indicators. Ground your financial decisions in economic values obtained with precision.' : 'Fortalece tus inversiones de alto nivel con indicadores bursátiles constantes. Fundamenta tus decisiones financieras en valores económicos obtenidos con precisión.',
     testimonials: [
       {
         rating: 5,
@@ -705,7 +701,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'E-commerce Catalogs' : 'Catálogos de E-commerce',
     titlePart2: '',
-    description: isEn ? 'Perfect for commercial brands that need to manage massive inventory volumes and audit competitor catalogs by automating their decision-making.' : 'Perfecto para marcas comerciales que precisan de gestionar masivos volúmenes de inventario y auditar el catálogo de sus competidores automatizando su toma de decisiones.',
+    description: isEn ? 'Adjust your commercial offer in real time and without technical friction. Take control of inventory by tracking your competition\'s stock.' : 'Ajusta tu oferta comercial en tiempo real y sin fricciones técnicas. Toma el control del inventario rastreando el stock de tu competencia.',
     testimonials: [
       {
         rating: 5,
@@ -781,7 +777,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Marketing Insights' : 'Insights de Marketing',
     titlePart2: '',
-    description: isEn ? 'Perfect for marketing teams that need to process large volumes of data or automate vital tasks, reducing campaign validation times by leveraging Web Scraping for Marketing.' : 'Perfecto para equipos de marketing que necesitan procesar grandes volúmenes de datos u automatizar tareas vitales, reduciendo tiempos de validación de campañas al apoyarse en el Web Scraping para Marketing.',
+    description: isEn ? 'Measure the real impact of your campaigns and your positioning. Detect trends and brand mentions to lead the conversation in your sector.' : 'Mide el impacto real de tus campañas y tu posicionamiento. Detecta tendencias y menciones de marca para liderar la conversación en tu sector.',
     testimonials: [
       {
         rating: 5,
@@ -895,7 +891,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Real Estate Indexing' : 'Indexación Inmobiliaria',
     titlePart2: '',
-    description: isEn ? 'Perfect for real estate agents, franchises, or investment funds that need to daily track the value of properties listed on leading portals to capitalize on market volume.' : 'Perfecto para agentes, franquicias o fondos inversores inmobiliarios que precisan trackear diariamente el valor de las propiedades publicadas dentro de los portales líderes para capitalizar el volumen del mercado.',
+    description: isEn ? 'Capitalize on every opportunity through early offer detection. Access precise valuations with mass capture of listings and variations.' : 'Capitaliza cada oportunidad mediante la detección temprana de ofertas. Accede a valoraciones precisas con la captura masiva de listados y variaciones.',
     testimonials: [
       {
         rating: 5,
@@ -1009,7 +1005,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'SEO Audit' : 'Auditoría SEO',
     titlePart2: '',
-    description: isEn ? 'Perfect for brands or agencies with aggressive digital presence that need to programmatically audit millions of URLs, meta tags, and competitor clusters.' : 'Perfecto para marcas o agencias con presencia digital agresiva que requieren auditar programáticamente millones de URLs, meta tags y clústers de competidores.',
+    description: isEn ? 'Constantly improve your platform\'s organic ranking. Secure your visibility through automated tracking of search results.' : 'Mejora el ranking orgánico de tu plataforma de manera constante. Asegura tu visibilidad mediante el seguimiento automatizado de los resultados de búsqueda.',
     testimonials: [
       {
         rating: 5,
@@ -1123,7 +1119,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Pricing Strategies' : 'Estrategias de Pricing',
     titlePart2: '',
-    description: isEn ? 'Price and promotion monitoring to execute competitive adjustments that protect your profit margins and strengthen your market penetration.' : 'Monitoreo de precios y promociones para ejecutar ajustes competitivos que protejan tus márgenes de beneficio y fortalezcan tu penetración en el mercado.',
+    description: isEn ? 'Protect your profit margins with a complete view of the market. Execute competitive adjustments based on price and promotion monitoring.' : 'Protege tus márgenes de beneficio con una visión total del mercado. Ejecuta ajustes competitivos basados en el monitoreo de precios y promociones.',
     testimonials: [
       {
         rating: 5,
@@ -1237,7 +1233,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'AI Training' : 'Entrenamiento de IA',
     titlePart2: '',
-    description: isEn ? 'Massive processing of sites and unstructured databases to feed, scale, and refine language models and machine learning algorithms.' : 'Procesamiento masivo de sitios y bases de datos no estructuradas para alimentar, escalar y perfeccionar modelos de lenguaje y algoritmos de machine learning.',
+    description: isEn ? 'Scale your product\'s intelligence with data ready to process. Feed your algorithms through the processing of unstructured sites.' : 'Escala la inteligencia de tu producto con datos listos para procesar. Alimenta tus algoritmos mediante el procesamiento de sitios no estructurados.',
     testimonials: [
       {
         rating: 5,
@@ -1351,7 +1347,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Flight Comparison' : 'Comparativa de Vuelos',
     titlePart2: '',
-    description: isEn ? 'Real-time extraction of airfares, itineraries, and routes to optimize competitiveness for agencies, OTAs, and tourism booking engines.' : 'Extracción de tarifas aéreas, trayectos y rutas en tiempo real para optimizar la competitividad de agencias, OTAs y motores de reserva turística.',
+    description: isEn ? 'Optimize the competitiveness of your booking engine in real time. Access updated airfares and routes to guarantee the best offer.' : 'Optimiza la competitividad de tu motor de reservas en tiempo real. Accede a tarifas aéreas y rutas actualizadas para garantizar la mejor oferta.',
     testimonials: [
       {
         rating: 5,
@@ -1437,7 +1433,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Reputation Management' : 'Gestión de Reputación',
     titlePart2: '',
-    description: isEn ? 'Constant collection of reviews, social comments, and ratings on key platforms for sentiment analysis and critical care of your corporation\'s image.' : 'Recolección constante de reseñas, comentarios sociales y valoraciones en plataformas clave para el análisis de sentimiento y cuidado crítico de la imagen de tu corporación.',
+    description: isEn ? 'Protect your brand image with critical care for public perception. Identify sentiments through the collection of reviews on key platforms.' : 'Protege tu imagen de marca con un cuidado crítico de la percepción pública. Identifica sentimientos mediante la recolección de reseñas en plataformas clave.',
     testimonials: [
       {
         rating: 5,
@@ -1523,7 +1519,7 @@ export function getServicesData(isEn: boolean): Record<string, ServiceData> {
     titlePart1: '',
     titlePartGradient: isEn ? 'Labor Trends' : 'Tendencias Laborales',
     titlePart2: '',
-    description: isEn ? 'Deep tracking of job offers (Job Boards) and salary structures to feed modern headhunting platforms and human resources analytics.' : 'Rastreo profundo de ofertas de empleo (Job Boards) y estructuras salariales para nutrir plataformas de headhunting y analíticas de recursos humanos modernas.',
+    description: isEn ? 'Ground your human capital decisions with real sector data. Fuel your recruitment platforms by analyzing job offers and salary scales.' : 'Fundamenta tus decisiones de capital humano con datos reales del sector. Nutre tus plataformas de reclutamiento analizando ofertas de empleo y escalas salariales.',
     testimonials: [
       {
         rating: 5,
