@@ -3,16 +3,17 @@
 import { Zap, CalendarDays, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useLang } from '@/hooks/useLang';
+import CountUp from '@/components/CountUp';
 
 export default function ResultadosBanner() {
   const lang = useLang();
   const isEn = lang === 'en';
 
   const stats = [
-    { value: '+13.700', label: isEn ? 'Engineering hours' : 'Horas de ingeniería' },
-    { value: '99,9%', label: isEn ? 'Success rate' : 'Tasa de éxito' },
-    { value: '+170', label: isEn ? 'Maintained repositories' : 'Repositorios mantenidos' },
-    { value: '+500', label: isEn ? 'Websites processed' : 'Sitios web procesados' },
+    { end: 13.7,  prefix: '+', suffix: 'K',  decimals: 1, label: isEn ? 'Engineering hours' : 'Horas de ingeniería' },
+    { end: 99.9,  prefix: '',  suffix: '%',  decimals: 1, label: isEn ? 'Success rate' : 'Tasa de éxito' },
+    { end: 170,   prefix: '+', suffix: '',   decimals: 0, label: isEn ? 'Maintained repositories' : 'Repositorios mantenidos' },
+    { end: 500,   prefix: '+', suffix: '',   decimals: 0, label: isEn ? 'Websites processed' : 'Sitios web procesados' },
   ];
 
   return (
@@ -108,7 +109,7 @@ export default function ResultadosBanner() {
               }}
             >
               <p className="text-white font-extrabold text-3xl md:text-4xl leading-none mb-2">
-                {stat.value}
+                <CountUp end={stat.end} prefix={stat.prefix} suffix={stat.suffix} decimals={stat.decimals} />
               </p>
               <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 {stat.label}

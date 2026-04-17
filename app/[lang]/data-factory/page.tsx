@@ -3,6 +3,7 @@
 import { Shield, Clock, Lock, Sparkles, Building2, ArrowRight, MessageSquare, ChevronDown, RefreshCw, Database, Layers, Zap, ChartBar as BarChart3, Target, CreditCard, Sun, Bolt, ShoppingCart, Chrome as HomeIcon, Plane, Heart, ShoppingBag, Ticket, UserCheck, ChevronLeft, ChevronRight, Smile, FileStack, TrendingUp, BookOpen, Globe, CircleCheck as CheckCircle2, Puzzle, Calendar, Users, Search, Settings, Server, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import CountUp from '@/components/CountUp';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
@@ -1033,7 +1034,7 @@ export default function DataFactoryPage() {
                   <Globe className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">+5000</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2"><CountUp end={5} prefix="+" suffix="K" /></div>
               <div className="text-sm text-blue-100 font-medium">{isEn ? 'Extracted sources' : 'Fuentes extraídas'}</div>
             </div>
 
@@ -1044,7 +1045,7 @@ export default function DataFactoryPage() {
                   <Database className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">{isEn ? '+2 billion' : '+2 billones'}</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2"><CountUp end={2} prefix="+" suffix="B" /></div>
               <div className="text-sm text-blue-100 font-medium">{isEn ? 'records delivered' : 'registros entregados'}</div>
             </div>
 
@@ -1055,7 +1056,7 @@ export default function DataFactoryPage() {
                   <Layers className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">+350</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2"><CountUp end={350} prefix="+" /></div>
               <div className="text-sm text-blue-100 font-medium">{isEn ? 'Completed projects' : 'Proyectos finalizados'}</div>
             </div>
 
@@ -1066,7 +1067,7 @@ export default function DataFactoryPage() {
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">+149</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2"><CountUp end={149} prefix="+" /></div>
               <div className="text-sm text-blue-100 font-medium">Jobs done</div>
             </div>
 
@@ -1077,7 +1078,7 @@ export default function DataFactoryPage() {
                   <Clock className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">+65 000</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2"><CountUp end={65} prefix="+" suffix="K" /></div>
               <div className="text-sm text-blue-100 font-medium">{isEn ? 'Execution hours' : 'Horas de ejecución'}</div>
             </div>
 
@@ -1088,7 +1089,7 @@ export default function DataFactoryPage() {
                   <Sparkles className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">99,9%</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2"><CountUp end={99.9} decimals={1} suffix="%" /></div>
               <div className="text-sm text-blue-100 font-medium">{isEn ? 'effectiveness' : 'de efectividad'}</div>
             </div>
           </div>
