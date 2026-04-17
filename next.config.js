@@ -17,8 +17,8 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://calendly.com https://assets.calendly.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://app.asana.com https://calendly.com",
+      "img-src 'self' data: blob: https: http://localhost:1337",
+      "connect-src 'self' https://app.asana.com https://calendly.com http://localhost:1337",
       "frame-src https://calendly.com",
       "object-src 'none'",
       "base-uri 'self'",
@@ -42,6 +42,19 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'media.licdn.com',
         pathname: '/**',
+      },
+      {
+        // Strapi local uploads (development)
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+        pathname: '/uploads/**',
+      },
+      {
+        // Strapi production uploads — update hostname when deploying
+        protocol: 'https',
+        hostname: 'strapi.autoscraping.com', // ← change to your production Strapi domain
+        pathname: '/uploads/**',
       },
     ],
     // Reasonable cache TTL for CDN images
