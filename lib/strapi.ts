@@ -56,6 +56,7 @@ export interface StrapiAuthor {
   name: string;
   bio?: StrapiBlock[];
   photo?: StrapiImage | StrapiImage[] | null;
+  linkedin?: string;
 }
 
 // ─── Rich-text blocks ─────────────────────────────────────────────────────────
