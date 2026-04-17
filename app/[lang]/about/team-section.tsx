@@ -110,9 +110,9 @@ export default function TeamSection() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ marginTop: 'auto' }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white text-[0.8rem] font-semibold transition-all duration-200 hover:scale-105"
                     style={{
+                      marginTop: 'auto',
                       background: 'rgba(10, 102, 194, 0.18)',
                       border: '1px solid rgba(10, 102, 194, 0.45)',
                     }}
