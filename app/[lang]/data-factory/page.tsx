@@ -496,7 +496,7 @@ export default function DataFactoryPage() {
           {/* Description */}
           <p className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto mb-12">
             {isEn ? (
-              <>
+              <> 
                 We automate extraction so you receive structured data<br />
                 ready to integrate, eliminating any technical friction from your path.<br />
                 You set the goal, we execute the capture.
