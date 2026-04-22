@@ -27,7 +27,8 @@
       "Bash(node -e \"const p=require\\('D:/as-front-nuevo/package.json'\\); console.log\\('next:', p.dependencies.next, 'react:', p.dependencies.react\\)\")",
       "Bash(node -e ' *)",
       "Bash(dir \"D:/as-front-nuevo/app/[lang]/blog/[slug]\")",
-      "Bash(dir \"D:/as-front-nuevo/app/[lang]/blog\")"
+      "Bash(dir \"D:/as-front-nuevo/app/[lang]/blog\")",
+      "Bash(dir \"D:/as-front-nuevo/app/[lang]\")"
     ]
   }
 }

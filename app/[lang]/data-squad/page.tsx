@@ -681,7 +681,7 @@ export default function DataSquadPage() {
       <CicloDelDatoSection />
 
       {/* Servicios de Data Squad Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      <section className="relative py-24 px-6 bg-white overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-32 h-32 border-2 border-purple-200 rounded-full"></div>
@@ -775,8 +775,10 @@ export default function DataSquadPage() {
         </div>
       </section>
       <ResultadosBanner />
-      <FaqSection />
-      <ContactCTA />
+      <div className="bg-white">
+        <FaqSection />
+        <ContactCTA sectionClassName="bg-transparent" />
+      </div>
       <Footer />
     </main>
   );

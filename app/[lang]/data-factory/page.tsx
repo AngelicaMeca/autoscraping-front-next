@@ -1140,8 +1140,9 @@ export default function DataFactoryPage() {
         </div>
       </section>
 
-      {/* Unified Capabilities and FAQ Section */}
-      <section className="bg-white">
+      {/* Unified Capabilities, FAQ + CTA — shared white background */}
+      <div className="bg-white">
+      <section>
         {/* Capacidades técnicas Section */}
         <div className="relative pt-24 pb-16 px-6 overflow-hidden">
         {/* Background decorative circles */}
@@ -1356,7 +1357,8 @@ export default function DataFactoryPage() {
       </section>
 
       {/* Contact Section */}
-      <ContactCTA />
+      <ContactCTA sectionClassName="bg-transparent" />
+      </div>
 
       <Footer />
     </main>

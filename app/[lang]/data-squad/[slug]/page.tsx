@@ -268,8 +268,10 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* FAQ + CTA unified background */}
+      <div className="bg-[#FAFAFA]">
       {/* FAQ */}
-      <section className="py-32 px-6 bg-[#FAFAFA] relative overflow-hidden">
+      <section className="py-32 px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-100/50 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-100/50 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -360,7 +362,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <ContactCTA />
+      <ContactCTA sectionClassName="bg-transparent" />
+      </div>
 
       <Footer />
     </main>

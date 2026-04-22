@@ -1,15 +1,21 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import { headers } from 'next/headers';
 import { isPreviewEnvironment, SITE_URL } from '@/lib/seo';
 import JsonLd from '@/components/JsonLd';
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',      // Prevents invisible text during font load (improves CLS)
+  display: 'swap',
   preload: true,
   variable: '--font-inter',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
 });
 
 const SITE_NAME = 'AUTOScraping';
@@ -143,7 +149,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang={lang}>
-      <body className={`${inter.variable} ${inter.className}`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} ${inter.className}`}>
         <JsonLd schema={organizationSchema} />
         {children}
       </body>

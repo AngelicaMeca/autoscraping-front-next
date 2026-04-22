@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useLang } from '@/hooks/useLang';
 import JsonLd from '@/components/JsonLd';
 import { SITE_URL } from '@/lib/seo';
+import HeroVisualCaosOrden from '@/components/HeroVisualCaosOrden';
 
 function CountUp({
   end,
@@ -176,49 +177,64 @@ export default function Home() {
 
       <div className="relative min-h-screen overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #0E155B 0%, #2A327A 25%, #9D62FA 50%, #2A327A 75%, #0E155B 100%)'
+          background: 'linear-gradient(135deg, #0E155B 0%, #2A327A 25%, #9D62FA 50%, #2A327A 75%, #0E155B 100%)',
         }}>
 
         <AnimatedSection>
           <main className="relative z-10 mx-auto max-w-7xl px-6 pt-24 md:pt-32 pb-16 md:pb-24">
-            <div className="max-w-4xl">
-              <p className="text-blue-200 text-sm font-medium mb-8">
-                {isEn ? 'Leading Web Scraping Solutions' : 'Soluciones de Web Scraping líderes'}
-              </p>
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+              {/* Left: copy */}
+              <div className="flex-1 max-w-2xl">
+                <p className="text-blue-200 text-sm font-medium mb-8">
+                  {isEn ? 'Leading Web Scraping Solutions' : 'Soluciones de Web Scraping líderes'}
+                </p>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6 md:mb-8">
-                {isEn ? (
-                  <>Human engineering{' '}<br className="hidden md:block" />
-                  for continuous and{' '}<br className="hidden md:block" />
-                  precise data extraction</>
-                ) : (
-                  <>Ingeniería humana{' '}<br className="hidden md:block" />
-                  para una extracción{' '}<br className="hidden md:block" />
-                  de datos continua y precisa</>
-                )}
-              </h1>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 md:mb-8">
+                  {isEn ? (
+                    <>Human engineering{' '}<br className="hidden md:block" />
+                    for continuous and{' '}<br className="hidden md:block" />
+                    precise data extraction</>
+                  ) : (
+                    <>Ingeniería humana{' '}<br className="hidden md:block" />
+                    para una extracción{' '}<br className="hidden md:block" />
+                    de datos continua y precisa</>
+                  )}
+                </h1>
 
-              <p className="text-blue-200 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-2xl">
-                {isEn
-                  ? 'We solve the technical challenges of scraping so you receive structured, ready-to-use information. While you scale your business, we ensure the integrity and transparency of every data point.'
-                  : 'Resolvemos los desafíos técnicos del scraping para que recibas información estructurada y lista para usar. Mientras tú escalas tu negocio, nosotros aseguramos la integridad y transparencia de cada dato.'}
-              </p>
+                <p className="text-blue-200 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-xl">
+                  {isEn
+                    ? 'We solve the technical challenges of scraping so you receive structured, ready-to-use information. While you scale your business, we ensure the integrity and transparency of every data point.'
+                    : 'Resolvemos los desafíos técnicos del scraping para que recibas información estructurada y lista para usar. Mientras tú escalas tu negocio, nosotros aseguramos la integridad y transparencia de cada dato.'}
+                </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href={`/${lang}/book-a-meeting`} className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition inline-block text-center">
-                  {isEn ? "Let's talk about your project" : 'Hablemos de tu proyecto'}
-                </Link>
-                <a href="#infraestructura" className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition inline-block text-center">
-                  {isEn ? 'Discover more' : 'Descubre más'}
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link href={`/${lang}/book-a-meeting`} className="w-full sm:w-auto bg-white hover:bg-gray-100 text-purple-700 font-medium px-8 py-3 rounded-lg transition inline-block text-center">
+                    {isEn ? "Let's talk about your project" : 'Hablemos de tu proyecto'}
+                  </Link>
+                  <a href="#infraestructura" className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-lg border-2 border-white/30 transition inline-block text-center">
+                    {isEn ? 'Discover more' : 'Descubre más'}
+                  </a>
+                </div>
+              </div>
+
+              {/* Right: hero illustration */}
+              <div className="flex-1 w-full max-w-xl lg:max-w-none flex items-center justify-center">
+                <HeroVisualCaosOrden />
               </div>
             </div>
           </main>
         </AnimatedSection>
+
+        {/* Wave separator */}
+        <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">
+          <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 md:h-20">
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+          </svg>
+        </div>
       </div>
 
       <AnimatedSection>
-        <section id="infraestructura" className="relative bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/20 py-24 pb-64 z-20">
+        <section id="infraestructura" className="relative bg-gradient-to-br from-white via-purple-50/30 to-blue-50/20 py-24 pb-64 z-20">
           {/* Decorative elements - 3 circles with specified colors */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(167, 139, 250, 0.4)' }}></div>
@@ -513,16 +529,17 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      <AnimatedSection>
+      <AnimatedSection direction="none">
         <section className="relative py-16 md:py-24 overflow-hidden">
           <div
             className="absolute inset-0 z-0"
             style={{
-              background: 'radial-gradient(ellipse at center, #302B63 0%, #24243E 40%, #0F0C29 70%)',
+              backgroundImage: "url('/leaders-parallax.svg')",
+              backgroundAttachment: 'fixed',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
-          >
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] rounded-full blur-[120px] opacity-80" style={{ background: 'radial-gradient(circle, #5B4DB5 0%, #302B63 50%, transparent 100%)' }}></div>
-          </div>
+          />
 
           <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
             <div className="mb-6 md:mb-8">
@@ -682,10 +699,18 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      <AnimatedSection>
-        <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-[#1a1654] via-[#1e1a5e] to-[#0f0c3d]">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
+      <AnimatedSection direction="none">
+        <section className="relative py-16 md:py-24 overflow-hidden">
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: "url('/data-path-parallax.svg')",
+              backgroundAttachment: 'fixed',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          <div className="absolute inset-0 z-0 bg-black/50" />
 
           <div className="relative z-10 mx-auto max-w-6xl px-6">
             <div className="text-center mb-12 md:mb-16">
@@ -1054,13 +1079,18 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Expert Talent CTA Section */}
-      <AnimatedSection>
-        <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-[#0f0b24] via-[#1f1447] to-[#0f0b24]">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-15">
-            <div className="absolute top-20 left-20 w-96 h-96 bg-purple-600 rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-600 rounded-full blur-[120px]"></div>
-          </div>
+      <AnimatedSection direction="none">
+        <section className="relative py-20 md:py-32 overflow-hidden">
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: "url('/clarity-parallax.svg')",
+              backgroundAttachment: 'fixed',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          <div className="absolute inset-0 z-0 bg-black/55" />
 
           <div className="relative max-w-5xl mx-auto px-6 text-center">
             {/* Badge */}
@@ -1125,25 +1155,32 @@ export default function Home() {
             {/* Social Media Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* LinkedIn Card - Large */}
-              <div className="relative lg:row-span-2 bg-gradient-to-br from-[#0A66C2] to-[#004182] rounded-3xl shadow-lg text-white overflow-hidden flex flex-col">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#60A5FA]/25 via-[#C084FC]/25 to-[#F472B6]/25 rounded-3xl blur-2xl -z-10"></div>
+              <div className="group relative lg:row-span-2 bg-gradient-to-br from-[#0A66C2] via-[#0957A8] to-[#004182] rounded-3xl shadow-2xl text-white overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(10,102,194,0.45)]">
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-white/20 pointer-events-none"></div>
 
                 {/* Post Image */}
-                <div className="relative w-full h-56 lg:h-64 overflow-hidden">
+                <div className="relative w-full h-60 lg:h-72 overflow-hidden">
                   <Image
                     src="https://media.licdn.com/dms/image/v2/D5622AQHCcasDDuOE1g/feedshare-shrink_2048_1536/B56ZzdmHJnHIAg-/0/1773244281709?e=2147483647&v=beta&t=8rFPr0VtQn0evMkzyVp3Huy_6tMD-uRR0UB0ChEY9I0"
                     alt="AUTOScraping team at Milan international expansion event"
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#004182]/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#004182]/90 via-[#004182]/20 to-transparent"></div>
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-1.5">
+                    <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
+                    <span className="text-[#0A66C2] text-xs font-bold">LinkedIn</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs text-white font-medium">
+                    🇦🇷🤝🇮🇹 {isEn ? 'Milan' : 'Milán'}
+                  </div>
                 </div>
 
                 <div className="p-8 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                      <Linkedin className="w-7 h-7 text-[#0A66C2]" />
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                      <Linkedin className="w-6 h-6 text-[#0A66C2]" />
                     </div>
                     <div>
                       <p className="font-bold text-lg">AUTOScraping</p>
@@ -1151,7 +1188,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-3">
+                  <h3 className="text-xl font-bold mb-3 leading-snug">
                     {isEn
                       ? 'Scaling is a team sport: Our experience in Milan 🇦🇷🤝🇮🇹'
                       : 'Escalar es un deporte de equipo: Nuestra experiencia en Milán 🇦🇷🤝🇮🇹'}
@@ -1163,169 +1200,219 @@ export default function Home() {
                       : 'Nuestras soluciones de autoscraping y automatización tienen un espacio real y necesario en el mercado global. Compartir el camino con otros fundadores argentinos refuerza la idea de que la tecnología argentina es una marca de calidad exportable.'}
                   </p>
 
-                  <p className="text-blue-200 text-xs mb-5">
-                    #InternationalExpansion #ArgentinaStartups #Italy #TechLeadership #Innovation #Networking #ArgentinaToTheWorld
+                  <p className="text-blue-300/80 text-xs mb-6 font-medium">
+                    #InternationalExpansion #ArgentinaStartups #Italy #TechLeadership
                   </p>
 
                   <a
                     href="https://www.linkedin.com/posts/autoscraping_expansioninternacional-startupsargentina-activity-7437525596605304832-boOo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6NdK4BJzdQ0uiz6MIlSV5KFGhp5cTwDdk"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0A66C2] font-medium px-6 py-3 rounded-lg transition mb-6 self-start"
+                    className="inline-flex items-center gap-2 bg-white hover:bg-blue-50 text-[#0A66C2] font-semibold px-6 py-3 rounded-xl transition-all duration-200 self-start shadow-md mb-6"
                   >
                     {isEn ? 'View on LinkedIn' : 'Ver en LinkedIn'}
                     <ExternalLink className="w-4 h-4" />
                   </a>
 
-                  <div className="flex items-center gap-4 text-sm border-t border-white/20 pt-5 mt-auto flex-wrap">
-                    <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-5 text-sm border-t border-white/15 pt-5 mt-auto">
+                    <button className="flex items-center gap-2 hover:text-blue-200 transition-colors">
                       <ThumbsUp className="w-4 h-4" />
-                      <span>{isEn ? '16 reactions' : '16 reacciones'}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
+                      <span>16</span>
+                    </button>
+                    <button className="flex items-center gap-2 hover:text-blue-200 transition-colors">
                       <MessageCircle className="w-4 h-4" />
-                      <span>{isEn ? 'Comments' : 'Comentarios'}</span>
-                    </div>
-                    <div className="hidden sm:flex items-center gap-2">
+                      <span>{isEn ? 'Comment' : 'Comentar'}</span>
+                    </button>
+                    <button className="hidden sm:flex items-center gap-2 hover:text-blue-200 transition-colors ml-auto">
                       <ArrowRight className="w-4 h-4" />
                       <span>{isEn ? 'Share' : 'Compartir'}</span>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
 
               {/* Facebook Card */}
-              <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 flex flex-col">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center">
-                    <Facebook className="w-6 h-6 text-white" />
+              <div className="group relative bg-white rounded-3xl shadow-lg border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-100">
+                <div className="h-1.5 bg-gradient-to-r from-[#1877F2] to-[#42a5f5]"></div>
+                <div className="p-7 flex flex-col flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-11 h-11 bg-[#1877F2] rounded-full flex items-center justify-center shadow-md flex-shrink-0">
+                      <Facebook className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-gray-900 text-sm">AUTOScraping</p>
+                      <p className="text-gray-400 text-xs truncate">{isEn ? 'March 3 · 📍 Fira Barcelona Gran Via' : '3 de marzo · 📍 Fira Barcelona Gran Via'}</p>
+                    </div>
+                    <div className="bg-[#E8F4FE] text-[#1877F2] text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0">
+                      #MWC26
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-gray-900">AUTOScraping</p>
-                    <p className="text-gray-500 text-xs">{isEn ? 'March 3 · Fira Barcelona Gran Via 📍' : '3 de marzo · Fira Barcelona Gran Via 📍'}</p>
+
+                  <p className="text-gray-700 leading-relaxed mb-4 text-sm flex-1">
+                    {isEn
+                      ? 'Day 1 at #MWC26: Check! ✅🇦🇷 From the adrenaline of presenting at the Argentine Hub to getting lost in the vastness of the Samsung, Microsoft and MediaTek pavilions. 🤯'
+                      : '¡Día 1 en el #MWC26: Check! ✅🇦🇷 De la adrenalina de presentar en el Hub Argentino, a perderse en la inmensidad de los pabellones de Samsung, Microsoft y MediaTek. 🤯'}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-gray-100 text-gray-500 rounded-full px-3 py-1 text-xs">🇪🇸 Barcelona</span>
+                    <span className="bg-gray-100 text-gray-500 rounded-full px-3 py-1 text-xs">🇦🇷 ArgentinaInnovation</span>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-3 text-sm text-gray-500">
+                      <button className="flex items-center gap-1.5 hover:text-[#1877F2] transition-colors">
+                        <ThumbsUp className="w-4 h-4" />
+                        <span className="font-medium">{isEn ? 'Like' : 'Me gusta'}</span>
+                      </button>
+                      <button className="flex items-center gap-1.5 hover:text-[#1877F2] transition-colors">
+                        <MessageCircle className="w-4 h-4" />
+                        <span className="font-medium">{isEn ? 'Comment' : 'Comentar'}</span>
+                      </button>
+                    </div>
+                    <a
+                      href="https://www.facebook.com/AutoScraping/posts/pfbid0EFGg8DBNy4fsA9rVXnn9bUScoQgvWVG534WaYLrgsJhBfGEgxT9sPayywLkvDY8ol"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#1877F2] hover:text-blue-700 text-xs font-semibold flex items-center gap-1 bg-[#E8F4FE] hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
+                    >
+                      {isEn ? 'View post' : 'Ver publicación'}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* YouTube Card */}
+              <a
+                href="https://www.youtube.com/@Autoscraping"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative self-start bg-gradient-to-br from-[#0f0505] to-[#1a0808] rounded-3xl shadow-xl text-white flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(255,0,0,0.25)]"
+              >
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 pointer-events-none"></div>
+                <div className="absolute -top-16 -right-16 w-56 h-56 bg-[#FF0000]/8 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div className="p-7 flex flex-col gap-6">
+                  {/* Header */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 bg-[#FF0000] rounded-full flex items-center justify-center shadow-lg shadow-red-900/50 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                      <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-bold text-lg group-hover:text-red-400 transition-colors">@Autoscraping</p>
+                      <p className="text-gray-500 text-sm">YouTube</p>
+                    </div>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-white/5 border border-white/8 rounded-xl p-3 text-center">
+                      <p className="text-white font-bold text-lg leading-none">18</p>
+                      <p className="text-gray-500 text-xs mt-1">{isEn ? 'Videos' : 'Videos'}</p>
+                    </div>
+                    <div className="bg-white/5 border border-white/8 rounded-xl p-3 text-center">
+                      <p className="text-white font-bold text-lg leading-none">13</p>
+                      <p className="text-gray-500 text-xs mt-1">{isEn ? 'Subscribers' : 'Suscriptores'}</p>
+                    </div>
+                    <div className="bg-white/5 border border-white/8 rounded-xl p-3 text-center">
+                      <p className="text-white font-bold text-lg leading-none">439</p>
+                      <p className="text-gray-500 text-xs mt-1">{isEn ? 'Views' : 'Vistas'}</p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-400 leading-relaxed text-sm">
+                    {isEn
+                      ? 'Tutorials, behind-the-scenes and technical deep-dives on web scraping, data engineering and automation. Subscribe and stay ahead.'
+                      : 'Tutoriales, behind-the-scenes y análisis técnicos sobre web scraping, ingeniería de datos y automatización. Suscribite y mantente un paso adelante.'}
+                  </p>
+
+                  {/* CTA */}
+                  <div className="inline-flex items-center gap-2 bg-[#FF0000] group-hover:bg-[#cc0000] text-white font-semibold px-5 py-3 rounded-xl transition-all text-sm shadow-lg shadow-red-900/30 self-start">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    {isEn ? 'Visit our channel' : 'Visitar el canal'}
+                  </div>
+                </div>
+              </a>
+
+              {/* GitHub Card */}
+              <div className="group relative bg-gradient-to-br from-[#161B22] to-[#0D1117] rounded-3xl p-7 shadow-xl text-white flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(0,0,0,0.6)]">
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 pointer-events-none"></div>
+
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <Github className="w-6 h-6 text-gray-900" />
+                  </div>
+                  <div className="flex-1">
+                    <a href="https://github.com/autoscraping" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-purple-300 transition-colors">AUTOScraping</a>
+                    <p className="text-gray-500 text-xs">{isEn ? 'This month' : 'Este mes'}</p>
                   </div>
                 </div>
 
-                <p className="text-gray-700 leading-relaxed mb-2 text-sm flex-1">
-                  {isEn
-                    ? 'Day 1 at #MWC26: Check! ✅🇦🇷 Swipe to see what the second part of our first day in Barcelona was like. 🇪🇸 From the adrenaline of presenting at the Argentine Hub to companies and partners, to getting lost in the vastness of the Samsung, Microsoft and MediaTek pavilions. 🤯'
-                    : '¡Día 1 en el #MWC26: Check! ✅🇦🇷 Deslizá para ver lo que fue la segunda parte de nuestra primera jornada en Barcelona. 🇪🇸 De la adrenalina de presentar en el Hub Argentino ante empresas y partners, a perderse en la inmensidad de los pabellones de Samsung, Microsoft y MediaTek. 🤯'}
-                </p>
-
-                <p className="text-[#1877F2] text-xs mb-4 font-medium">
-                  #MWC2026 #Barcelona #TechLife #ArgentinaInnovation
-                </p>
-
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <div className="flex items-center gap-2">
-                      <ThumbsUp className="w-4 h-4 text-[#1877F2] fill-[#1877F2]" />
-                      <span className="text-gray-700 font-medium">{isEn ? 'Like' : 'Me gusta'}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MessageCircle className="w-4 h-4" />
-                      <span className="text-gray-700 font-medium">{isEn ? 'Comment' : 'Comentar'}</span>
-                    </div>
+                <div className="flex gap-3 mb-5">
+                  <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-center">
+                    <p className="text-green-400 text-2xl font-bold">+2,847</p>
+                    <p className="text-gray-500 text-xs mt-0.5">{isEn ? 'contributions' : 'contribuciones'}</p>
                   </div>
-                  <a
-                    href="https://www.facebook.com/AutoScraping/posts/pfbid0EFGg8DBNy4fsA9rVXnn9bUScoQgvWVG534WaYLrgsJhBfGEgxT9sPayywLkvDY8ol"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#1877F2] hover:text-blue-700 text-sm font-medium flex items-center gap-1.5 transition"
-                  >
-                    {isEn ? 'View on Facebook' : 'Ver en Facebook'}
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-center">
+                    <p className="text-purple-400 text-2xl font-bold">24</p>
+                    <p className="text-gray-500 text-xs mt-0.5">{isEn ? 'repositories' : 'repositorios'}</p>
+                  </div>
                 </div>
+
+                {/* Contribution graph */}
+                <div className="mb-5">
+                  <p className="text-gray-600 text-xs mb-2">{isEn ? 'Contribution activity' : 'Actividad reciente'}</p>
+                  <div className="flex flex-col gap-1">
+                    {([
+                      [0,1,2,3,1,0,2,3,2,1,3,0],
+                      [2,3,1,0,3,2,1,0,3,2,1,3],
+                      [1,0,3,2,0,3,1,2,0,3,2,1],
+                      [3,2,0,1,2,1,3,0,1,2,0,3],
+                      [0,2,1,3,0,2,3,1,2,0,3,1],
+                    ] as number[][]).map((row, ri) => (
+                      <div key={ri} className="flex gap-1">
+                        {row.map((val, ci) => (
+                          <div key={ci} className={`flex-1 h-3 rounded-sm ${val === 3 ? 'bg-green-400' : val === 2 ? 'bg-green-600' : val === 1 ? 'bg-green-900' : 'bg-white/5'}`} />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <p className="text-gray-400 text-sm mb-5 flex-1">
+                  {isEn ? 'Building open-source tools for the community 🛠️' : 'Construyendo herramientas open-source para la comunidad 🛠️'}
+                </p>
+
+                <a
+                  href="https://github.com/autoscraping"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium px-5 py-2.5 rounded-xl transition-all self-start text-sm"
+                >
+                  <Github className="w-4 h-4" />
+                  {isEn ? 'View on GitHub' : 'Ver en GitHub'}
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </div>
 
               {/* Instagram Card - Dynamic */}
               <InstagramCard />
-
-              {/* GitHub Card */}
-              <div className="relative bg-gradient-to-br from-[#24292F] to-[#1C2128] rounded-3xl p-8 shadow-lg text-white flex flex-col">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#C084FC]/25 via-[#60A5FA]/25 to-[#F472B6]/25 rounded-3xl blur-2xl -z-10"></div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <Github className="w-7 h-7 text-gray-900" />
-                  </div>
-                  <div>
-                    <a href="https://github.com/autoscraping" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:text-purple-300 transition-colors">AUTOScraping</a>
-                    <p className="text-gray-400 text-sm">This month</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-8">
-                  <div>
-                    <p className="text-green-400 text-4xl font-bold">+2,847</p>
-                    <p className="text-gray-400 text-sm">contributions this month across</p>
-                  </div>
-                  <div>
-                    <p className="text-purple-400 text-4xl font-bold">24</p>
-                    <p className="text-gray-400 text-sm">repositories</p>
-                  </div>
-                </div>
-
-                <p className="text-gray-300 mt-6 flex-1">
-                  Building open-source tools for the community 🛠️
-                </p>
-              </div>
-
-              {/* YouTube Card */}
-              <div className="relative bg-gradient-to-br from-[#1a0a0a] to-[#0f0505] rounded-3xl p-8 shadow-lg text-white flex flex-col overflow-hidden">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#FF0000]/20 via-[#FF4444]/15 to-[#CC0000]/10 rounded-3xl blur-2xl -z-10"></div>
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[#FF0000]/5 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-[#FF0000] rounded-full flex items-center justify-center flex-shrink-0">
-                    {/* YouTube SVG icon */}
-                    <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <a
-                      href="https://www.youtube.com/@Autoscraping"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold text-lg hover:text-red-400 transition-colors"
-                    >
-                      @Autoscraping
-                    </a>
-                    <p className="text-gray-400 text-sm">YouTube</p>
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold mb-3">
-                  {isEn ? 'Tech, data and real cases' : 'Tecnología, datos y casos reales'}
-                </h3>
-
-                <p className="text-gray-400 leading-relaxed mb-6 text-sm flex-1">
-                  {isEn
-                    ? 'Tutorials, behind-the-scenes and technical deep-dives on web scraping, data engineering and automation. Subscribe and stay ahead.'
-                    : 'Tutoriales, behind-the-scenes y análisis técnicos sobre web scraping, ingeniería de datos y automatización. Suscribite y mantente un paso adelante.'}
-                </p>
-
-                <a
-                  href="https://www.youtube.com/@Autoscraping"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#FF0000] hover:bg-[#cc0000] text-white font-semibold px-6 py-3 rounded-xl transition-colors self-start mt-auto"
-                >
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                  {isEn ? 'Watch on YouTube' : 'Ver en YouTube'}
-                </a>
-              </div>
             </div>
           </div>
         </section>
       </AnimatedSection>
 
+      {/* Blog + CTA — shared background so they look unified */}
+      <div className="bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Blog Section */}
       <AnimatedSection>
-        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-purple-50/20">
+        <section className="relative py-24 overflow-hidden">
           {/* Background decorative circles - matching the image */}
           <div className="absolute top-10 left-10 w-32 h-32 bg-purple-300/40 rounded-full blur-2xl"></div>
           <div className="absolute top-32 left-32 w-24 h-24 bg-blue-300/30 rounded-full blur-xl"></div>
@@ -1472,7 +1559,8 @@ export default function Home() {
         </section>
       </AnimatedSection>
       {/* Contact Section */}
-      <ContactCTA />
+      <ContactCTA sectionClassName="bg-transparent" />
+      </div>
 
       <Footer />
     </>

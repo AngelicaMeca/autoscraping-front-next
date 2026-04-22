@@ -1,0 +1,343 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 700" width="1920" height="700">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080808"/>
+      <stop offset="50%" stop-color="#0d0d12"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+
+    <!-- Left edge fade -->
+    <linearGradient id="fadeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#080808" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#080808" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Right edge fade -->
+    <linearGradient id="fadeRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#080808" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#080808" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Emerald bar gradient -->
+    <linearGradient id="barGradEmerald" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#00CC55" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#00FF88" stop-opacity="0.22"/>
+    </linearGradient>
+
+    <!-- Glow filter for trend line dot -->
+    <filter id="glowGold" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow filter for trend line -->
+    <filter id="glowLineGold" x="-10%" y="-200%" width="120%" height="500%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow filter for bar tops -->
+    <filter id="glowEmerald" x="-50%" y="-200%" width="200%" height="500%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle glow for scatter highlights -->
+    <filter id="glowDot" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Donut arc clip path -->
+    <clipPath id="donutClip">
+      <circle cx="1600" cy="350" r="140"/>
+    </clipPath>
+  </defs>
+
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="1920" height="700" fill="url(#bgGrad)"/>
+
+  <!-- ===== DATA GRID / AXIS LINES ===== -->
+  <!-- Horizontal lines every 80px -->
+  <g stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="100" x2="1920" y2="100"/>
+    <line x1="0" y1="180" x2="1920" y2="180"/>
+    <line x1="0" y1="260" x2="1920" y2="260"/>
+    <line x1="0" y1="340" x2="1920" y2="340"/>
+    <line x1="0" y1="420" x2="1920" y2="420"/>
+    <line x1="0" y1="500" x2="1920" y2="500"/>
+    <line x1="0" y1="580" x2="1920" y2="580"/>
+    <line x1="0" y1="660" x2="1920" y2="660"/>
+  </g>
+  <!-- Vertical lines -->
+  <g stroke="#FFFFFF" stroke-opacity="0.025" stroke-width="1">
+    <line x1="240"  y1="0" x2="240"  y2="700"/>
+    <line x1="480"  y1="0" x2="480"  y2="700"/>
+    <line x1="720"  y1="0" x2="720"  y2="700"/>
+    <line x1="960"  y1="0" x2="960"  y2="700"/>
+    <line x1="1200" y1="0" x2="1200" y2="700"/>
+    <line x1="1440" y1="0" x2="1440" y2="700"/>
+    <line x1="1680" y1="0" x2="1680" y2="700"/>
+  </g>
+
+  <!-- ===== BAR CHART (left side, bars anchored at y=620) ===== -->
+  <!-- Bar widths ~40px, gaps ~12px, starting at x=105 -->
+  <!-- Heights: 400, 280, 350, 480, 320, 260, 420 -->
+
+  <!-- Bar 1: height 400, top at y=220 -->
+  <rect x="105" y="220" width="40" height="400" fill="url(#barGradEmerald)"/>
+  <line x1="105" y1="220" x2="145" y2="220" stroke="#00FF88" stroke-width="1.5" stroke-opacity="0.7" filter="url(#glowEmerald)"/>
+
+  <!-- Bar 2: height 280, top at y=340 -->
+  <rect x="157" y="340" width="40" height="280" fill="url(#barGradEmerald)"/>
+  <line x1="157" y1="340" x2="197" y2="340" stroke="#00FF88" stroke-width="1.5" stroke-opacity="0.7" filter="url(#glowEmerald)"/>
+
+  <!-- Bar 3: height 350, top at y=270 -->
+  <rect x="209" y="270" width="40" height="350" fill="url(#barGradEmerald)"/>
+  <line x1="209" y1="270" x2="249" y2="270" stroke="#00CC55" stroke-width="1.5" stroke-opacity="0.65" filter="url(#glowEmerald)"/>
+
+  <!-- Bar 4: height 480, top at y=140 -->
+  <rect x="261" y="140" width="40" height="480" fill="url(#barGradEmerald)"/>
+  <line x1="261" y1="140" x2="301" y2="140" stroke="#00FF88" stroke-width="2" stroke-opacity="0.8" filter="url(#glowEmerald)"/>
+
+  <!-- Bar 5: height 320, top at y=300 -->
+  <rect x="313" y="300" width="40" height="320" fill="url(#barGradEmerald)"/>
+  <line x1="313" y1="300" x2="353" y2="300" stroke="#00CC55" stroke-width="1.5" stroke-opacity="0.65" filter="url(#glowEmerald)"/>
+
+  <!-- Bar 6: height 260, top at y=360 -->
+  <rect x="365" y="360" width="40" height="260" fill="url(#barGradEmerald)"/>
+  <line x1="365" y1="360" x2="405" y2="360" stroke="#00FF88" stroke-width="1.5" stroke-opacity="0.6" filter="url(#glowEmerald)"/>
+
+  <!-- Bar 7: height 420, top at y=200 -->
+  <rect x="417" y="200" width="40" height="420" fill="url(#barGradEmerald)"/>
+  <line x1="417" y1="200" x2="457" y2="200" stroke="#00FF88" stroke-width="2" stroke-opacity="0.75" filter="url(#glowEmerald)"/>
+
+  <!-- X-axis baseline -->
+  <line x1="90" y1="620" x2="470" y2="620" stroke="#00FF88" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- ===== TREND LINE (center-left to center, upward) ===== -->
+  <!-- Quadratic bezier from (200,450) through control (600,180) to (1000,200) -->
+  <path d="M 200 450 Q 600 140 1000 200"
+        stroke="#FFB800"
+        stroke-width="2"
+        stroke-opacity="0.30"
+        fill="none"
+        filter="url(#glowLineGold)"/>
+
+  <!-- Trend line glow layer (wider, more diffuse) -->
+  <path d="M 200 450 Q 600 140 1000 200"
+        stroke="#FFB800"
+        stroke-width="6"
+        stroke-opacity="0.08"
+        fill="none"/>
+
+  <!-- ===== ANIMATED DOT ON TREND LINE ===== -->
+  <circle r="3" fill="#FFB800" filter="url(#glowGold)">
+    <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#trendPath"/>
+    </animateMotion>
+  </circle>
+
+  <!-- Hidden path for animateMotion reference -->
+  <path id="trendPath" d="M 200 450 Q 600 140 1000 200" fill="none" stroke="none"/>
+
+  <!-- ===== SCATTER PLOT DOTS (x:600–1200, y:200–500) ===== -->
+  <!-- Regular dots (opacity 0.2–0.35) -->
+  <circle cx="618"  cy="468" r="3" fill="#00FF88" opacity="0.25"/>
+  <circle cx="645"  cy="430" r="4" fill="#FFB800" opacity="0.22"/>
+  <circle cx="672"  cy="415" r="3" fill="#00FF88" opacity="0.28"/>
+  <circle cx="700"  cy="390" r="3" fill="#FFB800" opacity="0.20"/>
+  <circle cx="730"  cy="380" r="4" fill="#00FF88" opacity="0.30"/>
+  <circle cx="758"  cy="355" r="3" fill="#00FF88" opacity="0.22"/>
+  <circle cx="785"  cy="370" r="3" fill="#FFB800" opacity="0.25"/>
+  <circle cx="820"  cy="340" r="4" fill="#00FF88" opacity="0.28"/>
+  <circle cx="852"  cy="320" r="3" fill="#FFB800" opacity="0.20"/>
+  <circle cx="880"  cy="310" r="3" fill="#00FF88" opacity="0.25"/>
+  <circle cx="910"  cy="290" r="4" fill="#FFB800" opacity="0.30"/>
+  <circle cx="945"  cy="280" r="3" fill="#00FF88" opacity="0.22"/>
+  <circle cx="975"  cy="295" r="3" fill="#00FF88" opacity="0.26"/>
+  <circle cx="1005" cy="270" r="4" fill="#FFB800" opacity="0.28"/>
+  <circle cx="1040" cy="255" r="3" fill="#00FF88" opacity="0.22"/>
+  <circle cx="1070" cy="265" r="3" fill="#FFB800" opacity="0.20"/>
+  <circle cx="1100" cy="248" r="4" fill="#00FF88" opacity="0.30"/>
+
+  <!-- Highlighted dots (brighter, with glow) -->
+  <circle cx="700" cy="390" r="5" fill="#FFB800" opacity="0.60" filter="url(#glowDot)"/>
+  <circle cx="880" cy="310" r="5" fill="#00FF88" opacity="0.65" filter="url(#glowDot)">
+    <animate attributeName="opacity" values="0.65;0.25;0.65" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="5;7;5"           dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1040" cy="255" r="5" fill="#FFB800" opacity="0.60" filter="url(#glowDot)">
+    <animate attributeName="opacity" values="0.60;0.20;0.60" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="5;7;5"          dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="730" cy="380" r="5" fill="#00FF88" opacity="0.55" filter="url(#glowDot)">
+    <animate attributeName="opacity" values="0.55;0.18;0.55" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="5;6.5;5"        dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== CONNECTION LINES BETWEEN SCATTER DOTS ===== -->
+  <g stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1">
+    <line x1="618"  y1="468" x2="645"  y2="430"/>
+    <line x1="645"  y1="430" x2="672"  y2="415"/>
+    <line x1="672"  y1="415" x2="700"  y2="390"/>
+    <line x1="700"  y1="390" x2="730"  y2="380"/>
+    <line x1="730"  y1="380" x2="758"  y2="355"/>
+    <line x1="758"  y1="355" x2="820"  y2="340"/>
+    <line x1="820"  y1="340" x2="852"  y2="320"/>
+    <line x1="852"  y1="320" x2="880"  y2="310"/>
+    <line x1="880"  y1="310" x2="910"  y2="290"/>
+    <line x1="910"  y1="290" x2="945"  y2="280"/>
+    <line x1="945"  y1="280" x2="1005" y2="270"/>
+    <line x1="1005" y1="270" x2="1040" y2="255"/>
+    <line x1="1040" y1="255" x2="1100" y2="248"/>
+    <!-- A few cross-links -->
+    <line x1="672"  y1="415" x2="730"  y2="380"/>
+    <line x1="785"  y1="370" x2="852"  y2="320"/>
+    <line x1="975"  y1="295" x2="1040" y2="255"/>
+  </g>
+
+  <!-- ===== PIE/DONUT CHART (right side, center: 1600,350, r=140) ===== -->
+  <!--
+    Total circumference of r=140: 2π×140 ≈ 879.6
+    Segment 1 (emerald): 120° → arc length ≈ 293.2  → dash: 293.2 rest
+    Segment 2 (gold):    110° → arc length ≈ 268.9
+    Segment 3 (cyan):     90° → arc length ≈ 219.9
+    Remaining gap:        40° → arc length ≈  97.6 (intentional gap for open donut feel)
+
+    Using stroke-dasharray trick on a circle.
+    stroke-dashoffset rotates the start position.
+    Circle starts at 3 o'clock (rightmost point). We rotate -90° to start at top.
+  -->
+
+  <!-- Donut ring base (very faint) -->
+  <circle cx="1600" cy="350" r="140"
+          fill="none"
+          stroke="#FFFFFF"
+          stroke-width="28"
+          stroke-opacity="0.04"/>
+
+  <!-- Segment 1: emerald green, 120° -->
+  <circle cx="1600" cy="350" r="140"
+          fill="none"
+          stroke="#00FF88"
+          stroke-width="28"
+          stroke-opacity="0.25"
+          stroke-dasharray="293.2 586.4"
+          stroke-dashoffset="219.9"
+          transform="rotate(-90 1600 350)"/>
+
+  <!-- Segment 2: gold, 110° -->
+  <circle cx="1600" cy="350" r="140"
+          fill="none"
+          stroke="#FFB800"
+          stroke-width="28"
+          stroke-opacity="0.22"
+          stroke-dasharray="268.9 610.7"
+          stroke-dashoffset="-73.3"
+          transform="rotate(-90 1600 350)"/>
+
+  <!-- Segment 3: soft cyan, 90° -->
+  <circle cx="1600" cy="350" r="140"
+          fill="none"
+          stroke="#4ECDC4"
+          stroke-width="28"
+          stroke-opacity="0.20"
+          stroke-dasharray="219.9 659.7"
+          stroke-dashoffset="-342.1"
+          transform="rotate(-90 1600 350)"/>
+
+  <!-- Center circle (hides the inner part of the stroke, making it a donut) -->
+  <circle cx="1600" cy="350" r="126" fill="#0d0d12"/>
+  <!-- Inner dark circle for donut hole -->
+  <circle cx="1600" cy="350" r="80" fill="#080808"/>
+
+  <!-- Subtle donut inner ring -->
+  <circle cx="1600" cy="350" r="80"
+          fill="none"
+          stroke="#FFFFFF"
+          stroke-width="0.5"
+          stroke-opacity="0.08"/>
+  <circle cx="1600" cy="350" r="126"
+          fill="none"
+          stroke="#FFFFFF"
+          stroke-width="0.5"
+          stroke-opacity="0.06"/>
+
+  <!-- Small tick marks at segment boundaries (subtle) -->
+  <g stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.12">
+    <!-- top (0°, start reference) -->
+    <line x1="1600" y1="202" x2="1600" y2="216"/>
+    <!-- 120° -->
+    <line x1="1721" y1="420" x2="1709" y2="430"/>
+    <!-- 230° -->
+    <line x1="1493" y1="488" x2="1499" y2="476"/>
+    <!-- 320° -->
+    <line x1="1510" y1="221" x2="1516" y2="233"/>
+  </g>
+
+  <!-- ===== ADDITIONAL AMBIENT ELEMENTS ===== -->
+
+  <!-- Faint emerald vertical line (chart y-axis) -->
+  <line x1="95" y1="100" x2="95" y2="630"
+        stroke="#00FF88" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- Small axis ticks on left chart -->
+  <g stroke="#00FF88" stroke-opacity="0.15" stroke-width="1">
+    <line x1="88" y1="220" x2="95" y2="220"/>
+    <line x1="88" y1="300" x2="95" y2="300"/>
+    <line x1="88" y1="380" x2="95" y2="380"/>
+    <line x1="88" y1="460" x2="95" y2="460"/>
+    <line x1="88" y1="540" x2="95" y2="540"/>
+  </g>
+
+  <!-- A second smaller bar chart echo (very faint, far right background) -->
+  <g opacity="0.06">
+    <rect x="1720" y="300" width="22" height="320" fill="#00FF88"/>
+    <rect x="1748" y="380" width="22" height="240" fill="#FFB800"/>
+    <rect x="1776" y="330" width="22" height="290" fill="#00FF88"/>
+    <rect x="1804" y="260" width="22" height="360" fill="#4ECDC4"/>
+    <rect x="1832" y="350" width="22" height="270" fill="#00CC55"/>
+    <rect x="1860" y="410" width="22" height="210" fill="#FFB800"/>
+    <rect x="1888" y="290" width="22" height="330" fill="#00FF88"/>
+  </g>
+
+  <!-- Subtle horizontal accent line (center area separator) -->
+  <line x1="500" y1="450" x2="1420" y2="450"
+        stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1" stroke-dasharray="6,12"/>
+
+  <!-- ===== EDGE FADE OVERLAYS ===== -->
+  <!-- Left fade (300px) -->
+  <rect x="0" y="0" width="300" height="700" fill="url(#fadeLeft)"/>
+  <!-- Right fade (300px) -->
+  <rect x="1620" y="0" width="300" height="700" fill="url(#fadeRight)"/>
+  <!-- Top fade -->
+  <rect x="0" y="0" width="1920" height="80" fill="url(#topFade)"/>
+  <!-- Bottom fade -->
+  <rect x="0" y="620" width="1920" height="80" fill="url(#bottomFade)"/>
+
+  <defs>
+    <linearGradient id="topFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080808" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#080808" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080808" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#080808" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
+</svg>

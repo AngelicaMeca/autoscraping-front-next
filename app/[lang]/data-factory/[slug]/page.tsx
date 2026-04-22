@@ -383,7 +383,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <ContactCTA />
+      <ContactCTA sectionClassName="bg-transparent" />
 
       <Footer />
     </main>

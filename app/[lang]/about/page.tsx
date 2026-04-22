@@ -9,7 +9,7 @@ import Timeline from './timeline';
 import CtaBanner from './cta-banner';
 import ValuesSection from './values-section';
 import TeamSection from './team-section';
-import ContactCta from './contact-cta';
+import ContactCTA from '@/components/ContactCTA';
 
 export default function AboutPage() {
   const lang = useLang();
@@ -286,7 +286,7 @@ export default function AboutPage() {
       <CtaBanner />
       <ValuesSection />
       <TeamSection />
-      <ContactCta />
+      <ContactCTA sectionClassName="bg-white" />
 
       <Footer />
     </main>
